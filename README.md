@@ -1,4 +1,1 @@
-csc494
-======
-
-Surface 2.0 Project
+PixelSense Universal Device Communication
