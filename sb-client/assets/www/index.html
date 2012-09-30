@@ -2,44 +2,40 @@
 <html>
 <head>
 
-<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="vendors/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.css" />
+<link rel="stylesheet" type="text/css" href="vendors/jquery.mobile-1.1.1/jquery.mobile.structure-1.1.1.min.css" />
+<link rel="stylesheet" type="text/css" href="vendors/jquery.mobile-1.1.1/jquery.mobile.theme-1.1.1.min.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
 
 <title>File Explorer</title>
 
-<script src="cordova-1.9.0.js"></script>
+<script src="cordova-2.1.0.js"></script>
 <script src="vendors/jquery-1.8.2.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.js"></script>
+<script src="vendors/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.js"></script>
 <script src="vendors/underscore-min.js"></script>
 <script src="vendors/backbone-min.js"></script>
+<script src="vendors/mustache.js"></script>
+
+<script src="js/main.js"></script>
 
 </head>
 <body>
-<h1>Hello World</h1>
 
- // Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
+<div id="container"></div>
 
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
-        window.resolveLocalFileSystemURI("file:///example.txt", onResolveSuccess, fail);
-    }
 
-    function onFileSystemSuccess(fileSystem) {
-        console.log(fileSystem.name);
-    }
-
-    function onResolveSuccess(fileEntry) {
-        console.log(fileEntry.name);
-    }
-
-    function fail(evt) {
-        console.log(evt.target.error.code);
-    }
-
-    </script>
+<script type="text/template" id="directory_row_template">
+    <div class="row-fluid" data-path="{{fullPath}}">
+        <div class="span12 dir">
+            <i class="icon-folder-close" style="margin-right:10px;"></i>{{name}}
+            <i class="icon-play pull-right"></i>
+        </div>
+    </div>
+</script>
 
 
 </body>
