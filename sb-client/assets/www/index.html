@@ -20,16 +20,27 @@
 <script src="vendors/backbone-min.js"></script>
 <script src="vendors/mustache.js"></script>
 
+<script src="js/model.js"></script>
 <script src="js/main.js"></script>
 
 </head>
 <body>
 
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand"><b>Slidboard</b></a>
+        <ul class="nav">
+            <li><a id="path"></a></li>
+            <li><a href="#">Root</a></li>
+            <li><a id="up">Up</a></li>
+        </ul>
+    </div>
+</div>
+
 <div id="container"></div>
 
-
 <script type="text/template" id="directory_row_template">
-    <div class="row-fluid" data-path="{{fullPath}}">
+    <div class="row-fluid dir_goto" data-path="{{fullPath}}">
         <div class="span12 dir">
             <i class="icon-folder-close" style="margin-right:10px;"></i>{{name}}
             <i class="icon-play pull-right"></i>
@@ -37,6 +48,14 @@
     </div>
 </script>
 
+<script type="text/template" id="file_row_template">
+    <div class="row-fluid file_goto" data-path="{{fullPath}}">
+        <div class="span12 dir">
+            <i class="icon-file" style="margin-right:10px;"></i>{{name}}
+        </div>
+    </div>
+</script>
+</script>
 
 </body>
 </html>
