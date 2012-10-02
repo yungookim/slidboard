@@ -1,4 +1,5 @@
 <plugins>
 	<plugin name="File" value="org.apache.cordova.FileUtils" />
 	<plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
+	<plugin name="BluetoothPlugin" value="org.apache.cordova.plugin.BluetoothPlugin"/>
 </plugins>

@@ -5,17 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="vendors/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.css" />
-<link rel="stylesheet" type="text/css" href="vendors/jquery.mobile-1.1.1/jquery.mobile.structure-1.1.1.min.css" />
-<link rel="stylesheet" type="text/css" href="vendors/jquery.mobile-1.1.1/jquery.mobile.theme-1.1.1.min.css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 
 <title>File Explorer</title>
 
 <script src="cordova-2.1.0.js"></script>
+<script src="bluetooth.js"></script>
 <script src="vendors/jquery-1.8.2.min.js"></script>
-<script src="vendors/jquery.mobile-1.1.1/jquery.mobile-1.1.1.min.js"></script>
-<script src="vendors/bootstrap/js/bootstrap.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
 <script src="vendors/underscore-min.js"></script>
 <script src="vendors/backbone-min.js"></script>
 <script src="vendors/mustache.js"></script>
@@ -26,18 +23,56 @@
 </head>
 <body>
 
-<div class="navbar">
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
-        <a class="brand"><b>Slidboard</b></a>
-        <ul class="nav">
-            <li><a id="path"></a></li>
-            <li><a href="#">Root</a></li>
-            <li><a id="up">Up</a></li>
-        </ul>
+        <div class="container">
+            <a class="brand">Slidboard</a>
+            <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li> <a id="root">Root</a> </li>
+                <li class="divider-vertical"></li>
+                <li> <a id="up">Up</a> </li>
+            </ul>
+        </div>
     </div>
 </div>
 
-<div id="container"></div>
+<div class="row-fluid">
+    <div class="span12">
+        <h5 id="path"></h5>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <button onclick="enableBT();">Enable</button>
+    <button onclick="disableBT();">Disable</button>
+    <br />
+    <button onclick="discoverDevices();">Discover</button>
+    <br />
+    <select id='bt-devices-select'>
+    </select>
+    <br />
+    <button id='bt-pair' onclick="listUUIDs();">List UUIDs</button>
+    </p>
+    <p>
+    <select id='bt-device-uuids'>
+    </select>
+    <br />
+    <button id='bt-connect' onclick="openRfcomm();">Connect</button>
+    <br />
+    <button onclick="readRfcomm();">Read</button>
+    <br />
+    <div id='bt-data-dump'></div>
+   </p>
+</div>
+
+
+
+
+<div id="container" style="overflow-y:scroll;">
+</div>
 
 <script type="text/template" id="directory_row_template">
     <div class="row-fluid dir_goto" data-path="{{fullPath}}">
@@ -54,7 +89,6 @@
             <i class="icon-file" style="margin-right:10px;"></i>{{name}}
         </div>
     </div>
-</script>
 </script>
 
 </body>

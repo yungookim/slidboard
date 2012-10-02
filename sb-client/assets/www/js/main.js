@@ -3,13 +3,36 @@ var MainView = Backbone.View.extend({
 
     events: {
         'click .dir_goto' : 'goToDir',
-        'click .file_goto' : 'goToFile'
+        'click .file_goto' : 'readFile'
     },
 
     initialize: function() {
         //DirectoryEntries
         this.currentDir = null;
         this.previousDir = null;
+        this.root = null;
+        this.dir_template = $("#directory_row_template").html();
+        this.file_template = $("#file_row_template").html();
+        var self = this;
+
+        $('#root').bind('click', function(){
+            self.currentDir = null;
+            self.currentDir = self.root;
+            self.readDirectory();
+        });
+
+        $('#up').bind('click', function(){
+            self.currentDir.getParent(
+                function(parent){
+                    self.currentDir = null;
+                    self.currentDir = parent;
+                    self.readDirectory();
+                },
+                function(error){
+                    console.log(error.code);
+                }
+            );
+        });
     },
 
     readFileSystem : function(next){
@@ -17,7 +40,7 @@ var MainView = Backbone.View.extend({
         //Create callbacks
         var onSuccess = function(fileSystem) {
             // console.log(fileSystem.name);
-            // console.log(fileSystem.root.name);
+            self.root = fileSystem.root;
             self.currentDir = fileSystem.root;
             $("#path").html(self.currentDir.fullPath);
             next();
@@ -42,24 +65,21 @@ var MainView = Backbone.View.extend({
 
             self.$el.html('');
 
-            var dir_template = $("#directory_row_template").html();
-            var file_template = $("#file_row_template").html();
-
             _.each(entries, function(each){
                 var temp = new window.FileSystemModel();
                 temp.setObject(each);
                 self.collection.add(temp);
 
                 if (each.isFile){
-                    self.$el.append(Mustache.render(file_template, each));
+                    self.$el.append(Mustache.render(self.file_template, each));
                 } else {
-                    self.$el.append(Mustache.render(dir_template, each));
+                    self.$el.append(Mustache.render(self.dir_template, each));
                 }
             });
 
             $("#path").html(self.currentDir.fullPath);
-        }
 
+        }
         // Get a list of all the entries in the directory
         directoryReader.readEntries(success,self.FileSystemError);
     },
@@ -84,7 +104,7 @@ var MainView = Backbone.View.extend({
         self.readDirectory();
     },
 
-    goToFile : function(e){
+    readFile : function(e){
         var self = this;
 
         var targetPath = $(e.currentTarget).attr("data-path");
@@ -127,10 +147,13 @@ var MainView = Backbone.View.extend({
     }
 });
 
-
+var g_socketid = -1;
+var g_bluetoothPlugin = null;
 
 window.addEventListener('load', function () {
     document.addEventListener('deviceready', function(){
+        g_bluetoothPlugin = cordova.require( 'cordova/plugin/bluetooth' );
+
         var file_system_collection = new FileSystemCollection();
         var main_view = new MainView({collection : file_system_collection});
         main_view.readFileSystem(function(err){
@@ -141,3 +164,62 @@ window.addEventListener('load', function () {
         });
     }, false);
 }, false);
+
+
+
+
+
+
+
+
+function enableBT() {
+    g_bluetoothPlugin.enable( function() {
+        alert( 'Enabling successfull' );
+    }, function(error) {
+        alert( 'Error enabling BT: ' + error );
+    } );
+}
+
+function disableBT() {
+    g_bluetoothPlugin.disable( function() {
+        alert( 'Disabling successfull' );
+    }, function(error) {
+        alert( 'Error disabling BT: ' + error );
+    } );
+}
+
+function discoverDevices() {
+    g_bluetoothPlugin.discoverDevices( function(devices) {
+        $('#bt-devices-select').html('');
+        
+        for( var i = 0; i < devices.length; i++ ) {
+            $('#bt-devices-select').append( $( '<option value="' + devices[i].address + '">' + devices[i].name + '</option>' ) );
+        }
+    }, function(error) { alert( 'Error: ' + error ); } );
+}
+
+function listUUIDs() {
+    g_bluetoothPlugin.getUUIDs( function(uuids) {
+        $('#bt-device-uuids').html('');
+
+        for( var i = 0; i < uuids.length; i++ ) {
+            $('#bt-device-uuids').append( $( '<option value="' + uuids[i] + '">' + uuids[i] + '</option>' ) );
+        }
+    }, function(error) { alert( 'Error: ' + error ); }, $( '#bt-devices-select' ).val() );
+}
+
+function openRfcomm() {
+    g_bluetoothPlugin.connect( function(socketId) { g_socketid = socketId; console.log( 'Socket-id: ' + g_socketid ); }, function(error) { alert( 'Error: ' + error ); }, $( '#bt-devices-select' ).val(), $( '#bt-device-uuids' ).val() );
+}
+
+function readRfcomm() {
+    g_bluetoothPlugin.read( bp_readSuccess, bp_readError, g_socketid );
+}
+
+function bp_readError( error ) {
+    alert( 'Error: ' + error );
+}
+
+function bp_readSuccess( p_data ) {
+    $( '#bt-data-dump' ).html( p_data );
+}
