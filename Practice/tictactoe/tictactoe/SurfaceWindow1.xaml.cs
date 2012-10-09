@@ -18,21 +18,6 @@ using Microsoft.Surface.Presentation.Input;
 
 namespace tictactoe
 {
-    public class TTTBoard
-    {
-        public String name { get; set; }
-        public int row { get; set; }
-        public int col { get; set; }
-
-        public TTTBoard(String name, int row, int col)
-        {
-            this.name = name;
-            this.row = row;
-            this.col = col;
-        }
-    }
-
-    
 
     /// <summary>
     /// Interaction logic for SurfaceWindow1.xaml
@@ -41,7 +26,7 @@ namespace tictactoe
     {
 
         string[,] perGrid = new string[3,3];
-        int current = 0;
+        string current = "O";
 
         /// <summary>
         /// Default constructor.
@@ -60,7 +45,8 @@ namespace tictactoe
                 }
             }
 
-            //board_view.Items.Add();
+            board_view.Items.Add(createNewBoard());
+            board_view.Items.Add(createNewBoard());
             board_view.Items.Add(createNewBoard());
         }
 
@@ -138,7 +124,7 @@ namespace tictactoe
             {
                 return;
             }
-
+            /*
             if (current == 0)
             {
                 btn.Content = "X";
@@ -167,9 +153,8 @@ namespace tictactoe
                 }
                 //duplicateGrid();
             }
+             */
         }
-
-        
 
         private bool winner_Checker(string content) {
 
@@ -197,7 +182,7 @@ namespace tictactoe
             return false;
         }
 
-        //Duplicate the finished grid and append to the current main scatter view
+        //Factory function : Add a new game board to the main scatter view
         private ScatterViewItem createNewBoard()
         {
 
@@ -207,19 +192,16 @@ namespace tictactoe
             Grid grid = new Grid();
 
             ColumnDefinition c = new ColumnDefinition();
-            c.Width = GL;
+//            c.Width = GL;
             ColumnDefinition c1 = new ColumnDefinition();
-            c1.Width = GL;
             ColumnDefinition c2 = new ColumnDefinition();
-            c2.Width = GL;
 
             RowDefinition r = new RowDefinition();
-            r.Height = GL;
+            //r.Height = GL;
             RowDefinition r1 = new RowDefinition();
-            r1.Height = GL;
             RowDefinition r2 = new RowDefinition();
-            r2.Height = GL;
 
+            //Set definitions
             grid.ColumnDefinitions.Add(c);
             grid.ColumnDefinitions.Add(c1);
             grid.ColumnDefinitions.Add(c2);
@@ -237,17 +219,39 @@ namespace tictactoe
 
             sci.Height = 300;
             sci.Content = grid;
-            //sci.Visibility = Visibility.Visible;
             return sci;
         }
 
+        //Factory Function : Create a new SurfaceButton
         private SurfaceButton createSB(int row, int col)
         {
             SurfaceButton sb = new SurfaceButton();
+            sb.Margin = new Thickness(5);
+            sb.Height = 100;
+            sb.Width = 100;
+            sb.HorizontalContentAlignment = HorizontalAlignment.Center;
+            sb.VerticalContentAlignment = VerticalAlignment.Center;
+            sb.Content = "";
+
+            //Set row and column
             Grid.SetColumn(sb, row);
             Grid.SetRow(sb, col);
 
+            sb.Click += new RoutedEventHandler(change);
             return sb;
+        }
+
+        private void change(object sender, RoutedEventArgs e)
+        {
+            SurfaceButton cur_ele = (SurfaceButton)sender;
+            string content = cur_ele.Content.ToString();
+
+            if (content.Equals(""))
+            {
+                cur_ele.Content = current;
+                current = current.Equals("X") ? "O" : "X";
+            } 
+
         }
     }
 }
