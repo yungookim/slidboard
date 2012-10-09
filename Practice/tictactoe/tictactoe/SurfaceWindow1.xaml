@@ -1,0 +1,52 @@
+﻿<s:SurfaceWindow x:Class="tictactoe.SurfaceWindow1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    Title="tictactoe"
+    >
+
+
+    <s:SurfaceWindow.Resources>
+        <ControlTemplate x:Key="tttBoard">
+            
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <s:SurfaceButton Content="{DynamicResource foo}" Margin="10" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <s:SurfaceButton Content="" Margin="10" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <s:SurfaceButton Content="" Margin="10" Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+                    <s:SurfaceButton Content="" Margin="10" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <s:SurfaceButton Content="" Margin="10" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <s:SurfaceButton Content="" Margin="10" Grid.Row="1" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+                    <s:SurfaceButton Content="" Margin="10" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <s:SurfaceButton Content="" Margin="10" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <s:SurfaceButton Content="" Margin="10" Grid.Row="2" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+                </Grid>
+        </ControlTemplate>
+
+    </s:SurfaceWindow.Resources>
+
+
+
+    <Grid Name="MainGrid" Background="BlanchedAlmond">
+
+        <s:ScatterView Name="board_view">
+            <s:ScatterViewItem Template="{StaticResource tttBoard}" Height="300">
+                
+            </s:ScatterViewItem>
+        </s:ScatterView>
+    
+    </Grid>
+</s:SurfaceWindow>
