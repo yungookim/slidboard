@@ -40,8 +40,6 @@ namespace tictactoe
     public partial class SurfaceWindow1 : SurfaceWindow
     {
 
-        string foo = "asdf";
-
         string[,] perGrid = new string[3,3];
         int current = 0;
 
@@ -63,7 +61,7 @@ namespace tictactoe
             }
 
             //board_view.Items.Add();
-            //board_view.Items.Add(createGrid());
+            board_view.Items.Add(createNewBoard());
         }
 
         /// <summary>
@@ -200,21 +198,55 @@ namespace tictactoe
         }
 
         //Duplicate the finished grid and append to the current main scatter view
-        private void createGrid()
+        private ScatterViewItem createNewBoard()
         {
-            /*ScatterViewItem sci = new ScatterViewItem();
-            //sci.Content = ((ContentControl)board_template.Content);
-            sci.Height = 300;
-            sci.Visibility = Visibility.Visible;
-            return sci;*/
 
+            GridLength GL = new GridLength(100, GridUnitType.Pixel);
+
+            ScatterViewItem sci = new ScatterViewItem();
+            Grid grid = new Grid();
+
+            ColumnDefinition c = new ColumnDefinition();
+            c.Width = GL;
+            ColumnDefinition c1 = new ColumnDefinition();
+            c1.Width = GL;
+            ColumnDefinition c2 = new ColumnDefinition();
+            c2.Width = GL;
+
+            RowDefinition r = new RowDefinition();
+            r.Height = GL;
+            RowDefinition r1 = new RowDefinition();
+            r1.Height = GL;
+            RowDefinition r2 = new RowDefinition();
+            r2.Height = GL;
+
+            grid.ColumnDefinitions.Add(c);
+            grid.ColumnDefinitions.Add(c1);
+            grid.ColumnDefinitions.Add(c2);
+            grid.RowDefinitions.Add(r);
+            grid.RowDefinitions.Add(r1);
+            grid.RowDefinitions.Add(r2);
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    grid.Children.Add(createSB(i, j));
+                }
+            }
+
+            sci.Height = 300;
+            sci.Content = grid;
+            //sci.Visibility = Visibility.Visible;
+            return sci;
         }
 
-        private SurfaceButton sbFactory(int row, int col)
+        private SurfaceButton createSB(int row, int col)
         {
             SurfaceButton sb = new SurfaceButton();
-            Thickness t = new Thickness(5);
-            sb.Margin = t;
+            Grid.SetColumn(sb, row);
+            Grid.SetRow(sb, col);
+
             return sb;
         }
     }
