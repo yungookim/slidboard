@@ -21,7 +21,7 @@
                         <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
 
-                    <s:SurfaceButton Content="{DynamicResource foo}" Margin="10" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <s:SurfaceButton Content="" Margin="10" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                     <s:SurfaceButton Content="" Margin="10" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                     <s:SurfaceButton Content="" Margin="10" Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
 

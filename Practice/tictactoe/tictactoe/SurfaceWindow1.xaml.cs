@@ -18,6 +18,7 @@ using Microsoft.Surface.Presentation.Input;
 
 namespace tictactoe
 {
+    
 
     /// <summary>
     /// Interaction logic for SurfaceWindow1.xaml
@@ -186,28 +187,31 @@ namespace tictactoe
         private ScatterViewItem createNewBoard()
         {
 
-            GridLength GL = new GridLength(100, GridUnitType.Pixel);
+           
 
             ScatterViewItem sci = new ScatterViewItem();
             Grid grid = new Grid();
 
+            /*
+            GridLength GL = new GridLength(100, GridUnitType.Pixel);
             ColumnDefinition c = new ColumnDefinition();
-//            c.Width = GL;
+            c.Width = GL;
             ColumnDefinition c1 = new ColumnDefinition();
             ColumnDefinition c2 = new ColumnDefinition();
 
             RowDefinition r = new RowDefinition();
-            //r.Height = GL;
+            r.Height = GL;
             RowDefinition r1 = new RowDefinition();
             RowDefinition r2 = new RowDefinition();
+            */
 
             //Set definitions
-            grid.ColumnDefinitions.Add(c);
-            grid.ColumnDefinitions.Add(c1);
-            grid.ColumnDefinitions.Add(c2);
-            grid.RowDefinitions.Add(r);
-            grid.RowDefinitions.Add(r1);
-            grid.RowDefinitions.Add(r2);
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
 
             for (int i = 0; i < 3; i++)
             {
@@ -248,10 +252,14 @@ namespace tictactoe
 
             if (content.Equals(""))
             {
+
+
+                Console.WriteLine(Grid.GetColumn(cur_ele) + "x" + Grid.GetRow(cur_ele));
+
+
                 cur_ele.Content = current;
                 current = current.Equals("X") ? "O" : "X";
             } 
-
         }
     }
 }
