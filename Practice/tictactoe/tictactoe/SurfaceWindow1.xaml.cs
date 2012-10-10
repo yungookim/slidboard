@@ -28,6 +28,7 @@ namespace tictactoe
         string current = "O";
         string[,] perGrid = new String[3, 3];
         bool win = false;
+        int count = 0;
 
         public TTTboard(ScatterView mv) 
         {
@@ -41,7 +42,6 @@ namespace tictactoe
                     perGrid[i, j] = "";
                 }
             }
-
         }
 
         public string[,] getGrid()
@@ -64,6 +64,7 @@ namespace tictactoe
             {
                 int col = Grid.GetColumn(cur_ele);
                 int row = Grid.GetRow(cur_ele);
+                count++;
 
                 cur_ele.Content = current;
 
@@ -72,11 +73,13 @@ namespace tictactoe
                 perGrid[row, col] = current; // set the cell content as marked sign
 
                 win = winner_Checker(current); // check winner
-                if (win)
+
+                if (win || count == 9)
                 {
                     TTTboard _new = new TTTboard(main_view);
                     main_view.Items.Add(_new.getView());
                 }
+                
             }
             else if (content.Equals("") && (win)) // if the cell is empty, and found a winner.
             {
@@ -135,7 +138,6 @@ namespace tictactoe
                     grid.Children.Add(createSB(i, j));
                 }
             }
-
             sci.Height = 300;
             sci.Content = grid;
             return sci;
