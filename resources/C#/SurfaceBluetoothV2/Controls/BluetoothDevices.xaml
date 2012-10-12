@@ -1,0 +1,151 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:s="http://schemas.microsoft.com/surface/2008"
+	mc:Ignorable="d"
+	x:Class="SurfaceBluetoothV2.Controls.BluetoothDevices"
+	x:Name="UserControl"
+	d:DesignWidth="608" d:DesignHeight="270"
+	MinHeight="270" MinWidth="608">
+    <UserControl.Resources>
+        <Storyboard x:Key="FadeClear">
+            <ColorAnimation Storyboard.TargetName="blueBrush" Storyboard.TargetProperty="Color" To="#6338FF" Duration="0:0:01"/>
+        </Storyboard>
+        <Storyboard x:Key="FadeBlue" >
+            <ColorAnimation Storyboard.TargetName="blueBrush" Storyboard.TargetProperty="Color" To="#FF2335" Duration="0:0:01"/>
+        </Storyboard>
+
+        <ItemsPanelTemplate x:Key="HorizontalItems">
+            <StackPanel Orientation="Horizontal"/>
+        </ItemsPanelTemplate>
+        <DataTemplate x:Key="ItemDataTemplate">
+            <!--OnDropTargetDragEnter-->
+            <StackPanel Margin="5,5,5,5" AllowDrop="True" s:SurfaceDragDrop.Drop="OnDrop" s:SurfaceDragDrop.DragEnter="StackPanel_DragEnter">
+                <StackPanel.Background>
+                    <SolidColorBrush x:Name="blueBrush" Color="#FFFFFF"/>
+                </StackPanel.Background>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.75*" />
+                        <RowDefinition Height="0.25*" />
+                    </Grid.RowDefinitions>
+                    <Path Fill="#3C0151" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+                        <Path.Data>
+                            <PathGeometry FillRule="Nonzero" Figures="M43.101,0L7.837,0C3.509,0,0,3.508,0,7.836L0,92.163C0,96.491,3.509,100,7.837,100L43.101,100C47.429,100,50.938,96.491,50.938,92.163L50.938,7.836C50.938,3.508,47.429,0,43.101,0z M21.615,8.315L29.323,8.315C29.899,8.315 30.366,8.782 30.366,9.359 30.366,9.935 29.899,10.402 29.323,10.402L21.615,10.402C21.038,10.402 20.571,9.935 20.571,9.359 20.571,8.782 21.038,8.315 21.615,8.315z M17.123,7.915C17.81,7.915 18.367,8.472 18.367,9.159 18.367,9.846 17.81,10.403 17.123,10.403 16.436,10.403 15.879,9.846 15.879,9.159 15.879,8.472 16.437,7.915 17.123,7.915z M25.469,95.772C22.764,95.772 20.571,93.58 20.571,90.875 20.571,88.169 22.764,85.977 25.469,85.977 28.174,85.977 30.366,88.169 30.366,90.875 30.366,93.58 28.174,95.772 25.469,95.772z M47.019,82.489L3.919,82.489 3.919,17.511 47.019,17.511 47.019,82.489z" />
+                        </Path.Data>
+                    </Path>
+                    <Label Content="{Binding DeviceName}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#3C0151" Grid.Row="1"/>
+                </Grid>
+            </StackPanel>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=Connected}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource FadeBlue}"  Name="FadeBlue"/>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <StopStoryboard BeginStoryboardName="FadeBlue"/>
+                        <BeginStoryboard Storyboard="{StaticResource FadeClear}" Name="FadeClear"/>
+                    </DataTrigger.ExitActions>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=Connected}" Value="False">
+                    <DataTrigger.EnterActions>
+
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+
+        <Storyboard x:Key="RadioAnimation"  RepeatBehavior="Forever">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:3" Value="{x:Static Visibility.Hidden}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path1">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2.5" Value="{x:Static Visibility.Hidden}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2" Value="{x:Static Visibility.Hidden}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard x:Name="RadioAnimation_BeginStoryboard" Storyboard="{StaticResource RadioAnimation}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+    <Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.042*"/>
+			<ColumnDefinition Width="0.916*"/>
+			<ColumnDefinition Width="0.042*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.13*"/>
+			<RowDefinition Height="0.0135*"/>
+			<RowDefinition Height="0.6834*"/>
+			<RowDefinition Height="0.0135*"/>
+			<RowDefinition Height="0.13*"/>
+		</Grid.RowDefinitions>
+        <s:SurfaceListBox x:Name="DeviceList" MinWidth="102" MinHeight="102" Grid.Row="2" Grid.RowSpan="1" 
+		    Grid.ColumnSpan="3" BorderThickness="0" Margin="0" >
+            <s:SurfaceListBox.Background>
+                <SolidColorBrush Color="{DynamicResource Velvet}"/>
+            </s:SurfaceListBox.Background>
+            <ItemsControl ItemsSource="{Binding BluetoothDeviceList}" ItemTemplate="{StaticResource ItemDataTemplate}" 
+                          ItemsPanel="{StaticResource HorizontalItems}">
+            </ItemsControl>
+        </s:SurfaceListBox>
+        <Border Grid.ColumnSpan="3" Grid.Column="0" Grid.RowSpan="2" Panel.ZIndex="10">
+			<Border.Background>
+				<SolidColorBrush Color="{DynamicResource VelvetLight}"/>
+			</Border.Background>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.90*" />
+					<ColumnDefinition Width="0.05*" />
+					<ColumnDefinition Width="0.010*" />
+					<ColumnDefinition Width="0.010*" />
+					<ColumnDefinition Width="0.010*" />
+					<ColumnDefinition Width="0.025*" />
+				</Grid.ColumnDefinitions>
+				<TextBlock Grid.Column="0" Margin="20,0,0,0" Background="{x:Null}" Foreground="White" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Text="Bluetooth devices"/></TextBlock>
+				<Path x:Name="path3" Grid.Column="1" Margin="0,5,0,5" VerticalAlignment="Center" HorizontalAlignment="Right" Stretch="Fill">
+					<Path.Data>
+						<PathGeometry FillRule="Nonzero" Figures="M55.018,28.546L33.554,7.083 26.473,0 26.473,10.016 26.473,42.909 26.473,42.914 5.009,21.448 0,26.457 5.009,31.466 5.009,31.465 26.473,52.925 5.009,74.384 5.009,74.384 0,79.391 5.009,84.4 26.473,62.936 26.473,89.984 26.473,90.517 26.473,100 55.018,71.454 33.563,50 55.018,28.546z M33.554,17.1L45.001,28.547 33.554,39.994 33.554,17.1z M45.001,71.454L33.554,82.901 33.554,60.006 45.001,71.454z" />
+					</Path.Data>
+                    <Path.Fill>
+                        <SolidColorBrush Color="{DynamicResource Velvet}"/>
+                    </Path.Fill>
+				</Path>
+                <Path x:Name="path"  Grid.Column="2" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Data="F1 M 29.9079,84.0318C 45.6426,67.6985 45.6426,42.3078 29.9079,25.9705C 26.8092,22.7465 21.9185,27.6518 25.0119,30.8651C 38.1159,44.4705 38.1159,65.5278 25.0119,79.1371C 21.9185,82.3558 26.8092,87.2558 29.9079,84.0318 Z ">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{DynamicResource Velvet}"/>
+                    </Path.Fill>
+                </Path>
+                <Path x:Name="path1"  Grid.Column="3" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Data="F1 M 40.9292,97.3291C 63.9185,73.7505 63.9185,36.2505 40.9292,12.6785C 37.8092,9.47446 32.9132,14.3758 36.0332,17.5745C 56.3879,38.4491 56.3879,71.5531 36.0332,92.4331C 32.9132,95.6318 37.8092,100.528 40.9292,97.3291 Z ">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{DynamicResource Velvet}"/>
+                    </Path.Fill>
+                </Path>
+                <Path x:Name="path2"  Grid.Column="4" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Data="F1 M 54.6479,107.293C 83.0692,78.2878 83.0692,31.7145 54.6479,2.70379C 51.5172,-0.488213 46.6212,4.41312 49.7519,7.60513C 75.5386,33.9225 75.5386,76.0838 49.7519,102.397C 46.6212,105.589 51.5172,110.49 54.6479,107.293 Z ">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{DynamicResource Velvet}"/>
+                    </Path.Fill>
+                </Path>
+			</Grid>
+		</Border>
+		<Border Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="3" Grid.RowSpan="2" Panel.ZIndex="10">
+			<Border.Background>
+				<SolidColorBrush Color="{DynamicResource VelvetLight}"/>
+			</Border.Background>
+            <TextBlock Background="Transparent" Foreground="White" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="Drop the content on the device you want to receive it"/></TextBlock>
+		</Border>
+	</Grid>
+</UserControl>

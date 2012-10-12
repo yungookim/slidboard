@@ -1,0 +1,32 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Custom="http://schemas.microsoft.com/surface/2008"
+	mc:Ignorable="d"
+	x:Class="SurfaceBluetoothV2.Controls.LibraryContents"
+	x:Name="UserControl"
+	d:DesignWidth="270" d:DesignHeight="270" MinHeight="300" MinWidth="300">
+
+	<UserControl.Resources>
+<!-- A template describing the view of each piece of library data -->
+		<DataTemplate x:Key="LibraryItemTemplate">
+			<Viewbox Stretch="Uniform">
+				<Image Source="{Binding Thumb}" />
+			</Viewbox>
+		</DataTemplate>
+
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot">
+        <Custom:LibraryContainer x:Name="LibraryItems" Custom:SurfaceDragDrop.DragEnter="LibraryItems_DragEnter">
+			<Custom:LibraryContainer.StackView>
+				<Custom:StackView ItemTemplate="{StaticResource LibraryItemTemplate}"/>
+			</Custom:LibraryContainer.StackView>
+			<Custom:LibraryContainer.BarView>
+				<Custom:BarView ItemTemplate="{StaticResource LibraryItemTemplate}" Rows="1"/>
+			</Custom:LibraryContainer.BarView>
+		</Custom:LibraryContainer>
+	</Grid>
+</UserControl>
