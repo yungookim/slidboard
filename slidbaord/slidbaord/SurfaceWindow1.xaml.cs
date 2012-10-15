@@ -103,20 +103,20 @@ namespace slidbaord
         private void OnVisualizationAdded(object sender, TagVisualizerEventArgs e)
         {
 
-            ObjectVisualization camera = (ObjectVisualization)e.TagVisualization;
-            switch (camera.VisualizedTag.Value)
+            ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
-                    camera.ObjectModel.Content = "KimY's Phone";
-                    camera.myEllipse.Fill = SurfaceColors.Accent1Brush;
+                    _obj.ObjectModel.Content = "KimY's Phone";
+                    _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
                     break;
                 case 0xC2:
-                    camera.ObjectModel.Content = "Nexus One";
-                    camera.myEllipse.Fill = SurfaceColors.Accent2Brush;
+                    _obj.ObjectModel.Content = "Nexus One";
+                    _obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
                     break;
                 default:
-                    camera.ObjectModel.Content = "UNKNOWN MODEL";
-                    camera.myEllipse.Fill = SurfaceColors.ControlAccentBrush;
+                    _obj.ObjectModel.Content = "UNKNOWN MODEL";
+                    _obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
                     break;
             }
         }
