@@ -2,9 +2,10 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
-    Loaded="ObjectVisualization_Loaded">
+    Loaded="ObjectVisualization_Loaded"
+    Height="200" Width="200">
     <Grid>
-        <Ellipse Name="myEllipse"
+        <Rectangle Name="objectWrapper"
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Stretch"/>
         <Label Name="ObjectModel" 
