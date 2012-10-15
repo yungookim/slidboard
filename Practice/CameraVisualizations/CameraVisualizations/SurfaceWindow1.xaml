@@ -24,7 +24,7 @@
                                               TagRemovedBehavior="Fade"
                                               UsesTagOrientation="True"
                                               />
-                <s:TagVisualizationDefinition Value="0x2" 
+                <s:TagVisualizationDefinition Value="0xC2" 
                                               Source="CameraVisualization.xaml"
                                               LostTagTimeout="2000"
                                               MaxCount="2"
@@ -33,7 +33,7 @@
                                               TagRemovedBehavior="Fade"
                                               UsesTagOrientation="True"
                                               />
-                <s:TagVisualizationDefinition Value="0x3" 
+                <s:TagVisualizationDefinition Value="0xC3" 
                                               Source="CameraVisualization.xaml"
                                               LostTagTimeout="2000"
                                               MaxCount="2"
@@ -42,7 +42,7 @@
                                               TagRemovedBehavior="Fade"
                                               UsesTagOrientation="True"
                                               />
-                <s:TagVisualizationDefinition Value="0x4" 
+                <s:TagVisualizationDefinition Value="0xC4" 
                                               Source="CameraVisualization.xaml"
                                               LostTagTimeout="2000"
                                               MaxCount="2"
