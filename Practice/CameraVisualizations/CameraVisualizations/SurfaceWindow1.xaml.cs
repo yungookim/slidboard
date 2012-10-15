@@ -105,7 +105,7 @@ namespace CameraVisualizations
             CameraVisualization camera = (CameraVisualization)e.TagVisualization;
             switch (camera.VisualizedTag.Value)
             {
-                case 1:
+                case 0xC1:
                     camera.CameraModel.Content = "Fabrikam, Inc. ABC-12";
                     camera.myEllipse.Fill = SurfaceColors.Accent1Brush;
                     break;
