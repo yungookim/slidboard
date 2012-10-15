@@ -106,18 +106,18 @@ namespace CameraVisualizations
             switch (camera.VisualizedTag.Value)
             {
                 case 0xC1:
-                    camera.CameraModel.Content = "Fabrikam, Inc. ABC-12";
+                    camera.CameraModel.Content = "KimY's Infuse";
                     camera.myEllipse.Fill = SurfaceColors.Accent1Brush;
                     break;
-                case 2:
-                    camera.CameraModel.Content = "Fabrikam, Inc. DEF-34";
+                case 0xC2:
+                    camera.CameraModel.Content = "Laptop";
                     camera.myEllipse.Fill = SurfaceColors.Accent2Brush;
                     break;
-                case 3:
-                    camera.CameraModel.Content = "Fabrikam, Inc. GHI-56";
+                case 0xC3:
+                    camera.CameraModel.Content = "Laptop";
                     camera.myEllipse.Fill = SurfaceColors.Accent3Brush;
                     break;
-                case 4:
+                case 0xC4:
                     camera.CameraModel.Content = "Fabrikam, Inc. JKL-78";
                     camera.myEllipse.Fill = SurfaceColors.Accent4Brush;
                     break;
