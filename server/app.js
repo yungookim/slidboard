@@ -1,8 +1,9 @@
 var net = require('net');
+var PORT = 6060;
 
 var server = net.createServer(function (socket){
 	socket.setEncoding('utf-8');	
-	console.log('server running');
+	console.log('Accepting Connection');
 	socket.on('data', function(data){
 		console.log(data);
 		socket.write("Accepted ");
@@ -14,7 +15,6 @@ var server = net.createServer(function (socket){
 	});
 });
 
-var PORT = 6060;
 server.listen(PORT, function(){
 	console.log('Server Listening on '+ PORT);
 });
