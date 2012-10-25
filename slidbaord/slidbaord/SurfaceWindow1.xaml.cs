@@ -32,6 +32,12 @@ namespace slidbaord
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
+
+            //Establish a connection with the server
+            SocketClient sc = new SocketClient("69.164.219.86", 6060);
+            sc.connect();
+            sc.write("asdf1234");
+
         }
 
         /// <summary>

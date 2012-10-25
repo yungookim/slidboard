@@ -68,6 +68,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="socketClient.cs" />
     <Compile Include="ObjectVisualization.xaml.cs">
       <DependentUpon>ObjectVisualization.xaml</DependentUpon>
     </Compile>
