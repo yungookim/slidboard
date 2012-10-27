@@ -8,24 +8,12 @@ var server = net.createServer(function (socket){
 
 	console.log('Accepting Connection from ' + socket.remoteAddress);
 	socket.on('data', function(data){
-		console.log(JSON.parse(data));
-
-
+		//console.log(JSON.parse(data));
+		console.log(data);
 		socket.write("Accepted ");
 		socket.pipe(socket);
 
 		socket.end();
-		
-		setTimeout(function(){	
-				var newSocket = new net.Socket();
-				console.log('starting');
-				newSocket.connect(6060, pixelSense, function(_socket){
-					console.log("writing to socket");
-					_socket.write("Hello PixelSense!\n");
-					_socket.pipe(_socket);
-				});
-		}, 1000);
-
 
 	});
 	socket.on('end', function(){
