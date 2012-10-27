@@ -40,10 +40,7 @@ namespace slidbaord
             sc.write("Message", "{PORT : 6060}");
             sc.close();
             
-            Console.WriteLine("Instantiating server");
-            SocketServer ss = new SocketServer(6060);
-            //Server socket open for business
-            ss.open();
+            
         }
 
         /// <summary>

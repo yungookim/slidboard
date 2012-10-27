@@ -6,6 +6,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.UUID;
+
+import org.json.simple.JSONObject;
+
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -14,17 +18,21 @@ import android.view.Menu;
 
 public class MainActivity extends Activity {
 
+	private UUID CLIENT_UUID = UUID.randomUUID();
+	private String CLIENT_TYPE = "MOBILE";
+	
+	
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+       
         //Only read one specific file for now.
         //TODO: Improve this
         String str = readFiles();
-        
         //Creates a connection to the server
-        createConnection(str);
+        createConnection();
     }
 
     @Override
@@ -33,10 +41,17 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    private void createConnection(String input){
+    @SuppressWarnings("unchecked")
+	private void createConnection(){
 		TCPClient client = new TCPClient("69.164.219.86", 6060);
     	client.connect();
-		client.write(input);
+    	
+    	//Tell the server who am I.
+    	JSONObject startString = new JSONObject();
+    	startString.put("uuid", CLIENT_UUID.toString());
+    	startString.put("type", CLIENT_TYPE.toString());
+		client.write(startString.toString());
+		
     }
     
     private String readFiles(){
@@ -50,6 +65,7 @@ public class MainActivity extends Activity {
 			while ((strLine = br.readLine()) != null)   {
 				str = str + strLine + "\n";
 			}
+			
 			in.close();
 			
 			Log.v("File reads", str);

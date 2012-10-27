@@ -55,6 +55,16 @@ public class TCPClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void close(){
+		try {
+			this.outToServer.close();
+			this.clientSocket.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 }
