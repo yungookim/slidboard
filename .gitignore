@@ -7,3 +7,5 @@ TestResults
 
 *.swp
 node_modules
+*.sln
+*.suo
