@@ -75,7 +75,6 @@
     <Compile Include="ObjectVisualization.xaml.cs">
       <DependentUpon>ObjectVisualization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="socketServer.cs" />
     <Compile Include="SurfaceWindow1.xaml.cs">
       <DependentUpon>SurfaceWindow1.xaml</DependentUpon>
       <SubType>Code</SubType>
