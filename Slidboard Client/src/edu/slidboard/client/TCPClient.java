@@ -37,24 +37,39 @@ public class TCPClient {
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			Log.e("Client Socket", "UnknownHostException");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			Log.e("Client Socket", "IOException");
 		}
 	}
 	
 	public void write(String input){
 		try {
 			this.outToServer.writeBytes(input);
-			String t = this.inFromServer.readLine();
-			Log.v("From Server", t);
-			//this.clientSocket.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+	
+	//Start listening to the incoming message. 
+	//Blocking function.
+	public void read(){
+		try {
+			Log.v("MSG", "Start listening.");
+			Log.v("MSG", "Going to wait.");
+			while (!this.inFromServer.ready()){}
+			
+			Log.v("MSG", "Wait done, receiving.");
+			//Blocks until messages arrive
+			String t = this.inFromServer.readLine();
+			Log.v("From Server", t);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void close(){

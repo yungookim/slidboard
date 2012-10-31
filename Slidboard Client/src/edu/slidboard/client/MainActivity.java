@@ -32,10 +32,9 @@ public class MainActivity extends Activity {
         
         //Only read one specific file for now.
         //TODO: Improve this
-        String str = readFiles();
         //Creates a connection to the server
-        createConnection(client);
-        client.write(str);
+        this.createConnection(client);
+        this.client.read();
     }
 
     @Override
@@ -46,14 +45,14 @@ public class MainActivity extends Activity {
     
     @SuppressWarnings("unchecked")
 	private void createConnection(TCPClient client){
-		client = new TCPClient("69.164.219.86", 6060);
-    	client.connect();
+		this.client = new TCPClient("69.164.219.86", 6060);
+    	this.client.connect();
     	
     	//Tell the server who am I.
     	JSONObject startString = new JSONObject();
     	startString.put("uuid", CLIENT_UUID.toString());
     	startString.put("type", CLIENT_TYPE.toString());
-		client.write(startString.toString());
+    	this.client.write(startString.toString());
     }
     
     private String readFiles(){
@@ -68,7 +67,6 @@ public class MainActivity extends Activity {
 				str = str + strLine + "\n";
 			}
 			in.close();
-			
 			Log.v("File reads", str);
 			return str;
 		} catch (FileNotFoundException e) {
