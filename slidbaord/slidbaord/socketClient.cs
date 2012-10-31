@@ -35,6 +35,7 @@ namespace slidbaord
             this.clientSocket.Connect(this.ip, this.port);
             this.serverStream = clientSocket.GetStream();
 
+           
             //Start listening on a dedicated thread
             this.listenThread = new Thread(new ThreadStart(listen));
             this.listenThread.Name = "TCP_LISENING_THREAD";
@@ -65,14 +66,15 @@ namespace slidbaord
         {
 
             byte[] inStream = new byte[10025];
-            
 
             while (this.keep_alive)
             {
                 Console.WriteLine("worker thread: working...");
                 //Following function blocks. Wait til the server responds then go on.
                 //BUG: The current worker thread does not shut down gracefully.
-                serverStream.Read(inStream, 0, 10025);
+
+                serverStream.Read(inStream, 0, clientSocket.ReceiveBufferSize);
+
                 string msg = System.Text.Encoding.ASCII.GetString(inStream);
                 Console.WriteLine("Server Says :" + msg + "\n");
             }

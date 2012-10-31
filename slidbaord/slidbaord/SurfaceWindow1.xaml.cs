@@ -25,6 +25,7 @@ namespace slidbaord
     {
 
         private SocketClient sc;
+
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -36,9 +37,11 @@ namespace slidbaord
             AddWindowAvailabilityHandlers();
 
             //Establish a connection with the server
-            this.sc = new SocketClient("69.164.219.86", 6060);
-            this.sc.connect();
-            this.sc.write("{\"ACTION\" : \"INIT\", \"PORT\" : \"6060\"}");
+           
+            //this.sc = new SocketClient("69.164.219.86", 6060);
+            //this.sc.connect();
+            //this.sc.write("{\"ACTION\" : \"INIT\", \"PORT\" : \"6060\"}");
+            AsynchronousClient.StartClient();
         }
 
         /// <summary>
@@ -48,7 +51,7 @@ namespace slidbaord
         protected override void OnClosed(EventArgs e)
         {
             //Close the socket
-            sc.close();
+            //sc.close();
 
             base.OnClosed(e);
 
