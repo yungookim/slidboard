@@ -37,10 +37,6 @@ namespace slidbaord
             AddWindowAvailabilityHandlers();
 
             //Establish a connection with the server
-           
-            //this.sc = new SocketClient("69.164.219.86", 6060);
-            //this.sc.connect();
-            //this.sc.write("{\"ACTION\" : \"INIT\", \"PORT\" : \"6060\"}");
             AsynchronousClient.StartClient();
         }
 

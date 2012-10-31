@@ -34,7 +34,6 @@ namespace slidbaord
             //Establish a connection, get the stream.
             this.clientSocket.Connect(this.ip, this.port);
             this.serverStream = clientSocket.GetStream();
-
            
             //Start listening on a dedicated thread
             this.listenThread = new Thread(new ThreadStart(listen));

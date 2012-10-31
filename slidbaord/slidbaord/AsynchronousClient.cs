@@ -46,7 +46,7 @@ namespace slidbaord
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);
 
                 // Create a TCP/IP socket.
-                Socket client = new Socket(AddressFamily.InterNetwork,
+                Socket client = new Socket(AddressFamily.InterNetwork, 
                     SocketType.Stream, ProtocolType.Tcp);
 
                 // Connect to the remote endpoint.
