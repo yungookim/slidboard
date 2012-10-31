@@ -23,6 +23,9 @@ namespace slidbaord
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
+
+        private SocketClient sc;
+
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -34,13 +37,7 @@ namespace slidbaord
             AddWindowAvailabilityHandlers();
 
             //Establish a connection with the server
-            
-            SocketClient sc = new SocketClient("69.164.219.86", 6060);
-            sc.connect();
-            sc.write("Message", "{PORT : 6060}");
-            sc.close();
-            
-            
+            AsynchronousClient.StartClient();
         }
 
         /// <summary>
@@ -49,6 +46,9 @@ namespace slidbaord
         /// <param name="e"></param>
         protected override void OnClosed(EventArgs e)
         {
+            //Close the socket
+            //sc.close();
+
             base.OnClosed(e);
 
             // Remove handlers for window availability events
