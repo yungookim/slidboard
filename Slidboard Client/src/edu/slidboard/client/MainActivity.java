@@ -21,18 +21,21 @@ public class MainActivity extends Activity {
 	private UUID CLIENT_UUID = UUID.randomUUID();
 	private String CLIENT_TYPE = "MOBILE";
 	
+	//TCP Client
+	private TCPClient client;
 	
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       
+        
         //Only read one specific file for now.
         //TODO: Improve this
         String str = readFiles();
         //Creates a connection to the server
-        createConnection();
+        createConnection(client);
+        client.write(str);
     }
 
     @Override
@@ -42,8 +45,8 @@ public class MainActivity extends Activity {
     }
     
     @SuppressWarnings("unchecked")
-	private void createConnection(){
-		TCPClient client = new TCPClient("69.164.219.86", 6060);
+	private void createConnection(TCPClient client){
+		client = new TCPClient("69.164.219.86", 6060);
     	client.connect();
     	
     	//Tell the server who am I.
@@ -51,7 +54,6 @@ public class MainActivity extends Activity {
     	startString.put("uuid", CLIENT_UUID.toString());
     	startString.put("type", CLIENT_TYPE.toString());
 		client.write(startString.toString());
-		
     }
     
     private String readFiles(){
@@ -65,7 +67,6 @@ public class MainActivity extends Activity {
 			while ((strLine = br.readLine()) != null)   {
 				str = str + strLine + "\n";
 			}
-			
 			in.close();
 			
 			Log.v("File reads", str);

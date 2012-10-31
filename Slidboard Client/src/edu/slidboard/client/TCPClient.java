@@ -50,7 +50,7 @@ public class TCPClient {
 			this.outToServer.writeBytes(input);
 			String t = this.inFromServer.readLine();
 			Log.v("From Server", t);
-			this.clientSocket.close();
+			//this.clientSocket.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
