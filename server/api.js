@@ -9,23 +9,28 @@ module.exports = {
 		try {
 			data = JSON.parse(data);
 		}	catch (e){
+			socket.write('WOT');
+			console.log(e);
 			return 'Wrong Object Type.';
 		}
 
 		console.log(data);
 		if (data.type === this.CLIENT_MOBILE){
-			execMobile(data, socket);
+			this.execMobile(data, socket);
 		} else if (data.FROM === this.CLIENT_PIXELSENSE){
 			this.execPixelSense(data, socket);
 		}
 	},
 
 	execMobile : function(data, socket){
+		//console.log('Mobile connected. UUID : ' + data.uuid);
 		var item = {
 			socket : socket,
 			uuid : data.uuid
 		};
 		this.mobiles.push(item);
+		socket.write('{ uuid : something, foo : goo}');
+		socket.end();
 	},
 
 	execPixelSense : function(data, socket){

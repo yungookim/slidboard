@@ -8,13 +8,11 @@ var server = net.createServer(function (socket){
 	socket.setKeepAlive(true);
 	console.log('Accepting Connection from ' + socket.remoteAddress);
 
-	socket.write("hello");
-	socket.write("hello2");
-	socket.end();
+	//socket.write("Welcome!\n");
 	
 	socket.on('data', function(data){
-		//APICalls.exec(data, socket);
-		console.log(data);		
+		APICalls.exec(data, socket);
+		//console.log(data);		
 	});
 	socket.on('end', function(){
 		console.log('server disconnected');
