@@ -1,6 +1,3 @@
-/**
- * 
- */
 package edu.slidboard.client;
 
 import java.io.BufferedReader;

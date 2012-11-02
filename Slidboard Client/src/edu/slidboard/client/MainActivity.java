@@ -13,6 +13,7 @@ import org.json.simple.JSONObject;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 
@@ -30,11 +31,25 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        //Get path to an external storage
+        String storage = Environment.getExternalStorageDirectory().getPath();
+        
+        //Scan the contents of the external storage
+        FileWalker fw;
+		try {
+			fw = new FileWalker(storage);
+			fw.walk(storage);
+			fw.done();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
         //Only read one specific file for now.
         //TODO: Improve this
         //Creates a connection to the server
-        this.createConnection(client);
-        this.client.read();
+//        this.createConnection(client);
+//        this.client.read();
     }
 
     @Override
@@ -76,7 +91,6 @@ public class MainActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		return "";
     }
 }
