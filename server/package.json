@@ -1,0 +1,8 @@
+{
+  "name": "slidboard",
+  "version": "0.0.1",
+  "main": "slidboard",
+  "dependencies": {
+	"mongodb" : "1.1.x"
+  }
+}
