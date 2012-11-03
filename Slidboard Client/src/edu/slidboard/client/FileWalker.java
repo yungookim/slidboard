@@ -1,31 +1,31 @@
 package edu.slidboard.client;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
+import java.util.ArrayList;
+import java.util.UUID;
 import org.json.simple.JSONObject;
 
 import android.util.Log;
 
 public class FileWalker {
 	
-	//Path to the external storage
-	private String external;
-	
 	//Object holding index.json
 	private File indexFileJSON;
 	private File indexDirJSON;
 	
+	//index.json file streams
+	private FileWriter fileJsonFstream;
+	private FileWriter dirJsonFstream;
+		
 	//Path to slidboard
 	private String dir;
 	
-	private FileWriter fileJsonFstream;
-	private FileWriter dirJsonFstream;
+	//Directories within this list will not be indexed
+	private ArrayList<String> blackList = new ArrayList<String>();
 	
 	public FileWalker(String external) throws Exception{
-		this.external = external;
 		this.dir = external + "/slidboard";
 		File root_dir = new File(this.dir);
 		//Ensure that the index.json file exists.
@@ -48,6 +48,22 @@ public class FileWalker {
 		//index.json file is created.
 		this.fileJsonFstream = new FileWriter(this.indexFileJSON);
 		this.dirJsonFstream = new FileWriter(this.indexDirJSON);
+		
+		this.prepBlackList();
+	}
+	
+	private void prepBlackList(){
+		//Just hardcode for now :p
+		//Should provide a regex too later.
+		this.blackList.add("Android");
+		this.blackList.add(".");
+		this.blackList.add("..");
+		this.blackList.add("viber");
+		this.blackList.add("data-app");
+		this.blackList.add("bugreports");
+		this.blackList.add("burstlyImageCache");
+		this.blackList.add("applanet");
+		this.blackList.add("slidboard");
 	}
 	
 	public void createIndexJSON() throws IOException{
@@ -72,12 +88,13 @@ public class FileWalker {
         	for (File f : list) {
         		Log.i("Walker", "Walking on " + f.getName());
         		
-                if (f.isDirectory()) {
+                if (f.isDirectory() && !this.blackList.contains(f.getName())) {
                 	JSONObject _json = new JSONObject();
             		_json.put("name", f.getName());
         			_json.put("fullPath", f.getAbsolutePath());
         			_json.put("size", f.length());
                 	_json.put("type", "DIR");
+                	_json.put("id", UUID.randomUUID());
                 	
                 	String temp = _json + "\n";
                 	this.dirJsonFstream.write(temp);
@@ -90,6 +107,7 @@ public class FileWalker {
         			_json.put("fullPath", f.getAbsolutePath());
         			_json.put("size", f.length());
                 	_json.put("type", "FILE");
+                	_json.put("id", UUID.randomUUID());
                 	
                 	String temp = _json + "\n";
                 	this.fileJsonFstream.write(temp);

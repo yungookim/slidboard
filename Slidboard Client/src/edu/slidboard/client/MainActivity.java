@@ -10,7 +10,6 @@ import java.util.UUID;
 
 import org.json.simple.JSONObject;
 
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
@@ -48,8 +47,8 @@ public class MainActivity extends Activity {
         //Only read one specific file for now.
         //TODO: Improve this
         //Creates a connection to the server
-        this.createConnection(client);
-        this.client.read();
+//        this.createConnection(client);
+//        this.client.read();
     }
 
     @Override

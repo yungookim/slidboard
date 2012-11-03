@@ -28,6 +28,7 @@ public class TCPClient {
 	
 	public void connect(){
 		try {
+			//Get all the streams ready
 			this.clientSocket = new Socket(ip, port);
 			this.outToServer = new DataOutputStream(clientSocket.getOutputStream());
 			this.inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -66,7 +67,6 @@ public class TCPClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public void close(){
