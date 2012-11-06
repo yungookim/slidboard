@@ -1,9 +1,14 @@
 package edu.slidboard.client;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -28,8 +33,9 @@ public class TCPClient {
 	
 	public void connect(){
 		try {
+			//Get all the streams ready
 			this.clientSocket = new Socket(ip, port);
-			this.outToServer = new DataOutputStream(clientSocket.getOutputStream());
+			this.outToServer = new DataOutputStream(this.clientSocket.getOutputStream());
 			this.inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
@@ -46,8 +52,7 @@ public class TCPClient {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
+		}	
 	}
 	
 	//Start listening to the incoming message. 
@@ -66,7 +71,6 @@ public class TCPClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public void close(){

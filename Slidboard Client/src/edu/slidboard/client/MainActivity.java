@@ -10,7 +10,6 @@ import java.util.UUID;
 
 import org.json.simple.JSONObject;
 
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
@@ -19,8 +18,8 @@ import android.view.Menu;
 
 public class MainActivity extends Activity {
 
-	private UUID CLIENT_UUID = UUID.randomUUID();
-	private String CLIENT_TYPE = "MOBILE";
+	public UUID CLIENT_UUID = UUID.randomUUID();
+	public final String CLIENT_TYPE = "MOBILE";
 	
 	//TCP Client
 	private TCPClient client;
@@ -36,20 +35,23 @@ public class MainActivity extends Activity {
         
         //Scan the contents of the external storage
         FileWalker fw;
+
 		try {
+			//Connect to server and send the index files
+			this.createConnection(client);
+			
 			fw = new FileWalker(storage);
-			fw.walk(storage);
+			fw.walk(storage, client, this.CLIENT_TYPE, this.CLIENT_UUID);
 			fw.done();
-		} catch (Exception e) {
+		
+			//TODO: should close here, but should start to listen
+			this.client.close();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
-        //Only read one specific file for now.
-        //TODO: Improve this
-        //Creates a connection to the server
-//        this.createConnection(client);
-//        this.client.read();
+		
+		
     }
 
     @Override
@@ -65,6 +67,7 @@ public class MainActivity extends Activity {
     	
     	//Tell the server who am I.
     	JSONObject startString = new JSONObject();
+    	startString.put("action", "INIT");
     	startString.put("uuid", CLIENT_UUID.toString());
     	startString.put("type", CLIENT_TYPE.toString());
     	this.client.write(startString.toString());

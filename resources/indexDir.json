@@ -1,0 +1,755 @@
+{"id":632d38cd-9edb-4308-9cbc-545642f685fa,"fullPath":"\/mnt\/sdcard\/axFileTemporary","type":"DIR","size":0,"name":"axFileTemporary"}
+{"id":99f52eb5-ac32-44a8-8fb4-8b648ca44e9b,"fullPath":"\/mnt\/sdcard\/axFileTemporary\/.nomedia","type":"DIR","size":0,"name":".nomedia"}
+{"id":2b02985f-4c0c-4dd1-9ef8-dfcf61b17f7e,"fullPath":"\/mnt\/sdcard\/PuddingFace","type":"DIR","size":0,"name":"PuddingFace"}
+{"id":deffc45f-c320-4471-800c-8a5b4f6ad4d5,"fullPath":"\/mnt\/sdcard\/pud","type":"DIR","size":0,"name":"pud"}
+{"id":c2f476cd-59d8-4900-99d5-e0b57ff16a1a,"fullPath":"\/mnt\/sdcard\/pud\/.nomedia","type":"DIR","size":0,"name":".nomedia"}
+{"id":9a9b5273-60a1-489c-93f3-8b3d0703c6b9,"fullPath":"\/mnt\/sdcard\/.uber","type":"DIR","size":0,"name":".uber"}
+{"id":0d14ab10-4b38-4b91-92a2-eac07c29a4f5,"fullPath":"\/mnt\/sdcard\/pm","type":"DIR","size":0,"name":"pm"}
+{"id":06e9940e-9fd5-4e5c-a341-2998eb73d1a4,"fullPath":"\/mnt\/sdcard\/Video","type":"DIR","size":0,"name":"Video"}
+{"id":9fcb7df1-1c00-4724-abbc-960362175c99,"fullPath":"\/mnt\/sdcard\/.skynet","type":"DIR","size":0,"name":".skynet"}
+{"id":55debfc2-e619-4d28-a8ae-a0ea12b3b3b6,"fullPath":"\/mnt\/sdcard\/.skynet\/.service","type":"DIR","size":0,"name":".service"}
+{"id":40e79e6f-9bea-4437-a0c4-18e1122f78f3,"fullPath":"\/mnt\/sdcard\/foursquare","type":"DIR","size":0,"name":"foursquare"}
+{"id":b985a02d-0dd4-4c5a-bafe-93754b5b16eb,"fullPath":"\/mnt\/sdcard\/foursquare\/cache","type":"DIR","size":0,"name":"cache"}
+{"id":26a692ff-9ea8-4c9b-8884-89d5a84fc0b2,"fullPath":"\/mnt\/sdcard\/tmp","type":"DIR","size":0,"name":"tmp"}
+{"id":941a2fc6-e959-4f9e-becb-8678c4100ecb,"fullPath":"\/mnt\/sdcard\/mapsforge","type":"DIR","size":0,"name":"mapsforge"}
+{"id":87201643-6c14-419b-ba1a-48de04deab7d,"fullPath":"\/mnt\/sdcard\/mapsforge\/0","type":"DIR","size":0,"name":"0"}
+{"id":2637769c-27b2-491c-baa7-667032c24014,"fullPath":"\/mnt\/sdcard\/myalbum","type":"DIR","size":0,"name":"myalbum"}
+{"id":2de98610-1e85-4276-8853-945ddbdf0d6b,"fullPath":"\/mnt\/sdcard\/openfeint","type":"DIR","size":0,"name":"openfeint"}
+{"id":f8104354-d1f8-4da1-8b1c-bd1bfc2ac7af,"fullPath":"\/mnt\/sdcard\/openfeint\/webui","type":"DIR","size":0,"name":"webui"}
+{"id":bf7a7060-444a-421c-917b-0306bf114b61,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/facebook","type":"DIR","size":0,"name":"facebook"}
+{"id":9e21a4eb-9aa2-4261-a922-982d845aa911,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/ofx","type":"DIR","size":0,"name":"ofx"}
+{"id":742be424-34b0-49ea-8b40-1ceddf17aaa3,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/gamefeed","type":"DIR","size":0,"name":"gamefeed"}
+{"id":2af8db93-03c2-405e-bb70-00d7918ba943,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/gamefeed\/android","type":"DIR","size":0,"name":"android"}
+{"id":ad99c4b0-e1bd-49bb-ba68-5742070c3704,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/gamefeed\/ios","type":"DIR","size":0,"name":"ios"}
+{"id":13a994be-86d5-4ff2-bf6b-396167a5fdaf,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/dashboard","type":"DIR","size":0,"name":"dashboard"}
+{"id":6abe58f4-5f2f-4913-9ee1-3f4ceb4e77e0,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/dashboard\/me","type":"DIR","size":0,"name":"me"}
+{"id":e662f625-a01c-4a83-822a-48bd47738a4f,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/settings","type":"DIR","size":0,"name":"settings"}
+{"id":98963617-8fb0-4854-9834-dded05abbef5,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/intro","type":"DIR","size":0,"name":"intro"}
+{"id":1bcab2cc-6cc5-4886-ae2b-a4c24b1d11b6,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/intro\/ofx_migrate","type":"DIR","size":0,"name":"ofx_migrate"}
+{"id":8ae19da0-79b4-40c3-b658-33a244502e50,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/stylesheets","type":"DIR","size":0,"name":"stylesheets"}
+{"id":894f84aa-498f-4545-aa0c-f6cf82dc9eee,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/stylesheets\/settings","type":"DIR","size":0,"name":"settings"}
+{"id":24b74cb5-c75c-401b-a6d0-139850c00f4d,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/stylesheets\/ofx","type":"DIR","size":0,"name":"ofx"}
+{"id":3048fefd-2fe6-4571-ad12-a806829c9b35,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/stylesheets\/dashboard","type":"DIR","size":0,"name":"dashboard"}
+{"id":e0327b31-814c-412c-a1ec-385e5981dc86,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/stylesheets\/intro","type":"DIR","size":0,"name":"intro"}
+{"id":86491e6a-a0a1-4c3a-b7a2-4a6ac8e891d3,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/javascripts","type":"DIR","size":0,"name":"javascripts"}
+{"id":445491eb-43bd-45ff-9207-6b70afa9b2ae,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/javascripts\/ofx","type":"DIR","size":0,"name":"ofx"}
+{"id":ed476eec-91e9-4b44-93ad-bf9415f31a58,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/javascripts\/intro","type":"DIR","size":0,"name":"intro"}
+{"id":b04558be-7972-49f2-8436-913d7016bca2,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/javascripts\/dashboard","type":"DIR","size":0,"name":"dashboard"}
+{"id":836e64d7-05fe-4f98-90df-54b5ebdd7d83,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/javascripts\/settings","type":"DIR","size":0,"name":"settings"}
+{"id":6f9735e2-f957-4434-9939-819aa2c1b723,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images","type":"DIR","size":0,"name":"images"}
+{"id":cb6b1cf9-07f5-45ee-9d0b-f9e4cfb4708e,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/intro","type":"DIR","size":0,"name":"intro"}
+{"id":3586b505-0e20-45ce-b5ac-eb707944aa16,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/intro\/login_to_share","type":"DIR","size":0,"name":"login_to_share"}
+{"id":1dc241e4-0e2a-463e-878b-1510436e87a5,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/intro\/tos_popup","type":"DIR","size":0,"name":"tos_popup"}
+{"id":3bdece6b-2db8-4620-99a0-20775ab6801a,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/intro\/initial","type":"DIR","size":0,"name":"initial"}
+{"id":3aa37cf1-c5fe-4068-a6af-9c6fc0dc1195,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/intro\/offline","type":"DIR","size":0,"name":"offline"}
+{"id":6bee568d-532b-4dce-9747-f82d5df22e94,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/intro\/share","type":"DIR","size":0,"name":"share"}
+{"id":ccad0d54-0b27-46bf-a8d9-41c1b9b457a0,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/settings","type":"DIR","size":0,"name":"settings"}
+{"id":04297169-e1e8-45b1-bb4d-0c1129c2ad9d,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/dashboard","type":"DIR","size":0,"name":"dashboard"}
+{"id":e33f1309-e853-4f97-8c7e-3d76a8c0c5d5,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/dashboard\/offline","type":"DIR","size":0,"name":"offline"}
+{"id":015486c1-3508-4a3e-ad86-c391a529e8d1,"fullPath":"\/mnt\/sdcard\/openfeint\/webui\/images\/dashboard\/tabs","type":"DIR","size":0,"name":"tabs"}
+{"id":65ab09b6-bdfa-45cd-a990-1fcab0f0b9ca,"fullPath":"\/mnt\/sdcard\/Music","type":"DIR","size":0,"name":"Music"}
+{"id":3aa2585f-7a88-4dec-8f69-ae9953dfdbe8,"fullPath":"\/mnt\/sdcard\/Music\/이정","type":"DIR","size":0,"name":"이정"}
+{"id":f205a263-f4cf-4e3c-928b-e63a85559b8a,"fullPath":"\/mnt\/sdcard\/Music\/이정\/'나는 가수다 2' 10월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 B조 경연"}
+{"id":f1716087-3984-4b34-a140-b73a3c660fae,"fullPath":"\/mnt\/sdcard\/Music\/이정\/'나는 가수다 2' 10월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월의 가수전"}
+{"id":05c47787-8fe6-429a-8d7f-7c7aa0bed0fd,"fullPath":"\/mnt\/sdcard\/Music\/소향 & 박완규","type":"DIR","size":0,"name":"소향 & 박완규"}
+{"id":3dc57613-3baf-4a86-9966-5b15d8bf14b5,"fullPath":"\/mnt\/sdcard\/Music\/소향 & 박완규\/'나는 가수다 2' 9월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월의 가수전"}
+{"id":dcd2f231-87bd-44a7-8d29-c33b49036574,"fullPath":"\/mnt\/sdcard\/Music\/PSY","type":"DIR","size":0,"name":"PSY"}
+{"id":292617a7-93f7-4028-b337-c6c7b8007455,"fullPath":"\/mnt\/sdcard\/Music\/PSY\/싸이6甲 Part.1","type":"DIR","size":0,"name":"싸이6甲 Part.1"}
+{"id":72f08a72-37fb-418b-a63d-c8178783d980,"fullPath":"\/mnt\/sdcard\/Music\/케이윌","type":"DIR","size":0,"name":"케이윌"}
+{"id":6a239895-c299-4339-82ec-5eed25db0e66,"fullPath":"\/mnt\/sdcard\/Music\/케이윌\/V.A - MBC 음악여행 라라라 Vol.5 (Live)","type":"DIR","size":0,"name":"V.A - MBC 음악여행 라라라 Vol.5 (Live)"}
+{"id":c7ecff24-1231-4b42-bc9c-7335c0579441,"fullPath":"\/mnt\/sdcard\/Music\/이종현(CNBLUE)","type":"DIR","size":0,"name":"이종현(CNBLUE)"}
+{"id":4fafcd89-43b4-4619-8993-5d19dc1fdf4a,"fullPath":"\/mnt\/sdcard\/Music\/이종현(CNBLUE)\/신사의 품격 OST 2","type":"DIR","size":0,"name":"신사의 품격 OST 2"}
+{"id":94a9911b-a38b-4615-9f78-a073a9022a10,"fullPath":"\/mnt\/sdcard\/Music\/윤하","type":"DIR","size":0,"name":"윤하"}
+{"id":802bc356-ab91-4027-acf3-7c52f585bf12,"fullPath":"\/mnt\/sdcard\/Music\/윤하\/'나는 가수다 2' 10월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 B조 경연"}
+{"id":6e5e604b-f2f8-4022-bded-5228502b308d,"fullPath":"\/mnt\/sdcard\/Music\/윤하\/'나는 가수다 2' 10월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월의 가수전"}
+{"id":78ab3f38-0da7-4ec8-8f8a-1fc53f7f890b,"fullPath":"\/mnt\/sdcard\/Music\/윤하\/'나는 가수다 2' 9월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월의 가수전"}
+{"id":8ae954f1-e096-4ef6-93b5-621eea6bd3a1,"fullPath":"\/mnt\/sdcard\/Music\/나얼","type":"DIR","size":0,"name":"나얼"}
+{"id":123a8366-b853-4f10-b38c-da8e37c395ef,"fullPath":"\/mnt\/sdcard\/Music\/나얼\/Principle Of My Soul","type":"DIR","size":0,"name":"Principle Of My Soul"}
+{"id":8cef8747-48db-40ba-a12c-870575a714e3,"fullPath":"\/mnt\/sdcard\/Music\/카니발 (Carnival)","type":"DIR","size":0,"name":"카니발 (Carnival)"}
+{"id":5bcab89d-fada-4cf5-a6ec-2c047bcab91e,"fullPath":"\/mnt\/sdcard\/Music\/카니발 (Carnival)\/1집 Carnival","type":"DIR","size":0,"name":"1집 Carnival"}
+{"id":990d8f47-a946-42a7-bbd2-3ba61da79905,"fullPath":"\/mnt\/sdcard\/Music\/BIGBANG","type":"DIR","size":0,"name":"BIGBANG"}
+{"id":501f6723-d74a-4366-84c0-07969ea72b04,"fullPath":"\/mnt\/sdcard\/Music\/BIGBANG\/mp3.zing.vn","type":"DIR","size":0,"name":"mp3.zing.vn"}
+{"id":253a2af1-4510-4ba4-83d5-0260a03cada8,"fullPath":"\/mnt\/sdcard\/Music\/조장혁","type":"DIR","size":0,"name":"조장혁"}
+{"id":d85f9d04-e01e-4af2-8126-932766ac7e51,"fullPath":"\/mnt\/sdcard\/Music\/조장혁\/'나는 가수다 2' 10월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 - 고별 가수전"}
+{"id":97c435fd-2bcc-4770-a4cd-a70a506f3603,"fullPath":"\/mnt\/sdcard\/Music\/조장혁\/'나는 가수다 2' 10월 A조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 A조 경연"}
+{"id":365a6ec9-98dd-4241-880d-a5beafb983e6,"fullPath":"\/mnt\/sdcard\/Music\/조장혁\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":a1da242c-a895-4ea4-b1e3-3c0e52036803,"fullPath":"\/mnt\/sdcard\/Music\/리사","type":"DIR","size":0,"name":"리사"}
+{"id":f904431e-07b5-47f7-a5a1-31ff589a4627,"fullPath":"\/mnt\/sdcard\/Music\/리사\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":0f0283bc-3b64-45b8-8c67-9e64a4db98f6,"fullPath":"\/mnt\/sdcard\/Music\/빨간 우체통","type":"DIR","size":0,"name":"빨간 우체통"}
+{"id":78162afd-e5a0-4ae9-9def-400da0d47e4a,"fullPath":"\/mnt\/sdcard\/Music\/빨간 우체통\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":8b5344c0-4d4b-4f5f-bad8-3638182bfaa2,"fullPath":"\/mnt\/sdcard\/Music\/타루","type":"DIR","size":0,"name":"타루"}
+{"id":03e04e17-768a-49da-8ff9-b1cb86eccc7d,"fullPath":"\/mnt\/sdcard\/Music\/타루\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":2e6dbd64-2f2c-4864-aa28-4a610fd25a17,"fullPath":"\/mnt\/sdcard\/Music\/박희수","type":"DIR","size":0,"name":"박희수"}
+{"id":8c360f5e-329c-4b8e-9f44-fe11b5b7363c,"fullPath":"\/mnt\/sdcard\/Music\/박희수\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":771f4de0-2fbd-488a-a299-d2034aca5ad6,"fullPath":"\/mnt\/sdcard\/Music\/지영선","type":"DIR","size":0,"name":"지영선"}
+{"id":afdbfe82-dd34-4322-a663-9e477d3231e4,"fullPath":"\/mnt\/sdcard\/Music\/지영선\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":5a024c30-fdd3-4a01-86f9-b388fd25e686,"fullPath":"\/mnt\/sdcard\/Music\/게이트 플라워즈","type":"DIR","size":0,"name":"게이트 플라워즈"}
+{"id":efaf2299-f5ca-4488-ae65-943496238ab5,"fullPath":"\/mnt\/sdcard\/Music\/게이트 플라워즈\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":6bd3698c-63dc-4fe5-a800-7d17c716372c,"fullPath":"\/mnt\/sdcard\/Music\/어반자카파","type":"DIR","size":0,"name":"어반자카파"}
+{"id":3b244f63-5679-4b2e-ba1d-6815dc1b91a5,"fullPath":"\/mnt\/sdcard\/Music\/어반자카파\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":38dc71bf-8f41-4401-afca-cb62085caa7f,"fullPath":"\/mnt\/sdcard\/Music\/고유진","type":"DIR","size":0,"name":"고유진"}
+{"id":606c8e65-47fb-4e45-bda2-315e29505066,"fullPath":"\/mnt\/sdcard\/Music\/고유진\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":c7c00211-718f-425c-80f3-f1c26a4437fe,"fullPath":"\/mnt\/sdcard\/Music\/유리","type":"DIR","size":0,"name":"유리"}
+{"id":146a772d-f030-4284-94a4-c7afbebcec6b,"fullPath":"\/mnt\/sdcard\/Music\/유리\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":ad4cc8f8-6a54-48ad-87cb-d4fb75d61dc0,"fullPath":"\/mnt\/sdcard\/Music\/더 원 (The One)","type":"DIR","size":0,"name":"더 원 (The One)"}
+{"id":86869b11-742e-4104-9707-37918b545680,"fullPath":"\/mnt\/sdcard\/Music\/더 원 (The One)\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":ed52e487-a9ff-49ca-9bce-1252cbcfc249,"fullPath":"\/mnt\/sdcard\/Music\/소찬휘","type":"DIR","size":0,"name":"소찬휘"}
+{"id":c698d435-5081-44fa-96da-c95c367ee093,"fullPath":"\/mnt\/sdcard\/Music\/소찬휘\/'나는 가수다 2' 10월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 B조 경연"}
+{"id":845d9cb4-d1d8-4b13-8e70-628fe5d422be,"fullPath":"\/mnt\/sdcard\/Music\/소찬휘\/'나는 가수다 2' 10월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 - 고별 가수전"}
+{"id":6e59660c-05a3-479a-9ae9-706d50be1306,"fullPath":"\/mnt\/sdcard\/Music\/소찬휘\/'나는 가수다 2' 9월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월의 가수전"}
+{"id":b8eb97a4-ff3b-4683-bdcc-2176350a4d04,"fullPath":"\/mnt\/sdcard\/Music\/소찬휘\/'나는 가수다 2' 새가수 초대전","type":"DIR","size":0,"name":"'나는 가수다 2' 새가수 초대전"}
+{"id":03faf928-9ae2-4fb4-8675-d41ff66c3f75,"fullPath":"\/mnt\/sdcard\/Music\/소찬휘\/'나는 가수다 2' 9월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 B조 경연"}
+{"id":6ca3c468-a072-44c4-b938-7fac7b7ee722,"fullPath":"\/mnt\/sdcard\/Music\/한영애","type":"DIR","size":0,"name":"한영애"}
+{"id":7f7b494c-cf5c-4613-be56-526cbb71a971,"fullPath":"\/mnt\/sdcard\/Music\/한영애\/'나는 가수다 2' 10월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 - 고별 가수전"}
+{"id":3bd17687-771e-45fa-86ff-3b5524ccb5e6,"fullPath":"\/mnt\/sdcard\/Music\/한영애\/'나는 가수다 2' 9월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 - 고별 가수전"}
+{"id":e8a87da9-fb7b-4d68-94ea-c9fc7dab831d,"fullPath":"\/mnt\/sdcard\/Music\/한영애\/'나는 가수다 2' 9월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 B조 경연"}
+{"id":0e56d78d-9097-42e8-b4a3-4255c529bcea,"fullPath":"\/mnt\/sdcard\/Music\/더 원","type":"DIR","size":0,"name":"더 원"}
+{"id":29668c96-bb04-42e1-9b26-550decd683c8,"fullPath":"\/mnt\/sdcard\/Music\/더 원\/'나는 가수다 2' 10월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월의 가수전"}
+{"id":9b5d34a7-c78b-49ab-9db3-401aea6cd44b,"fullPath":"\/mnt\/sdcard\/Music\/더 원\/'나는 가수다 2' 9월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월의 가수전"}
+{"id":326d7cf2-61ef-4bee-9896-88e92fa145d4,"fullPath":"\/mnt\/sdcard\/Music\/더 원\/'나는 가수다 2' 9월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 B조 경연"}
+{"id":3936d9e2-7833-4df7-b013-7c8a945e8d59,"fullPath":"\/mnt\/sdcard\/Music\/변진섭","type":"DIR","size":0,"name":"변진섭"}
+{"id":33470e0d-a662-451b-b976-5d80240c876b,"fullPath":"\/mnt\/sdcard\/Music\/변진섭\/'나는 가수다 2' 10월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 B조 경연"}
+{"id":c47f8a41-cdf0-4ab0-a4e9-384200492874,"fullPath":"\/mnt\/sdcard\/Music\/변진섭\/'나는 가수다 2' 10월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 - 고별 가수전"}
+{"id":da384beb-c113-4f4f-8310-f381efbb57c6,"fullPath":"\/mnt\/sdcard\/Music\/변진섭\/'나는 가수다 2' 9월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 - 고별 가수전"}
+{"id":fd58c0b6-0f5c-4f72-8e8f-d058e64ff827,"fullPath":"\/mnt\/sdcard\/Music\/변진섭\/'나는 가수다 2' 9월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 B조 경연"}
+{"id":cf2f03b5-d996-4782-87a4-a0c3976cf472,"fullPath":"\/mnt\/sdcard\/Music\/변진섭\/'나는 가수다 2' 8월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 8월 B조 경연"}
+{"id":27deca64-b29d-4736-9438-37bb976132e3,"fullPath":"\/mnt\/sdcard\/Music\/윤하 (Younhaユンナ)","type":"DIR","size":0,"name":"윤하 (Younhaユンナ)"}
+{"id":4d826e75-a234-4c18-912e-5c00347bde7c,"fullPath":"\/mnt\/sdcard\/Music\/윤하 (Younhaユンナ)\/나는 가수다 2  9월 A조 경연","type":"DIR","size":0,"name":"나는 가수다 2  9월 A조 경연"}
+{"id":a9cd4d4c-5fc4-44ce-913f-33acc12d52dd,"fullPath":"\/mnt\/sdcard\/Music\/시나위","type":"DIR","size":0,"name":"시나위"}
+{"id":38d2b687-75e0-4aa7-becb-e99022f6bb7c,"fullPath":"\/mnt\/sdcard\/Music\/시나위\/'나는 가수다 2' 10월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월의 가수전"}
+{"id":6592e1af-636b-4529-8f64-1292e1a6ba62,"fullPath":"\/mnt\/sdcard\/Music\/시나위\/'나는 가수다 2' 9월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 - 고별 가수전"}
+{"id":56608028-5e96-45ce-bc31-3de4f6e35131,"fullPath":"\/mnt\/sdcard\/Music\/시나위\/나는 가수다 2  9월 A조 경연","type":"DIR","size":0,"name":"나는 가수다 2  9월 A조 경연"}
+{"id":5d2e0d22-c984-4c2e-99a0-89e2745342c9,"fullPath":"\/mnt\/sdcard\/Music\/서문탁","type":"DIR","size":0,"name":"서문탁"}
+{"id":61efdb1f-4b0e-4493-9ca2-5dffd2102110,"fullPath":"\/mnt\/sdcard\/Music\/서문탁\/'나는 가수다 2' 10월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 B조 경연"}
+{"id":31be2fcc-86c3-482a-9cbd-daf041faaceb,"fullPath":"\/mnt\/sdcard\/Music\/서문탁\/'나는 가수다 2' 10월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월의 가수전"}
+{"id":fe372c8e-191c-41ec-aa0a-35aa482dcc1b,"fullPath":"\/mnt\/sdcard\/Music\/서문탁\/'나는 가수다 2' 9월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 - 고별 가수전"}
+{"id":eebdba38-f62b-4914-9a56-40759b2b4260,"fullPath":"\/mnt\/sdcard\/Music\/서문탁\/'나는 가수다 2' 8월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 8월 B조 경연"}
+{"id":350cddf3-af85-4b63-9446-24c0f7de49d1,"fullPath":"\/mnt\/sdcard\/Music\/서문탁\/'나는 가수다 2' 7월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 7월 - 고별 가수전"}
+{"id":c7cd2f35-b11d-4930-8323-5e63c0753df5,"fullPath":"\/mnt\/sdcard\/Music\/서문탁\/나는 가수다 2  9월 A조 경연","type":"DIR","size":0,"name":"나는 가수다 2  9월 A조 경연"}
+{"id":23443b17-2d52-4b85-ab36-784bdb6fa308,"fullPath":"\/mnt\/sdcard\/Music\/양파","type":"DIR","size":0,"name":"양파"}
+{"id":fb92c448-3203-400c-8361-5f78ee23cf7d,"fullPath":"\/mnt\/sdcard\/Music\/양파\/Together","type":"DIR","size":0,"name":"Together"}
+{"id":7caf617d-08b8-420e-ba40-fd2c1ef1589b,"fullPath":"\/mnt\/sdcard\/Music\/Lyn","type":"DIR","size":0,"name":"Lyn"}
+{"id":7774d580-c937-4108-af35-12618880a226,"fullPath":"\/mnt\/sdcard\/Music\/Lyn\/LoveFiction","type":"DIR","size":0,"name":"LoveFiction"}
+{"id":f90d0fac-4413-4854-96be-82c0776ff3f7,"fullPath":"\/mnt\/sdcard\/Music\/버즈","type":"DIR","size":0,"name":"버즈"}
+{"id":2161b675-53cc-4f8c-bb27-b26c4ee0cc4d,"fullPath":"\/mnt\/sdcard\/Music\/버즈\/Buzz Return","type":"DIR","size":0,"name":"Buzz Return"}
+{"id":37b12b64-90ea-4394-a40e-606a5e2c2f94,"fullPath":"\/mnt\/sdcard\/Music\/양파 & 다비치 & Hanna","type":"DIR","size":0,"name":"양파 & 다비치 & Hanna"}
+{"id":5aa9df5c-e626-4523-8107-e417160819ee,"fullPath":"\/mnt\/sdcard\/Music\/양파 & 다비치 & Hanna\/Together","type":"DIR","size":0,"name":"Together"}
+{"id":d457f13c-5b2e-48dd-b50d-87c48467c9a5,"fullPath":"\/mnt\/sdcard\/Music\/Maroon 5","type":"DIR","size":0,"name":"Maroon 5"}
+{"id":97d65b0b-7d12-4083-a016-b22917501d7b,"fullPath":"\/mnt\/sdcard\/Music\/Maroon 5\/Moves Like Jagger (The Voice Performance) [feat. Christina Aguilera] - Single","type":"DIR","size":0,"name":"Moves Like Jagger (The Voice Performance) [feat. Christina Aguilera] - Single"}
+{"id":d887e4df-418f-4986-8b78-e6d5b6dc56db,"fullPath":"\/mnt\/sdcard\/Music\/태연 (소녀시대)","type":"DIR","size":0,"name":"태연 (소녀시대)"}
+{"id":16bd9924-fd86-4a0f-94d7-b3cf911068e2,"fullPath":"\/mnt\/sdcard\/Music\/태연 (소녀시대)\/더킹 투하츠 OST Part.1","type":"DIR","size":0,"name":"더킹 투하츠 OST Part.1"}
+{"id":2763e7df-00a2-4c75-9b8e-ea0f0b317767,"fullPath":"\/mnt\/sdcard\/Music\/배치기","type":"DIR","size":0,"name":"배치기"}
+{"id":23250a5b-6efa-40f2-b448-9336cbdab2b1,"fullPath":"\/mnt\/sdcard\/Music\/배치기\/두 마리","type":"DIR","size":0,"name":"두 마리"}
+{"id":6d5faf98-75f0-46b8-afba-3b4ca0ef07ff,"fullPath":"\/mnt\/sdcard\/Music\/노을","type":"DIR","size":0,"name":"노을"}
+{"id":915dc59c-27b9-41a0-9695-5f42e00de720,"fullPath":"\/mnt\/sdcard\/Music\/노을\/떠나간다","type":"DIR","size":0,"name":"떠나간다"}
+{"id":36d3573f-680e-4f8e-a94c-4539e3d9c778,"fullPath":"\/mnt\/sdcard\/Music\/±èÅÂ¿ì","type":"DIR","size":0,"name":"±èÅÂ¿ì"}
+{"id":994d4f8c-3503-4841-8d9f-b71faf4f2f94,"fullPath":"\/mnt\/sdcard\/Music\/±èÅÂ¿ì\/½Å»çÀÇ Ç°°Ý OST Part 1","type":"DIR","size":0,"name":"½Å»çÀÇ Ç°°Ý OST Part 1"}
+{"id":5cb08395-489d-4382-9266-64b78a27d20f,"fullPath":"\/mnt\/sdcard\/Music\/Maroon 5(마룬 파이브)","type":"DIR","size":0,"name":"Maroon 5(마룬 파이브)"}
+{"id":afceda26-ca5d-470e-acd8-9dbf21b8ebd6,"fullPath":"\/mnt\/sdcard\/Music\/Maroon 5(마룬 파이브)\/Payphone","type":"DIR","size":0,"name":"Payphone"}
+{"id":738f8abc-751a-4742-8932-e3d6c6613149,"fullPath":"\/mnt\/sdcard\/Music\/가비엔제이(Gavy N.J.)","type":"DIR","size":0,"name":"가비엔제이(Gavy N.J.)"}
+{"id":c041b73f-2a7e-4df5-8f49-00e10f5906de,"fullPath":"\/mnt\/sdcard\/Music\/가비엔제이(Gavy N.J.)\/연락하지마","type":"DIR","size":0,"name":"연락하지마"}
+{"id":d41ebe6c-63a5-45ce-a632-949a8451844e,"fullPath":"\/mnt\/sdcard\/Music\/허각","type":"DIR","size":0,"name":"허각"}
+{"id":2ce91237-7586-42bf-a852-333c3028a69d,"fullPath":"\/mnt\/sdcard\/Music\/허각\/LACRIMOSO","type":"DIR","size":0,"name":"LACRIMOSO"}
+{"id":d6466b74-1ac1-4a54-a3fa-212843c8c519,"fullPath":"\/mnt\/sdcard\/Music\/디셈버(December) [듀오]","type":"DIR","size":0,"name":"디셈버(December) [듀오]"}
+{"id":a2611f91-5c2c-4c58-9492-ebd2a15d29d0,"fullPath":"\/mnt\/sdcard\/Music\/디셈버(December) [듀오]\/She's Gone","type":"DIR","size":0,"name":"She's Gone"}
+{"id":ba6da9a2-37d7-4594-b8a8-c802d7477120,"fullPath":"\/mnt\/sdcard\/Music\/울랄라세션(Ulala Session)","type":"DIR","size":0,"name":"울랄라세션(Ulala Session)"}
+{"id":9677e586-9eb9-416e-8453-74c705499a0a,"fullPath":"\/mnt\/sdcard\/Music\/울랄라세션(Ulala Session)\/ULALA SENSATION Part 1","type":"DIR","size":0,"name":"ULALA SENSATION Part 1"}
+{"id":8d89485c-ae00-49f0-91b2-fe3b3c95cce1,"fullPath":"\/mnt\/sdcard\/Music\/ºò¹ð (Bigbang)","type":"DIR","size":0,"name":"ºò¹ð (Bigbang)"}
+{"id":80fb6b12-ed29-433a-9d8a-cd2785c9c4be,"fullPath":"\/mnt\/sdcard\/Music\/ºò¹ð (Bigbang)\/BIGBANG SPECIAL EDITION  STILL ALIVE","type":"DIR","size":0,"name":"BIGBANG SPECIAL EDITION  STILL ALIVE"}
+{"id":a6e8d8e1-6ce8-4bcd-8511-9f1877c7cf45,"fullPath":"\/mnt\/sdcard\/Music\/원더걸스(Wonder Girls)","type":"DIR","size":0,"name":"원더걸스(Wonder Girls)"}
+{"id":2bad33a2-1e50-4b75-9b3e-37f75c9ddfd1,"fullPath":"\/mnt\/sdcard\/Music\/원더걸스(Wonder Girls)\/Wonder Party","type":"DIR","size":0,"name":"Wonder Party"}
+{"id":48d3e671-1c87-4416-b354-0fd8b2b487d1,"fullPath":"\/mnt\/sdcard\/Music\/에프 엑스 (f(x))","type":"DIR","size":0,"name":"에프 엑스 (f(x))"}
+{"id":bfba9fb0-070a-4488-905e-459abff0a75b,"fullPath":"\/mnt\/sdcard\/Music\/에프 엑스 (f(x))\/Electric Shock  The 2nd Mini Album","type":"DIR","size":0,"name":"Electric Shock  The 2nd Mini Album"}
+{"id":9cfd9b19-c303-49eb-a7ec-1270482e4a93,"fullPath":"\/mnt\/sdcard\/Music\/부활","type":"DIR","size":0,"name":"부활"}
+{"id":e5c216da-a685-438a-9132-dc6d34d2f85e,"fullPath":"\/mnt\/sdcard\/Music\/부활\/Purple Wave","type":"DIR","size":0,"name":"Purple Wave"}
+{"id":bf8a1fb2-b6b7-49f9-903a-818dbf22686a,"fullPath":"\/mnt\/sdcard\/Music\/에밀리","type":"DIR","size":0,"name":"에밀리"}
+{"id":c0374a71-d96c-4122-89a9-4b08b64022c9,"fullPath":"\/mnt\/sdcard\/Music\/에밀리\/ºÒÈÄÀÇ ¸í°î - Àü¼³À» ³ë·¡ÇÏ´Ù (ÀÛ°î°¡ ÀÌÈ£ÁØÆí)","type":"DIR","size":0,"name":"ºÒÈÄÀÇ ¸í°î - Àü¼³À» ³ë·¡ÇÏ´Ù (ÀÛ°î°¡ ÀÌÈ£ÁØÆí)"}
+{"id":5ed58e5b-d133-4961-bdb3-b1b9177cc08d,"fullPath":"\/mnt\/sdcard\/Music\/디셈버","type":"DIR","size":0,"name":"디셈버"}
+{"id":d892475e-2b01-4d3f-b675-8efa9b9b687a,"fullPath":"\/mnt\/sdcard\/Music\/디셈버\/ºÒÈÄÀÇ ¸í°î - Àü¼³À» ³ë·¡ÇÏ´Ù (ÀÛ°î°¡ ÀÌÈ£ÁØÆí)","type":"DIR","size":0,"name":"ºÒÈÄÀÇ ¸í°î - Àü¼³À» ³ë·¡ÇÏ´Ù (ÀÛ°î°¡ ÀÌÈ£ÁØÆí)"}
+{"id":683721f4-b4fc-4bac-8e18-8fcbe934c245,"fullPath":"\/mnt\/sdcard\/Music\/다비치 이해리","type":"DIR","size":0,"name":"다비치 이해리"}
+{"id":cd86b87e-37aa-40c9-ae5e-eca3af4eed9e,"fullPath":"\/mnt\/sdcard\/Music\/다비치 이해리\/불후의 명곡 - 전설을 노래하다 - 소방차편","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 - 소방차편"}
+{"id":b72d94c4-f6e4-4bee-8a27-0b2f535aefd8,"fullPath":"\/mnt\/sdcard\/Music\/에일리(Ailee)","type":"DIR","size":0,"name":"에일리(Ailee)"}
+{"id":c72026de-ff4e-4139-b8e5-7f740cb7297f,"fullPath":"\/mnt\/sdcard\/Music\/에일리(Ailee)\/불후의 명곡 - 전설을 노래하다 - 소방차편","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 - 소방차편"}
+{"id":ab37a424-1946-487f-a83a-6777f91c285c,"fullPath":"\/mnt\/sdcard\/Music\/소냐(Sonya)","type":"DIR","size":0,"name":"소냐(Sonya)"}
+{"id":c1c01f5a-b53b-4ef9-b0fd-f30e457303ac,"fullPath":"\/mnt\/sdcard\/Music\/소냐(Sonya)\/불후의 명곡 - 전설을 노래하다 - 소방차편","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 - 소방차편"}
+{"id":695ffcc3-2669-4086-9aaa-fce922dde8e8,"fullPath":"\/mnt\/sdcard\/Music\/DK(디셈버)","type":"DIR","size":0,"name":"DK(디셈버)"}
+{"id":8a5e8fae-8a5f-4309-a268-72191a6d4864,"fullPath":"\/mnt\/sdcard\/Music\/DK(디셈버)\/불후의 명곡 - 전설을 노래하다 - 소방차편","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 - 소방차편"}
+{"id":75f45567-bf9b-464b-ae7d-7e269b8a5612,"fullPath":"\/mnt\/sdcard\/Music\/Various Artist","type":"DIR","size":0,"name":"Various Artist"}
+{"id":0fbf37b5-25c9-476e-83b5-276030186be3,"fullPath":"\/mnt\/sdcard\/Music\/Various Artist\/100 Piano Masterpieces","type":"DIR","size":0,"name":"100 Piano Masterpieces"}
+{"id":4ef141a2-ebdf-4054-a12b-5e438ce60e54,"fullPath":"\/mnt\/sdcard\/Music\/하하","type":"DIR","size":0,"name":"하하"}
+{"id":363c903e-8545-43ef-aeff-1f70e81197ab,"fullPath":"\/mnt\/sdcard\/Music\/하하\/무한도전 나름 가수다","type":"DIR","size":0,"name":"무한도전 나름 가수다"}
+{"id":a3269002-9d1b-4251-b33c-7cb935c80755,"fullPath":"\/mnt\/sdcard\/Music\/정형돈","type":"DIR","size":0,"name":"정형돈"}
+{"id":8837935a-c332-41ce-b22b-eb8134a337f0,"fullPath":"\/mnt\/sdcard\/Music\/정형돈\/무한도전 나름 가수다","type":"DIR","size":0,"name":"무한도전 나름 가수다"}
+{"id":605003f1-e98e-4d69-83c5-445218a400b1,"fullPath":"\/mnt\/sdcard\/Music\/정준하","type":"DIR","size":0,"name":"정준하"}
+{"id":d6aa986a-b243-438b-857d-ff379c766e41,"fullPath":"\/mnt\/sdcard\/Music\/정준하\/무한도전 나름 가수다","type":"DIR","size":0,"name":"무한도전 나름 가수다"}
+{"id":13eb8e7e-49ee-4ae0-9666-3c9a0eeab290,"fullPath":"\/mnt\/sdcard\/Music\/유재석","type":"DIR","size":0,"name":"유재석"}
+{"id":82335116-7bc7-4edd-a944-62fed71a3ee4,"fullPath":"\/mnt\/sdcard\/Music\/유재석\/무한도전 나름 가수다","type":"DIR","size":0,"name":"무한도전 나름 가수다"}
+{"id":0bc1b55a-f76f-402f-8cd3-205c06c6e4e8,"fullPath":"\/mnt\/sdcard\/Music\/노홍철","type":"DIR","size":0,"name":"노홍철"}
+{"id":b80769a6-b1c1-4f15-8f8e-b1daf4afde8a,"fullPath":"\/mnt\/sdcard\/Music\/노홍철\/무한도전 나름 가수다","type":"DIR","size":0,"name":"무한도전 나름 가수다"}
+{"id":48079363-8fea-4eb3-8be1-5d9d586041bc,"fullPath":"\/mnt\/sdcard\/Music\/길","type":"DIR","size":0,"name":"길"}
+{"id":0bc18051-5759-485c-b435-01982a38a6e7,"fullPath":"\/mnt\/sdcard\/Music\/길\/무한도전 나름 가수다","type":"DIR","size":0,"name":"무한도전 나름 가수다"}
+{"id":a5333e03-c7f5-47ed-b255-75f27dd024d5,"fullPath":"\/mnt\/sdcard\/Music\/적우","type":"DIR","size":0,"name":"적우"}
+{"id":e26c352b-cb7a-493e-852e-d77c381f6ae4,"fullPath":"\/mnt\/sdcard\/Music\/적우\/나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래","type":"DIR","size":0,"name":"나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래"}
+{"id":21ebe9ea-541c-461e-86d3-f61b83fec178,"fullPath":"\/mnt\/sdcard\/Music\/빅마마킹 (BMK)","type":"DIR","size":0,"name":"빅마마킹 (BMK)"}
+{"id":7f051388-97f2-41ab-8959-780e2ff13674,"fullPath":"\/mnt\/sdcard\/Music\/빅마마킹 (BMK)\/2집 Soul Food","type":"DIR","size":0,"name":"2집 Soul Food"}
+{"id":bb48c684-c4db-4a55-8715-cd760e69eac2,"fullPath":"\/mnt\/sdcard\/Music\/Various Artists","type":"DIR","size":0,"name":"Various Artists"}
+{"id":2be623e5-9a24-46b4-a99e-b1447bb54ef1,"fullPath":"\/mnt\/sdcard\/Music\/Various Artists\/나는 가수다 사랑보다 깊은 상처 (박정현 & 김범수)","type":"DIR","size":0,"name":"나는 가수다 사랑보다 깊은 상처 (박정현 & 김범수)"}
+{"id":ac8fbe42-f3e5-4cd5-921c-16fdd156bf1b,"fullPath":"\/mnt\/sdcard\/Music\/토이(Toy)","type":"DIR","size":0,"name":"토이(Toy)"}
+{"id":9cf30fde-6c74-4ba9-a0d3-4d4105848708,"fullPath":"\/mnt\/sdcard\/Music\/토이(Toy)\/4집 A Night In SEOUL","type":"DIR","size":0,"name":"4집 A Night In SEOUL"}
+{"id":58da03af-f982-4da2-b302-37d38e707209,"fullPath":"\/mnt\/sdcard\/Music\/윤도현 밴드","type":"DIR","size":0,"name":"윤도현 밴드"}
+{"id":f3b830e4-b1d1-48ce-a73b-3fb5166e2144,"fullPath":"\/mnt\/sdcard\/Music\/윤도현 밴드\/나는 가수다 경연 6-2. 청중 평가단 추천곡","type":"DIR","size":0,"name":"나는 가수다 경연 6-2. 청중 평가단 추천곡"}
+{"id":b266e870-bc5e-4ae8-93e7-6a2989346e8e,"fullPath":"\/mnt\/sdcard\/Music\/윤도현","type":"DIR","size":0,"name":"윤도현"}
+{"id":a1cf411d-4282-4233-8936-b0fc1167d9cc,"fullPath":"\/mnt\/sdcard\/Music\/윤도현\/〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래","type":"DIR","size":0,"name":"〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래"}
+{"id":9635631f-8b85-42ad-a5c8-358a4d67717e,"fullPath":"\/mnt\/sdcard\/Music\/옥주현","type":"DIR","size":0,"name":"옥주현"}
+{"id":3521f145-f546-4fb1-bacb-cba044025040,"fullPath":"\/mnt\/sdcard\/Music\/옥주현\/나는 가수다 경연 6-2. 청중 평가단 추천곡","type":"DIR","size":0,"name":"나는 가수다 경연 6-2. 청중 평가단 추천곡"}
+{"id":c8fe4e69-46c3-4e0d-8e89-6a73bf20ef28,"fullPath":"\/mnt\/sdcard\/Music\/옥주현\/나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'","type":"DIR","size":0,"name":"나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'"}
+{"id":e180b8cf-698f-49cc-9bd5-61efe7add136,"fullPath":"\/mnt\/sdcard\/Music\/옥주현\/서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'"}
+{"id":fd68b89d-74d3-4e49-8f1d-9ae1d5dc4da7,"fullPath":"\/mnt\/sdcard\/Music\/옥주현\/[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`","type":"DIR","size":0,"name":"[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`"}
+{"id":db6f33d1-1e3b-496b-8001-4f2ba05cf9f3,"fullPath":"\/mnt\/sdcard\/Music\/YB","type":"DIR","size":0,"name":"YB"}
+{"id":984d08d8-31e7-4d39-bd6a-6e8dd5073b64,"fullPath":"\/mnt\/sdcard\/Music\/YB\/나는 가수다 '호주 특별 공연'","type":"DIR","size":0,"name":"나는 가수다 '호주 특별 공연'"}
+{"id":d85b59e1-c0f3-416a-b76f-580168776131,"fullPath":"\/mnt\/sdcard\/Music\/YB\/[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`","type":"DIR","size":0,"name":"[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`"}
+{"id":4c290617-3fc9-43cc-9094-f77ed59da99a,"fullPath":"\/mnt\/sdcard\/Music\/BMK","type":"DIR","size":0,"name":"BMK"}
+{"id":8099fe87-24d7-4a6e-9761-5ac9c5d6207d,"fullPath":"\/mnt\/sdcard\/Music\/BMK\/〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래","type":"DIR","size":0,"name":"〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래"}
+{"id":d50db781-8787-43d4-b4eb-9509dc168e11,"fullPath":"\/mnt\/sdcard\/Music\/BMK\/[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`","type":"DIR","size":0,"name":"[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`"}
+{"id":ee8c1563-c2ef-4367-8613-d35a3e910f53,"fullPath":"\/mnt\/sdcard\/Music\/임재범","type":"DIR","size":0,"name":"임재범"}
+{"id":485a9180-29ae-43cf-a309-8ca9002edcad,"fullPath":"\/mnt\/sdcard\/Music\/임재범\/〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래","type":"DIR","size":0,"name":"〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래"}
+{"id":d76b8421-c1d7-4478-95df-9b71b2814055,"fullPath":"\/mnt\/sdcard\/Music\/임재범\/서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'"}
+{"id":bfaa97d6-8a30-42d7-844d-4f9d4cf4d79f,"fullPath":"\/mnt\/sdcard\/Music\/YB(윤도현 밴드)","type":"DIR","size":0,"name":"YB(윤도현 밴드)"}
+{"id":fcec5225-69b1-4b6b-8c66-883e62c71570,"fullPath":"\/mnt\/sdcard\/Music\/YB(윤도현 밴드)\/나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'","type":"DIR","size":0,"name":"나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'"}
+{"id":63501618-a7ad-43b9-b10c-b362a1b0b548,"fullPath":"\/mnt\/sdcard\/Music\/YB(윤도현 밴드)\/서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'"}
+{"id":715f7611-0d96-4caa-bd07-4e05028ba2ff,"fullPath":"\/mnt\/sdcard\/Music\/YB(윤도현 밴드)\/서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'"}
+{"id":1f5d25af-5ead-44f5-a9b1-1e1ee477776f,"fullPath":"\/mnt\/sdcard\/Music\/빅마마킹(BMK)","type":"DIR","size":0,"name":"빅마마킹(BMK)"}
+{"id":2d499bcb-e147-4b43-972d-75be3be3a513,"fullPath":"\/mnt\/sdcard\/Music\/빅마마킹(BMK)\/서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'"}
+{"id":9cc807e1-b17d-4b37-8525-52892c5b2580,"fullPath":"\/mnt\/sdcard\/Music\/빅마마킹(BMK)\/서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'"}
+{"id":8093d616-62ba-4646-b771-4cfda9e48707,"fullPath":"\/mnt\/sdcard\/Music\/이소라","type":"DIR","size":0,"name":"이소라"}
+{"id":2141e0c6-bb15-4cb1-8eaa-9222ed57922c,"fullPath":"\/mnt\/sdcard\/Music\/이소라\/나는 가수다 '호주 특별 공연'","type":"DIR","size":0,"name":"나는 가수다 '호주 특별 공연'"}
+{"id":4760eee0-0516-4b5e-9ee3-8cc69519738f,"fullPath":"\/mnt\/sdcard\/Music\/이소라\/5집 SoRa's 5 Diary","type":"DIR","size":0,"name":"5집 SoRa's 5 Diary"}
+{"id":b69fbe86-16d9-44f3-bc51-aa94a40e029d,"fullPath":"\/mnt\/sdcard\/Music\/이소라\/〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래","type":"DIR","size":0,"name":"〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래"}
+{"id":7f1b23d8-acc8-47f9-ba8b-202a374c05be,"fullPath":"\/mnt\/sdcard\/Music\/이소라\/[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`","type":"DIR","size":0,"name":"[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`"}
+{"id":9c26ad69-d3d6-45aa-8bbf-762d2af50507,"fullPath":"\/mnt\/sdcard\/Music\/이소라\/서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'"}
+{"id":45a99f60-1663-43c5-b7f4-690521d9dab0,"fullPath":"\/mnt\/sdcard\/Music\/이소라\/나는 가수다 모음","type":"DIR","size":0,"name":"나는 가수다 모음"}
+{"id":e57965c5-9c93-463e-8d97-9f80d1ac2a2d,"fullPath":"\/mnt\/sdcard\/Music\/박정현","type":"DIR","size":0,"name":"박정현"}
+{"id":2c1d7222-8a65-4ac3-9d19-a1f03ea1c454,"fullPath":"\/mnt\/sdcard\/Music\/박정현\/나는 가수다 '호주 특별 공연'","type":"DIR","size":0,"name":"나는 가수다 '호주 특별 공연'"}
+{"id":cb469524-eb75-407b-bab0-2bcb24ecf360,"fullPath":"\/mnt\/sdcard\/Music\/박정현\/5집 On & On","type":"DIR","size":0,"name":"5집 On & On"}
+{"id":5de364be-5ecf-4d43-8789-7d90321fe9e0,"fullPath":"\/mnt\/sdcard\/Music\/박정현\/나는 가수다 경연 6-2. 청중 평가단 추천곡","type":"DIR","size":0,"name":"나는 가수다 경연 6-2. 청중 평가단 추천곡"}
+{"id":4a70e392-7820-468a-9854-b59c80c6baf3,"fullPath":"\/mnt\/sdcard\/Music\/박정현\/나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'","type":"DIR","size":0,"name":"나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'"}
+{"id":a862c080-80ec-41c5-8ab8-d5b1525e61fb,"fullPath":"\/mnt\/sdcard\/Music\/박정현\/서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'"}
+{"id":82ff8b16-57ea-4bf0-9708-f9ddc24ca6d2,"fullPath":"\/mnt\/sdcard\/Music\/박정현\/〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래","type":"DIR","size":0,"name":"〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래"}
+{"id":6ebe7b50-0194-4d18-b4de-d2c1c05208ae,"fullPath":"\/mnt\/sdcard\/Music\/박정현\/[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`","type":"DIR","size":0,"name":"[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`"}
+{"id":98c04e6d-7d8d-4ecf-b589-760425cdb9b4,"fullPath":"\/mnt\/sdcard\/Music\/박정현\/서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'"}
+{"id":49e524ad-13d3-4546-817e-e8430885645e,"fullPath":"\/mnt\/sdcard\/Music\/박정현\/나는 가수다 모음","type":"DIR","size":0,"name":"나는 가수다 모음"}
+{"id":c3ac09ef-8697-4ec6-b2d0-067221e98ab3,"fullPath":"\/mnt\/sdcard\/Music\/백지영","type":"DIR","size":0,"name":"백지영"}
+{"id":d4f00298-59f5-4a16-81b1-fdb73a621a43,"fullPath":"\/mnt\/sdcard\/Music\/백지영\/나는 가수다 모음","type":"DIR","size":0,"name":"나는 가수다 모음"}
+{"id":07c5ee8a-e4ea-4975-a531-f01eea35cdc7,"fullPath":"\/mnt\/sdcard\/Music\/윤도현밴드","type":"DIR","size":0,"name":"윤도현밴드"}
+{"id":5ccc702d-8ad9-43ab-9e68-80a8649ed33f,"fullPath":"\/mnt\/sdcard\/Music\/윤도현밴드\/7집 Why Be？ [CD 1]","type":"DIR","size":0,"name":"7집 Why Be？ [CD 1]"}
+{"id":f3f68f15-1f25-40f7-ae30-e0284a22007c,"fullPath":"\/mnt\/sdcard\/Music\/윤도현밴드\/나는 가수다 모음","type":"DIR","size":0,"name":"나는 가수다 모음"}
+{"id":cd95748b-4e50-47e8-83c2-9266159ce54f,"fullPath":"\/mnt\/sdcard\/Music\/김조한","type":"DIR","size":0,"name":"김조한"}
+{"id":f7348bcb-9c2e-418c-8b36-e5de986095ae,"fullPath":"\/mnt\/sdcard\/Music\/김조한\/나는 가수다 경연 7-1. 내가 부르고 싶은 노래","type":"DIR","size":0,"name":"나는 가수다 경연 7-1. 내가 부르고 싶은 노래"}
+{"id":a7b3ab07-670b-4977-a1f6-8285d4b89f2e,"fullPath":"\/mnt\/sdcard\/Music\/김조한\/나는 가수다 경연 6-2. 청중 평가단 추천곡","type":"DIR","size":0,"name":"나는 가수다 경연 6-2. 청중 평가단 추천곡"}
+{"id":0937e16a-7ce0-4273-9e4e-db78f8442bdc,"fullPath":"\/mnt\/sdcard\/Music\/김조한\/나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'","type":"DIR","size":0,"name":"나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'"}
+{"id":c28bd590-3ff6-4e2f-bfb3-bd83f8235fc7,"fullPath":"\/mnt\/sdcard\/Music\/김조한\/나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`","type":"DIR","size":0,"name":"나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`"}
+{"id":44c5b6e9-b7e5-4f74-a3f8-c56cd87fef22,"fullPath":"\/mnt\/sdcard\/Music\/김조한\/나는 가수다 '호주 특별 공연'","type":"DIR","size":0,"name":"나는 가수다 '호주 특별 공연'"}
+{"id":1ea97e82-dec3-416a-9abe-53fb5bb190fe,"fullPath":"\/mnt\/sdcard\/Music\/조규찬","type":"DIR","size":0,"name":"조규찬"}
+{"id":019bd7e5-ab86-4731-806c-125361cc1cfe,"fullPath":"\/mnt\/sdcard\/Music\/조규찬\/나는 가수다 경연 10-1. 듀엣곡 부르기","type":"DIR","size":0,"name":"나는 가수다 경연 10-1. 듀엣곡 부르기"}
+{"id":9c975834-093c-43a6-b475-fbc3e1e21f14,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴","type":"DIR","size":0,"name":"바비 킴"}
+{"id":a184d9bb-ae9e-424f-9851-7075af52d960,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴\/나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래","type":"DIR","size":0,"name":"나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래"}
+{"id":17e86412-1107-4949-9a50-b11a559a6c6c,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴\/나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`","type":"DIR","size":0,"name":"나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`"}
+{"id":c8a1e27c-e5e5-4fcb-8ef4-9396b47ad8bc,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴\/나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래","type":"DIR","size":0,"name":"나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래"}
+{"id":bd029364-8939-4ad7-b118-26d09c9831ec,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴\/나는 가수다 경연 10-1. 듀엣곡 부르기","type":"DIR","size":0,"name":"나는 가수다 경연 10-1. 듀엣곡 부르기"}
+{"id":bccfc503-9954-4580-9d32-820a8ff95f3a,"fullPath":"\/mnt\/sdcard\/Music\/조관우","type":"DIR","size":0,"name":"조관우"}
+{"id":7e0bb89f-3ec3-459f-9ac4-e8b41dfe797b,"fullPath":"\/mnt\/sdcard\/Music\/조관우\/나는 가수다 경연 6-2. 청중 평가단 추천곡","type":"DIR","size":0,"name":"나는 가수다 경연 6-2. 청중 평가단 추천곡"}
+{"id":90921f51-a992-4a89-bfc1-9c8b2cf55e54,"fullPath":"\/mnt\/sdcard\/Music\/조관우\/나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'","type":"DIR","size":0,"name":"나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'"}
+{"id":761d358e-a8de-42a5-bc9e-7d35133ff2e3,"fullPath":"\/mnt\/sdcard\/Music\/조관우\/서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'"}
+{"id":da96a407-8f77-4870-903d-31eb35322939,"fullPath":"\/mnt\/sdcard\/Music\/조관우\/나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`","type":"DIR","size":0,"name":"나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`"}
+{"id":3ab0ba91-7bb5-41ed-97b0-abeb0a62910f,"fullPath":"\/mnt\/sdcard\/Music\/조관우\/나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래","type":"DIR","size":0,"name":"나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래"}
+{"id":0e7b2d68-311c-4c53-b5e2-1ce624cc8518,"fullPath":"\/mnt\/sdcard\/Music\/린","type":"DIR","size":0,"name":"린"}
+{"id":fe25da5b-993d-4c58-96a1-76fee596b428,"fullPath":"\/mnt\/sdcard\/Music\/린\/불후의 명곡 - 전설을 노래하다","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다"}
+{"id":e88803bf-0529-4ddf-b07e-ee85473a539d,"fullPath":"\/mnt\/sdcard\/Music\/틴탑","type":"DIR","size":0,"name":"틴탑"}
+{"id":d79501ca-188c-4f30-b922-4a39def29b7a,"fullPath":"\/mnt\/sdcard\/Music\/틴탑\/불후의 명곡 - 전설을 노래하다","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다"}
+{"id":e06ff1d5-4e08-4a14-897f-e1a380d60082,"fullPath":"\/mnt\/sdcard\/Music\/김범수","type":"DIR","size":0,"name":"김범수"}
+{"id":982271ac-9e71-45ca-9de3-83e829a34206,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/나는 가수다 '호주 특별 공연'","type":"DIR","size":0,"name":"나는 가수다 '호주 특별 공연'"}
+{"id":f21b8af8-3807-4180-aa1e-8a15c5676706,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/2.0집 Remember","type":"DIR","size":0,"name":"2.0집 Remember"}
+{"id":4014fc78-d3ee-4513-bbd5-19f0cc089bb0,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/나는 가수다 경연 6-2. 청중 평가단 추천곡","type":"DIR","size":0,"name":"나는 가수다 경연 6-2. 청중 평가단 추천곡"}
+{"id":409eaffd-ce46-4770-b80f-6c45b1cbf6b5,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'","type":"DIR","size":0,"name":"나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'"}
+{"id":1425fb5b-6499-450d-9530-43554c65e200,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'"}
+{"id":a4c51ebd-c4ea-47a7-aa47-add342974394,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래","type":"DIR","size":0,"name":"〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래"}
+{"id":e6097887-cd3a-4bed-9d98-0314ffe63c7b,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`","type":"DIR","size":0,"name":"[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`"}
+{"id":a11d7dff-d442-4ab8-bd68-f28eb37ce706,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'"}
+{"id":d1679c6f-c5b0-4f72-bf16-d0432fe61cac,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/나는 가수다 모음","type":"DIR","size":0,"name":"나는 가수다 모음"}
+{"id":abbe859e-61b1-4116-bbd1-452a72b31dfe,"fullPath":"\/mnt\/sdcard\/Music\/김범수\/Rock Star","type":"DIR","size":0,"name":"Rock Star"}
+{"id":e2a9ea4d-3391-4e4d-8170-9a245634027e,"fullPath":"\/mnt\/sdcard\/Music\/성훈 (브라운 아이드 소울)","type":"DIR","size":0,"name":"성훈 (브라운 아이드 소울)"}
+{"id":85d8dd64-f3fe-48a8-a343-93f9acc68361,"fullPath":"\/mnt\/sdcard\/Music\/성훈 (브라운 아이드 소울)\/불후의 명곡 - 전설을 노래하다","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다"}
+{"id":fc9cc917-1ab5-478d-8f18-e8c68eb3dd8d,"fullPath":"\/mnt\/sdcard\/Music\/성훈(브라운아이드소울)","type":"DIR","size":0,"name":"성훈(브라운아이드소울)"}
+{"id":0ac1869c-2848-4c94-a15e-35a9a3de9c2f,"fullPath":"\/mnt\/sdcard\/Music\/성훈(브라운아이드소울)\/불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)"}
+{"id":57543ab2-c59e-4e51-8c3e-0315f18cb297,"fullPath":"\/mnt\/sdcard\/Music\/임태경 (Im TaeKyung)","type":"DIR","size":0,"name":"임태경 (Im TaeKyung)"}
+{"id":89927110-f81f-48a4-90e7-d5e366ae535a,"fullPath":"\/mnt\/sdcard\/Music\/임태경 (Im TaeKyung)\/불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)"}
+{"id":eb5531dd-66c7-48a0-b231-83f7e327347f,"fullPath":"\/mnt\/sdcard\/Music\/정엽","type":"DIR","size":0,"name":"정엽"}
+{"id":061baf12-663a-4aa6-89eb-abbb89d3eec6,"fullPath":"\/mnt\/sdcard\/Music\/정엽\/'나는 가수다 2' 9월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 - 고별 가수전"}
+{"id":53dd5439-7ee7-4035-a38a-a28b246118af,"fullPath":"\/mnt\/sdcard\/Music\/정엽\/'나는 가수다 2' 8월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 8월 B조 경연"}
+{"id":99fc5487-6819-4c61-8a79-b91c5ab6e195,"fullPath":"\/mnt\/sdcard\/Music\/정엽\/'나는 가수다 2' 7월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 7월 - 고별 가수전"}
+{"id":941eff82-1fd0-4326-bb46-e672caaf5ad6,"fullPath":"\/mnt\/sdcard\/Music\/정엽\/나는 가수다 2  9월 A조 경연","type":"DIR","size":0,"name":"나는 가수다 2  9월 A조 경연"}
+{"id":41d1978a-2f18-49e3-b3bc-e360054f60d7,"fullPath":"\/mnt\/sdcard\/Music\/정엽\/나는 가수다 모음","type":"DIR","size":0,"name":"나는 가수다 모음"}
+{"id":2a6e2250-79ef-4f02-ac2c-c4171115f6ea,"fullPath":"\/mnt\/sdcard\/Music\/정엽\/나는 가수다 2  5월 20일 - 고별 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 20일 - 고별 가수전"}
+{"id":c80dfd30-9086-46e2-a027-f80a03f8cd33,"fullPath":"\/mnt\/sdcard\/Music\/알리","type":"DIR","size":0,"name":"알리"}
+{"id":d9c2f4d9-9fc9-495e-8431-9bac1e73f15f,"fullPath":"\/mnt\/sdcard\/Music\/알리\/불후의 명곡 - 전설을 노래하다","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다"}
+{"id":81771d78-7d9e-413f-97d2-0d0cf758f465,"fullPath":"\/mnt\/sdcard\/Music\/에일리","type":"DIR","size":0,"name":"에일리"}
+{"id":50ae7878-ec09-4771-9a2e-323e7f0f41c2,"fullPath":"\/mnt\/sdcard\/Music\/에일리\/불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)"}
+{"id":51178851-1b4f-45ed-a8b5-aa2cc1fe98d5,"fullPath":"\/mnt\/sdcard\/Music\/에일리\/불후의 명곡 - 전설을 노래하다 (박진영 2편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (박진영 2편)"}
+{"id":409b3e69-d7b6-45fb-be5e-1a2df5663cf0,"fullPath":"\/mnt\/sdcard\/Music\/이해리 (다비치)","type":"DIR","size":0,"name":"이해리 (다비치)"}
+{"id":ff279c11-9470-4db2-a00e-71b9591ed1e7,"fullPath":"\/mnt\/sdcard\/Music\/이해리 (다비치)\/불후의 명곡 - 전설을 노래하다 (박진영 2편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (박진영 2편)"}
+{"id":6696ec6e-111a-41f6-ab31-b4e0d400e7d3,"fullPath":"\/mnt\/sdcard\/Music\/김연우","type":"DIR","size":0,"name":"김연우"}
+{"id":53a3d7a5-fd9b-421a-9eb1-aadf77d9d44d,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/'나는 가수다 2' 10월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 - 고별 가수전"}
+{"id":a267600f-ca55-425b-99db-5630d2c76046,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/'나는 가수다 2' 10월 A조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 A조 경연"}
+{"id":d7c074c3-bde9-4cd8-b740-df48b9af3749,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/'나는 가수다 2' 9월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월의 가수전"}
+{"id":c2b32e16-0fa4-4e64-a7ae-32046db7b7e0,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/'나는 가수다 2' 8월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 8월 B조 경연"}
+{"id":2856d563-31cc-4b2f-8b65-f63df0d64f3c,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/나는 가수다 2  9월 A조 경연","type":"DIR","size":0,"name":"나는 가수다 2  9월 A조 경연"}
+{"id":1ca362d6-a1f5-418f-89d8-9650896bd141,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래","type":"DIR","size":0,"name":"〈서바이벌 나는 가수다〉경연 3-1. 내가 부르고싶은 남의노래"}
+{"id":d608c4de-85de-43d4-896d-e2bbc221dd3e,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 3-2. '네티즌 추천곡'"}
+{"id":94f225ba-0f7f-42d0-9854-9ad8ac1db3cd,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/나는 가수다 '호주 특별 공연'","type":"DIR","size":0,"name":"나는 가수다 '호주 특별 공연'"}
+{"id":e0191280-fc9e-47eb-83aa-3b983e02d238,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/`나는 가수다 2` 6월 3일 A조 경연","type":"DIR","size":0,"name":"`나는 가수다 2` 6월 3일 A조 경연"}
+{"id":c289d164-68e5-4d93-bdcb-785c00ce82ab,"fullPath":"\/mnt\/sdcard\/Music\/김연우\/나는 가수다 2  5월 27일 - 5월의 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 27일 - 5월의 가수전"}
+{"id":90610f90-fd35-4a64-b300-de85ddaf3ada,"fullPath":"\/mnt\/sdcard\/Music\/정인","type":"DIR","size":0,"name":"정인"}
+{"id":99937da5-0ad6-4dbd-bb7b-11726873e727,"fullPath":"\/mnt\/sdcard\/Music\/정인\/'나는 가수다 2' 7월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 7월 - 고별 가수전"}
+{"id":b7ca18b1-a0ad-4aaa-aa13-4626f231faf3,"fullPath":"\/mnt\/sdcard\/Music\/정인\/나는 가수다 2  5월 20일 - 고별 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 20일 - 고별 가수전"}
+{"id":e97dce51-5258-4429-aef1-89f67dc19b50,"fullPath":"\/mnt\/sdcard\/Music\/울랄라세션","type":"DIR","size":0,"name":"울랄라세션"}
+{"id":6ad5c2ac-6fe3-432c-9988-7f91624d3237,"fullPath":"\/mnt\/sdcard\/Music\/울랄라세션\/불후의 명곡 - 전설을 노래하다 (박진영 2편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (박진영 2편)"}
+{"id":26fb5f04-88de-4307-9cee-0d38f08c0f42,"fullPath":"\/mnt\/sdcard\/Music\/김건모","type":"DIR","size":0,"name":"김건모"}
+{"id":7f5cb915-31f6-4a44-9329-29706bccf0d7,"fullPath":"\/mnt\/sdcard\/Music\/김건모\/'나는 가수다 2' 7월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 7월 - 고별 가수전"}
+{"id":ad0a9e18-fdeb-4f5f-a790-7aaa9d902fcf,"fullPath":"\/mnt\/sdcard\/Music\/김건모\/나는 가수다 모음","type":"DIR","size":0,"name":"나는 가수다 모음"}
+{"id":8fb33321-d509-449f-aba7-b5e841c0f1bf,"fullPath":"\/mnt\/sdcard\/Music\/김건모\/나는 가수다 2  5월 27일 - 5월의 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 27일 - 5월의 가수전"}
+{"id":11a2f1c2-7540-4b87-bd18-ed84f1899707,"fullPath":"\/mnt\/sdcard\/Music\/알리 (Ali)","type":"DIR","size":0,"name":"알리 (Ali)"}
+{"id":a4076b8f-2c6d-4785-9f84-80deb96dc8e5,"fullPath":"\/mnt\/sdcard\/Music\/알리 (Ali)\/불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)"}
+{"id":8d7e498e-a466-4866-8a74-1d4b277806e6,"fullPath":"\/mnt\/sdcard\/Music\/박상민","type":"DIR","size":0,"name":"박상민"}
+{"id":d2bb6ba4-f74e-4d6a-839f-203a5ead479b,"fullPath":"\/mnt\/sdcard\/Music\/박상민\/'나는 가수다 2' 10월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 B조 경연"}
+{"id":2e13ca5b-d807-4efd-803d-1e0fc0ba5134,"fullPath":"\/mnt\/sdcard\/Music\/박상민\/'나는 가수다 2' 10월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 - 고별 가수전"}
+{"id":680a42a6-7da8-444e-a9fd-f55f73f1f5ac,"fullPath":"\/mnt\/sdcard\/Music\/박상민\/'나는 가수다 2' 9월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 - 고별 가수전"}
+{"id":1a0325f6-2f1c-4ae3-963f-eb9a8c22419b,"fullPath":"\/mnt\/sdcard\/Music\/박상민\/'나는 가수다 2' 9월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 B조 경연"}
+{"id":02c258ff-99ac-4d1e-8320-46a314ccf959,"fullPath":"\/mnt\/sdcard\/Music\/박상민\/'나는 가수다 2' 8월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 8월 B조 경연"}
+{"id":48483c4d-30ac-4289-969c-4cb0809c7531,"fullPath":"\/mnt\/sdcard\/Music\/박상민\/'나는 가수다 2' 7월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 7월 - 고별 가수전"}
+{"id":dc76362c-0d22-4a30-9c62-cbe9edb2f980,"fullPath":"\/mnt\/sdcard\/Music\/박상민\/`나는 가수다 2` 6월 3일 A조 경연","type":"DIR","size":0,"name":"`나는 가수다 2` 6월 3일 A조 경연"}
+{"id":d5d6a19a-3cd1-44c8-a7ec-9f49dd88a1ba,"fullPath":"\/mnt\/sdcard\/Music\/박상민\/나는 가수다 2  5월 20일 - 고별 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 20일 - 고별 가수전"}
+{"id":e9b5c442-d119-455c-84b4-657c84c44b71,"fullPath":"\/mnt\/sdcard\/Music\/신용재 (포맨)","type":"DIR","size":0,"name":"신용재 (포맨)"}
+{"id":f8e016cf-dbf9-4398-971d-0ce47422dac5,"fullPath":"\/mnt\/sdcard\/Music\/신용재 (포맨)\/불후의 명곡 - 전설을 노래하다","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다"}
+{"id":307b22c5-61a4-4801-8856-1a297dd1990d,"fullPath":"\/mnt\/sdcard\/Music\/박미경","type":"DIR","size":0,"name":"박미경"}
+{"id":053377cb-e93e-433f-ba72-ead5c9837247,"fullPath":"\/mnt\/sdcard\/Music\/박미경\/나는 가수다 2  5월 20일 - 고별 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 20일 - 고별 가수전"}
+{"id":fe960693-3e40-4c62-823e-f8aaee2d7547,"fullPath":"\/mnt\/sdcard\/Music\/박미경\/`나는 가수다 2` 6월 3일 A조 경연","type":"DIR","size":0,"name":"`나는 가수다 2` 6월 3일 A조 경연"}
+{"id":3693ea7e-3fd5-4853-9c7d-67b4878a1eb0,"fullPath":"\/mnt\/sdcard\/Music\/홍경민","type":"DIR","size":0,"name":"홍경민"}
+{"id":1bfa287c-670b-4f0a-912c-c6cf184b428e,"fullPath":"\/mnt\/sdcard\/Music\/홍경민\/불후의 명곡 - 전설을 노래하다 - 소방차편","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 - 소방차편"}
+{"id":095591f0-bcf0-4c93-aac4-83e8c408b283,"fullPath":"\/mnt\/sdcard\/Music\/홍경민\/불후의 명곡 - 전설을 노래하다 (박진영 2편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (박진영 2편)"}
+{"id":b2d35192-b4ef-489f-a85e-1bc4162d942b,"fullPath":"\/mnt\/sdcard\/Music\/홍경민\/불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)"}
+{"id":91d3f932-5a0c-49c0-a8be-cec9804b45ad,"fullPath":"\/mnt\/sdcard\/Music\/이수영","type":"DIR","size":0,"name":"이수영"}
+{"id":b8748fb6-3192-45e0-ab9c-d3b60f5515d5,"fullPath":"\/mnt\/sdcard\/Music\/이수영\/'나는 가수다 2' 7월 - 고별 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 7월 - 고별 가수전"}
+{"id":058754b8-8021-4c88-bf72-cfa72442a398,"fullPath":"\/mnt\/sdcard\/Music\/이수영\/나는 가수다 2  5월 27일 - 5월의 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 27일 - 5월의 가수전"}
+{"id":0b14630e-d594-4b1a-896d-ba23dff5bcd6,"fullPath":"\/mnt\/sdcard\/Music\/이수영\/`나는 가수다 2` 6월 3일 A조 경연","type":"DIR","size":0,"name":"`나는 가수다 2` 6월 3일 A조 경연"}
+{"id":0f369be5-a846-4ee9-9921-3014b02727c2,"fullPath":"\/mnt\/sdcard\/Music\/JK 김동욱","type":"DIR","size":0,"name":"JK 김동욱"}
+{"id":701e26e3-4eca-4cfa-81ca-9d53c3294893,"fullPath":"\/mnt\/sdcard\/Music\/JK 김동욱\/나는 가수다 '호주 특별 공연'","type":"DIR","size":0,"name":"나는 가수다 '호주 특별 공연'"}
+{"id":3f50a84c-3880-42dd-9a20-dd2d2c765161,"fullPath":"\/mnt\/sdcard\/Music\/JK 김동욱\/[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`","type":"DIR","size":0,"name":"[서바이벌 나는 가수다] 경연4-2. `청중평가단 추천곡`"}
+{"id":de1d8ec1-fc3f-4da4-8c70-50eb75f86b57,"fullPath":"\/mnt\/sdcard\/Music\/JK 김동욱\/나는 가수다 2  5월 27일 - 5월의 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 27일 - 5월의 가수전"}
+{"id":6bb408b8-2013-4068-90e9-ee363ea09a0d,"fullPath":"\/mnt\/sdcard\/Music\/소냐","type":"DIR","size":0,"name":"소냐"}
+{"id":b121cf26-df54-4b12-9add-7de6a02b6420,"fullPath":"\/mnt\/sdcard\/Music\/소냐\/ºÒÈÄÀÇ ¸í°î - Àü¼³À» ³ë·¡ÇÏ´Ù (ÀÛ°î°¡ ÀÌÈ£ÁØÆí)","type":"DIR","size":0,"name":"ºÒÈÄÀÇ ¸í°î - Àü¼³À» ³ë·¡ÇÏ´Ù (ÀÛ°î°¡ ÀÌÈ£ÁØÆí)"}
+{"id":781fbf17-818e-484d-877b-dcbd721506b2,"fullPath":"\/mnt\/sdcard\/Music\/소냐\/불후의 명곡 - 전설을 노래하다 (박진영 2편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (박진영 2편)"}
+{"id":ef52b8e1-c138-45c9-a3bf-fdb7e57f233a,"fullPath":"\/mnt\/sdcard\/Music\/노브레인 (NoBrain)","type":"DIR","size":0,"name":"노브레인 (NoBrain)"}
+{"id":4c5e4daf-6412-4492-866b-88bbe91dfe18,"fullPath":"\/mnt\/sdcard\/Music\/노브레인 (NoBrain)\/불후의 명곡 - 전설을 노래하다 (박진영 2편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (박진영 2편)"}
+{"id":09840fb1-38ce-4caa-aefa-85b55fefbfe1,"fullPath":"\/mnt\/sdcard\/Music\/노브레인 (NoBrain)\/불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)","type":"DIR","size":0,"name":"불후의 명곡 - 전설을 노래하다 (윤항기 & 윤복희편)"}
+{"id":ffeccf15-7528-46fa-952d-58a509364216,"fullPath":"\/mnt\/sdcard\/Music\/이영현","type":"DIR","size":0,"name":"이영현"}
+{"id":50d7935c-fdb2-41c7-bc69-d5679090187e,"fullPath":"\/mnt\/sdcard\/Music\/이영현\/'나는 가수다 2' 10월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월의 가수전"}
+{"id":dbffdcb6-a54d-4968-ad7a-6fc0959459eb,"fullPath":"\/mnt\/sdcard\/Music\/이영현\/'나는 가수다 2' 10월 A조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 A조 경연"}
+{"id":b272f1d8-d45d-4b75-aab2-d2db224bdb84,"fullPath":"\/mnt\/sdcard\/Music\/이영현\/'나는 가수다 2' 9월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월의 가수전"}
+{"id":a639aa75-70cb-4e34-ba73-2bbd2afda709,"fullPath":"\/mnt\/sdcard\/Music\/이영현\/나는 가수다 2  9월 A조 경연","type":"DIR","size":0,"name":"나는 가수다 2  9월 A조 경연"}
+{"id":ce388eb8-4a5f-49d3-ac11-be7026145659,"fullPath":"\/mnt\/sdcard\/Music\/이영현\/나는 가수다 2  5월 20일 - 고별 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 20일 - 고별 가수전"}
+{"id":4a32f716-1eef-4281-984a-e0beca6ff5e3,"fullPath":"\/mnt\/sdcard\/Music\/이영현\/`나는 가수다 2` 6월 3일 A조 경연","type":"DIR","size":0,"name":"`나는 가수다 2` 6월 3일 A조 경연"}
+{"id":9b79b967-e490-4d1c-95f2-b7cea9510885,"fullPath":"\/mnt\/sdcard\/Music\/백두산","type":"DIR","size":0,"name":"백두산"}
+{"id":dd688dd0-907f-4294-adc1-e8946a06dc0b,"fullPath":"\/mnt\/sdcard\/Music\/백두산\/나는 가수다 2  5월 20일 - 고별 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 20일 - 고별 가수전"}
+{"id":1b4a6b36-e992-42cb-b6f5-80861b23f8a0,"fullPath":"\/mnt\/sdcard\/Music\/이은미","type":"DIR","size":0,"name":"이은미"}
+{"id":b3c2ef9a-eff6-4c0c-828d-4247c7005202,"fullPath":"\/mnt\/sdcard\/Music\/이은미\/나는 가수다 2  5월 27일 - 5월의 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 27일 - 5월의 가수전"}
+{"id":687cfae2-8d4a-4101-9d22-fcc777ad45e5,"fullPath":"\/mnt\/sdcard\/Music\/국카스텐","type":"DIR","size":0,"name":"국카스텐"}
+{"id":6af22bc4-f656-43c4-aaa0-f7e074f895a9,"fullPath":"\/mnt\/sdcard\/Music\/국카스텐\/'나는 가수다 2' 10월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 10월의 가수전"}
+{"id":e8f4784d-47eb-4694-be58-c7cfcc892199,"fullPath":"\/mnt\/sdcard\/Music\/국카스텐\/'나는 가수다 2' 10월 A조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 10월 A조 경연"}
+{"id":d3ebc074-dcd0-44df-9d73-0852114bca31,"fullPath":"\/mnt\/sdcard\/Music\/국카스텐\/'나는 가수다 2' 9월의 가수전","type":"DIR","size":0,"name":"'나는 가수다 2' 9월의 가수전"}
+{"id":81b2e169-da08-4d98-bf0f-1e2d1f2ab2e6,"fullPath":"\/mnt\/sdcard\/Music\/국카스텐\/'나는 가수다 2' 9월 B조 경연","type":"DIR","size":0,"name":"'나는 가수다 2' 9월 B조 경연"}
+{"id":eeda93f2-fbac-4d1b-9c1b-34f8a9a9775e,"fullPath":"\/mnt\/sdcard\/Music\/국카스텐\/³ª´Â °¡¼ö´Ù 2  6¿ù 3ÀÏ AÁ¶ °æ¿¬","type":"DIR","size":0,"name":"³ª´Â °¡¼ö´Ù 2  6¿ù 3ÀÏ AÁ¶ °æ¿¬"}
+{"id":bde416d8-5c86-4cd4-ba14-0d73fe7256d5,"fullPath":"\/mnt\/sdcard\/Music\/국카스텐\/`나는 가수다 2` 6월 3일 A조 경연","type":"DIR","size":0,"name":"`나는 가수다 2` 6월 3일 A조 경연"}
+{"id":171b7050-351b-4a9a-85ae-4dc9ecd8b32f,"fullPath":"\/mnt\/sdcard\/Music\/리쌍","type":"DIR","size":0,"name":"리쌍"}
+{"id":a83a864e-6fbf-4ded-baa6-1e17c8dd6d72,"fullPath":"\/mnt\/sdcard\/Music\/리쌍\/8집 Unplugged","type":"DIR","size":0,"name":"8집 Unplugged"}
+{"id":1b55a6a0-6081-42f5-81e3-efef1422abfa,"fullPath":"\/mnt\/sdcard\/Music\/국카스텐(Guckkasten)","type":"DIR","size":0,"name":"국카스텐(Guckkasten)"}
+{"id":c20dc4fb-e435-4e46-96d4-4e307caeef54,"fullPath":"\/mnt\/sdcard\/Music\/국카스텐(Guckkasten)\/Tagtraume","type":"DIR","size":0,"name":"Tagtraume"}
+{"id":b63177fb-2d13-43f0-af83-8e495c963053,"fullPath":"\/mnt\/sdcard\/Music\/Guckkasten","type":"DIR","size":0,"name":"Guckkasten"}
+{"id":aaa2028a-98cf-4a82-b45a-9ac87dfcd2b1,"fullPath":"\/mnt\/sdcard\/Music\/Guckkasten\/Guckkasten (Re-Recording Album)","type":"DIR","size":0,"name":"Guckkasten (Re-Recording Album)"}
+{"id":1e9dca66-78b6-43bb-8666-64d24e555ad8,"fullPath":"\/mnt\/sdcard\/Music\/장혜진","type":"DIR","size":0,"name":"장혜진"}
+{"id":8b88e2a1-f752-4747-97ba-68619b81e0ef,"fullPath":"\/mnt\/sdcard\/Music\/장혜진\/나는 가수다 경연 6-2. 청중 평가단 추천곡","type":"DIR","size":0,"name":"나는 가수다 경연 6-2. 청중 평가단 추천곡"}
+{"id":130a96fc-b76a-40d2-921d-15187e640229,"fullPath":"\/mnt\/sdcard\/Music\/장혜진\/나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'","type":"DIR","size":0,"name":"나는 가수다 경연 6-1. '이 무대에서 도전하고 싶은 노래'"}
+{"id":67ba954e-f795-478d-8b09-a43361567414,"fullPath":"\/mnt\/sdcard\/Music\/장혜진\/서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'","type":"DIR","size":0,"name":"서바이벌 나는 가수다 경연 5-1. '내가 부르고 싶은 노래'"}
+{"id":ca4864ca-e066-4f82-841d-72fee35ca8d8,"fullPath":"\/mnt\/sdcard\/Music\/장혜진\/나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`","type":"DIR","size":0,"name":"나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`"}
+{"id":2c5bd71f-9092-46c0-93b3-4e83ca99547f,"fullPath":"\/mnt\/sdcard\/Music\/장혜진\/나는 가수다 경연 10-1. 듀엣곡 부르기","type":"DIR","size":0,"name":"나는 가수다 경연 10-1. 듀엣곡 부르기"}
+{"id":d07d6100-1d32-4fe3-85b6-556e88f78738,"fullPath":"\/mnt\/sdcard\/Music\/장혜진\/나는 가수다 11-2. '서로의 노래 바꿔 부르기'","type":"DIR","size":0,"name":"나는 가수다 11-2. '서로의 노래 바꿔 부르기'"}
+{"id":e4c4098b-3175-4b10-8199-636c92db9d04,"fullPath":"\/mnt\/sdcard\/Music\/장혜진\/나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래","type":"DIR","size":0,"name":"나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래"}
+{"id":15701eef-095c-47ce-bd00-65c0446abd57,"fullPath":"\/mnt\/sdcard\/Music\/장혜진\/나는 가수다 경연 11-1","type":"DIR","size":0,"name":"나는 가수다 경연 11-1"}
+{"id":7f9e6f15-56b6-4553-85b7-d20b77b35859,"fullPath":"\/mnt\/sdcard\/Music\/인순이","type":"DIR","size":0,"name":"인순이"}
+{"id":235033e6-a096-4f9a-aa8c-47e96bdb6fc6,"fullPath":"\/mnt\/sdcard\/Music\/인순이\/나는 가수다 경연 12-2 '산울림 스페셜'","type":"DIR","size":0,"name":"나는 가수다 경연 12-2 '산울림 스페셜'"}
+{"id":72fbd087-13fb-4971-a451-73a8add01940,"fullPath":"\/mnt\/sdcard\/Music\/인순이\/나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`","type":"DIR","size":0,"name":"나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`"}
+{"id":64099525-4550-48b6-8f52-4058e68611a0,"fullPath":"\/mnt\/sdcard\/Music\/인순이\/나는 가수다 경연 11-1","type":"DIR","size":0,"name":"나는 가수다 경연 11-1"}
+{"id":e1d06d02-d01d-471c-8b45-3367b1195c33,"fullPath":"\/mnt\/sdcard\/Music\/인순이\/나는 가수다 11-2. '서로의 노래 바꿔 부르기'","type":"DIR","size":0,"name":"나는 가수다 11-2. '서로의 노래 바꿔 부르기'"}
+{"id":85ba6e5e-7380-4f58-ad8a-65d1fd1b4942,"fullPath":"\/mnt\/sdcard\/Music\/인순이\/나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래","type":"DIR","size":0,"name":"나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래"}
+{"id":dfd25783-621f-444d-bcef-74760f5269f2,"fullPath":"\/mnt\/sdcard\/Music\/인순이\/나는 가수다 경연 10-1. 듀엣곡 부르기","type":"DIR","size":0,"name":"나는 가수다 경연 10-1. 듀엣곡 부르기"}
+{"id":1510415e-fb58-4e0d-b9c4-25df33c9aa4c,"fullPath":"\/mnt\/sdcard\/Music\/자우림","type":"DIR","size":0,"name":"자우림"}
+{"id":ba0fd3f3-fd31-47cf-a935-09fe99d44320,"fullPath":"\/mnt\/sdcard\/Music\/자우림\/나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래","type":"DIR","size":0,"name":"나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래"}
+{"id":650d48a4-f5c2-4951-8a5f-8bb9f115c2d1,"fullPath":"\/mnt\/sdcard\/Music\/자우림\/나는 가수다 경연 13-1","type":"DIR","size":0,"name":"나는 가수다 경연 13-1"}
+{"id":dc49033a-d6d0-4a1d-aa29-fc49120c83ae,"fullPath":"\/mnt\/sdcard\/Music\/자우림\/나는 가수다 경연 12-2 '산울림 스페셜'","type":"DIR","size":0,"name":"나는 가수다 경연 12-2 '산울림 스페셜'"}
+{"id":5e37f74a-6173-4b4b-920c-77a4e7a6c9e4,"fullPath":"\/mnt\/sdcard\/Music\/자우림\/나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`","type":"DIR","size":0,"name":"나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`"}
+{"id":448de19b-4434-45f6-b8c1-05ca00bf271f,"fullPath":"\/mnt\/sdcard\/Music\/자우림\/나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래","type":"DIR","size":0,"name":"나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래"}
+{"id":58a97014-80a4-4c5d-8b13-f630ae0516f5,"fullPath":"\/mnt\/sdcard\/Music\/자우림\/나는 가수다 경연 11-1","type":"DIR","size":0,"name":"나는 가수다 경연 11-1"}
+{"id":389c0c05-ae2d-4659-b269-2dcd14238235,"fullPath":"\/mnt\/sdcard\/Music\/자우림\/나는 가수다 경연 10-1. 듀엣곡 부르기","type":"DIR","size":0,"name":"나는 가수다 경연 10-1. 듀엣곡 부르기"}
+{"id":d6f8152a-3661-4f9b-b7fc-3ec6fd7bad8c,"fullPath":"\/mnt\/sdcard\/Music\/자우림\/나는 가수다 11-2. '서로의 노래 바꿔 부르기'","type":"DIR","size":0,"name":"나는 가수다 11-2. '서로의 노래 바꿔 부르기'"}
+{"id":667b5368-5c9a-42b0-9ca4-f372eddf18ae,"fullPath":"\/mnt\/sdcard\/Music\/윤민수","type":"DIR","size":0,"name":"윤민수"}
+{"id":61b9cf76-ae70-4060-8876-796be33e2c9e,"fullPath":"\/mnt\/sdcard\/Music\/윤민수\/나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래","type":"DIR","size":0,"name":"나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래"}
+{"id":0bef905a-3bb5-4103-97e7-e89574977f85,"fullPath":"\/mnt\/sdcard\/Music\/윤민수\/나는 가수다 경연 12-2 '산울림 스페셜'","type":"DIR","size":0,"name":"나는 가수다 경연 12-2 '산울림 스페셜'"}
+{"id":b7f6746d-6e58-4eed-821e-aa5b51cface2,"fullPath":"\/mnt\/sdcard\/Music\/윤민수\/나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`","type":"DIR","size":0,"name":"나는 가수다 경연 8-1. `자문위원단이 추천한 명곡30`"}
+{"id":e4da29a8-3b0a-47ab-8532-495ded1d390e,"fullPath":"\/mnt\/sdcard\/Music\/윤민수\/나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래","type":"DIR","size":0,"name":"나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래"}
+{"id":c2a50ff8-f736-40d7-a10a-ff1378fbc1ca,"fullPath":"\/mnt\/sdcard\/Music\/윤민수\/나는 가수다 경연 10-1. 듀엣곡 부르기","type":"DIR","size":0,"name":"나는 가수다 경연 10-1. 듀엣곡 부르기"}
+{"id":cdfb591b-7582-496f-b20b-cb7e3aab1f5c,"fullPath":"\/mnt\/sdcard\/Music\/윤민수\/나는 가수다 경연 11-1","type":"DIR","size":0,"name":"나는 가수다 경연 11-1"}
+{"id":c9fbda57-8b68-497a-9225-c4151e0d624f,"fullPath":"\/mnt\/sdcard\/Music\/윤민수\/나는 가수다 11-2. '서로의 노래 바꿔 부르기'","type":"DIR","size":0,"name":"나는 가수다 11-2. '서로의 노래 바꿔 부르기'"}
+{"id":ed3902aa-fcc2-4a17-af4c-85559caf6048,"fullPath":"\/mnt\/sdcard\/Music\/윤민수\/나는 가수다 경연 13-1","type":"DIR","size":0,"name":"나는 가수다 경연 13-1"}
+{"id":4835a7fa-e2ea-4745-8646-6b1395b4adc3,"fullPath":"\/mnt\/sdcard\/Music\/김경호","type":"DIR","size":0,"name":"김경호"}
+{"id":8fc9eb6e-d941-459f-9543-402b795766ba,"fullPath":"\/mnt\/sdcard\/Music\/김경호\/나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래","type":"DIR","size":0,"name":"나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래"}
+{"id":1cdc2357-0da3-46aa-8213-fe3e1e3985cf,"fullPath":"\/mnt\/sdcard\/Music\/김경호\/나는 가수다 경연 12-2 '산울림 스페셜'","type":"DIR","size":0,"name":"나는 가수다 경연 12-2 '산울림 스페셜'"}
+{"id":22d3d7ce-d91e-4dec-a29b-204b64d2fec9,"fullPath":"\/mnt\/sdcard\/Music\/김경호\/나는 가수다 11-2. '서로의 노래 바꿔 부르기'","type":"DIR","size":0,"name":"나는 가수다 11-2. '서로의 노래 바꿔 부르기'"}
+{"id":b1bbb2f7-cce3-4350-8574-6a5b61807c3d,"fullPath":"\/mnt\/sdcard\/Music\/김경호\/나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래","type":"DIR","size":0,"name":"나는 가수다 경연 9-1. 가수들이 부르고 싶은 노래"}
+{"id":d5623ee3-b3ba-4e5f-af87-cfcf133e0043,"fullPath":"\/mnt\/sdcard\/Music\/김경호\/나는 가수다 경연 10-1. 듀엣곡 부르기","type":"DIR","size":0,"name":"나는 가수다 경연 10-1. 듀엣곡 부르기"}
+{"id":065ad96a-0439-4c36-9089-d65d376c15ff,"fullPath":"\/mnt\/sdcard\/Music\/김경호\/나는 가수다 경연 11-1","type":"DIR","size":0,"name":"나는 가수다 경연 11-1"}
+{"id":763eeda1-a42a-47a6-b1ee-00978675ecb3,"fullPath":"\/mnt\/sdcard\/Music\/김경호\/나는 가수다 경연 13-1","type":"DIR","size":0,"name":"나는 가수다 경연 13-1"}
+{"id":c795d6fd-1d75-42f0-b67b-0475abb8c9eb,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴(Bobby Kim)","type":"DIR","size":0,"name":"바비 킴(Bobby Kim)"}
+{"id":b8fb77d5-a52e-423e-998b-948028dd399e,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴(Bobby Kim)\/나는 가수다 경연 12-2 '산울림 스페셜'","type":"DIR","size":0,"name":"나는 가수다 경연 12-2 '산울림 스페셜'"}
+{"id":d86df902-b2c7-4fd4-801b-7e9d9d28ab13,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴(Bobby Kim)\/나는 가수다 11-2. '서로의 노래 바꿔 부르기'","type":"DIR","size":0,"name":"나는 가수다 11-2. '서로의 노래 바꿔 부르기'"}
+{"id":0b945077-373b-41ff-a8f1-c20be07f8d00,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴(Bobby Kim)\/나는 가수다 경연 11-1","type":"DIR","size":0,"name":"나는 가수다 경연 11-1"}
+{"id":8b00575e-e03e-410a-b76a-352caca837a9,"fullPath":"\/mnt\/sdcard\/Music\/바비 킴(Bobby Kim)\/나는 가수다 경연 13-1","type":"DIR","size":0,"name":"나는 가수다 경연 13-1"}
+{"id":d83d155f-526e-4fe3-925d-f7d48b8b6447,"fullPath":"\/mnt\/sdcard\/Music\/거미","type":"DIR","size":0,"name":"거미"}
+{"id":af5af07b-c800-415c-9ada-63fa5bac6809,"fullPath":"\/mnt\/sdcard\/Music\/거미\/나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래","type":"DIR","size":0,"name":"나는 가수다 경연 13-2. 나가수를 빛낸 가수들의 노래"}
+{"id":a569092a-2901-4995-b40a-1ebad17df6e4,"fullPath":"\/mnt\/sdcard\/Music\/거미\/나는 가수다 경연 12-2 '산울림 스페셜'","type":"DIR","size":0,"name":"나는 가수다 경연 12-2 '산울림 스페셜'"}
+{"id":d82c49e1-3a17-4914-918a-ddf3fa0762c3,"fullPath":"\/mnt\/sdcard\/Music\/거미\/나는 가수다 경연 11-1","type":"DIR","size":0,"name":"나는 가수다 경연 11-1"}
+{"id":4c6b3400-2c43-4032-89cc-6077fdb01f97,"fullPath":"\/mnt\/sdcard\/Music\/거미\/나는 가수다 11-2. '서로의 노래 바꿔 부르기'","type":"DIR","size":0,"name":"나는 가수다 11-2. '서로의 노래 바꿔 부르기'"}
+{"id":9fd49c54-e55e-421e-bae7-54fb06abddbd,"fullPath":"\/mnt\/sdcard\/Music\/거미\/나는 가수다 경연 13-1","type":"DIR","size":0,"name":"나는 가수다 경연 13-1"}
+{"id":44211c3e-d7d2-451a-8a7a-07938d5c7fb1,"fullPath":"\/mnt\/sdcard\/Music\/적우(赤雨)","type":"DIR","size":0,"name":"적우(赤雨)"}
+{"id":099350d0-0bd4-412e-a931-152bda79057e,"fullPath":"\/mnt\/sdcard\/Music\/적우(赤雨)\/나는 가수다 경연 12-2 '산울림 스페셜'","type":"DIR","size":0,"name":"나는 가수다 경연 12-2 '산울림 스페셜'"}
+{"id":d14edb23-5d31-4f5a-8338-f82ad20f51c8,"fullPath":"\/mnt\/sdcard\/Music\/적우(赤雨)\/나는 가수다 경연 13-1","type":"DIR","size":0,"name":"나는 가수다 경연 13-1"}
+{"id":b6145921-50ee-4459-90d6-142bbc497116,"fullPath":"\/mnt\/sdcard\/Music\/박완규","type":"DIR","size":0,"name":"박완규"}
+{"id":27d974ef-e98c-4177-bd96-394203f11f1e,"fullPath":"\/mnt\/sdcard\/Music\/박완규\/나는 가수다  경연 13-2. 나가수를 빛낸 가수들의 노래","type":"DIR","size":0,"name":"나는 가수다  경연 13-2. 나가수를 빛낸 가수들의 노래"}
+{"id":33fcb73b-723f-40e5-92d5-219ff2452468,"fullPath":"\/mnt\/sdcard\/Music\/박완규\/나는 가수다 2  5월 27일 - 5월의 가수전","type":"DIR","size":0,"name":"나는 가수다 2  5월 27일 - 5월의 가수전"}
+{"id":c239c2da-c9d0-44f2-8a5b-af5a1cd7b63c,"fullPath":"\/mnt\/sdcard\/Music\/박완규\/나는 가수다 경연 13-1","type":"DIR","size":0,"name":"나는 가수다 경연 13-1"}
+{"id":bd83b351-9ec3-467c-9b19-841dd82a29e3,"fullPath":"\/mnt\/sdcard\/EasyVoiceRecorder","type":"DIR","size":0,"name":"EasyVoiceRecorder"}
+{"id":66ec3512-b177-4963-9601-4da64e1538b9,"fullPath":"\/mnt\/sdcard\/.doubleTwist","type":"DIR","size":0,"name":".doubleTwist"}
+{"id":e1129b99-2219-42f9-b75c-8732f95f2759,"fullPath":"\/mnt\/sdcard\/.doubleTwist\/thumbnails","type":"DIR","size":0,"name":"thumbnails"}
+{"id":5688f881-ed03-47b5-a3d5-f5ca195ab861,"fullPath":"\/mnt\/sdcard\/.doubleTwist\/thumbnails\/podcast","type":"DIR","size":0,"name":"podcast"}
+{"id":2b333e06-7272-41da-888e-b502ac388db0,"fullPath":"\/mnt\/sdcard\/.doubleTwist\/thumbnails\/podcast\/thumb","type":"DIR","size":0,"name":"thumb"}
+{"id":a5805d6d-0e8c-419d-9a41-78e218020a1f,"fullPath":"\/mnt\/sdcard\/bluetooth","type":"DIR","size":0,"name":"bluetooth"}
+{"id":a1ecdb7a-dfa0-467c-a026-6f367c813171,"fullPath":"\/mnt\/sdcard\/Facebook","type":"DIR","size":0,"name":"Facebook"}
+{"id":258a5b82-b723-4eab-9d89-a6724abff723,"fullPath":"\/mnt\/sdcard\/LazyList","type":"DIR","size":0,"name":"LazyList"}
+{"id":472910e6-5c42-43a5-bfec-3ce4c1c0270a,"fullPath":"\/mnt\/sdcard\/droidhen","type":"DIR","size":0,"name":"droidhen"}
+{"id":ff17ea36-e147-481d-8746-663f5f3b298d,"fullPath":"\/mnt\/sdcard\/droidhen\/images","type":"DIR","size":0,"name":"images"}
+{"id":6ad409a9-cd27-47d3-a7c5-adf663110541,"fullPath":"\/mnt\/sdcard\/Pictures","type":"DIR","size":0,"name":"Pictures"}
+{"id":d2488786-0475-47da-a35b-eaae224cce7c,"fullPath":"\/mnt\/sdcard\/Pictures\/Instagram","type":"DIR","size":0,"name":"Instagram"}
+{"id":9cc4cf49-a92b-4f04-b6ae-19fa395d7421,"fullPath":"\/mnt\/sdcard\/download","type":"DIR","size":0,"name":"download"}
+{"id":928044ab-1960-4912-88a7-d1aac6b30fb4,"fullPath":"\/mnt\/sdcard\/.downloadTemp","type":"DIR","size":0,"name":".downloadTemp"}
+{"id":12d88e70-5c04-4303-a89c-6723ce05826b,"fullPath":"\/mnt\/sdcard\/Sounds","type":"DIR","size":0,"name":"Sounds"}
+{"id":a718ad41-5b8c-468f-b169-d6a21765faa6,"fullPath":"\/mnt\/sdcard\/mdm","type":"DIR","size":0,"name":"mdm"}
+{"id":1092be02-55e5-44c8-b45b-0d970550f757,"fullPath":"\/mnt\/sdcard\/mdm\/log","type":"DIR","size":0,"name":"log"}
+{"id":a6965f71-4dcb-48b0-b9fb-8aa5b37744b7,"fullPath":"\/mnt\/sdcard\/Mobile Systems","type":"DIR","size":0,"name":"Mobile Systems"}
+{"id":2588fe69-9019-4c76-9dd7-e1ec27b51a0a,"fullPath":"\/mnt\/sdcard\/Mobile Systems\/com.mobisystems.msdict.embedded.wireless.oxford.ode.full","type":"DIR","size":0,"name":"com.mobisystems.msdict.embedded.wireless.oxford.ode.full"}
+{"id":3fc78e10-ad3f-4e02-9c68-62b7a3ad3b2e,"fullPath":"\/mnt\/sdcard\/Mobile Systems\/com.mobisystems.msdict.embedded.wireless.oxford.ode.full\/mobisystems.com.cgi-bin2.pdb.file=OxfordDictionaryOfEnglish_ms.pdb","type":"DIR","size":0,"name":"mobisystems.com.cgi-bin2.pdb.file=OxfordDictionaryOfEnglish_ms.pdb"}
+{"id":115bc574-8195-49ab-a011-74447a61c1cf,"fullPath":"\/mnt\/sdcard\/ScreenCapture","type":"DIR","size":0,"name":"ScreenCapture"}
+{"id":37bb97f5-f404-479d-a4f6-7f6fecd3ad1d,"fullPath":"\/mnt\/sdcard\/sleep-data","type":"DIR","size":0,"name":"sleep-data"}
+{"id":dce9bf7c-3f81-40c2-b669-6d88106e8f04,"fullPath":"\/mnt\/sdcard\/sleep-data\/rec","type":"DIR","size":0,"name":"rec"}
+{"id":482e9a47-ff94-4e0a-b3ab-de0f0455bbc8,"fullPath":"\/mnt\/sdcard\/GOLocker","type":"DIR","size":0,"name":"GOLocker"}
+{"id":343e58a8-2d46-4d40-b9d6-4c09871ae7f7,"fullPath":"\/mnt\/sdcard\/GOLocker\/gotheme","type":"DIR","size":0,"name":"gotheme"}
+{"id":6a4bc2c0-b795-40f9-a053-220133ae6f2f,"fullPath":"\/mnt\/sdcard\/GOLocker\/gotheme\/icon","type":"DIR","size":0,"name":"icon"}
+{"id":2911d145-3fea-46ad-b021-41eca5220e72,"fullPath":"\/mnt\/sdcard\/GoStore","type":"DIR","size":0,"name":"GoStore"}
+{"id":a54b0025-7c75-4558-be64-791b33d26cc2,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp","type":"DIR","size":0,"name":"recommendedApp"}
+{"id":53480ec9-5786-461a-b7cf-0e47bb82e6cd,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/icon","type":"DIR","size":0,"name":"icon"}
+{"id":5c6f2db8-63d3-4cb2-9885-6ba0cfd1e684,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification","type":"DIR","size":0,"name":"classification"}
+{"id":f32b2020-3555-4321-a037-6017e194eef6,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_game_50308","type":"DIR","size":0,"name":"classification_game_50308"}
+{"id":8254f74b-1fa1-4f29-b0a6-0f6cfe1231d3,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_game_50314","type":"DIR","size":0,"name":"classification_game_50314"}
+{"id":511bd085-559f-41c7-9e94-9a84c4b47d00,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_game_50313","type":"DIR","size":0,"name":"classification_game_50313"}
+{"id":02c62089-3379-41e0-a016-908c3b9013f9,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_game_0","type":"DIR","size":0,"name":"classification_game_0"}
+{"id":43ff6cc0-2897-4ebc-96f9-8021f385665f,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_game_50531","type":"DIR","size":0,"name":"classification_game_50531"}
+{"id":3d13c997-9929-444b-9bf1-3394fc15a41f,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_app_60554","type":"DIR","size":0,"name":"classification_app_60554"}
+{"id":49899cd7-59b7-489e-9343-73a985b3b66d,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_app_60336","type":"DIR","size":0,"name":"classification_app_60336"}
+{"id":a6c396ad-ccf7-43c0-8879-c967288ac65e,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_app_60337","type":"DIR","size":0,"name":"classification_app_60337"}
+{"id":eebd9803-778e-46b3-a4d5-eebdb67598a2,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_app_0","type":"DIR","size":0,"name":"classification_app_0"}
+{"id":ece68a81-d23c-41f0-aa91-5369ed8f9fd0,"fullPath":"\/mnt\/sdcard\/GoStore\/recommendedApp\/classification\/classification_app_60325","type":"DIR","size":0,"name":"classification_app_60325"}
+{"id":51a14095-dce6-4b00-bd9c-aa00d40230a3,"fullPath":"\/mnt\/sdcard\/GoStore\/icon","type":"DIR","size":0,"name":"icon"}
+{"id":20bdd85f-9b5d-4d2b-98fd-ce78b9df70e4,"fullPath":"\/mnt\/sdcard\/GoStore\/view_data_cache","type":"DIR","size":0,"name":"view_data_cache"}
+{"id":582ae3d7-1077-4fca-8a84-0d8e61f6c205,"fullPath":"\/mnt\/sdcard\/media","type":"DIR","size":0,"name":"media"}
+{"id":8a687a1a-516e-41eb-baef-14ed30ffcfe9,"fullPath":"\/mnt\/sdcard\/media\/audio","type":"DIR","size":0,"name":"audio"}
+{"id":eb2d5537-cec1-4d70-999a-710adccde496,"fullPath":"\/mnt\/sdcard\/media\/audio\/notifications","type":"DIR","size":0,"name":"notifications"}
+{"id":12770415-5d77-4d38-87aa-60f64dfed08b,"fullPath":"\/mnt\/sdcard\/Evernote","type":"DIR","size":0,"name":"Evernote"}
+{"id":c2c9d09a-4a1b-41ac-afb0-1626e94d204c,"fullPath":"\/mnt\/sdcard\/Evernote\/.trash","type":"DIR","size":0,"name":".trash"}
+{"id":1c726389-784f-48d8-96b7-a44aed03a19a,"fullPath":"\/mnt\/sdcard\/Evernote\/.logs","type":"DIR","size":0,"name":".logs"}
+{"id":97982260-d9fb-49c6-a8ef-035d36e59336,"fullPath":"\/mnt\/sdcard\/Evernote\/Temp","type":"DIR","size":0,"name":"Temp"}
+{"id":427c2179-9810-42cc-9cf9-f5d09761f61e,"fullPath":"\/mnt\/sdcard\/noteeverything","type":"DIR","size":0,"name":"noteeverything"}
+{"id":107bb2a0-7bc6-45ad-b0c8-e97e82284344,"fullPath":"\/mnt\/sdcard\/noteeverything\/backup","type":"DIR","size":0,"name":"backup"}
+{"id":5df8c49d-e8f2-40f6-81a2-e191bf099dab,"fullPath":"\/mnt\/sdcard\/noteeverything\/videos","type":"DIR","size":0,"name":"videos"}
+{"id":e1606ec8-e613-4304-8517-68ba55cd38d4,"fullPath":"\/mnt\/sdcard\/noteeverything\/photos","type":"DIR","size":0,"name":"photos"}
+{"id":794dc433-7589-4f79-9123-0ad672f3a3a8,"fullPath":"\/mnt\/sdcard\/noteeverything\/voices","type":"DIR","size":0,"name":"voices"}
+{"id":2ea04bfd-c553-4c3e-bf2a-de15124180e3,"fullPath":"\/mnt\/sdcard\/noteeverything\/paintings","type":"DIR","size":0,"name":"paintings"}
+{"id":3b6cdea3-ea16-4c0a-b477-7f56b0e2cafb,"fullPath":"\/mnt\/sdcard\/noteeverything\/text","type":"DIR","size":0,"name":"text"}
+{"id":5573a717-a880-48bc-9696-124e517c5857,"fullPath":"\/mnt\/sdcard\/TunnyBrowser","type":"DIR","size":0,"name":"TunnyBrowser"}
+{"id":16ae9406-364a-4c61-814e-a0bc815a0078,"fullPath":"\/mnt\/sdcard\/TunnyBrowser\/Saved_images","type":"DIR","size":0,"name":"Saved_images"}
+{"id":ab4b8068-d03b-410c-8119-877bf9537a6f,"fullPath":"\/mnt\/sdcard\/TunnyBrowser\/cache","type":"DIR","size":0,"name":"cache"}
+{"id":b85dc6c4-614b-460c-8099-28131602c6e0,"fullPath":"\/mnt\/sdcard\/TunnyBrowser\/cache\/images","type":"DIR","size":0,"name":"images"}
+{"id":d8da2731-6bbc-48c0-8bf9-ed03ef3c099a,"fullPath":"\/mnt\/sdcard\/GOLauncherEX","type":"DIR","size":0,"name":"GOLauncherEX"}
+{"id":d4e30272-3510-4f8a-a8b1-6b90a83d6c42,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/messagecenter","type":"DIR","size":0,"name":"messagecenter"}
+{"id":84a8d93d-2ac6-4ec4-8eb0-a5338b923029,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/messagecenter\/143zip1","type":"DIR","size":0,"name":"143zip1"}
+{"id":f715e524-279c-4a1c-980a-3addc1ff78c9,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/messagecenter\/143zip2","type":"DIR","size":0,"name":"143zip2"}
+{"id":1b53c403-053e-4198-912d-63eb53cde949,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/statistics","type":"DIR","size":0,"name":"statistics"}
+{"id":f2254df4-8465-4d40-af88-2281ce3bdc34,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/statistics\/statistics","type":"DIR","size":0,"name":"statistics"}
+{"id":9fb71d4c-9010-4d68-8186-c153cb6eeebb,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/diygesture","type":"DIR","size":0,"name":"diygesture"}
+{"id":0163fc9b-3743-4d36-96fa-9d774e7e7864,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/gotheme","type":"DIR","size":0,"name":"gotheme"}
+{"id":56b1129a-6c4f-4332-8b4e-c8fa97b06db9,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/gotheme\/spec_data_cahe","type":"DIR","size":0,"name":"spec_data_cahe"}
+{"id":e525d833-7915-4318-821d-4fc3bd0a0eed,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/gotheme\/icon","type":"DIR","size":0,"name":"icon"}
+{"id":1d19d0ca-6ccb-4510-b2b3-cc38cc66dcd4,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/gotheme\/icon\/mnt","type":"DIR","size":0,"name":"mnt"}
+{"id":4fa95c9b-cf4f-493b-bc81-8e34b47f1aa9,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/gotheme\/icon\/mnt\/sdcard","type":"DIR","size":0,"name":"sdcard"}
+{"id":74fed9c0-b3d8-4054-a2c3-801bc8c806d0,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/gotheme\/icon\/mnt\/sdcard\/GOLauncherEX","type":"DIR","size":0,"name":"GOLauncherEX"}
+{"id":b59cd063-e1f3-471c-badc-93b00113db23,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/gotheme\/icon\/mnt\/sdcard\/GOLauncherEX\/gotheme","type":"DIR","size":0,"name":"gotheme"}
+{"id":a342bd0e-2734-4eb9-b587-06c39cec7978,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/gotheme\/icon\/mnt\/sdcard\/GOLauncherEX\/gotheme\/icon","type":"DIR","size":0,"name":"icon"}
+{"id":df0a6b6e-ee04-42ba-b89f-b94451313316,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/gotheme\/lockericon","type":"DIR","size":0,"name":"lockericon"}
+{"id":7efd27c0-1cc0-42ab-9e48-68446882fb13,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/db","type":"DIR","size":0,"name":"db"}
+{"id":c0bd4989-081d-45ba-9b99-8e1bef8f7ae2,"fullPath":"\/mnt\/sdcard\/GOLauncherEX\/fonts","type":"DIR","size":0,"name":"fonts"}
+{"id":d16fed46-68fd-4e84-862e-192e4d1c7746,"fullPath":"\/mnt\/sdcard\/RootUninstaller","type":"DIR","size":0,"name":"RootUninstaller"}
+{"id":e0d8a825-62be-4b16-9021-8f5c5f0ce315,"fullPath":"\/mnt\/sdcard\/RootUninstaller\/autobackup","type":"DIR","size":0,"name":"autobackup"}
+{"id":7faa9c1a-e170-48e2-a9c9-7cf607b51fa7,"fullPath":"\/mnt\/sdcard\/TitaniumBackup","type":"DIR","size":0,"name":"TitaniumBackup"}
+{"id":931f9259-6e71-4faf-9af4-3c3dcba24ad0,"fullPath":"\/mnt\/sdcard\/backups","type":"DIR","size":0,"name":"backups"}
+{"id":86d00e7e-0a3f-4f16-a0da-c33eec5bda50,"fullPath":"\/mnt\/sdcard\/backups\/apps","type":"DIR","size":0,"name":"apps"}
+{"id":4f361443-eb3b-427b-a794-0d18b92cf674,"fullPath":"\/mnt\/sdcard\/.estrongs","type":"DIR","size":0,"name":".estrongs"}
+{"id":e0c973f9-0b47-43df-a081-6f3b73745b61,"fullPath":"\/mnt\/sdcard\/.estrongs\/zip","type":"DIR","size":0,"name":"zip"}
+{"id":0175386f-5f7d-4dbf-9ae8-1d60b24336da,"fullPath":"\/mnt\/sdcard\/clockworkmod","type":"DIR","size":0,"name":"clockworkmod"}
+{"id":4c016c57-0036-4c9e-ac36-fc68a65e6cb7,"fullPath":"\/mnt\/sdcard\/clockworkmod\/download","type":"DIR","size":0,"name":"download"}
+{"id":80fb996d-db88-4977-84f3-cb27666cdefc,"fullPath":"\/mnt\/sdcard\/DCIM","type":"DIR","size":0,"name":"DCIM"}
+{"id":d95faa4c-79dc-4c88-b766-dc5129fb980d,"fullPath":"\/mnt\/sdcard\/DCIM\/MISC","type":"DIR","size":0,"name":"MISC"}
+{"id":035021e7-6308-4a81-8418-0b9c67bb73e5,"fullPath":"\/mnt\/sdcard\/DCIM\/Camera","type":"DIR","size":0,"name":"Camera"}
+{"id":f2ae9d3a-44df-4654-8d6d-e6ed0c8f3006,"fullPath":"\/mnt\/sdcard\/DCIM\/Camera_nexus","type":"DIR","size":0,"name":"Camera_nexus"}
+{"id":0baf0281-2f39-4adb-9e15-c51b38c895f6,"fullPath":"\/mnt\/sdcard\/DCIM\/Camera_nexus\/Screenshots","type":"DIR","size":0,"name":"Screenshots"}
+{"id":36af4801-b6d6-4a45-b01c-8f30db251b17,"fullPath":"\/mnt\/sdcard\/DCIM\/Camera_nexus\/saveshot","type":"DIR","size":0,"name":"saveshot"}
+{"id":4e017aed-0946-44e1-8bae-e7c04eab356b,"fullPath":"\/mnt\/sdcard\/DCIM\/Camera_nexus\/100ANDRO","type":"DIR","size":0,"name":"100ANDRO"}
+{"id":f20d463e-bf8f-497b-8a90-0d9a03c3c02c,"fullPath":"\/mnt\/sdcard\/DCIM\/Camera_nexus\/Camera","type":"DIR","size":0,"name":"Camera"}
+{"id":0dcef837-bb4c-4980-8ad6-ec47574cc22e,"fullPath":"\/mnt\/sdcard\/DCIM\/.thumbnails","type":"DIR","size":0,"name":".thumbnails"}
+{"id":381392ac-9702-4bc4-b6be-8b289ca97e48,"fullPath":"\/mnt\/sdcard\/DCIM\/Facebook","type":"DIR","size":0,"name":"Facebook"}
+{"id":bb1fae6c-ad6e-4dc1-9d5a-4570f115b05a,"fullPath":"\/mnt\/sdcard\/external_sd","type":"DIR","size":0,"name":"external_sd"}
+{"id":e5137a70-36c3-4079-a2b0-fe0af60b77cd,"fullPath":"\/mnt\/sdcard\/external_sd\/Titanium Backup Pro 4.8.1.1","type":"DIR","size":0,"name":"Titanium Backup Pro 4.8.1.1"}
+{"id":f96a7d90-e5c1-4e78-9892-5d521dd1c31c,"fullPath":"\/mnt\/sdcard\/external_sd\/FxCamera","type":"DIR","size":0,"name":"FxCamera"}
+{"id":ee7244b0-aa6e-4ee5-ab85-d218990b1d08,"fullPath":"\/mnt\/sdcard\/external_sd\/Evernote","type":"DIR","size":0,"name":"Evernote"}
+{"id":28928baa-34e7-4487-bbd3-7f3f6ba1ea09,"fullPath":"\/mnt\/sdcard\/external_sd\/Evernote\/Temp","type":"DIR","size":0,"name":"Temp"}
+{"id":64c5b752-31ec-4409-b839-c0143c288a3c,"fullPath":"\/mnt\/sdcard\/external_sd\/Evernote\/notes","type":"DIR","size":0,"name":"notes"}
+{"id":811c036d-7271-4b3b-a769-de0e165be163,"fullPath":"\/mnt\/sdcard\/external_sd\/Evernote\/notes\/a28","type":"DIR","size":0,"name":"a28"}
+{"id":58cdbe86-858e-4db9-877b-e4ff8dede280,"fullPath":"\/mnt\/sdcard\/external_sd\/Evernote\/notes\/a28\/a287f41c-ab92-4738-ad0d-6294aafad4bf","type":"DIR","size":0,"name":"a287f41c-ab92-4738-ad0d-6294aafad4bf"}
+{"id":0de8224d-e683-4b38-ade4-40a9be95129c,"fullPath":"\/mnt\/sdcard\/external_sd\/Evernote\/.trash","type":"DIR","size":0,"name":".trash"}
+{"id":16d7fbfd-a223-4f47-ad37-aa46ca3b5307,"fullPath":"\/mnt\/sdcard\/external_sd\/Evernote\/.logs","type":"DIR","size":0,"name":".logs"}
+{"id":f1223328-c394-4eb6-8d42-c674946824d2,"fullPath":"\/mnt\/sdcard\/external_sd\/eBooks","type":"DIR","size":0,"name":"eBooks"}
+{"id":57d54507-9572-401a-aa58-4eba9dec8fb4,"fullPath":"\/mnt\/sdcard\/external_sd\/eBooks\/Herman Melville","type":"DIR","size":0,"name":"Herman Melville"}
+{"id":da3c116e-8bf6-4ba8-84dd-11622f0d7ed1,"fullPath":"\/mnt\/sdcard\/external_sd\/eBooks\/Herman Melville\/Moby-Dick","type":"DIR","size":0,"name":"Moby-Dick"}
+{"id":b3521c55-a30b-4ddd-83d9-12ff7352aad6,"fullPath":"\/mnt\/sdcard\/external_sd\/download","type":"DIR","size":0,"name":"download"}
+{"id":6ccd3860-d52c-485b-8eb0-7fdd93b90006,"fullPath":"\/mnt\/sdcard\/external_sd\/bluetooth","type":"DIR","size":0,"name":"bluetooth"}
+{"id":58e90521-a2f6-4a3c-bf1e-c68ae27d79f4,"fullPath":"\/mnt\/sdcard\/external_sd\/retroCamera","type":"DIR","size":0,"name":"retroCamera"}
+{"id":234c3f4e-e7fe-4ca9-bc98-20b35e9073f4,"fullPath":"\/mnt\/sdcard\/external_sd\/picture","type":"DIR","size":0,"name":"picture"}
+{"id":0065ff3f-d50c-4658-9ed3-89bdbd7f123d,"fullPath":"\/mnt\/sdcard\/external_sd\/music","type":"DIR","size":0,"name":"music"}
+{"id":c4ee6c8c-5af8-4c9f-86e7-dee2581005a2,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/휘성","type":"DIR","size":0,"name":"휘성"}
+{"id":273a101f-a4f3-4808-996d-4600c1338486,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/휘성\/Realslow Is Back (Single)","type":"DIR","size":0,"name":"Realslow Is Back (Single)"}
+{"id":e0f0ebde-a383-4b7b-9fdc-8ee0b59c1ef0,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/화요비","type":"DIR","size":0,"name":"화요비"}
+{"id":1288ddf9-10e4-4693-828b-746835cbcf06,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/화요비\/사랑+one-가을愛","type":"DIR","size":0,"name":"사랑+one-가을愛"}
+{"id":f4c7f6ff-a670-4c14-bc5a-b21aed624dba,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/포맨(4Men)","type":"DIR","size":0,"name":"포맨(4Men)"}
+{"id":eed9ebf2-73c8-4144-ba9d-06a5b97edb0b,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/포맨(4Men)\/You (EP)","type":"DIR","size":0,"name":"You (EP)"}
+{"id":d3b749b4-2cbc-418a-9267-76fe7ba47cd3,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/트랙스(Trax)","type":"DIR","size":0,"name":"트랙스(Trax)"}
+{"id":509036d4-5dec-4297-805a-75cb3a001f5e,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/트랙스(Trax)\/오! 나의 여신님","type":"DIR","size":0,"name":"오! 나의 여신님"}
+{"id":e46481d5-62a3-4c43-8839-3504a5ecbd0c,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/토니 안","type":"DIR","size":0,"name":"토니 안"}
+{"id":f73c2290-9e16-4c46-b6df-6e844ba5dc21,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/토니 안\/지금 만나러 갑니다 (Single)","type":"DIR","size":0,"name":"지금 만나러 갑니다 (Single)"}
+{"id":55eb4210-82eb-465d-a22f-14ae51d0671c,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/테이 (Tei)","type":"DIR","size":0,"name":"테이 (Tei)"}
+{"id":4488cc01-4ebc-490d-a3b2-72b0c8fc460b,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/테이 (Tei)\/무적자 OST Part.2","type":"DIR","size":0,"name":"무적자 OST Part.2"}
+{"id":1c377e75-9d34-4c91-9efa-f4163025aeb9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/태양","type":"DIR","size":0,"name":"태양"}
+{"id":4bb99c44-af96-4331-b999-639676ea65f8,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/태양\/Solar (인터내셔널 릴리즈 앨범)","type":"DIR","size":0,"name":"Solar (인터내셔널 릴리즈 앨범)"}
+{"id":178f5c68-3e64-4132-aecb-d6bdb765ab04,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/채동하","type":"DIR","size":0,"name":"채동하"}
+{"id":5de357e1-34cd-4acc-ac31-3db410692b25,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/채동하\/D Day (EP)","type":"DIR","size":0,"name":"D Day (EP)"}
+{"id":80386c05-6c0e-44c1-a91d-de23eb517c46,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/창민","type":"DIR","size":0,"name":"창민"}
+{"id":382a95c5-18d4-4848-ba7c-99a25dd918ea,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/창민\/Homme By `Hitman` Bang","type":"DIR","size":0,"name":"Homme By `Hitman` Bang"}
+{"id":ebda168e-1469-4549-9679-c6b8cc0d1ee5,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/지오낯선","type":"DIR","size":0,"name":"지오낯선"}
+{"id":3a819eec-de6d-4907-a541-ed5d8f27cfd6,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/지오낯선\/O-IWI-O","type":"DIR","size":0,"name":"O-IWI-O"}
+{"id":8bd4fdc3-d862-49c5-880e-33dbafc3b719,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/지아(Zia)","type":"DIR","size":0,"name":"지아(Zia)"}
+{"id":771a0462-294a-436b-bf6d-d1c55c7991e7,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/지아(Zia)\/Difference (EP)","type":"DIR","size":0,"name":"Difference (EP)"}
+{"id":9ea115ea-b3f4-4590-96f2-8c4a6b6e3b85,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/준수","type":"DIR","size":0,"name":"준수"}
+{"id":61cf2c9b-efcc-40ba-a1c4-f0446c9831f0,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/준수\/성균관 스캔들 OST (KBS 월화드라마)","type":"DIR","size":0,"name":"성균관 스캔들 OST (KBS 월화드라마)"}
+{"id":5f172054-0c36-4431-be4e-b02f06651dcd,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/조성모","type":"DIR","size":0,"name":"조성모"}
+{"id":75f4d5ad-4209-478a-8857-a9010a2a4b7f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/조성모\/성모 Meet Brave","type":"DIR","size":0,"name":"성모 Meet Brave"}
+{"id":2a235d8d-59d8-4efa-8d53-25c91ef12d64,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/정엽","type":"DIR","size":0,"name":"정엽"}
+{"id":d022a3eb-807d-4a43-b95f-4a46fafe3bc6,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/정엽\/Love You","type":"DIR","size":0,"name":"Love You"}
+{"id":89e5dc95-1adb-4d7c-9cc5-c2d769538f78,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/정엽\/Love You\/Without You (Digital Single)","type":"DIR","size":0,"name":"Without You (Digital Single)"}
+{"id":880850ae-2d1e-4c7f-ad42-cea3da76b10b,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/재중","type":"DIR","size":0,"name":"재중"}
+{"id":b97b67d4-9a86-4d9b-892c-78befb7c0967,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/재중\/성균관 스캔들 OST (KBS 월화드라마)","type":"DIR","size":0,"name":"성균관 스캔들 OST (KBS 월화드라마)"}
+{"id":d74bd7b4-8780-43c9-8a68-704fc78956ba,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/장혜진","type":"DIR","size":0,"name":"장혜진"}
+{"id":f8174cab-8c13-405c-a23c-c680123893ae,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/장혜진\/가려진 시간 사이로","type":"DIR","size":0,"name":"가려진 시간 사이로"}
+{"id":4314aa7e-b1b8-4cf7-a150-92ae719f0438,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/임정희","type":"DIR","size":0,"name":"임정희"}
+{"id":4437ee27-dac4-4a21-a0f3-6ff99eefa1cc,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/임정희\/헤어지러 가는 길","type":"DIR","size":0,"name":"헤어지러 가는 길"}
+{"id":499c65f6-c416-4f1e-b62f-aff752c550e4,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이지혜","type":"DIR","size":0,"name":"이지혜"}
+{"id":d89e22de-e9e2-4d6a-abe5-9f7bac3b755d,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이지혜\/Lost","type":"DIR","size":0,"name":"Lost"}
+{"id":8a82c1d6-337e-4cd4-bdf3-38a9327bfff1,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이적","type":"DIR","size":0,"name":"이적"}
+{"id":f56fd865-8530-489b-a842-fb1daa2628b8,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이적\/빨래","type":"DIR","size":0,"name":"빨래"}
+{"id":278c3b49-8d16-4ecb-9938-d93ec596a273,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이승철","type":"DIR","size":0,"name":"이승철"}
+{"id":8d4784c4-4382-428b-af9b-e03ae9be7791,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이승철\/제빵왕 김탁구 OST Part.3","type":"DIR","size":0,"name":"제빵왕 김탁구 OST Part.3"}
+{"id":129d9fe3-8765-4262-ac90-bf4ae594cca8,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이승기","type":"DIR","size":0,"name":"이승기"}
+{"id":b7f67204-df88-45d4-98e7-f330df1171ec,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이승기\/지금부터 사랑해","type":"DIR","size":0,"name":"지금부터 사랑해"}
+{"id":39c46372-3260-48dc-a791-fba35cbd6a88,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이승기\/정신이 나갔었나봐","type":"DIR","size":0,"name":"정신이 나갔었나봐"}
+{"id":8a643f0a-0934-4497-bf2f-42bba60cfd1c,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이선희","type":"DIR","size":0,"name":"이선희"}
+{"id":9970155a-6381-4dcd-a623-049bd46b6bae,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이선희\/내 여자친구는 구미호 Part.1 (SBS 수목드라마)","type":"DIR","size":0,"name":"내 여자친구는 구미호 Part.1 (SBS 수목드라마)"}
+{"id":6879840a-3e78-48d3-a9c6-38995ebd5ac1,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이선희\/내 여자친구는 구미호 OST Part.5","type":"DIR","size":0,"name":"내 여자친구는 구미호 OST Part.5"}
+{"id":c620d30a-0952-4533-86f7-c005829e9c15,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이루","type":"DIR","size":0,"name":"이루"}
+{"id":2891a649-5d86-4abb-a3b7-01c1508b7896,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/이루\/4집 Got To Be","type":"DIR","size":0,"name":"4집 Got To Be"}
+{"id":0eb1d707-78f4-4bfd-8132-3bbbecb7f4b5,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/유천 ＆ 준수 ＆ 재중","type":"DIR","size":0,"name":"유천 ＆ 준수 ＆ 재중"}
+{"id":1b917817-bc46-405a-bb1f-1cfeb2fcba9a,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/유천 ＆ 준수 ＆ 재중\/성균관 스캔들 OST (KBS 월화드라마)","type":"DIR","size":0,"name":"성균관 스캔들 OST (KBS 월화드라마)"}
+{"id":155cdb96-4c70-43b5-ac15-609361d80b86,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/유브이(UV)","type":"DIR","size":0,"name":"유브이(UV)"}
+{"id":8658ee8b-816d-4bbd-b996-9dca668f7fd9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/유브이(UV)\/Mom (Digital Single)","type":"DIR","size":0,"name":"Mom (Digital Single)"}
+{"id":176761a8-1b6f-4c07-a91f-402f7ac86ae2,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/오종혁 (Oh Jong Hyuk)","type":"DIR","size":0,"name":"오종혁 (Oh Jong Hyuk)"}
+{"id":745940c7-f087-420b-bd2a-dce4d2a2a3d6,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/오종혁 (Oh Jong Hyuk)\/OJ (Digital Single)","type":"DIR","size":0,"name":"OJ (Digital Single)"}
+{"id":a280a41b-83a1-4fff-8cc7-cac65e0d2f0a,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/에스프레소","type":"DIR","size":0,"name":"에스프레소"}
+{"id":6a014916-7924-40e2-8bda-917e2e236a5a,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/에스프레소\/자꾸 생각나 (Single)","type":"DIR","size":0,"name":"자꾸 생각나 (Single)"}
+{"id":073bbcfe-fa15-4f9d-b4f1-d7720227db0e,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/안진경","type":"DIR","size":0,"name":"안진경"}
+{"id":b1eb460c-48c1-493a-a7ab-79f6c3d3a48b,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/안진경\/Be The Voice (Single)","type":"DIR","size":0,"name":"Be The Voice (Single)"}
+{"id":6a738ca6-764b-46b7-b605-7c563706cb03,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/안나(Anna)","type":"DIR","size":0,"name":"안나(Anna)"}
+{"id":70050079-835e-4e0c-832f-677428398d2c,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/안나(Anna)\/5분만 (Single)","type":"DIR","size":0,"name":"5분만 (Single)"}
+{"id":4db06ff6-636f-4d6d-8768-745af8e2399c,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/아이유(IU), 임슬옹","type":"DIR","size":0,"name":"아이유(IU), 임슬옹"}
+{"id":73aa2dd6-a7a8-4382-97df-3d3156b3866c,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/아이유(IU), 임슬옹\/잔소리 (Digital Single)","type":"DIR","size":0,"name":"잔소리 (Digital Single)"}
+{"id":e199d1db-2fc7-4ff6-957f-00ba2e70e9d1,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/씨야","type":"DIR","size":0,"name":"씨야"}
+{"id":3b8e5352-4559-4269-aa89-bd0bb1f058f9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/씨야\/안영민 Baby Brown","type":"DIR","size":0,"name":"안영민 Baby Brown"}
+{"id":7c236d94-677f-4436-bc90-a1bb08a0531f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/씨스타(Sistar)","type":"DIR","size":0,"name":"씨스타(Sistar)"}
+{"id":ab1bd0ec-83b8-42d5-aad8-b1bd920065a3,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/씨스타(Sistar)\/가식걸 (Single)","type":"DIR","size":0,"name":"가식걸 (Single)"}
+{"id":3b2f90a4-925a-4a35-a4a6-c1a64819202e,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/씨스타 (소유)","type":"DIR","size":0,"name":"씨스타 (소유)"}
+{"id":bb92e31f-6985-478d-a6ec-920af218d7ad,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/씨스타 (소유)\/장난스런 키스 (MBC 수목드라마) - Part.3","type":"DIR","size":0,"name":"장난스런 키스 (MBC 수목드라마) - Part.3"}
+{"id":2c505a49-99d8-4ebc-a1ad-6ed214173a72,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/써니 사이드(Sunny Side)","type":"DIR","size":0,"name":"써니 사이드(Sunny Side)"}
+{"id":266ea80f-5f74-4ac3-80e1-62274894913f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/써니 사이드(Sunny Side)\/나쁜남자 착한여자 (Digital Single)","type":"DIR","size":0,"name":"나쁜남자 착한여자 (Digital Single)"}
+{"id":539b2136-b881-4d77-94e7-b4873a462c20,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/시크릿(Secret)","type":"DIR","size":0,"name":"시크릿(Secret)"}
+{"id":7845a30e-6314-433e-8519-bb96995a1bc1,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/시크릿(Secret)\/Madonna (EP)","type":"DIR","size":0,"name":"Madonna (EP)"}
+{"id":ed827417-4e14-465e-b018-89c50ca68641,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/슈프림팀(Supreme Team), 영준","type":"DIR","size":0,"name":"슈프림팀(Supreme Team), 영준"}
+{"id":1f7ac6e5-a5ec-402a-b4de-5233260cec9f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/슈프림팀(Supreme Team), 영준\/왜 (Digital Single)","type":"DIR","size":0,"name":"왜 (Digital Single)"}
+{"id":13e2872f-2d6e-49ef-bb47-5638d39a8721,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/손담비","type":"DIR","size":0,"name":"손담비"}
+{"id":ec244447-cc1f-44c5-8c8b-567c60103c84,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/손담비\/dB Rider (Digital Single)","type":"DIR","size":0,"name":"dB Rider (Digital Single)"}
+{"id":6fd59648-9425-458b-804c-6121606e1e46,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/세븐","type":"DIR","size":0,"name":"세븐"}
+{"id":e735e7ab-5646-4804-b808-b61843e9abc8,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/세븐\/Digital Bounce","type":"DIR","size":0,"name":"Digital Bounce"}
+{"id":11448c81-72d4-47fb-a987-9006b53845a7,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/서인국","type":"DIR","size":0,"name":"서인국"}
+{"id":84d13f0b-f2f6-4cad-b1a2-771a117a1f81,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/서인국\/애기야 (EP)","type":"DIR","size":0,"name":"애기야 (EP)"}
+{"id":21002bfb-68b1-4029-9962-eb73a9398c6f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/서영은","type":"DIR","size":0,"name":"서영은"}
+{"id":f6ba05fe-ac3d-4c9b-8baf-0245a63d0b19,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/서영은\/혹시 돌아올까봐 (Single)","type":"DIR","size":0,"name":"혹시 돌아올까봐 (Single)"}
+{"id":957fc3fd-a36a-4d12-83b5-f3be878eb86f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/서승희, 바비킴","type":"DIR","size":0,"name":"서승희, 바비킴"}
+{"id":81a0f0dd-0b5b-4c52-8008-17b659ddf4c3,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/서승희, 바비킴\/Project `True Colors` 1 (Digital Single)","type":"DIR","size":0,"name":"Project `True Colors` 1 (Digital Single)"}
+{"id":4e0fed0d-65d5-4825-8292-e87e418cbd3d,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/샤이니","type":"DIR","size":0,"name":"샤이니"}
+{"id":751b7a75-fe22-47b0-ad72-970de6af2515,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/샤이니\/2집 Lucifer","type":"DIR","size":0,"name":"2집 Lucifer"}
+{"id":145b483b-59d7-4435-8320-5571fd1c8c5b,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/산이(San E)","type":"DIR","size":0,"name":"산이(San E)"}
+{"id":44fdf481-bf63-42ab-bee5-14b78869c8ef,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/산이(San E)\/Everybody Ready (EP)","type":"DIR","size":0,"name":"Everybody Ready (EP)"}
+{"id":67723916-0842-420e-96f6-a724761ed7c9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/비스트 (Beast)","type":"DIR","size":0,"name":"비스트 (Beast)"}
+{"id":7620bf92-ce34-4146-9122-f21b780c8978,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/비스트 (Beast)\/주먹을 꽉 쥐고","type":"DIR","size":0,"name":"주먹을 꽉 쥐고"}
+{"id":cefe428f-1bec-483e-8730-07f14493be21,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/브라운 아이드 소울(Brown Eyed Soul)","type":"DIR","size":0,"name":"브라운 아이드 소울(Brown Eyed Soul)"}
+{"id":ba2bb710-d687-4136-a832-313c66b8a2c9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/브라운 아이드 소울(Brown Eyed Soul)\/그대 (Digital Single)","type":"DIR","size":0,"name":"그대 (Digital Single)"}
+{"id":8df72139-a87b-49de-a0e5-9d3b98bff396,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/부활","type":"DIR","size":0,"name":"부활"}
+{"id":ec8a1cd3-bbbe-463d-8d7b-8cbed712e8dc,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/부활\/사랑해서 사랑해서","type":"DIR","size":0,"name":"사랑해서 사랑해서"}
+{"id":f4085f22-f008-4ab3-8ce3-a42c5e84abb7,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/보아","type":"DIR","size":0,"name":"보아"}
+{"id":fd15e4aa-bd22-4a65-99a8-d6844aceede7,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/보아\/Hurricane Venus","type":"DIR","size":0,"name":"Hurricane Venus"}
+{"id":7a7198ab-af98-4c46-b81e-ba26667e0a18,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/박효신","type":"DIR","size":0,"name":"박효신"}
+{"id":fdfacc83-b070-4cf1-ba9e-47282d47b968,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/박효신\/안녕 사랑아 (Digital Single)","type":"DIR","size":0,"name":"안녕 사랑아 (Digital Single)"}
+{"id":9f87adc7-cec9-4359-86cd-c838c8998b0a,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/박효신\/널 사랑한다 (아테나 OST Part.1)","type":"DIR","size":0,"name":"널 사랑한다 (아테나 OST Part.1)"}
+{"id":62dd4104-e9a0-4752-bca8-90983ff93426,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/미스에이(miss A)","type":"DIR","size":0,"name":"미스에이(miss A)"}
+{"id":250f28db-1a5b-4337-8739-df0b9e85eaca,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/미스에이(miss A)\/Bad But Good (Single)","type":"DIR","size":0,"name":"Bad But Good (Single)"}
+{"id":806e181e-91ff-4551-972f-9935e4dca251,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/모임 프로젝트(일락, 매직플로우, ZMin)","type":"DIR","size":0,"name":"모임 프로젝트(일락, 매직플로우, ZMin)"}
+{"id":9790aaea-4964-452a-8938-74c1f3e15692,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/모임 프로젝트(일락, 매직플로우, ZMin)\/같은밥을 먹던여자 같은차를 타던남자 (Single)","type":"DIR","size":0,"name":"같은밥을 먹던여자 같은차를 타던남자 (Single)"}
+{"id":4ba2548f-8566-46dd-aa42-101d7adf58fd,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/린 (LYn)","type":"DIR","size":0,"name":"린 (LYn)"}
+{"id":65cf24e8-35b8-4ca2-8e60-55d485a576ed,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/린 (LYn)\/내 여자친구는 구미호 (SBS 수목드라마) - Part.4","type":"DIR","size":0,"name":"내 여자친구는 구미호 (SBS 수목드라마) - Part.4"}
+{"id":e30e999d-3293-4c72-8fc9-671d3d642f3e,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/루나 [에프엑스]","type":"DIR","size":0,"name":"루나 [에프엑스]"}
+{"id":3b2f7485-af1c-415a-9dd5-cf9560c7e228,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/루나 [에프엑스]\/결혼해주세요 (KBS 2TV 주말드라마)","type":"DIR","size":0,"name":"결혼해주세요 (KBS 2TV 주말드라마)"}
+{"id":4f643460-e5a4-4c30-86c2-365b4a20c1bf,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/레인보우(Rainbow)","type":"DIR","size":0,"name":"레인보우(Rainbow)"}
+{"id":d19ffd54-2d3e-41e6-b641-7f2feb7817c3,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/레인보우(Rainbow)\/A (Digital Single)","type":"DIR","size":0,"name":"A (Digital Single)"}
+{"id":a4bae216-1150-4ebe-be73-8f964ab631d8,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/럼블피쉬(Rumble Fish)","type":"DIR","size":0,"name":"럼블피쉬(Rumble Fish)"}
+{"id":011c920f-4fe6-4032-ad7c-69e817c7d0d7,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/럼블피쉬(Rumble Fish)\/기분 좋은 말 (Single)","type":"DIR","size":0,"name":"기분 좋은 말 (Single)"}
+{"id":eb7b27e7-b317-4881-a743-548cdff6f37d,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/란(Ran)","type":"DIR","size":0,"name":"란(Ran)"}
+{"id":b4080a22-dd96-4e1a-b164-d2d256b957b4,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/란(Ran)\/Present","type":"DIR","size":0,"name":"Present"}
+{"id":5607ca30-86d1-4cf9-a819-597b0be15685,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/디베이스(D Bace)","type":"DIR","size":0,"name":"디베이스(D Bace)"}
+{"id":9c4b8505-e877-40f5-9052-45b1c7f4b205,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/디베이스(D Bace)\/Season III","type":"DIR","size":0,"name":"Season III"}
+{"id":d79db923-6645-4cf0-9f9c-fcbc5628ed5c,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/더 원","type":"DIR","size":0,"name":"더 원"}
+{"id":19f31642-99dc-4e16-ba91-5f8d48b320b9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/더 원\/The Last","type":"DIR","size":0,"name":"The Last"}
+{"id":cbfe5e4b-5fae-441e-9eba-3744896de0c2,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/다비치, 일렉트로보이즈(Electroboyz)","type":"DIR","size":0,"name":"다비치, 일렉트로보이즈(Electroboyz)"}
+{"id":40676815-c7a2-434e-9fe1-2b9e53f1fd06,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/다비치, 일렉트로보이즈(Electroboyz)\/1집 the Classic","type":"DIR","size":0,"name":"1집 the Classic"}
+{"id":a302b1c4-5c97-4e3c-b39b-677b28e484ed,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/다비치","type":"DIR","size":0,"name":"다비치"}
+{"id":41eca408-7078-4119-8d4e-16875b1472b9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/다비치\/조영수 All Star - 다비치","type":"DIR","size":0,"name":"조영수 All Star - 다비치"}
+{"id":3b6db1bb-857a-4e26-b882-87a88bee9cd7,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/노 리플라이 (No Reply)","type":"DIR","size":0,"name":"노 리플라이 (No Reply)"}
+{"id":502b1b05-2636-40ba-bf82-adae4547d6d9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/노 리플라이 (No Reply)\/Dream","type":"DIR","size":0,"name":"Dream"}
+{"id":7a4b5f13-784e-450b-9a76-69f737cf1b0b,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/나르샤","type":"DIR","size":0,"name":"나르샤"}
+{"id":cb615290-ecce-42e0-98b1-6890c398e9a7,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/나르샤\/맘마미아 (Digital Single)","type":"DIR","size":0,"name":"맘마미아 (Digital Single)"}
+{"id":5d098930-f6ee-4c8b-81f5-a07a25169e82,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/김진표","type":"DIR","size":0,"name":"김진표"}
+{"id":75ef0515-8642-4218-9f22-c99b082bf34a,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/김진표\/Romantic 겨울 (EP)","type":"DIR","size":0,"name":"Romantic 겨울 (EP)"}
+{"id":33964c92-c9c5-4ac2-9040-740b2d8bf10a,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/김진표\/Bluebrand Part 2","type":"DIR","size":0,"name":"Bluebrand Part 2"}
+{"id":d2406cfa-8f97-4785-9b92-7fea2e3679b0,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/가비엔제이(Gavy nj)","type":"DIR","size":0,"name":"가비엔제이(Gavy nj)"}
+{"id":5c9f75a0-688d-4ce3-aa93-a423551afdee,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/가비엔제이(Gavy nj)\/그만하자 (Digital Single)","type":"DIR","size":0,"name":"그만하자 (Digital Single)"}
+{"id":07441910-00bd-4e9c-808f-b0389328067d,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/V.O.S","type":"DIR","size":0,"name":"V.O.S"}
+{"id":2fdf312c-fc5c-4dbc-bde2-65c50185e04f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/V.O.S\/The Blue Bird (EP)","type":"DIR","size":0,"name":"The Blue Bird (EP)"}
+{"id":9a0d0e02-6d6e-4230-9491-1afc02f38c29,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/SG wannabe,MtoM,Vibe","type":"DIR","size":0,"name":"SG wannabe,MtoM,Vibe"}
+{"id":957dcbf2-6830-442d-bc1d-9672457cd7a2,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/SG wannabe,MtoM,Vibe\/BIG 4 Digital Single","type":"DIR","size":0,"name":"BIG 4 Digital Single"}
+{"id":4cb254dc-6735-404b-be6a-6417bc4e4ad5,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Sarah Brightman","type":"DIR","size":0,"name":"Sarah Brightman"}
+{"id":87256ba5-5234-41d8-9f0c-f4c8c9c4bfd1,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Sarah Brightman\/Eden","type":"DIR","size":0,"name":"Eden"}
+{"id":ed2acd5c-2f7f-47f7-bf9d-3196b4ed0c75,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Ne-Yo(니요)","type":"DIR","size":0,"name":"Ne-Yo(니요)"}
+{"id":24ea6ff3-225f-4d7b-86b2-60a759784754,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Ne-Yo(니요)\/One In A Million","type":"DIR","size":0,"name":"One In A Million"}
+{"id":9ac543ec-b8be-4c51-b009-2a041575837c,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Muse","type":"DIR","size":0,"name":"Muse"}
+{"id":bebaeaf5-2323-445a-8166-30744d99d4d6,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Muse\/Absolution","type":"DIR","size":0,"name":"Absolution"}
+{"id":94d150ac-1e66-437d-99fc-13d81ba37135,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Miss $","type":"DIR","size":0,"name":"Miss $"}
+{"id":297128b1-7137-4cc2-92ab-8f3816112d45,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Miss $\/Miss Independent (Digital Single)","type":"DIR","size":0,"name":"Miss Independent (Digital Single)"}
+{"id":313f5d2f-2f74-43ea-aad4-c33f6a0c9aff,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/MC몽","type":"DIR","size":0,"name":"MC몽"}
+{"id":63da7a57-517e-4db1-a45d-38feb4170a5f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/MC몽\/블루브랜드 2집 Trauma Part 2","type":"DIR","size":0,"name":"블루브랜드 2집 Trauma Part 2"}
+{"id":2f3d5591-19a5-4f6c-bd9d-67a83f900643,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/MC 스나이퍼","type":"DIR","size":0,"name":"MC 스나이퍼"}
+{"id":af48db3e-62af-4bc9-8936-fe73aabe124e,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/MC 스나이퍼\/2010 Snipersound #3 (Digital Single)","type":"DIR","size":0,"name":"2010 Snipersound #3 (Digital Single)"}
+{"id":e1958eae-6549-40b5-96b1-886b974da1cf,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Maroon 5","type":"DIR","size":0,"name":"Maroon 5"}
+{"id":09973648-39ce-4c46-8d10-70bc03ca9f0f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Maroon 5\/Hands All Over [Japan Edition]","type":"DIR","size":0,"name":"Hands All Over [Japan Edition]"}
+{"id":a197eefe-6580-43e4-80df-083b325f033e,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Maroon 5\/Hands All Over (Deluxe Edition)","type":"DIR","size":0,"name":"Hands All Over (Deluxe Edition)"}
+{"id":73e98497-841f-46fe-9d56-fce7ccd9b30f,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Maroon 5\/Hands All Over","type":"DIR","size":0,"name":"Hands All Over"}
+{"id":d129f80a-9425-4181-8f83-f32a2185dc72,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Linkin Park(린킨 파크)","type":"DIR","size":0,"name":"Linkin Park(린킨 파크)"}
+{"id":e3646af6-1046-4e46-b48b-c87a7fd479be,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Linkin Park(린킨 파크)\/The Catalyst","type":"DIR","size":0,"name":"The Catalyst"}
+{"id":6163d168-d2d6-48d3-ad79-70d3343d8d24,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Kelly Clarckson","type":"DIR","size":0,"name":"Kelly Clarckson"}
+{"id":445ee1e3-6a74-4d21-88b9-727e7bce0ce5,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Kelly Clarckson\/Breakaway","type":"DIR","size":0,"name":"Breakaway"}
+{"id":31f9422f-5fdf-4fd9-b624-0d324ef41062,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/KCM","type":"DIR","size":0,"name":"KCM"}
+{"id":2b3df313-e7ed-4882-945a-d5c12c7c00f9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/KCM\/3년이 지났어 (Digital Single)","type":"DIR","size":0,"name":"3년이 지났어 (Digital Single)"}
+{"id":c231c5e9-d925-4042-bb06-c69a2cdde7ea,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/K.will 케이윌","type":"DIR","size":0,"name":"K.will 케이윌"}
+{"id":6c533e25-8a0a-4f7f-b5ec-83a089e3d97b,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/K.will 케이윌\/MBC 음악여행 라라라 Live Vol.5","type":"DIR","size":0,"name":"MBC 음악여행 라라라 Live Vol.5"}
+{"id":722a55ff-0e02-4298-8db1-641515db9902,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/G.NA","type":"DIR","size":0,"name":"G.NA"}
+{"id":d35600cf-69d5-4b72-8e86-9e30ffb3b24c,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/G.NA\/장난스런 키스 OST Part.1","type":"DIR","size":0,"name":"장난스런 키스 OST Part.1"}
+{"id":b2270792-7f28-4979-ac04-622d5de72701,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/F.T Island","type":"DIR","size":0,"name":"F.T Island"}
+{"id":16e41b75-70c5-46e4-85bd-eca778c042a6,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/F.T Island\/Beautiful Journey (EP)","type":"DIR","size":0,"name":"Beautiful Journey (EP)"}
+{"id":b1778449-4ad8-4156-8027-3c8f774898f5,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/DJ DOC","type":"DIR","size":0,"name":"DJ DOC"}
+{"id":34c424c4-165a-4b89-a3ce-1fbed9959c88,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/DJ DOC\/풍류","type":"DIR","size":0,"name":"풍류"}
+{"id":4dbaf6c4-111e-45b7-b381-e8afb9da5fb8,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/CNET.com","type":"DIR","size":0,"name":"CNET.com"}
+{"id":04d19353-093c-4cca-801d-259664c8c5fb,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/CNET.com\/Buzz Out Loud (MP3)","type":"DIR","size":0,"name":"Buzz Out Loud (MP3)"}
+{"id":80d34151-1f6a-4acd-b380-73960a4aaeac,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Bruno Mars","type":"DIR","size":0,"name":"Bruno Mars"}
+{"id":19ab89a2-55d8-48a8-ba42-2255407fbff7,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/Bruno Mars\/Just The Way You Are","type":"DIR","size":0,"name":"Just The Way You Are"}
+{"id":1b86a8ee-da65-42ec-8767-4456f2145391,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/B G M(Beauty Gorgeous Music)","type":"DIR","size":0,"name":"B G M(Beauty Gorgeous Music)"}
+{"id":ddd48b6f-a3be-40b9-b0f4-ed6208e8ac5b,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/B G M(Beauty Gorgeous Music)\/고백할 때 이노래 꼭 불러주세요","type":"DIR","size":0,"name":"고백할 때 이노래 꼭 불러주세요"}
+{"id":a071ebc6-2228-427e-adc6-bf45dc081277,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/2PM","type":"DIR","size":0,"name":"2PM"}
+{"id":57a7ec5e-596f-4c89-b5b7-d4475cd1b5d4,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/2PM\/Nori For U (Digital Single)","type":"DIR","size":0,"name":"Nori For U (Digital Single)"}
+{"id":20ed3e2e-db91-4a08-94b8-888a58da62fe,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/2NE1","type":"DIR","size":0,"name":"2NE1"}
+{"id":8e41c7db-6217-4529-9893-b06cb0679cd7,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/2NE1\/To Anyone","type":"DIR","size":0,"name":"To Anyone"}
+{"id":9162956a-f627-44b9-b63f-a0579d2404e5,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/2AM","type":"DIR","size":0,"name":"2AM"}
+{"id":fbbcf523-525a-4838-b4e1-5908de6462e9,"fullPath":"\/mnt\/sdcard\/external_sd\/music\/2AM\/어쿠스틱 OST Part.1","type":"DIR","size":0,"name":"어쿠스틱 OST Part.1"}
+{"id":c57e6724-7956-4706-8673-efc30632bf38,"fullPath":"\/mnt\/sdcard\/external_sd\/media","type":"DIR","size":0,"name":"media"}
+{"id":c4ffcf42-24a8-4c44-9623-d41ed96210e4,"fullPath":"\/mnt\/sdcard\/external_sd\/media\/mic","type":"DIR","size":0,"name":"mic"}
+{"id":711d5e09-99b6-434c-aae2-675b1742ab9c,"fullPath":"\/mnt\/sdcard\/external_sd\/media\/mic\/ringtones","type":"DIR","size":0,"name":"ringtones"}
+{"id":5d59f558-55cb-47bd-ac73-2b17caea1130,"fullPath":"\/mnt\/sdcard\/external_sd\/media\/mic\/ringtones\/alarms","type":"DIR","size":0,"name":"alarms"}
+{"id":8dae5bea-05b8-4c8d-90d5-56198dc70854,"fullPath":"\/mnt\/sdcard\/external_sd\/media\/audio","type":"DIR","size":0,"name":"audio"}
+{"id":20f42c93-efe0-46d6-b719-d7f25a4ff24b,"fullPath":"\/mnt\/sdcard\/external_sd\/media\/audio\/notifications","type":"DIR","size":0,"name":"notifications"}
+{"id":ca4391a4-2ff2-4c27-b803-868ae5f582b1,"fullPath":"\/mnt\/sdcard\/external_sd\/KakaoTalk","type":"DIR","size":0,"name":"KakaoTalk"}
+{"id":aeeb003e-7901-4092-85d1-864a5fb4b108,"fullPath":"\/mnt\/sdcard\/external_sd\/KakaoTalk\/Chats","type":"DIR","size":0,"name":"Chats"}
+{"id":bc6b660b-69b5-47f0-9eb7-60e78a78fa3d,"fullPath":"\/mnt\/sdcard\/external_sd\/KakaoTalk\/Chats\/KakaoTalk_Chats_2012-02-08_01.53.09","type":"DIR","size":0,"name":"KakaoTalk_Chats_2012-02-08_01.53.09"}
+{"id":bd6aa12a-dd1b-4b69-a029-b1f69b85650b,"fullPath":"\/mnt\/sdcard\/external_sd\/Ringtones","type":"DIR","size":0,"name":"Ringtones"}
+{"id":cf4fc383-a682-4bbe-a55d-7867af238b09,"fullPath":"\/mnt\/sdcard\/external_sd\/.doubleTwist","type":"DIR","size":0,"name":".doubleTwist"}
+{"id":fbfbb8de-f6b5-4f99-b116-c456333db04b,"fullPath":"\/mnt\/sdcard\/external_sd\/TitaniumBackup","type":"DIR","size":0,"name":"TitaniumBackup"}
+{"id":cab0e2a3-3964-4572-b7b4-ba6e942c0378,"fullPath":"\/mnt\/sdcard\/external_sd\/.estrongs","type":"DIR","size":0,"name":".estrongs"}
+{"id":d22282d5-54d7-49af-98bd-c1fc656d4fe5,"fullPath":"\/mnt\/sdcard\/external_sd\/.estrongs\/recomm","type":"DIR","size":0,"name":"recomm"}
+{"id":3c65e827-c1ad-49a3-b2cd-15ecb2f59937,"fullPath":"\/mnt\/sdcard\/external_sd\/.estrongs\/recomm\/apks","type":"DIR","size":0,"name":"apks"}
+{"id":85db9b29-30ba-4711-9dd7-f1ec72e997b8,"fullPath":"\/mnt\/sdcard\/external_sd\/.estrongs\/recomm\/icons","type":"DIR","size":0,"name":"icons"}
+{"id":e98cd035-ab22-488e-b5d7-d73679869429,"fullPath":"\/mnt\/sdcard\/external_sd\/.estrongs\/cache","type":"DIR","size":0,"name":"cache"}
+{"id":0adf8cdc-e28f-4de9-8095-6bfa2a2f3297,"fullPath":"\/mnt\/sdcard\/external_sd\/DCIM","type":"DIR","size":0,"name":"DCIM"}
+{"id":51c75161-f199-4328-940a-9f7661a9308d,"fullPath":"\/mnt\/sdcard\/external_sd\/DCIM\/MISC","type":"DIR","size":0,"name":"MISC"}
+{"id":44a154a3-055c-4c75-affc-ab7a6a9fbc22,"fullPath":"\/mnt\/sdcard\/external_sd\/DCIM\/Camera","type":"DIR","size":0,"name":"Camera"}
+{"id":0f144cd4-0c19-428a-b540-c55aa0831ba8,"fullPath":"\/mnt\/sdcard\/external_sd\/DCIM\/.thumbnails","type":"DIR","size":0,"name":".thumbnails"}
+{"id":e25803bf-2254-46d8-9555-d2df0b052261,"fullPath":"\/mnt\/sdcard\/external_sd\/data","type":"DIR","size":0,"name":"data"}
+{"id":f37c624f-d561-46e8-a1ac-f112e525f560,"fullPath":"\/mnt\/sdcard\/external_sd\/data\/com.keramidas.TitaniumBackup","type":"DIR","size":0,"name":"com.keramidas.TitaniumBackup"}
+{"id":401f54c8-01bc-45c4-be00-c017704b45e1,"fullPath":"\/mnt\/sdcard\/external_sd\/.android_secure","type":"DIR","size":0,"name":".android_secure"}
+{"id":b27db445-079d-434e-abb9-a39a72fc73eb,"fullPath":"\/mnt\/sdcard\/external_sd\/LOST.DIR","type":"DIR","size":0,"name":"LOST.DIR"}
+{"id":4232fcee-9c08-4c0a-b3da-b026cc60efcf,"fullPath":"\/mnt\/sdcard\/LOST.DIR","type":"DIR","size":0,"name":"LOST.DIR"}
