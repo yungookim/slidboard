@@ -1,36 +1,35 @@
 module.exports = {
-	CLIENT_MOBILE : "MOBILE",
+  CLIENT_MOBILE : "MOBILE",
   CLIENT_PIXELSENSE : "PixelSense",
   pixelSense : null,
   mobiles : [],
 
 	exec : function(data, socket){
-		//check if data is JSON
-		try {
-			data = JSON.parse(data);
-		}	catch (e){
-			socket.write('WOT');
-			console.log(e);
-			return 'Wrong Object Type.';
-		}
-
-		console.log(data);
-		if (data.type === this.CLIENT_MOBILE){
-			this.execMobile(data, socket);
-		} else if (data.FROM === this.CLIENT_PIXELSENSE){
-			this.execPixelSense(data, socket);
-		}
+	
+	  if (data.from === this.CLIENT_MOBILE){
+		  this.execMobile(data, socket);
+	  } else if (data.from == this.CLIENT_PIXELSENSE){
+		  this.execPixelSense(data, socket);
+	  }
 	},
 
 	execMobile : function(data, socket){
-		//console.log('Mobile connected. UUID : ' + data.uuid);
-		var item = {
-			socket : socket,
-			uuid : data.uuid
-		};
-		this.mobiles.push(item);
-		socket.write('{ uuid : something, foo : goo}');
-		socket.end();
+		
+		switch (data.action)
+		{
+			case "INIT": 
+				var item = {
+					socket : socket,
+					uuid : data.uuid
+				};
+				this.mobiles.push(item);
+				//socket.write('{ uuid : something, foo : goo}');
+				break;
+			case "INDEX":
+				console.log(data.name);
+				break;
+		}
+//		socket.end();
 	},
 
 	execPixelSense : function(data, socket){

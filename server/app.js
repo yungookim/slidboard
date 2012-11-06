@@ -4,14 +4,21 @@ var net = require('net'),
 
 var server = net.createServer(function (socket){
 	socket.setEncoding('utf-8');
-	socket.setNoDelay(true);
+	//socket.setNoDelay(true);
 	socket.setKeepAlive(true);
 	console.log('Accepting Connection from ' + socket.remoteAddress);
 
 	//socket.write("Welcome!\n");
 	
 	socket.on('data', function(data){
-		APICalls.exec(data, socket);
+		console.log(data + "\n");
+		//check if data is JSON
+		try {
+			
+			var parsed_data = JSON.parse(data);
+			APICalls.exec(parsed_data, socket);
+		} catch (e){
+		}
 		//console.log(data);		
 	});
 	socket.on('end', function(){
@@ -32,3 +39,19 @@ server.listen(PORT, function(){
 	console.log('Server Listening on '+ PORT);
 });
 
+//To recieve a larger chunk of data such as an entire index file
+var express = require('express'); 
+
+var app = express.createServer();
+
+app.configure(function(){
+ 	app.use(express.bodyParser());
+});
+
+app.post('/fileIndex', function(req, res){
+	console.log(req.body.msg);
+	res.send('ok');
+});
+
+app.listen(8081);
+console.log("HTTP server running on 8081");
