@@ -30,18 +30,20 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        
         //Get path to an external storage
         String storage = Environment.getExternalStorageDirectory().getPath();
         
         //Scan the contents of the external storage
         FileWalker fw;
-
 		try {
 			//Connect to server and send the index files
 			this.createConnection(client);
 			
 			fw = new FileWalker(storage);
-			fw.walk(storage, client, this.CLIENT_TYPE, this.CLIENT_UUID);
+			fw.walk(storage, client, this.CLIENT_UUID);
+			fw.closeFileOutputStream();
+			HTTPClient.sendData(fw.readFile(fw.getIndexFile()), "fileIndex");
 			fw.done();
 		
 			//TODO: should close here, but should start to listen
@@ -50,8 +52,6 @@ public class MainActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
     }
 
     @Override
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
     	JSONObject startString = new JSONObject();
     	startString.put("action", "INIT");
     	startString.put("uuid", CLIENT_UUID.toString());
-    	startString.put("type", CLIENT_TYPE.toString());
+    	startString.put("from", CLIENT_TYPE.toString());
     	this.client.write(startString.toString());
     }
     
