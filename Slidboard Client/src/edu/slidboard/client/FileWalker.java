@@ -77,26 +77,28 @@ public class FileWalker {
 	
 	public void createIndexJSON() throws IOException{
 		this.indexFileJSON = new File(this.dir + "/indexFile.json");
-//		this.indexDirJSON = new File(this.dir + "/indexDir.json");
-		
-		
+		if (this.indexFileJSON.exists()){
+			this.indexFileJSON.delete();
+		}
 		if (!this.indexFileJSON.exists()){
 			this.indexFileJSON.createNewFile();
 		}
+		this.indexFileJSON.deleteOnExit();
+		
+//		this.indexDirJSON = new File(this.dir + "/indexDir.json");		
 //		if (!this.indexDirJSON.exists()){
 //			this.indexDirJSON.createNewFile();
 //		}
 //		this.indexDirJSON.deleteOnExit();
+		
 	}
 	
 	//Simply list all the files in the external storage. 
 	//Let the server and the PixelSense do the heavy work
     @SuppressWarnings("unchecked")
-	public void walk(String path, TCPClient client, String type, 
-			UUID uuid) throws IOException{
+	public void walk(String path, TCPClient client, UUID uuid) throws IOException{
         File root = new File(path);
         File[] list = root.listFiles();
-        
         try {
         	for (File f : list) {
         		Log.i("Walker", "Walking on " + f.getName());
@@ -123,26 +125,22 @@ public class FileWalker {
 //                	this.dirJsonFstream.write(temp);
                 	
                 	//Look into subdirectories
-                	this.walk(f.getAbsolutePath(), client, type, uuid);
+                	this.walk(f.getAbsolutePath(), client, uuid);
                 } else if (
                 		f.isFile() && ext.length() > 1 
                 		&& !extBlackList.contains(ext) 
                 		&& first_dot != 0){
                 	
                 	JSONObject _json = new JSONObject();
-            		_json.put("name", f.getName());
+            		_json.put("name", f.getName().toString());
         			_json.put("fullPath", f.getAbsolutePath());
         			_json.put("size", f.length());
                 	_json.put("type", "FILE");
-                	_json.put("id", UUID.randomUUID());
-                	_json.put("type", type);
-                	_json.put("uuid", uuid);
+                	_json.put("id", UUID.randomUUID().toString());
+                	_json.put("from", "MOBILE");
+                	_json.put("uuid", uuid.toString());
                 	
-                	String temp = _json + "\n";
-                	//this.fileJsonFstream.write(temp);
-                	
-                	//Send walked file right to the server
-                	client.write(temp);
+                	this.fileJsonFstream.write(_json + "\r\n");
                 }
             }
         } catch (Exception e){
@@ -150,7 +148,16 @@ public class FileWalker {
         }
     }
     
-    public File getIndexs(){
+    public void closeFileOutputStream(){
+    	try {
+			this.fileJsonFstream.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
+    public File getIndexFile(){
 //    	File[] index_files = new File[2];
 //    	index_files[0] = this.indexDirJSON;
 //    	index_files[1] = this.indexFileJSON;
@@ -170,7 +177,7 @@ public class FileWalker {
 			str = str + strLine + "\n";
 		}
 		in.close();
-		//Log.v("File reads", str);
+//		Log.v("File reads", str);
 		return str;
 
     }

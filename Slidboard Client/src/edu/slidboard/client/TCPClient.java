@@ -1,7 +1,9 @@
 package edu.slidboard.client;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,6 +11,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -23,7 +27,7 @@ public class TCPClient {
 	private int port;
 	private String ip;
 	private Socket clientSocket = null;
-	private DataOutputStream outToServer = null;
+	private PrintWriter  outToServer = null;
 	private BufferedReader inFromServer = null;
 	
 	public TCPClient(String ip, int port){	
@@ -35,7 +39,7 @@ public class TCPClient {
 		try {
 			//Get all the streams ready
 			this.clientSocket = new Socket(ip, port);
-			this.outToServer = new DataOutputStream(this.clientSocket.getOutputStream());
+			this.outToServer = new PrintWriter(this.clientSocket.getOutputStream());
 			this.inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
@@ -47,12 +51,23 @@ public class TCPClient {
 	}
 	
 	public void write(String input){
-		try {
-			this.outToServer.writeBytes(input);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+		this.outToServer.println(input + "\r\n");
+		this.outToServer.flush();
+	}
+	
+	public void sendFile(File file) throws IOException{
+		byte[] buf = new byte[1024];
+	    OutputStream os = this.clientSocket.getOutputStream();
+	    BufferedOutputStream out = new BufferedOutputStream(os, 1024);
+	    FileInputStream in = new FileInputStream(file);
+	    int i = 0;
+	    int bytecount = 1024;
+	    while ((i = in.read(buf, 0, 1024)) != -1) {
+	      bytecount = bytecount + 1024;
+	      out.write(buf, 0, i);
+	    }
+	    out.flush();
+	    this.clientSocket.shutdownOutput(); /* important */
 	}
 	
 	//Start listening to the incoming message. 
