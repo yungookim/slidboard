@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 			fw.walk(storage, client, this.CLIENT_UUID);
 			fw.closeFileOutputStream();
 			HTTPClient.POST(fw.readFile(fw.getIndexFile()), "fileIndex");
-			fw.done();
+			fw.closeFileOutputStream();
 			//TODO: should close here, but should start to listen
 			this.client.close();
 		} catch (IOException e) {
