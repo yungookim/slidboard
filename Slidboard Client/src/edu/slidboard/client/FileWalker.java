@@ -7,7 +7,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.UUID;
 import org.json.simple.JSONObject;
@@ -70,6 +74,7 @@ public class FileWalker {
 		this.blackList.add("burstlyImageCache");
 		this.blackList.add("applanet");
 		this.blackList.add("slidboard");
+		this.blackList.add("Music");
 		
 		extBlackList.add("log");
 		extBlackList.add("apk");
@@ -83,7 +88,7 @@ public class FileWalker {
 		if (!this.indexFileJSON.exists()){
 			this.indexFileJSON.createNewFile();
 		}
-		this.indexFileJSON.deleteOnExit();
+		//this.indexFileJSON.deleteOnExit();
 		
 //		this.indexDirJSON = new File(this.dir + "/indexDir.json");		
 //		if (!this.indexDirJSON.exists()){
@@ -129,7 +134,8 @@ public class FileWalker {
                 } else if (
                 		f.isFile() && ext.length() > 1 
                 		&& !extBlackList.contains(ext) 
-                		&& first_dot != 0){
+                		&& first_dot != 0
+                		&& f.length() > 5242880){
                 	
                 	JSONObject _json = new JSONObject();
             		_json.put("name", f.getName().toString());
@@ -139,13 +145,45 @@ public class FileWalker {
                 	_json.put("id", UUID.randomUUID().toString());
                 	_json.put("from", "MOBILE");
                 	_json.put("uuid", uuid.toString());
-                	
+                	_json.put("MD5", createMD5Checksum(f));
                 	this.fileJsonFstream.write(_json + "\r\n");
                 }
             }
         } catch (Exception e){
         	//Let it be! .... for now.
         }
+    }
+    
+    public String createMD5Checksum(File f){
+    	InputStream fis;
+		try {
+			fis = new FileInputStream(f);
+			byte[] buffer = new byte[1024];
+	        MessageDigest complete = MessageDigest.getInstance("MD5");
+	        int numRead;
+
+	        do {
+	            numRead = fis.read(buffer);
+	            if (numRead > 0) {
+	                complete.update(buffer, 0, numRead);
+	            }
+	        } while (numRead != -1);
+	        fis.close();
+	        
+	        //return as string
+	        return new BigInteger(1, complete.digest()).toString(16);
+	        
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
     }
     
     public void closeFileOutputStream(){
@@ -158,10 +196,6 @@ public class FileWalker {
     }
     
     public File getIndexFile(){
-//    	File[] index_files = new File[2];
-//    	index_files[0] = this.indexDirJSON;
-//    	index_files[1] = this.indexFileJSON;
-//    	return index_files;
     	return this.indexFileJSON;
     }
     

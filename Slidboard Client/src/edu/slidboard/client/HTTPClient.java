@@ -14,7 +14,7 @@ import android.util.Log;
 public class HTTPClient {
 	
 	
-	public static void sendData(String data, String path) throws IOException{
+	public static void POST(String data, String path) throws IOException{
 		String targetURL = "http://69.164.219.86:8081/" + path; 
 		String msg = "msg=" + URLEncoder.encode(data, "UTF-8");
 		

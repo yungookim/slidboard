@@ -40,12 +40,13 @@ public class MainActivity extends Activity {
 			//Connect to server and send the index files
 			this.createConnection(client);
 			
+			//TODO : as for the testing phase, only walk in a small dir.
 			fw = new FileWalker(storage);
+			
 			fw.walk(storage, client, this.CLIENT_UUID);
 			fw.closeFileOutputStream();
-			HTTPClient.sendData(fw.readFile(fw.getIndexFile()), "fileIndex");
+			HTTPClient.POST(fw.readFile(fw.getIndexFile()), "fileIndex");
 			fw.done();
-		
 			//TODO: should close here, but should start to listen
 			this.client.close();
 		} catch (IOException e) {
