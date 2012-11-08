@@ -1,20 +1,18 @@
 //Index given file system listing using Mongodb.
-var fs = require('fs'),
-		_ = require('underscore')._,
-		 mongodb = require('mongodb'),
-    server = new mongodb.Server("127.0.0.1", 27017, 
-						{ 'auto_reconnect': true, 'poolSize': 2 }
-						),
-    db = new mongodb.Db('slidboard', server, {safe:true});
+var fs      = require('fs'),
+    mongodb = require('mongodb'),
+    server  = new mongodb.Server("127.0.0.1", 27017, 
+						{'auto_reconnect': true}),
+    db      = new mongodb.Db('slidboard', server, {safe:true});
 
-var RAW_INDEX_DIR = '/data/indexDir.json';
+var RAW_INDEX_DIR  = '/data/indexDir.json';
 var RAW_INDEX_FILE = '/data/indexFile.json';
 var RAW_INDEX_TEST = '/data/test.json';
  
 module.exports.indexer = {
+
 	index_dir : function(next) {
 		var self = this;
-
 		//Synchronous file read.
 		var data = fs.readFileSync(RAW_INDEX_DIR);
 		//have the raw index interatable
@@ -53,6 +51,7 @@ module.exports.indexer = {
 						if (numbLines - numbInsertions < 1) {
 							console.log("Indexed " + numbLines + " items.");
 							db.close();
+							next();
 						}
 						return;
 					}
@@ -62,8 +61,7 @@ module.exports.indexer = {
 		});
 	},
 
-	index_files : function(){
-
+	index_files : function(next){
 		//Synchronous file read.
 		var data = fs.readFileSync(RAW_INDEX_FILE);
 		//have the raw index interatable
@@ -107,6 +105,7 @@ module.exports.indexer = {
 							if (numbLines - numbInsertions < 1) {
 								console.log("Indexed " + numbLines + " items.");
 								db.close();
+								next();
 							}
 							return;
 						}
@@ -120,8 +119,7 @@ module.exports.indexer = {
 			}
 		});
 	}
-
 }
 
-module.exports.indexer.index_files();
+//module.exports.indexer.index_files();
 //module.exports.indexer.index_dir();

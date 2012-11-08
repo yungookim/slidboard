@@ -14,10 +14,10 @@ var server = net.createServer(function (socket){
 		console.log(data + "\n");
 		//check if data is JSON
 		try {
-			
 			var parsed_data = JSON.parse(data);
 			APICalls.exec(parsed_data, socket);
 		} catch (e){
+			console("Wrong data time : app.js.socket.on.data")
 		}
 		//console.log(data);		
 	});
@@ -40,9 +40,8 @@ server.listen(PORT, function(){
 });
 
 //To recieve a larger chunk of data such as an entire index file
-var express = require('express'); 
-
-var app = express.createServer();
+var express = require('express'),
+    app     = express.createServer();
 
 app.configure(function(){
  	app.use(express.bodyParser());
