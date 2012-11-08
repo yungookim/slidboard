@@ -1,0 +1,100 @@
+//Index given file system listing using Mongodb.
+var mongodb = require('mongodb'),
+    server = new mongodb.Server("127.0.0.1", 27017, {}),
+    db = new mongodb.Db('slidboard', server, {safe:true}),
+    fs = require('fs'),
+    byline = require('byline'),
+		_ = require('underscore')._;
+
+var RAW_INDEX_DIR = '/data/indexDir.json';
+var RAW_INDEX_FILE = '/data/indexFile.json';
+var RAW_INDEX_TEST = '/data/test.json';
+ 
+module.exports.indexer = {
+	line_count : 0,
+	index : function() {
+		var self = this;
+		db.open(function (error, client) {
+			if (error) throw error;
+			var stream = byline(fs.createReadStream(RAW_INDEX_TEST));
+			var collection = new mongodb.Collection(client, 'index');
+
+			//Start reading the raw index file line by line
+			stream.on('data', function(line) {
+				var indexEntry = JSON.parse(line);
+				var fullPath = indexEntry.fullPath;
+				var dirName = indexEntry.name;
+				//[0] == '', [1] == root, [2] == sdcard, and so on
+				var deviceId = indexEntry.device_uuid;
+				var id = indexEntry.id;
+				var type = indexEntry.type;
+				var name = indexEntry.name;
+
+				collection.findOne({ id : id }, function(err, ret){
+					if (err) { console.log(err); return; }
+					if (!ret){
+						collection.insert(
+							{ 
+								deviceId : deviceId,
+								id : id,
+								name : name,
+								fullPath : fullPath,
+								children : []
+							},
+							{ safe : false }
+						);
+					} 
+				});
+
+				//Now, find the current entity's parent dir and update it
+				//In case it DNE, create an empty document object with only name.
+				var dir_array = fullPath.split('/');
+				_.each(dir_array, function(dir, i){
+					collection.findOne({ name : dir }, function(err, ret){
+						if (ret){/*Document object exists*/}
+						else {
+				 			if (i === dir_array.length-1){
+								return;
+							}
+							//Document object DNE. Insert
+							self.initializeDirectory(collection, deviceId, dir, type);
+							//dir_array[i-1] is the parent of the current dir
+							if (dir_array[i-1]){
+								//console.log(dir_array[i-1] + "/" + dir);
+								collection.findOne({ name : dir_array[i-1] }, function(err, ret){
+									if (err) { console.log(err); return; }
+									if (!ret){
+										self.initializeDirectory(collection, deviceId, dir_array[i-1], type);
+									} else {
+	//									var children = ret.childrent;
+//										children.push({ name : name, id : id });
+//										collection.update({   })
+										console.log(ret);
+									}
+								});	
+							}
+						}
+					});
+				});				
+			});
+
+			//Close DB connection on EOF
+			//stream.on('end', function(){db.close();});
+		});
+	},
+
+	initializeDirectory : function(collection, deviceId, name, type){
+		collection.insert(
+			{ 
+				deviceId : deviceId, 
+				name : name, 
+				type : type,
+				children : []
+			}, 
+			{ safe : false }
+		);
+	}
+
+}
+
+module.exports.indexer.index();
