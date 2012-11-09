@@ -9,7 +9,7 @@ var RAW_INDEX_DIR  = '/data/indexDir.json';
 var RAW_INDEX_FILE = '/data/indexFile.json';
 var RAW_INDEX_TEST = '/data/test.json';
  
-module.exports.indexer = {
+module.exports = {
 
 	index_dir : function(next) {
 		var self = this;
@@ -118,8 +118,30 @@ module.exports.indexer = {
 				}
 			}
 		});
+	},
+
+	getIndex : function(deviceId, dir, next){
+		db.open(function (error, client) {
+			if (error) throw error;
+					var collection = new mongodb.Collection(client, 'index_dir');
+					
+					collection.find({ deviceId : deviceId, parent : dir }, {})
+						.toArray(function(err, dirIndexes){
+						if (err) {console.log(err); return;}
+
+							collection = new mongodb.Collection(client, 'index_file');
+							collection.find({ deviceId : deviceId, parent : dir }, {})
+								.toArray(function(err, fileIndexes){
+									//Join the two results
+									var index = dirIndexes.concat(fileIndexes);
+									db.close();
+									next(index);
+								});					
+
+
+					});
+
+		});
 	}
 }
 
-//module.exports.indexer.index_files();
-//module.exports.indexer.index_dir();

@@ -4,26 +4,30 @@ var net = require('net'),
 
 var server = net.createServer(function (socket){
 	socket.setEncoding('utf-8');
-	//socket.setNoDelay(true);
+	socket.setNoDelay(true);
 	socket.setKeepAlive(true);
-	console.log('Accepting Connection from ' + socket.remoteAddress);
+	var remoteAddress = socket.remoteAddress;
+	var device = "";
 
-	//socket.write("Welcome!\n");
+	console.log('Accepting Connection from ' + socket.remoteAddress);
 	
 	socket.on('data', function(data){
-		console.log(data + "\n");
+		console.log("===================================================");
+		console.log("Raw Message : " + data);
 		//check if data is JSON
 		try {
 			var parsed_data = JSON.parse(data);
-			APICalls.exec(parsed_data, socket);
+			device = parsed_data.from;
+			console.log("Message parsed");
+			console.log(parsed_data);
 		} catch (e){
 			console("Wrong data time : app.js.socket.on.data")
 		}
-		//console.log(data);		
+		APICalls.exec(parsed_data, socket);
+		console.log("===================================================");
 	});
 	socket.on('end', function(){
-		console.log('server disconnected');
-		socket.end();
+		console.log('Connection half closed with ' + device + "(" + remoteAddress + ")");
 		socket.destroy();
 	});
 	socket.on('timeout', function(){
@@ -32,6 +36,10 @@ var server = net.createServer(function (socket){
 	});
 	socket.on('error', function(e){
 		console.log(e);
+	});
+	socket.on('close', function(){
+		console.log('Connection fully closed with ' +
+				device + "(" + remoteAddress + ")");
 	});
 });
 

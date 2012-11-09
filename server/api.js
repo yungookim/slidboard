@@ -1,3 +1,5 @@
+var indexer = require('./indexer');
+
 module.exports = {
   CLIENT_MOBILE : "MOBILE",
   CLIENT_PIXELSENSE : "PixelSense",
@@ -6,11 +8,11 @@ module.exports = {
 
 	exec : function(data, socket){
 	
-	  if (data.from === this.CLIENT_MOBILE){
-		  this.execMobile(data, socket);
-	  } else if (data.from == this.CLIENT_PIXELSENSE){
-		  this.execPixelSense(data, socket);
-	  }
+		if (data.from === this.CLIENT_MOBILE){
+			this.execMobile(data, socket);
+		} else if (data.from == this.CLIENT_PIXELSENSE){
+			this.execPixelSense(data, socket);
+		}
 	},
 
 	execMobile : function(data, socket){
@@ -23,7 +25,6 @@ module.exports = {
 					uuid : data.uuid
 				};
 				this.mobiles.push(item);
-				//socket.write('{ uuid : something, foo : goo}');
 				break;
 			case "INDEX":
 				console.log(data.name);
@@ -33,24 +34,33 @@ module.exports = {
 	},
 
 	execPixelSense : function(data, socket){
-		if (data.msg === "END"){
-			socket.write("END");
+		if (data.action === "end"){
+			socket.write("end");
 			this.pixelSense = null;
 			console.log("Teminating connection with PixelSense");
+			socket.end();
+			socket.destroy();
 			return;
 		}
 
-		data = JSON.parse(data.msg);
-		//console.log(data);
-		switch (data.ACTION){
-			case 'INIT':
+		switch (data.action){
+			case 'init':
 				this.pixelSense = socket;
-				socket.write('ok');
-				//socket.pipe(socket);
+				console.log("PixelSense Connected");
+				socket.end('ok');
+				break;
+			case 'getIndex':
+				var query = JSON.parse(data.extraMsg);
+				indexer.getIndex(query.requestingDevice, query.dir, function(indexList){
+					console.log(indexList);
+					console.log('Sending response');
+				
+					socket.end(indexList);
+				});
 				break;
 			default :
-				console.log("Error");
-				console.log(data);
+				console.log(JSON.parse(data.msg));
+				
 				break;
 		}
 	}
