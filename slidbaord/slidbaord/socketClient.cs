@@ -85,25 +85,4 @@ namespace slidbaord
             return this.clientSocket;
         }
     }
-
-    //Converts message to JSON format that can be easily parsed by the server
-    public class Message
-    {
-        private const String CONNECTION_FROM = "PixelSense";
-
-        //Let the server know where the connection is coming from
-        public String FROM = CONNECTION_FROM;
-        public String msg = "";
-
-        public Message(String data) 
-        {
-            this.msg = data;
-        }
-
-        //Serialize current object to JSON then return
-        public String getMessage(){
-            string json = JsonConvert.SerializeObject(this);
-            return json;
-        }
-    }
 }

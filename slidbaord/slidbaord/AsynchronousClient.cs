@@ -3,10 +3,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace slidbaord
 {
-    // State object for receiving data from remote device.
+    //The mojority of the following codes are from MSDN examples.
+    // State object for receiving data from remote.
     public class StateObject
     {
         // Client socket.
@@ -19,21 +21,40 @@ namespace slidbaord
         public StringBuilder sb = new StringBuilder();
     }
 
+    //Converts message to JSON format that can be easily parsed by the server
+    public class Message
+    {
+        private const String CONNECTION_FROM = "PixelSense";
+
+        //Let the server know where the connection is coming from
+        public String from = CONNECTION_FROM;
+        public String msg = "";
+
+        public Message(String data)
+        {
+            this.msg = data;
+        }
+
+        //Serialize current object to JSON then return
+        public String getMessage()
+        {
+            string json = JsonConvert.SerializeObject(this);
+            return json;
+        }
+    }
 
     public class AsynchronousClient
     {
         // The port number for the remote device.
         private const int port = 6060;
+        private const String ip = "69.164.219.86";
 
         // ManualResetEvent instances signal completion.
-        private static ManualResetEvent connectDone =
-            new ManualResetEvent(false);
-        private static ManualResetEvent sendDone =
-            new ManualResetEvent(false);
-        private static ManualResetEvent receiveDone =
-            new ManualResetEvent(false);
+        private static ManualResetEvent connectDone = new ManualResetEvent(false);
+        private static ManualResetEvent sendDone = new ManualResetEvent(false);
+        private static ManualResetEvent receiveDone = new ManualResetEvent(false);
 
-        // The response from the remote device.
+        // The response from the remote.
         private static String response = String.Empty;
 
         public static void StartClient()
@@ -42,7 +63,7 @@ namespace slidbaord
             try
             {
                 // Establish the remote endpoint for the socket.
-                IPAddress ipAddress = IPAddress.Parse("69.164.219.86");
+                IPAddress ipAddress = IPAddress.Parse(ip);
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);
 
                 // Create a TCP/IP socket.
@@ -54,8 +75,12 @@ namespace slidbaord
                     new AsyncCallback(ConnectCallback), client);
                 connectDone.WaitOne();
 
+                //Prepare JSON message to send
+                Message _msg = new Message("INIT");
+                String message = _msg.getMessage();
+
                 // Send test data to the remote device.
-                Send(client, "This is a test<EOF>");
+                Send(client, message);
                 sendDone.WaitOne();
 
                 // Receive the response from the remote device.
@@ -64,11 +89,6 @@ namespace slidbaord
 
                 // Write the response to the console.
                 Console.WriteLine("Response received : {0}", response);
-
-                // Release the socket.
-                client.Shutdown(SocketShutdown.Both);
-                client.Close();
-
             }
             catch (Exception e)
             {
@@ -183,5 +203,14 @@ namespace slidbaord
                 Console.WriteLine(e.ToString());
             }
         }
+
+        public static void close()
+        {
+            // Release the socket.
+  //          client.Shutdown(SocketShutdown.Both);
+//            client.Close();
+        }
     }
+
+    
 }

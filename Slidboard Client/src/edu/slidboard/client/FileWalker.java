@@ -146,8 +146,8 @@ public class FileWalker {
                 	_json.put("type", "FILE");
                 	_json.put("id", UUID.randomUUID().toString());
                 	_json.put("device_uuid", device_uuid.toString());
-//                	_json.put("MD5", createMD5Checksum(f));
-//                	this.fileJsonFstream.write(_json + "\r\n");
+                	_json.put("MD5", createMD5Checksum(f));
+                	this.fileJsonFstream.write(_json + "\r\n");
                 }
             }
         } catch (Exception e){
