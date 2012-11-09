@@ -116,6 +116,7 @@ namespace slidbaord
             switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
+			87841656-3842-40cb-af59-389ee46b23cd
                     _obj.ObjectModel.Content = "KimY's Phone";
                     _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
                     break;
