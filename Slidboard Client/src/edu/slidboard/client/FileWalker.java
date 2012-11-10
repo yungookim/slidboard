@@ -7,7 +7,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.UUID;
 import org.json.simple.JSONObject;
@@ -18,18 +22,19 @@ public class FileWalker {
 	
 	//Object holding index.json
 	private File indexFileJSON;
-//	private File indexDirJSON;
+	private File indexDirJSON;
 	
 	//index.json file streams
 	private FileWriter fileJsonFstream;
-//	private FileWriter dirJsonFstream;
+	private FileWriter dirJsonFstream;
 		
 	//Path to slidboard
 	private String dir;
 	
 	//Directories within this list will not be indexed
 	private ArrayList<String> blackList = new ArrayList<String>();
-	private ArrayList<String> extBlackList = new ArrayList<String>();
+	private ArrayList<String> extAllowedList = new ArrayList<String>();
+
 	
 	public FileWalker(String external) throws IOException{
 		this.dir = external + "/slidboard";
@@ -47,13 +52,13 @@ public class FileWalker {
 			} else {
 				//Error
 				Log.e("Error", "Directory could not be created. Abort.");
-				throw new FileNotFoundException();	
+				throw new FileNotFoundException();
 			}
 		}
 		
 		//index.json file is created.
 		this.fileJsonFstream = new FileWriter(this.indexFileJSON);
-//		this.dirJsonFstream = new FileWriter(this.indexDirJSON);
+		this.dirJsonFstream = new FileWriter(this.indexDirJSON);
 		
 		this.prepBlackList();
 	}
@@ -71,8 +76,12 @@ public class FileWalker {
 		this.blackList.add("applanet");
 		this.blackList.add("slidboard");
 		
-		extBlackList.add("log");
-		extBlackList.add("apk");
+		extAllowedList.add("jpg");
+		extAllowedList.add("jpeg");
+		extAllowedList.add("png");
+		extAllowedList.add("bmp");
+		extAllowedList.add("txt");
+		extAllowedList.add("mp3");
 	}
 	
 	public void createIndexJSON() throws IOException{
@@ -83,20 +92,21 @@ public class FileWalker {
 		if (!this.indexFileJSON.exists()){
 			this.indexFileJSON.createNewFile();
 		}
-		this.indexFileJSON.deleteOnExit();
 		
-//		this.indexDirJSON = new File(this.dir + "/indexDir.json");		
-//		if (!this.indexDirJSON.exists()){
-//			this.indexDirJSON.createNewFile();
-//		}
-//		this.indexDirJSON.deleteOnExit();
+		this.indexDirJSON = new File(this.dir + "/indexDir.json");
+		if (this.indexDirJSON.exists()){
+			this.indexDirJSON.delete();
+		}
+		if (!this.indexDirJSON.exists()){
+			this.indexDirJSON.createNewFile();
+		}
 		
 	}
 	
 	//Simply list all the files in the external storage. 
 	//Let the server and the PixelSense do the heavy work
     @SuppressWarnings("unchecked")
-	public void walk(String path, TCPClient client, UUID uuid) throws IOException{
+	public void walk(String path, TCPClient client, UUID device_uuid) throws IOException{
         File root = new File(path);
         File[] list = root.listFiles();
         try {
@@ -111,25 +121,23 @@ public class FileWalker {
         		int first_dot = f.getName().indexOf('.');
         		
                 if (f.isDirectory() && !this.blackList.contains(f.getName())) {
-                	
-                	//I don't need directory listings
-                	
-//                	JSONObject _json = new JSONObject();
-//            		_json.put("name", f.getName());
-//        			_json.put("fullPath", f.getAbsolutePath());
-//        			_json.put("size", f.length());
-//                	_json.put("type", "DIR");
-//                	_json.put("id", UUID.randomUUID());
-//                	
-//                	String temp = _json + "\n";
-//                	this.dirJsonFstream.write(temp);
+                	                	
+                	JSONObject _json = new JSONObject();
+            		_json.put("name", f.getName());
+        			_json.put("fullPath", f.getAbsolutePath());
+                	_json.put("type", "DIR");
+                	_json.put("device_uuid", device_uuid.toString());
+                	_json.put("id", UUID.randomUUID().toString());
+                	this.dirJsonFstream.write(_json + "\r\n");
                 	
                 	//Look into subdirectories
-                	this.walk(f.getAbsolutePath(), client, uuid);
+                	this.walk(f.getAbsolutePath(), client, device_uuid);
+                	
                 } else if (
                 		f.isFile() && ext.length() > 1 
-                		&& !extBlackList.contains(ext) 
-                		&& first_dot != 0){
+                		&& extAllowedList.contains(ext) 
+                		&& first_dot != 0
+                		&& f.length() > 5242880){
                 	
                 	JSONObject _json = new JSONObject();
             		_json.put("name", f.getName().toString());
@@ -137,9 +145,8 @@ public class FileWalker {
         			_json.put("size", f.length());
                 	_json.put("type", "FILE");
                 	_json.put("id", UUID.randomUUID().toString());
-                	_json.put("from", "MOBILE");
-                	_json.put("uuid", uuid.toString());
-                	
+                	_json.put("device_uuid", device_uuid.toString());
+                	_json.put("MD5", createMD5Checksum(f));
                 	this.fileJsonFstream.write(_json + "\r\n");
                 }
             }
@@ -148,9 +155,43 @@ public class FileWalker {
         }
     }
     
+    public String createMD5Checksum(File f){
+    	InputStream fis;
+		try {
+			fis = new FileInputStream(f);
+			byte[] buffer = new byte[1024];
+	        MessageDigest complete = MessageDigest.getInstance("MD5");
+	        int numRead;
+
+	        do {
+	            numRead = fis.read(buffer);
+	            if (numRead > 0) {
+	                complete.update(buffer, 0, numRead);
+	            }
+	        } while (numRead != -1);
+	        fis.close();
+	        
+	        //return as string
+	        return new BigInteger(1, complete.digest()).toString(16);
+	        
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+    }
+    
+  //Close the file streams
     public void closeFileOutputStream(){
     	try {
 			this.fileJsonFstream.close();
+			this.dirJsonFstream.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -158,10 +199,6 @@ public class FileWalker {
     }
     
     public File getIndexFile(){
-//    	File[] index_files = new File[2];
-//    	index_files[0] = this.indexDirJSON;
-//    	index_files[1] = this.indexFileJSON;
-//    	return index_files;
     	return this.indexFileJSON;
     }
     
@@ -180,11 +217,5 @@ public class FileWalker {
 //		Log.v("File reads", str);
 		return str;
 
-    }
-    
-    //Close the file streams
-    public void done() throws IOException{
-//    	this.dirJsonFstream.close();
-    	this.fileJsonFstream.close();
     }
 }

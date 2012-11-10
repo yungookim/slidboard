@@ -16,6 +16,10 @@ using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
 
+using System.Collections;
+using Newtonsoft.Json;
+
+
 namespace slidbaord
 {
     /// <summary>
@@ -23,6 +27,9 @@ namespace slidbaord
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
+
+        //private SocketClient sc;
+        private ArrayList deviceIds = new ArrayList();
 
         private SocketClient sc;
 
@@ -36,8 +43,16 @@ namespace slidbaord
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
 
-            //Establish a connection with the server
-            AsynchronousClient.StartClient();
+            //Establish a TCP connection with the server
+            //Async Stlye
+            //AsynchronousClient.StartClient();
+            //Blocking calls
+            //sc = new SocketClient("69.164.219.86", 6060);
+            //sc.connect();
+
+            //Or doing it in HTTP
+            JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
+            String response = HttpClient.GET("init", _msg.getMessage());
         }
 
         /// <summary>
@@ -116,8 +131,18 @@ namespace slidbaord
             switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
+                    String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
+                    this.deviceIds.Add(deviceId);
+
                     _obj.ObjectModel.Content = "KimY's Phone";
                     _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
+
+                    JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
+                    JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
+
+                    String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
+                    Console.WriteLine(response);
+
                     break;
                 case 0xC2:
                     _obj.ObjectModel.Content = "Nexus One";

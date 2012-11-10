@@ -35,75 +35,48 @@ namespace slidbaord
             this.clientSocket.Connect(this.ip, this.port);
             this.serverStream = clientSocket.GetStream();
            
-            //Start listening on a dedicated thread
-            this.listenThread = new Thread(new ThreadStart(listen));
-            this.listenThread.Name = "TCP_LISENING_THREAD";
-            this.keep_alive = true;
-            this.listenThread.Start();
+            //Prepare initiating JSON message to send
+            JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
+            
+            //Tell the server who I am
+            this.write(_msg.getMessage());
+            //this.listen();
         }
 
         public void close()
         {
-            this.keep_alive = false;
-            this.write("END");
+            this.write("end");
             //this.listenThread.Join();
             this.clientSocket.Close();
         }
 
         public void write(String val)
         {
-            //Prepare JSON message to send
-            Message _msg = new Message(val);
-            String message = _msg.getMessage();
-
-            byte[] outStream = System.Text.Encoding.ASCII.GetBytes(message);
+            byte[] outStream = System.Text.Encoding.ASCII.GetBytes(val);
             serverStream.Write(outStream, 0, outStream.Length);
             serverStream.Flush();
         }
 
-        private void listen()
+        public void listen()
         {
+            byte[] inStream = new byte[clientSocket.Available];
+            //Following function blocks. Wait til the server responds then go on.
+            //BUG: The current worker thread does not shut down gracefully.
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("Waiting for msg");
+            String msg = "";
 
-            byte[] inStream = new byte[10025];
+            serverStream.Read(inStream, 0, clientSocket.Available);
+            
+            msg = System.Text.Encoding.ASCII.GetString(inStream);
 
-            while (this.keep_alive)
-            {
-                Console.WriteLine("worker thread: working...");
-                //Following function blocks. Wait til the server responds then go on.
-                //BUG: The current worker thread does not shut down gracefully.
-
-                serverStream.Read(inStream, 0, clientSocket.ReceiveBufferSize);
-
-                string msg = System.Text.Encoding.ASCII.GetString(inStream);
-                Console.WriteLine("Server Says :" + msg + "\n");
-            }
-            Console.WriteLine("worker thread: terminating gracefully.");
+            Console.WriteLine("Server Says : {0}\r\n", msg);
+            Console.WriteLine("------------------------------------------------");
         }
 
         public TcpClient getSocket()
         {
             return this.clientSocket;
-        }
-    }
-
-    //Converts message to JSON format that can be easily parsed by the server
-    public class Message
-    {
-        private const String CONNECTION_FROM = "PixelSense";
-
-        //Let the server know where the connection is coming from
-        public String FROM = CONNECTION_FROM;
-        public String msg = "";
-
-        public Message(String data) 
-        {
-            this.msg = data;
-        }
-
-        //Serialize current object to JSON then return
-        public String getMessage(){
-            string json = JsonConvert.SerializeObject(this);
-            return json;
         }
     }
 }
