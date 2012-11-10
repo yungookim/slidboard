@@ -18,8 +18,7 @@ using Microsoft.Surface.Presentation.Input;
 
 using System.Collections;
 using Newtonsoft.Json;
-using System.Net;
-using System.IO;
+
 
 namespace slidbaord
 {
@@ -44,10 +43,16 @@ namespace slidbaord
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
 
-            //Establish a connection with the server
+            //Establish a TCP connection with the server
+            //Async Stlye
             //AsynchronousClient.StartClient();
+            //Blocking calls
             //sc = new SocketClient("69.164.219.86", 6060);
             //sc.connect();
+
+            //Or doing it in HTTP
+
+            HttpClient.GET("init", )
         }
 
         /// <summary>
@@ -135,10 +140,7 @@ namespace slidbaord
                     JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
                     JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
 
-                    
-
-
-                    
+                    String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
 
                     break;
                 case 0xC2:
