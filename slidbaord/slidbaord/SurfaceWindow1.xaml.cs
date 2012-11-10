@@ -135,12 +135,7 @@ namespace slidbaord
                     JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
                     JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
 
-                    WebRequest request = WebRequest.Create("http://69.164.219.86:8081/init?asdf=a");
-                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                    Console.WriteLine(response.StatusDescription);
-                    Stream dataStream = response.GetResponseStream();
-                    StreamReader reader = new StreamReader(dataStream);
-                    Console.WriteLine(reader.ReadToEnd());
+                    
 
 
                     

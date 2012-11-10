@@ -78,6 +78,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AsynchronousClient.cs" />
+    <Compile Include="HttpClient.cs" />
     <Compile Include="JSONMessage.cs" />
     <Compile Include="socketClient.cs" />
     <Compile Include="ObjectVisualization.xaml.cs">
