@@ -51,8 +51,9 @@ namespace slidbaord
             //sc.connect();
 
             //Or doing it in HTTP
+            JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
+            String response = HttpClient.GET("init", _msg.getMessage());
 
-            HttpClient.GET("init", )
         }
 
         /// <summary>

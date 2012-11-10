@@ -12,7 +12,7 @@ namespace slidbaord
 
         public static String GET(String urn, String query)
         {
-            WebRequest request = WebRequest.Create("http://69.164.219.86:8081/" + urn + "?msg=");
+            WebRequest request = WebRequest.Create("http://69.164.219.86:8081/" + urn + "?msg=" + query);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Console.WriteLine(response.StatusDescription);
             Stream dataStream = response.GetResponseStream();
