@@ -16,6 +16,11 @@ using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
 
+using System.Collections;
+using Newtonsoft.Json;
+using System.Net;
+using System.IO;
+
 namespace slidbaord
 {
     /// <summary>
@@ -23,6 +28,9 @@ namespace slidbaord
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
+
+        //private SocketClient sc;
+        private ArrayList deviceIds = new ArrayList();
 
         private SocketClient sc;
 
@@ -37,7 +45,9 @@ namespace slidbaord
             AddWindowAvailabilityHandlers();
 
             //Establish a connection with the server
-            AsynchronousClient.StartClient();
+            //AsynchronousClient.StartClient();
+            //sc = new SocketClient("69.164.219.86", 6060);
+            //sc.connect();
         }
 
         /// <summary>
@@ -116,9 +126,25 @@ namespace slidbaord
             switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
-			87841656-3842-40cb-af59-389ee46b23cd
+                    String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
+                    this.deviceIds.Add(deviceId);
+
                     _obj.ObjectModel.Content = "KimY's Phone";
                     _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
+
+                    JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
+                    JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
+
+                    WebRequest request = WebRequest.Create("http://69.164.219.86:8081/init?asdf=a");
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                    Console.WriteLine(response.StatusDescription);
+                    Stream dataStream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(dataStream);
+                    Console.WriteLine(reader.ReadToEnd());
+
+
+                    
+
                     break;
                 case 0xC2:
                     _obj.ObjectModel.Content = "Nexus One";

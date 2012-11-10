@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Text;
-using Newtonsoft.Json;
+
 
 namespace slidbaord
 {
@@ -21,33 +21,13 @@ namespace slidbaord
         public StringBuilder sb = new StringBuilder();
     }
 
-    //Converts message to JSON format that can be easily parsed by the server
-    public class Message
-    {
-        private const String CONNECTION_FROM = "PixelSense";
-
-        //Let the server know where the connection is coming from
-        public String from = CONNECTION_FROM;
-        public String msg = "";
-
-        public Message(String data)
-        {
-            this.msg = data;
-        }
-
-        //Serialize current object to JSON then return
-        public String getMessage()
-        {
-            string json = JsonConvert.SerializeObject(this);
-            return json;
-        }
-    }
-
     public class AsynchronousClient
     {
         // The port number for the remote device.
         private const int port = 6060;
         private const String ip = "69.164.219.86";
+
+        private static Socket client;
 
         // ManualResetEvent instances signal completion.
         private static ManualResetEvent connectDone = new ManualResetEvent(false);
@@ -55,6 +35,7 @@ namespace slidbaord
         private static ManualResetEvent receiveDone = new ManualResetEvent(false);
 
         // The response from the remote.
+        
         private static String response = String.Empty;
 
         public static void StartClient()
@@ -67,7 +48,7 @@ namespace slidbaord
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);
 
                 // Create a TCP/IP socket.
-                Socket client = new Socket(AddressFamily.InterNetwork, 
+                client = new Socket(AddressFamily.InterNetwork, 
                     SocketType.Stream, ProtocolType.Tcp);
 
                 // Connect to the remote endpoint.
@@ -76,15 +57,15 @@ namespace slidbaord
                 connectDone.WaitOne();
 
                 //Prepare JSON message to send
-                Message _msg = new Message("INIT");
+                JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
                 String message = _msg.getMessage();
 
                 // Send test data to the remote device.
-                Send(client, message);
+                Send(message);
                 sendDone.WaitOne();
 
                 // Receive the response from the remote device.
-                Receive(client);
+                Receive();
                 receiveDone.WaitOne();
 
                 // Write the response to the console.
@@ -95,7 +76,7 @@ namespace slidbaord
                 Console.WriteLine(e.ToString());
             }
         }
-
+        
         private static void ConnectCallback(IAsyncResult ar)
         {
             try
@@ -106,7 +87,7 @@ namespace slidbaord
                 // Complete the connection.
                 client.EndConnect(ar);
 
-                Console.WriteLine("Socket connected to {0}",
+                Console.WriteLine("Socket connected to {0}", 
                     client.RemoteEndPoint.ToString());
 
                 // Signal that the connection has been made.
@@ -118,7 +99,7 @@ namespace slidbaord
             }
         }
 
-        private static void Receive(Socket client)
+        public static void Receive()
         {
             try
             {
@@ -134,6 +115,11 @@ namespace slidbaord
             {
                 Console.WriteLine(e.ToString());
             }
+        }
+
+        public static ManualResetEvent getReceiveEvent()
+        {
+            return receiveDone;
         }
 
         private static void ReceiveCallback(IAsyncResult ar)
@@ -163,9 +149,11 @@ namespace slidbaord
                     if (state.sb.Length > 1)
                     {
                         response = state.sb.ToString();
+                        Console.WriteLine(response);
                     }
                     // Signal that all bytes have been received.
                     receiveDone.Set();
+                    
                 }
             }
             catch (Exception e)
@@ -174,7 +162,7 @@ namespace slidbaord
             }
         }
 
-        private static void Send(Socket client, String data)
+        public static void Send(String data)
         {
             // Convert the string data to byte data using ASCII encoding.
             byte[] byteData = Encoding.ASCII.GetBytes(data);
@@ -182,6 +170,11 @@ namespace slidbaord
             // Begin sending the data to the remote device.
             client.BeginSend(byteData, 0, byteData.Length, 0,
                 new AsyncCallback(SendCallback), client);
+        }
+
+        public static ManualResetEvent getSendEvent()
+        {
+            return sendDone;
         }
 
         private static void SendCallback(IAsyncResult ar)
@@ -206,9 +199,7 @@ namespace slidbaord
 
         public static void close()
         {
-            // Release the socket.
-  //          client.Shutdown(SocketShutdown.Both);
-//            client.Close();
+            client.Shutdown(SocketShutdown.Both);
         }
     }
 
