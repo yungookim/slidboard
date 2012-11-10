@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
@@ -57,7 +57,24 @@ namespace slidbaord
             String json = JsonConvert.SerializeObject(this);
             return json;
         }
-
     }
+
+    public class Parser
+    {
+        public static ArrayList parseIndexes(String list)
+        {
+            list = list.Trim();
+            String[] items = list.Split('\n');
+            ArrayList alItems = new ArrayList();
+
+            foreach(String i in items)
+            {
+                IndexObject _temp = JsonConvert.DeserializeObject<IndexObject>(i);
+                alItems.Add(_temp);
+            }
+            return alItems;
+        }
+    }
+
 
 }

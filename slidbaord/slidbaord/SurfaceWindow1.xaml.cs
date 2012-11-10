@@ -15,7 +15,6 @@ using Microsoft.Surface;
 using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
-
 using System.Collections;
 using Newtonsoft.Json;
 
@@ -53,6 +52,10 @@ namespace slidbaord
             //Or doing it in HTTP
             JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
             String response = HttpClient.GET("init", _msg.getMessage());
+
+            //TODO DELETE THIS. FOR TESTING ONLY
+            //String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
+            //this.getIndexObject(deviceId);
         }
 
         /// <summary>
@@ -137,11 +140,7 @@ namespace slidbaord
                     _obj.ObjectModel.Content = "KimY's Phone";
                     _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
 
-                    JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
-                    JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
-
-                    String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
-                    Console.WriteLine(response);
+                    this.getIndexObject(deviceId);
 
                     break;
                 case 0xC2:
@@ -153,6 +152,14 @@ namespace slidbaord
                     _obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
                     break;
             }
+        }
+
+        private ArrayList getIndexObject(String deviceId)
+        {
+            JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
+            JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
+            String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
+            return Parser.parseIndexes(response);
         }
     }
 }
