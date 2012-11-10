@@ -53,7 +53,6 @@ namespace slidbaord
             //Or doing it in HTTP
             JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
             String response = HttpClient.GET("init", _msg.getMessage());
-
         }
 
         /// <summary>
@@ -142,6 +141,7 @@ namespace slidbaord
                     JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
 
                     String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
+                    Console.WriteLine(response);
 
                     break;
                 case 0xC2:
