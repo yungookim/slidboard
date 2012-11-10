@@ -137,10 +137,7 @@ module.exports = {
 									db.close();
 									next(index);
 								});					
-
-
 					});
-
 		});
 	}
 }

@@ -2,6 +2,7 @@ var net = require('net'),
     PORT = 6060,
     APICalls = require('./api');
 
+//Using TCP
 var server = net.createServer(function (socket){
 	socket.setEncoding('utf-8');
 	socket.setNoDelay(true);
@@ -21,9 +22,13 @@ var server = net.createServer(function (socket){
 			console.log("Message parsed");
 			console.log(parsed_data);
 		} catch (e){
-			console("Wrong data time : app.js.socket.on.data")
+			console.log("Wrong data time : app.js.socket.on.data");
+			console.log(e);
+			console.log(data);
+			socket.end('WDT');
+			return;
 		}
-		APICalls.exec(parsed_data, socket);
+		APICalls.Execs.exec(parsed_data, socket);
 		console.log("===================================================");
 	});
 	socket.on('end', function(){
@@ -47,7 +52,8 @@ server.listen(PORT, function(){
 	console.log('Server Listening on '+ PORT);
 });
 
-//To recieve a larger chunk of data such as an entire index file
+
+//Using HTTP
 var express = require('express'),
     app     = express.createServer();
 
@@ -59,6 +65,27 @@ app.post('/fileIndex', function(req, res){
 	console.log(req.body.msg);
 	res.send('ok');
 });
+
+app.get('/init', function(req, res){
+	console.log("===================================================");
+	var query = APICalls.parse(req.query.msg);
+	APICalls.exec(query, function(ret){
+		res.send(ret);
+	});
+	console.log("===================================================");
+});
+
+
+app.get('/getIndex', function(req, res){
+	console.log("===================================================");
+	var query = APICalls.parse(req.query.msg);
+	APICalls.exec(query, function(ret){
+		console.log(ret);
+		res.send(ret);
+	});
+	console.log("===================================================");
+});
+
 
 app.listen(8081);
 console.log("HTTP server running on 8081");
