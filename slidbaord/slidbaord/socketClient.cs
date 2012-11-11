@@ -17,11 +17,6 @@ namespace slidbaord
         private TcpClient clientSocket;
         private NetworkStream serverStream;
         
-        //Listening Thread
-        private Thread listenThread;
-        //Following variable will be accessed by multiple threads.
-        private volatile Boolean keep_alive = false;
-
         public SocketClient(String ip, int port)
         {
             this.ip = ip;

@@ -30,8 +30,6 @@ namespace slidbaord
         //private SocketClient sc;
         private ArrayList deviceIds = new ArrayList();
 
-        private SocketClient sc;
-
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -56,6 +54,7 @@ namespace slidbaord
             //TODO DELETE THIS. FOR TESTING ONLY
             //String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
             //this.getIndexObject(deviceId);
+            
         }
 
         /// <summary>
@@ -139,7 +138,6 @@ namespace slidbaord
 
                     _obj.ObjectModel.Content = "KimY's Phone";
                     _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
-
                     this.getIndexObject(deviceId);
 
                     break;
