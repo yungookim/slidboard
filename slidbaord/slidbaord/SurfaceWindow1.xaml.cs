@@ -15,7 +15,6 @@ using Microsoft.Surface;
 using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
-
 using System.Collections;
 using Newtonsoft.Json;
 
@@ -30,8 +29,6 @@ namespace slidbaord
 
         //private SocketClient sc;
         private ArrayList deviceIds = new ArrayList();
-
-        private SocketClient sc;
 
         /// <summary>
         /// Default constructor.
@@ -53,6 +50,11 @@ namespace slidbaord
             //Or doing it in HTTP
             JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
             String response = HttpClient.GET("init", _msg.getMessage());
+
+            //TODO DELETE THIS. FOR TESTING ONLY
+            //String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
+            //this.getIndexObject(deviceId);
+            
         }
 
         /// <summary>
@@ -134,25 +136,29 @@ namespace slidbaord
                     String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
                     this.deviceIds.Add(deviceId);
 
-                    _obj.ObjectModel.Content = "KimY's Phone";
-                    _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
-
-                    JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
-                    JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
-
-                    String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
-                    Console.WriteLine(response);
+                    _obj.ObjectModel.Content = "Samsung Infuse";
+                    //_obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
+                    this.getIndexObject(deviceId);
 
                     break;
                 case 0xC2:
                     _obj.ObjectModel.Content = "Nexus One";
-                    _obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
+                    //_obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
                     break;
                 default:
                     _obj.ObjectModel.Content = "UNKNOWN MODEL";
-                    _obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
+                    _obj.DirList.Visibility = Visibility.Hidden;
+                    //_obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
                     break;
             }
+        }
+
+        private ArrayList getIndexObject(String deviceId)
+        {
+            JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
+            JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
+            String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
+            return Parser.parseIndexes(response);
         }
     }
 }
