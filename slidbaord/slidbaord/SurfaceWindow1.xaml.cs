@@ -130,15 +130,25 @@ namespace slidbaord
         {
 
             ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            
             switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
                     String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
+                    String deviceName = "Samsung Infuse";
                     this.deviceIds.Add(deviceId);
 
-                    _obj.ObjectModel.Content = "Samsung Infuse";
+                    _obj.ObjectModel.Content = deviceName;
                     //_obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
-                    this.getIndexObject(deviceId);
+
+                    ScatterViewItem[] ls = _obj.createFileList(this.getIndexObject(deviceId), 
+                                            deviceName, new Point(500, 500));
+
+                    foreach (ScatterViewItem i in ls)
+                    {
+                        this.DirList.Items.Add(i);
+                        
+                    }
 
                     break;
                 case 0xC2:
@@ -147,10 +157,17 @@ namespace slidbaord
                     break;
                 default:
                     _obj.ObjectModel.Content = "UNKNOWN MODEL";
-                    _obj.DirList.Visibility = Visibility.Hidden;
+                    this.DirList.Visibility = Visibility.Hidden;
                     //_obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
                     break;
             }
+        }
+
+        private void OnVisualizationRemoved(object sender, TagVisualizerEventArgs e) 
+        {
+            ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            this.DirList.Items.Clear();
+            
         }
 
         private ArrayList getIndexObject(String deviceId)

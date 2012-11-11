@@ -25,5 +25,8 @@ namespace slidbaord
 
         //File's parent
         public String parent = "";
+
+        //Type
+        public String type = "";
     }
 }

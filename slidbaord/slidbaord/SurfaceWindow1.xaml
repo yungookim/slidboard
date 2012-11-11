@@ -10,7 +10,9 @@
             HorizontalAlignment="Stretch"
             Background="#FF1C1C1C" 
             Height="Auto" Width="Auto"
-            VisualizationAdded="OnVisualizationAdded" FontFamily="SlidBoard">
+            VisualizationAdded="OnVisualizationAdded" 
+            VisualizationRemoved="OnVisualizationRemoved"
+            FontFamily="SlidBoard">
             <s:TagVisualizer.Definitions>
                 <s:TagVisualizationDefinition Value="0xC1" 
                                               Source="ObjectVisualization.xaml"
@@ -40,5 +42,13 @@
                                               />
             </s:TagVisualizer.Definitions>
         </s:TagVisualizer>
+
+        <s:ScatterView Name="DirList" 
+                       HorizontalAlignment="Stretch" 
+                       VerticalAlignment="Stretch" 
+                       HorizontalContentAlignment="Center" 
+                       VerticalContentAlignment="Top">
+        </s:ScatterView>
+
     </Grid>
 </s:SurfaceWindow>
