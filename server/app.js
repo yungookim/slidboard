@@ -80,8 +80,8 @@ app.get('/getIndex', function(req, res){
 	console.log("===================================================");
 	var query = APICalls.parse(req.query.msg);
 	APICalls.exec(query, function(ret){
-		console.log(ret);
 		res.send(ret);
+		console.log("Query Sent");
 	});
 	console.log("===================================================");
 });

@@ -1,4 +1,5 @@
-var indexer = require('./indexer');
+var indexer = require('./indexer'), 
+    _ = require('underscore')._;
 
 
 module.exports = {
@@ -51,7 +52,15 @@ module.exports = {
 				var query = JSON.parse(data.extraMsg);
 				indexer.getIndex(query.requestingDevice, query.dir, function(indexList){
 					console.log('Query Done');
-					next(indexList);
+					//Serialize the returned list into a format that can be easily parsed
+					//in PixelSense
+					var list = "";
+					
+					for (i in indexList){
+						list += JSON.stringify(indexList[i]) + "\n";
+					}
+
+					next(list);
 				});
 				break;
 			default :
@@ -62,7 +71,6 @@ module.exports = {
 }
 
 module.exports.parse = function(query){
-	console.log("===================================================");
 	console.log("Raw Message : " + query);
 	//check if data is JSON
 	try {
