@@ -136,18 +136,19 @@ namespace slidbaord
                     String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
                     this.deviceIds.Add(deviceId);
 
-                    _obj.ObjectModel.Content = "KimY's Phone";
-                    _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
+                    _obj.ObjectModel.Content = "Samsung Infuse";
+                    //_obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
                     this.getIndexObject(deviceId);
 
                     break;
                 case 0xC2:
                     _obj.ObjectModel.Content = "Nexus One";
-                    _obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
+                    //_obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
                     break;
                 default:
                     _obj.ObjectModel.Content = "UNKNOWN MODEL";
-                    _obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
+                    _obj.DirList.Visibility = Visibility.Hidden;
+                    //_obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
                     break;
             }
         }

@@ -17,7 +17,7 @@
                                               LostTagTimeout="2000"
                                               MaxCount="1"
                                               OrientationOffsetFromTag="0"
-                                              PhysicalCenterOffsetFromTag="2,2"
+                                              PhysicalCenterOffsetFromTag="3,-2"
                                               TagRemovedBehavior="Fade"
                                               UsesTagOrientation="True"
                                               />
@@ -26,7 +26,7 @@
                                               LostTagTimeout="2000"
                                               MaxCount="1"
                                               OrientationOffsetFromTag="0"
-                                              PhysicalCenterOffsetFromTag="2,2" 
+                                              PhysicalCenterOffsetFromTag="3,-2"
                                               TagRemovedBehavior="Fade"
                                               UsesTagOrientation="True"
                                               />
@@ -34,7 +34,7 @@
                                               LostTagTimeout="2000"
                                               MaxCount="2"
                                               OrientationOffsetFromTag="0"
-                                              PhysicalCenterOffsetFromTag="2,2" 
+                                              PhysicalCenterOffsetFromTag="0,0"
                                               TagRemovedBehavior="Fade"
                                               UsesTagOrientation="True"
                                               />

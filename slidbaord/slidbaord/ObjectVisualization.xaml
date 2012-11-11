@@ -3,18 +3,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Loaded="ObjectVisualization_Loaded"
-    Height="600" Width="200">
+    Height="305" Width="200" Background="Aqua">
     <Grid>
-        <Rectangle Name="objectWrapper"
-                 HorizontalAlignment="Stretch"
-                 VerticalAlignment="Stretch"/>
         <Label Name="ObjectModel"
                Content="Model" 
                HorizontalAlignment="Center"
-               VerticalAlignment="Center"/>
-
-        <ListBox Name="lb" SelectionChanged="PrintText" SelectionMode="Single"  HorizontalAlignment="Stretch"
-                 VerticalAlignment="Stretch">
+               VerticalAlignment="Top"
+               Height="25"/>
+        
+        <ListBox Name="DirList" SelectionMode="Single" Height="280"
+                 HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
             <ListBoxItem>Item 1</ListBoxItem>
             <ListBoxItem>Item 2</ListBoxItem>
             <ListBoxItem>Item 3</ListBoxItem>
