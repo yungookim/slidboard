@@ -59,19 +59,38 @@ namespace slidbaord
             String deviceName, Point startingPosition)
         {
             ScatterViewItem item = new ScatterViewItem();
-            //item.Center = startingPosition;
+            //Set properties
+            
+            item.Center = startingPosition;
+            item.MinWidth = 250;
+            item.MinHeight = 120;
+            if (indexedItem.name.Substring(0,1).Equals("."))
+            {
+                item.Visibility = Visibility.Hidden;
+            }
 
             Grid grid = new Grid();
             grid.ColumnDefinitions.Add(new ColumnDefinition());
             grid.RowDefinitions.Add(new RowDefinition());
             grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+
             Label device_name = new Label();
+            device_name.Name = "deviceName";
             device_name.Content = deviceName;
             device_name.HorizontalContentAlignment = HorizontalAlignment.Center;
             device_name.VerticalContentAlignment = VerticalAlignment.Center;
 
+            Label entityId = new Label();
+            entityId.Name = "entityId";
+            entityId.Content = indexedItem.id;
+            entityId.HorizontalContentAlignment = HorizontalAlignment.Center;
+            entityId.VerticalContentAlignment = VerticalAlignment.Center;
+            entityId.Visibility = Visibility.Hidden;
+
             SurfaceButton sb = new SurfaceButton();
             //Style the buttons
+            sb.Name = "button";
             sb.Height = 25;
             sb.HorizontalContentAlignment = HorizontalAlignment.Stretch;
             sb.VerticalContentAlignment = VerticalAlignment.Center;
@@ -82,26 +101,49 @@ namespace slidbaord
             if (indexedItem.type.Equals("DIR"))
             {
                 sb.Content = indexedItem.parent + "/" + indexedItem.name + "      >>";
-                item.MaxWidth = 500;
-                item.MaxHeight = 120;
             }
             else
             {
                 sb.Content = indexedItem.parent + "/" + indexedItem.name;
             }
 
+            sb.Click += new RoutedEventHandler(this.open);
+
             Grid.SetColumn(device_name, 0);
             Grid.SetRow(device_name, 0);
             Grid.SetColumn(sb, 0);
             Grid.SetRow(sb, 1);
-
-            //sb.Click += new RoutedEventHandler(blah);
+            Grid.SetColumn(entityId, 0);
+            Grid.SetRow(entityId, 2);
+            
             grid.Children.Add(device_name);
             grid.Children.Add(sb);
+            grid.Children.Add(entityId);
 
             item.Content = grid;
 
             return item;
+        }
+
+        private void open(object sender, EventArgs e)
+        {
+            
+            SurfaceButton sb = (SurfaceButton)sender;
+            Grid item = (Grid)sb.Parent;
+            //((Label)item.FindName("entityId")).GetValue(Label.NameProperty);
+
+            UIElementCollection collection = item.Children;
+
+            foreach (UIElement c in collection)
+            {
+                String name = c.GetValue(Control.NameProperty).ToString();
+                if (name.Equals("entityId"))
+                {
+                    String uuid = ((Label)c).Content.ToString();
+
+                    Console.WriteLine(uuid);
+                }
+            }
         }
     }
 }

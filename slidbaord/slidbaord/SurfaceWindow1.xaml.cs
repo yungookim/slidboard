@@ -139,21 +139,26 @@ namespace slidbaord
                     this.deviceIds.Add(deviceId);
 
                     _obj.ObjectModel.Content = deviceName;
-                    //_obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
+                    _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
+
+                    //Get the tag's location
+                    Point tagLocation = _obj.Center;
+                    tagLocation.X -= 300;
 
                     ScatterViewItem[] ls = _obj.createFileList(this.getIndexObject(deviceId), 
-                                            deviceName, new Point(500, 500));
+                                            deviceName, tagLocation);
+
+                    Console.WriteLine("Dir views added");
 
                     foreach (ScatterViewItem i in ls)
                     {
                         this.DirList.Items.Add(i);
-                        
                     }
 
                     break;
                 case 0xC2:
                     _obj.ObjectModel.Content = "Nexus One";
-                    //_obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
+                    _obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
                     break;
                 default:
                     _obj.ObjectModel.Content = "UNKNOWN MODEL";

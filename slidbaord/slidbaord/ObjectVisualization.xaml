@@ -5,17 +5,22 @@
     Loaded="ObjectVisualization_Loaded"
     >
     <Grid>
+        <Rectangle Name="objectWrapper"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch" Width="200" Height="300" />
+        
         <Label Name="ObjectModel"
                Content="Model" 
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                Height="25"/>
+        
         <!--
         <ListBox Name="DirList" SelectionMode="Single" Height="280" 
                  HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
             <ListBoxItem Height="25" Margin="4" Background="Gainsboro" FontWeight="Bold" FontSize="14">Item 1</ListBoxItem>
          </ListBox>
-           -->
+        -->
         
         
         
