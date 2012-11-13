@@ -145,7 +145,8 @@ namespace slidbaord
                     Point tagLocation = _obj.Center;
                     tagLocation.X -= 300;
 
-                    ScatterViewItem[] ls = _obj.createFileList(this.getIndexObject(deviceId), 
+                    ScatterViewItem[] ls = _obj.createFileList(
+                                            HttpClient.getIndexObject(deviceId, "/mnt/sdcard"), 
                                             deviceName, tagLocation);
 
                     Console.WriteLine("Dir views added");
@@ -175,12 +176,5 @@ namespace slidbaord
             
         }
 
-        private ArrayList getIndexObject(String deviceId)
-        {
-            JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
-            JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
-            String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
-            return Parser.parseIndexes(response);
-        }
     }
 }

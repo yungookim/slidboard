@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
+using System.Collections;
 
 namespace slidbaord
 {
@@ -18,6 +19,14 @@ namespace slidbaord
             Stream dataStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(dataStream);
             return reader.ReadToEnd();
-        }            
+        }
+
+        public static ArrayList getIndexObject(String deviceId, String dir)
+        {
+            JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, dir);
+            JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
+            String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
+            return Parser.parseIndexes(response);
+        }
     }
 }
