@@ -37,32 +37,44 @@ namespace slidbaord
 
         }
 
-
         /// <summary>
-        /// Factory method. Creates ListBoxItem view of items out from given ls 
+        ///  Factory method. Creates ScatterViewItemViews of items out from given ls
         /// </summary>
         /// <param name="ls"></param>
+        /// <param name="deviceName"></param>
+        /// <param name="startingPosition"></param>
         /// <returns></returns>
-        public ScatterViewItem[] createFileList(ArrayList ls, String deviceName, Point startingPosition)
+        public ScatterViewItem[] createFileList(ArrayList ls, String deviceName)
         {
             ls.TrimToSize();
             ScatterViewItem[] items = new ScatterViewItem[ls.Count];
             for (int i = 0; i < ls.Count; i++)
             {
                 IndexObject item = ls[i] as IndexObject;
-                items[i] = this.getItemView(item, deviceName, startingPosition);
+                ScatterViewItem temp = this.getItemView(item, deviceName);
+                if (temp != null)
+                {
+                    items[i] = temp;
+                }
             }
                 return items;
         }
 
-        private ScatterViewItem getItemView(IndexObject indexedItem, 
-            String deviceName, Point startingPosition)
+        private ScatterViewItem getItemView(IndexObject indexedItem, String deviceName)
         {
+
+            if (indexedItem == null)
+            {
+                return null;
+            }
+
             ScatterViewItem item = new ScatterViewItem();
             //Set properties
-            item.Center = startingPosition;
+            //item.Center = startingPosition;
             item.MinWidth = 250;
+            //item.MaxWidth = 600;
             item.MinHeight = 120;
+            
             if (indexedItem.name.Substring(0,1).Equals("."))
             {
                 item.Visibility = Visibility.Collapsed;
@@ -161,12 +173,16 @@ namespace slidbaord
             return item;
         }
 
+        /// <summary>
+        /// Event handler for opening up a directory or a file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void open(object sender, EventArgs e)
         {
             
             SurfaceButton sb = (SurfaceButton)sender;
             Grid item = (Grid)sb.Parent;
-            //((Label)item.FindName("entityId")).GetValue(Label.NameProperty);
 
             UIElementCollection collection = item.Children;
             String path = "", deviceId = "";
@@ -208,11 +224,12 @@ namespace slidbaord
                         button.FontWeight = FontWeights.UltraBold;
                         button.Foreground = Brushes.WhiteSmoke;
                         button.Content = io.fullPath;
+                        button.Click += new RoutedEventHandler(NewFolderCard);
 
                         Grid.SetColumn(button, 0);
                         Grid.SetRow(button, i++);
-
                         subDirList.RowDefinitions.Add(new RowDefinition());
+
                         subDirList.Children.Add(button);
                     }
                 }
@@ -227,9 +244,45 @@ namespace slidbaord
 
                 subDirList.Children.Add(label);
             }
+        }
 
 
-            
+        private void NewFolderCard(object sender, EventArgs e)
+        {
+            SurfaceButton sb = (SurfaceButton)sender;
+
+            //Get path for query
+            String path = sb.Content.ToString();
+
+            //Subdirectory list
+            Grid item = (Grid)sb.Parent;
+
+            //Directory card. Root for any given subdirectory
+            Grid topDirectoryCard = (Grid)item.Parent;
+            UIElementCollection collection = topDirectoryCard.Children;
+            String deviceId = "";
+            String deviceName = "";
+
+            //Get the device id of the querying item
+            foreach (UIElement c in collection)
+            {
+                String name = c.GetValue(Control.NameProperty).ToString();
+                if (name.Equals("deviceId"))
+                {
+                    deviceId = ((Label)c).Content.ToString();
+                }
+                if (name.Equals("deviceName"))
+                {
+                    deviceName = ((Label)c).Content.ToString();
+                }
+            }
+
+            ArrayList response = HttpClient.getIndexObject(deviceId, path);
+
+            foreach (ScatterViewItem i in this.createFileList(response, deviceName))
+            {
+                SurfaceWindow1.GlobalDirList.Items.Add(i);
+            }
         }
     }
 }

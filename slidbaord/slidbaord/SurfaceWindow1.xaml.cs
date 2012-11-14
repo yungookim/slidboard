@@ -26,9 +26,9 @@ namespace slidbaord
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
+        ObjectVisualization deviceObject;
 
-        //private SocketClient sc;
-        private ArrayList deviceIds = new ArrayList();
+        public static ScatterView GlobalDirList;
 
         /// <summary>
         /// Default constructor.
@@ -46,6 +46,9 @@ namespace slidbaord
             //Blocking calls
             //sc = new SocketClient("69.164.219.86", 6060);
             //sc.connect();
+
+            //Make the DirList ScatterView accessable globally
+            GlobalDirList = this.DirList;
 
             //Or doing it in HTTP
             JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
@@ -116,6 +119,21 @@ namespace slidbaord
             //TODO: optionally enable animations here
         }
 
+        private void OnStack(object sender, EventArgs e)
+        {
+
+            foreach (ScatterViewItem ic in this.DirList.Items)
+            {
+                if (!ic.Name.Equals("ControlBox"))
+                {
+                    Point point = deviceObject.Center;
+                    point.X -= 300;
+                    ic.Center = point;
+                }
+            }
+
+        }
+
         /// <summary>
         /// This is called when the application's window is not visible or interactive.
         /// </summary>
@@ -130,30 +148,28 @@ namespace slidbaord
         {
 
             ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            this.deviceObject = _obj;
             
             switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
                     String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
                     String deviceName = "Samsung Infuse";
-                    this.deviceIds.Add(deviceId);
 
                     _obj.ObjectModel.Content = deviceName;
                     _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
 
-                    //Get the tag's location
-                    Point tagLocation = _obj.Center;
-                    tagLocation.X -= 300;
-
                     ScatterViewItem[] ls = _obj.createFileList(
                                             HttpClient.getIndexObject(deviceId, "/mnt/sdcard"), 
-                                            deviceName, tagLocation);
+                                            deviceName);
 
                     Console.WriteLine("Dir views added");
-
                     foreach (ScatterViewItem i in ls)
                     {
-                        this.DirList.Items.Add(i);
+                        if (i != null)
+                        {
+                            this.DirList.Items.Add(i);
+                        }
                     }
 
                     break;
@@ -173,7 +189,26 @@ namespace slidbaord
         {
             ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
             this.DirList.Items.Clear();
-            
+
+            ScatterViewItem controlbox = new ScatterViewItem();
+            controlbox.Name = "ControlBox";
+            //controlbox.Background = Brush."#5D9D2020";
+            controlbox.BorderThickness = new Thickness(0);
+            controlbox.CanScale = false;
+            controlbox.CanMove = false;
+            controlbox.Center = new Point(100, 100);
+            controlbox.Orientation = 0;
+
+            SurfaceButton checkbox = new SurfaceButton();
+            checkbox.Name = "CenterItems";
+            checkbox.Background = Brushes.Aquamarine;
+            checkbox.FontSize = 14;
+            checkbox.Margin = new Thickness(10, 10, 10, 10);
+            checkbox.Click += new RoutedEventHandler(OnStack);
+            checkbox.Content = "Stack Items";
+            controlbox.Content = checkbox;
+
+            this.DirList.Items.Add(controlbox);
         }
 
     }

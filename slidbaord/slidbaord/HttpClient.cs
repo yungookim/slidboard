@@ -26,6 +26,7 @@ namespace slidbaord
             JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, dir);
             JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
             String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
+            //Make sure the trailing empty line is removed
             return Parser.parseIndexes(response);
         }
     }
