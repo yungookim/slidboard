@@ -11,14 +11,18 @@ import java.util.UUID;
 import org.json.simple.JSONObject;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 
 public class MainActivity extends Activity {
 
-	public UUID CLIENT_UUID = UUID.randomUUID();
+	public UUID CLIENT_UUID;
+	
 	public final String CLIENT_TYPE = "MOBILE";
 	
 	//TCP Client
@@ -30,6 +34,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        String device_id = Settings.Secure.ANDROID_ID;
+        
+        //Generate the device's UUID
+        CLIENT_UUID = new UUID(device_id.hashCode(), device_id.hashCode()*device_id.hashCode());
         
         //Get path to an external storage
         String storage = Environment.getExternalStorageDirectory().getPath();
