@@ -44,9 +44,9 @@ public class MainActivity extends Activity {
 			fw = new FileWalker(storage);
 			
 			fw.walk(storage, client, this.CLIENT_UUID);
-			fw.closeFileOutputStream();
-			HTTPClient.POST(fw.readFile(fw.getIndexFile()), "fileIndex");
-			fw.closeFileOutputStream();
+			
+			HTTPClient.POST(fw.getRawIndex(), "fileIndex");
+			
 			//TODO: should close here, but should start to listen
 			this.client.close();
 		} catch (IOException e) {
@@ -72,29 +72,5 @@ public class MainActivity extends Activity {
     	startString.put("uuid", CLIENT_UUID.toString());
     	startString.put("from", CLIENT_TYPE.toString());
     	this.client.write(startString.toString());
-    }
-    
-    private String readFiles(){
-    	FileInputStream fstream;
-		try {
-			fstream = new FileInputStream("/sdcard/slidboard/randomString");
-			DataInputStream in = new DataInputStream(fstream);
-			BufferedReader br = new BufferedReader(new InputStreamReader(in));
-			String strLine;
-			String str = "";
-			while ((strLine = br.readLine()) != null)   {
-				str = str + strLine + "\n";
-			}
-			in.close();
-			Log.v("File reads", str);
-			return str;
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "";
     }
 }

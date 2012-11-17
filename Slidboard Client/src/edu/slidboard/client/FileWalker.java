@@ -21,12 +21,12 @@ import android.util.Log;
 public class FileWalker {
 	
 	//Object holding index.json
-	private File indexFileJSON;
-	private File indexDirJSON;
+//	private File indexFileJSON;
+//	private File indexDirJSON;
 	
 	//index.json file streams
-	private FileWriter fileJsonFstream;
-	private FileWriter dirJsonFstream;
+//	private FileWriter fileJsonFstream;
+//	private FileWriter dirJsonFstream;
 		
 	//Path to slidboard
 	private String dir;
@@ -35,6 +35,10 @@ public class FileWalker {
 	private ArrayList<String> blackList = new ArrayList<String>();
 	private ArrayList<String> extAllowedList = new ArrayList<String>();
 
+	//Raw index is saved here
+	private StringBuilder fileRawIndex = new StringBuilder();
+	private StringBuilder dirRawIndex = new StringBuilder();
+	
 	
 	public FileWalker(String external) throws IOException{
 		this.dir = external + "/slidboard";
@@ -57,8 +61,8 @@ public class FileWalker {
 		}
 		
 		//index.json file is created.
-		this.fileJsonFstream = new FileWriter(this.indexFileJSON);
-		this.dirJsonFstream = new FileWriter(this.indexDirJSON);
+		//this.fileJsonFstream = new FileWriter(this.indexFileJSON);
+		//this.dirJsonFstream = new FileWriter(this.indexDirJSON);
 		
 		this.prepBlackList();
 	}
@@ -85,21 +89,21 @@ public class FileWalker {
 	}
 	
 	public void createIndexJSON() throws IOException{
-		this.indexFileJSON = new File(this.dir + "/indexFile.json");
-		if (this.indexFileJSON.exists()){
-			this.indexFileJSON.delete();
-		}
-		if (!this.indexFileJSON.exists()){
-			this.indexFileJSON.createNewFile();
-		}
-		
-		this.indexDirJSON = new File(this.dir + "/indexDir.json");
-		if (this.indexDirJSON.exists()){
-			this.indexDirJSON.delete();
-		}
-		if (!this.indexDirJSON.exists()){
-			this.indexDirJSON.createNewFile();
-		}
+//		this.indexFileJSON = new File(this.dir + "/indexFile.json");
+//		if (this.indexFileJSON.exists()){
+//			this.indexFileJSON.delete();
+//		}
+//		if (!this.indexFileJSON.exists()){
+//			this.indexFileJSON.createNewFile();
+//		}
+//		
+//		this.indexDirJSON = new File(this.dir + "/indexDir.json");
+//		if (this.indexDirJSON.exists()){
+//			this.indexDirJSON.delete();
+//		}
+//		if (!this.indexDirJSON.exists()){
+//			this.indexDirJSON.createNewFile();
+//		}
 		
 	}
 	
@@ -128,7 +132,9 @@ public class FileWalker {
                 	_json.put("type", "DIR");
                 	_json.put("device_uuid", device_uuid.toString());
                 	_json.put("id", UUID.randomUUID().toString());
-                	this.dirJsonFstream.write(_json + "\r\n");
+                	
+                	//this.dirJsonFstream.write(_json + "\r\n");
+                	dirRawIndex.append(_json + "\r\n");
                 	
                 	//Look into subdirectories
                 	this.walk(f.getAbsolutePath(), client, device_uuid);
@@ -137,7 +143,7 @@ public class FileWalker {
                 		f.isFile() && ext.length() > 1 
                 		&& extAllowedList.contains(ext) 
                 		&& first_dot != 0
-                		&& f.length() > 5242880){
+                		&& f.length() < 5242880){
                 	
                 	JSONObject _json = new JSONObject();
             		_json.put("name", f.getName().toString());
@@ -147,7 +153,9 @@ public class FileWalker {
                 	_json.put("id", UUID.randomUUID().toString());
                 	_json.put("device_uuid", device_uuid.toString());
                 	_json.put("MD5", createMD5Checksum(f));
-                	this.fileJsonFstream.write(_json + "\r\n");
+                	
+                	fileRawIndex.append(_json + "\r\n");
+                	//this.fileJsonFstream.write(_json + "\r\n");
                 }
             }
         } catch (Exception e){
@@ -188,18 +196,19 @@ public class FileWalker {
     }
     
   //Close the file streams
-    public void closeFileOutputStream(){
-    	try {
-			this.fileJsonFstream.close();
-			this.dirJsonFstream.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    public void closeFileOutputStreams(){
+//    	try {
+//			this.fileJsonFstream.close();
+//			this.dirJsonFstream.close();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
     }
     
     public File getIndexFile(){
-    	return this.indexFileJSON;
+//    	return this.indexFileJSON;
+    	return null;
     }
     
     public String readFile(File index_file) throws IOException{
@@ -218,4 +227,8 @@ public class FileWalker {
 		return str;
 
     }
+
+	public String getRawIndex() {
+		return this.fileRawIndex.append(this.dirRawIndex.toString()).toString();
+	}
 }
