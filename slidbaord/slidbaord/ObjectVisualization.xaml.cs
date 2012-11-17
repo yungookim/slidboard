@@ -123,7 +123,7 @@ namespace slidbaord
             }
             else
             {
-                sb.Content = indexedItem.parent + "/" + indexedItem.name;
+                sb.Content = "File : " + indexedItem.parent + "/" + indexedItem.name;
             }
 
             sb.Click += new RoutedEventHandler(this.open);
@@ -133,7 +133,7 @@ namespace slidbaord
 
             grid.ColumnDefinitions.Add(new ColumnDefinition());
             RowDefinition deviceNameRow = new RowDefinition();
-            deviceNameRow.MaxHeight = 35;
+            deviceNameRow.MaxHeight = 0;
             grid.RowDefinitions.Add(deviceNameRow);
 
             //Row def for button
@@ -188,6 +188,8 @@ namespace slidbaord
             String path = "", deviceId = "";
             Grid subDirList = null;
 
+
+            //Get the properties of the event sender
             foreach (UIElement c in collection)
             {
                 String name = c.GetValue(Control.NameProperty).ToString();
@@ -206,6 +208,7 @@ namespace slidbaord
             }
             
             ArrayList items = HttpClient.getIndexObject(deviceId, path);
+
             items.TrimToSize();
             int i = 0;
             if (items.Count > 1)
@@ -246,7 +249,11 @@ namespace slidbaord
             }
         }
 
-
+        /// <summary>
+        /// Creates a new Folder Card and append to the main view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NewFolderCard(object sender, EventArgs e)
         {
             SurfaceButton sb = (SurfaceButton)sender;
@@ -278,6 +285,13 @@ namespace slidbaord
             }
 
             ArrayList response = HttpClient.getIndexObject(deviceId, path);
+
+            if (((IndexObject)response[0]) == null)
+            {
+                String content_temp = (String)sb.Content;
+                sb.Content = "EMPTY Folder : " + content_temp;
+                return;
+            }
 
             foreach (ScatterViewItem i in this.createFileList(response, deviceName))
             {

@@ -115,20 +115,32 @@ namespace slidbaord
         private void OnWindowNoninteractive(object sender, EventArgs e)
         {
             //TODO: Disable audio here if it is enabled
-
             //TODO: optionally enable animations here
         }
 
         private void OnStack(object sender, EventArgs e)
         {
+            int y = 75;
+            int zindex = 0;
+            int x_subtract = 300;
 
             foreach (ScatterViewItem ic in this.DirList.Items)
             {
                 if (!ic.Name.Equals("ControlBox"))
                 {
                     Point point = deviceObject.Center;
-                    point.X -= 300;
+                    point.X -= x_subtract;
+                    point.Y = y;
+                    y += 25;
+                    if (y == 1000)
+                    {
+                        y = 75;
+                        x_subtract = 550;
+                    }
                     ic.Center = point;
+                    ic.Orientation = 0;
+                    ic.Width = 200;
+                    ic.ZIndex = zindex++;
                 }
             }
 
