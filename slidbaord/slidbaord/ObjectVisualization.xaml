@@ -3,27 +3,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Loaded="ObjectVisualization_Loaded"
-    Height="305" Width="200" Background="Aqua">
+    >
     <Grid>
+        <Rectangle Name="objectWrapper"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch" Width="200" Height="300" />
+        
         <Label Name="ObjectModel"
                Content="Model" 
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                Height="25"/>
         
-        <ListBox Name="DirList" SelectionMode="Single" Height="280"
+        <!--
+        <ListBox Name="DirList" SelectionMode="Single" Height="280" 
                  HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
-            <ListBoxItem>Item 1</ListBoxItem>
-            <ListBoxItem>Item 2</ListBoxItem>
-            <ListBoxItem>Item 3</ListBoxItem>
-            <ListBoxItem>Item 4</ListBoxItem>
-            <ListBoxItem>Item 5</ListBoxItem>
-            <ListBoxItem>Item 6</ListBoxItem>
-            <ListBoxItem>Item 7</ListBoxItem>
-            <ListBoxItem>Item 8</ListBoxItem>
-            <ListBoxItem>Item 9</ListBoxItem>
-            <ListBoxItem>Item 10</ListBoxItem>
+            <ListBoxItem Height="25" Margin="4" Background="Gainsboro" FontWeight="Bold" FontSize="14">Item 1</ListBoxItem>
          </ListBox>
-
+        -->
+        
+        
+        
     </Grid>
 </s:TagVisualization>
