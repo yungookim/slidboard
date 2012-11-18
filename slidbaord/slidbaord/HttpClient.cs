@@ -29,5 +29,16 @@ namespace slidbaord
             //Make sure the trailing empty line is removed
             return Parser.parseIndexes(response);
         }
+
+        public static String getFile(String deviceId, String fileFullPath)
+        {
+            JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, fileFullPath);
+            JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getFile", reqMsg.request());
+            String response = HttpClient.GET("getFile", msgWrapper.getMessage());
+
+            Console.WriteLine(response);
+
+            return "";
+        }
     }
 }

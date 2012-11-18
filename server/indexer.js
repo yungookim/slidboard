@@ -31,8 +31,13 @@ module.exports = {
 				var dirName = indexEntry.name;
 				var deviceId = indexEntry.device_uuid;
 				var id = indexEntry.id;
+				var type = indexEntry.type;
+
 				//[0] == '', [1] == root, [2] == sdcard, and so on
 				var dir_array = fullPath.split('/');
+				dir_array.splice(dir_array.length-1, 1);
+				var parent = dir_array.join('/');
+
 				collection.findAndModify({ id : id },[], 
 					{$set : 
 						{
@@ -40,7 +45,8 @@ module.exports = {
 							id : id,
 							name : dirName,
 							fullPath : fullPath,
-							parent : dir_array[dir_array.length-2]
+							type : type,
+							parent : parent
 						} 
 					}, 
 					{ upsert : true }, 
@@ -74,16 +80,22 @@ module.exports = {
 			for (i in data){
 				if (data[i].length === 0){ numbLines--;  }
 				else {
-					var collection = new mongodb.Collection(client, 'index_file');
-
-					var raw = JSON.parse(data[i]);
-					var fileName = raw.name;
-					var deviceId = raw.device_uuid;
-					var id = raw.id;
-					var fullPath = raw.fullPath;
-					var MD5 = raw.MD5;
-					var size = raw.size;
 					try {	
+						var collection = new mongodb.Collection(client, 'index_file');
+
+						var raw = JSON.parse(data[i]);
+						var fileName = raw.name;
+						var deviceId = raw.device_uuid;
+						var id = raw.id;
+						var fullPath = raw.fullPath;
+						var MD5 = raw.MD5;
+						var size = raw.size;
+						var type = raw.type;
+						//[0] == '', [1] == root, [2] == sdcard, and so on
+						var dir_array = fullPath.split('/');
+						dir_array.splice(dir_array.length-1, 1);
+						var parent = dir_array.join('/');
+
 						var path_array = fullPath.split('/');
 						collection.findAndModify({id : id}, [], 
 						{$set : 
@@ -94,7 +106,8 @@ module.exports = {
 								fullPath : fullPath,
 								MD5 : MD5,
 								size : size,
-								parent : path_array[path_array.length-2]
+								type : type,
+								parent : parent
 							}
 						}, 
 						{ upsert : true },
@@ -108,8 +121,7 @@ module.exports = {
 								next();
 							}
 							return;
-						}
-					);
+						});
 					} catch (err){
 						//Files in other language sometimes causes problems.
 						//Skip them
@@ -128,10 +140,10 @@ module.exports = {
 					collection.find({ deviceId : deviceId, parent : dir }, {})
 						.toArray(function(err, dirIndexes){
 						if (err) {console.log(err); return;}
-
 							collection = new mongodb.Collection(client, 'index_file');
 							collection.find({ deviceId : deviceId, parent : dir }, {})
 								.toArray(function(err, fileIndexes){
+									console.log(fileIndexes);
 									//Join the two results
 									var index = dirIndexes.concat(fileIndexes);
 									db.close();
@@ -139,6 +151,22 @@ module.exports = {
 								});					
 					});
 		});
+	},
+
+	getFile : function(deviceId, path, next){
+		db.open(function(err, client){
+			if (err) throw err;
+				var collection = new mongodb.Collection(client, 'index_file');
+
+				collection.findOne({deviceId : deviceId, fullPath : path}, function(err, ret){
+					if (err) throw err;
+					db.close();
+					next(ret);
+				});
+		});
 	}
 }
-
+/*
+module.exports.index_files(function(){
+	module.exports.index_dir(function(){});
+});*/
