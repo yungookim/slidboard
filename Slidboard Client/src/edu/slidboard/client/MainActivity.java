@@ -48,15 +48,21 @@ public class MainActivity extends Activity {
 			//Connect to server and send the index files
 			this.createConnection(client);
 			
+			this.client.read();
+			
+			
+			//Now, wait for requests from server
+			this.client.read();
+			
 			//TODO : as for the testing phase, only walk in a small dir.
 			fw = new FileWalker(storage);
 			
-			fw.walk(storage, client, this.CLIENT_UUID);
+			//fw.walk(storage, client, this.CLIENT_UUID);
 			
-			HTTPClient.POST(fw.getRawIndex(), "fileIndex");
+			//HTTPClient.POST(fw.getRawIndex(), "fileIndex");
 			
 			//TODO: should close here, but should start to listen
-			this.client.close();
+			//this.client.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,9 +82,10 @@ public class MainActivity extends Activity {
     	
     	//Tell the server who am I.
     	JSONObject startString = new JSONObject();
-    	startString.put("action", "INIT");
+    	startString.put("action", "init");
     	startString.put("uuid", CLIENT_UUID.toString());
     	startString.put("from", CLIENT_TYPE.toString());
     	this.client.write(startString.toString());
+    	//this.client.close();
     }
 }
