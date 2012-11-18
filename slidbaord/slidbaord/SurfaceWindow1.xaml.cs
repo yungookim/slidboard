@@ -22,13 +22,13 @@ using Newtonsoft.Json;
 namespace slidbaord
 {
     /// <summary>
-    /// Interaction logic for SurfaceWindow1.xaml
+    /// Controller for SurfaceWindow1.xaml
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
+        ObjectVisualization deviceObject;
 
-        //private SocketClient sc;
-        private ArrayList deviceIds = new ArrayList();
+        public static ScatterView GlobalDirList;
 
         /// <summary>
         /// Default constructor.
@@ -46,6 +46,9 @@ namespace slidbaord
             //Blocking calls
             //sc = new SocketClient("69.164.219.86", 6060);
             //sc.connect();
+
+            //Make the DirList ScatterView accessable globally
+            GlobalDirList = this.DirList;
 
             //Or doing it in HTTP
             JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
@@ -112,8 +115,35 @@ namespace slidbaord
         private void OnWindowNoninteractive(object sender, EventArgs e)
         {
             //TODO: Disable audio here if it is enabled
-
             //TODO: optionally enable animations here
+        }
+
+        private void OnStack(object sender, EventArgs e)
+        {
+            int y = 75;
+            int zindex = 0;
+            int x_subtract = 300;
+
+            foreach (ScatterViewItem ic in this.DirList.Items)
+            {
+                if (!ic.Name.Equals("ControlBox"))
+                {
+                    Point point = deviceObject.Center;
+                    point.X -= x_subtract;
+                    point.Y = y;
+                    y += 25;
+                    if (y == 1000)
+                    {
+                        y = 75;
+                        x_subtract = 550;
+                    }
+                    ic.Center = point;
+                    ic.Orientation = 0;
+                    ic.Width = 200;
+                    ic.ZIndex = zindex++;
+                }
+            }
+
         }
 
         /// <summary>
@@ -130,35 +160,68 @@ namespace slidbaord
         {
 
             ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            this.deviceObject = _obj;
+            
             switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
-                    String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
-                    this.deviceIds.Add(deviceId);
+                    String deviceId = "00000000-2b17-f0eb-0000-00001ef377b9";
+                    String deviceName = "Samsung Infuse";
 
-                    _obj.ObjectModel.Content = "Samsung Infuse";
-                    //_obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
-                    this.getIndexObject(deviceId);
+                    _obj.ObjectModel.Content = deviceName;
+                    _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
+
+                    ScatterViewItem[] ls = _obj.createFileList(
+                                            HttpClient.getIndexObject(deviceId, "/mnt/sdcard"), 
+                                            deviceName);
+
+                    Console.WriteLine("Dir views added");
+                    foreach (ScatterViewItem i in ls)
+                    {
+                        if (i != null)
+                        {
+                            this.DirList.Items.Add(i);
+                        }
+                    }
 
                     break;
                 case 0xC2:
                     _obj.ObjectModel.Content = "Nexus One";
-                    //_obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
+                    _obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
                     break;
                 default:
                     _obj.ObjectModel.Content = "UNKNOWN MODEL";
-                    _obj.DirList.Visibility = Visibility.Hidden;
+                    this.DirList.Visibility = Visibility.Hidden;
                     //_obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
                     break;
             }
         }
 
-        private ArrayList getIndexObject(String deviceId)
+        private void OnVisualizationRemoved(object sender, TagVisualizerEventArgs e) 
         {
-            JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, "sdcard");
-            JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getIndex", reqMsg.request());
-            String response = HttpClient.GET("getIndex", msgWrapper.getMessage());
-            return Parser.parseIndexes(response);
+            ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            this.DirList.Items.Clear();
+
+            ScatterViewItem controlbox = new ScatterViewItem();
+            controlbox.Name = "ControlBox";
+            //controlbox.Background = Brush."#5D9D2020";
+            controlbox.BorderThickness = new Thickness(0);
+            controlbox.CanScale = false;
+            controlbox.CanMove = false;
+            controlbox.Center = new Point(100, 100);
+            controlbox.Orientation = 0;
+
+            SurfaceButton checkbox = new SurfaceButton();
+            checkbox.Name = "CenterItems";
+            checkbox.Background = Brushes.Aquamarine;
+            checkbox.FontSize = 14;
+            checkbox.Margin = new Thickness(10, 10, 10, 10);
+            checkbox.Click += new RoutedEventHandler(OnStack);
+            checkbox.Content = "Stack Items";
+            controlbox.Content = checkbox;
+
+            this.DirList.Items.Add(controlbox);
         }
+
     }
 }

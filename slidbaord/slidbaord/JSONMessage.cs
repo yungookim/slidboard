@@ -35,7 +35,7 @@ namespace slidbaord
     public class JSONRequestIndex 
     {
         public String requestingDevice = "";
-        public String dir = "";
+        public String path = "";
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace slidbaord
         public JSONRequestIndex(String id, String dir)
         {
             this.requestingDevice = id;
-            this.dir = dir;
+            this.path = dir;
         }
         /// <summary>
         /// Returns the object in json format
