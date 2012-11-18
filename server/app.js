@@ -1,6 +1,9 @@
 var net = require('net'),
     PORT = 6060,
-    APICalls = require('./api');
+    APICalls = require('./api'),
+    indexer = require('./indexer'),
+    fs = require('fs'),
+    BufferedWriter = require('buffered-writer');
 
 //Using TCP
 var server = net.createServer(function (socket){
@@ -28,7 +31,15 @@ var server = net.createServer(function (socket){
 			socket.end('WDT');
 			return;
 		}
-		APICalls.Execs.exec(parsed_data, socket);
+		
+		APICalls.exec(parsed_data, function(ret){
+			if (ret === "PS.init") {
+				APICalls.pixelSense = socket;
+			} else if (ret === "Device.init") {
+				APICalls.mobiles.push(socket);
+				socket.end('ok');
+			}
+		});
 		console.log("===================================================");
 	});
 	socket.on('end', function(){
@@ -62,8 +73,36 @@ app.configure(function(){
 });
 
 app.post('/fileIndex', function(req, res){
-	console.log(req.body.msg);
-	res.send('ok');
+	
+	var data = req.body.msg.split('\n');
+
+	//Stupid, and slow implementation.
+
+	for (i in data){
+		try{
+			var temp  = JSON.parse(data[i]);
+			//Bit slower but, provides more cleaner output.
+			var line = JSON.stringify(temp) + "\n";
+			if (temp.type === "FILE"){		
+				fs.appendFileSync('/data/indexFile.json', line, 'utf8', function (err) {
+					if (err) throw err;
+				});
+			} else if (temp.type === "DIR") {
+				fs.appendFileSync('/data/indexDir.json', line, 'utf8', function (err) {
+					if (err) throw err;
+				});
+			}
+		} catch (e){
+			//Let it be
+		}
+	}
+	
+	indexer.index_dir(function(){
+		indexer.index_files(function(){
+			res.send('ok');
+		})
+	});
+	
 });
 
 app.get('/init', function(req, res){
@@ -82,10 +121,23 @@ app.get('/getIndex', function(req, res){
 	APICalls.exec(query, function(ret){
 		res.send(ret);
 		console.log("Query Sent");
+		//console.log(ret);
 	});
 	console.log("===================================================");
 });
 
+
+app.get('/getFile', function(req, res){
+	console.log("===================================================");
+	var query = APICalls.parse(req.query.msg);
+	APICalls.exec(query, function(ret){
+		console.log(ret);
+		res.send(ret);
+		console.log("Query Sent");
+	});
+
+	console.log("===================================================");
+});
 
 app.listen(8081);
 console.log("HTTP server running on 8081");
