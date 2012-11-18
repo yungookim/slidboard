@@ -19,12 +19,12 @@ using System.Collections;
 namespace slidbaord
 {
     /// <summary>
-    /// Interaction logic for ObjectVisualization.xaml
+    /// Veiw components for ObjectVisualization.xaml
     /// </summary>
     public partial class ObjectVisualization : TagVisualization
-    {   
+    {
 
-        
+        private String DEVICE_ID = "";
 
         public ObjectVisualization()
         {
@@ -68,6 +68,8 @@ namespace slidbaord
                 return null;
             }
 
+            DEVICE_ID = DEVICE_ID.Equals("") ? indexedItem.deviceId : DEVICE_ID;
+
             ScatterViewItem item = new ScatterViewItem();
             //Set properties
             //item.Center = startingPosition;
@@ -75,10 +77,12 @@ namespace slidbaord
             //item.MaxWidth = 600;
             item.MinHeight = 120;
             
+            /*
             if (indexedItem.name.Substring(0,1).Equals("."))
             {
                 item.Visibility = Visibility.Collapsed;
             }
+            */
 
             //Add grid view for sub-directory list
             Grid subDirectoryList = new Grid();
@@ -101,7 +105,7 @@ namespace slidbaord
 
             Label deviceId = new Label();
             deviceId.Name = "deviceId";
-            deviceId.Content = indexedItem.deviceId;
+            deviceId.Content = DEVICE_ID;
             deviceId.HorizontalContentAlignment = HorizontalAlignment.Center;
             deviceId.VerticalContentAlignment = VerticalAlignment.Center;
             deviceId.MaxHeight = 0;
@@ -116,6 +120,8 @@ namespace slidbaord
             sb.Background = Brushes.DodgerBlue;
             sb.FontWeight = FontWeights.UltraBold;
             sb.Foreground = Brushes.WhiteSmoke;
+
+            Console.WriteLine(indexedItem.type);
 
             if (indexedItem.type.Equals("DIR"))
             {
@@ -185,7 +191,7 @@ namespace slidbaord
             Grid item = (Grid)sb.Parent;
 
             UIElementCollection collection = item.Children;
-            String path = "", deviceId = "";
+            String path = "";
             Grid subDirList = null;
 
 
@@ -199,15 +205,15 @@ namespace slidbaord
                 }
                 if (name.Equals("deviceId"))
                 {
-                    deviceId = ((Label)c).Content.ToString();
+                    DEVICE_ID = DEVICE_ID.Equals("") ? ((Label)c).Content.ToString() : DEVICE_ID;
                 }
                 if (name.Equals("subDirectoryList"))
                 {
                     subDirList = ((Grid)c);
-                }    
+                }
             }
-            
-            ArrayList items = HttpClient.getIndexObject(deviceId, path);
+
+            ArrayList items = HttpClient.getIndexObject(DEVICE_ID, path);
 
             items.TrimToSize();
             int i = 0;
@@ -217,23 +223,46 @@ namespace slidbaord
                 {
                     if (io != null)
                     {
-                        SurfaceButton button = new SurfaceButton();
-                        //Style the buttons
-                        button.Name = "button";
-                        button.Height = 25;
-                        button.HorizontalContentAlignment = HorizontalAlignment.Stretch;
-                        button.VerticalContentAlignment = VerticalAlignment.Center;
-                        button.Background = Brushes.SteelBlue;
-                        button.FontWeight = FontWeights.UltraBold;
-                        button.Foreground = Brushes.WhiteSmoke;
-                        button.Content = io.fullPath;
-                        button.Click += new RoutedEventHandler(NewFolderCard);
+                        if (io.type.Equals("DIR"))
+                        {
+                            SurfaceButton button = new SurfaceButton();
+                            //Style the buttons
+                            button.Name = "button";
+                            button.Height = 25;
+                            button.HorizontalContentAlignment = HorizontalAlignment.Stretch;
+                            button.VerticalContentAlignment = VerticalAlignment.Center;
+                            button.Background = Brushes.SteelBlue;
+                            button.FontWeight = FontWeights.UltraBold;
+                            button.Foreground = Brushes.WhiteSmoke;
+                            button.Content = io.fullPath;
+                            button.Click += new RoutedEventHandler(NewFolderCard);
 
-                        Grid.SetColumn(button, 0);
-                        Grid.SetRow(button, i++);
-                        subDirList.RowDefinitions.Add(new RowDefinition());
+                            Grid.SetColumn(button, 0);
+                            Grid.SetRow(button, i++);
+                            subDirList.RowDefinitions.Add(new RowDefinition());
 
-                        subDirList.Children.Add(button);
+                            subDirList.Children.Add(button);
+                        }
+                        else if (io.type.Equals("FILE"))
+                        {
+                            SurfaceButton button = new SurfaceButton();
+                            //Style the buttons
+                            button.Name = "button";
+                            button.Height = 25;
+                            button.HorizontalContentAlignment = HorizontalAlignment.Stretch;
+                            button.VerticalContentAlignment = VerticalAlignment.Center;
+                            button.Background = Brushes.SteelBlue;
+                            button.FontWeight = FontWeights.UltraBold;
+                            button.Foreground = Brushes.WhiteSmoke;
+                            button.Content = io.fullPath;
+                            button.Click += new RoutedEventHandler(OpenFile);
+
+                            Grid.SetColumn(button, 0);
+                            Grid.SetRow(button, i++);
+                            subDirList.RowDefinitions.Add(new RowDefinition());
+
+                            subDirList.Children.Add(button);
+                        }
                     }
                 }
             }
@@ -267,7 +296,6 @@ namespace slidbaord
             //Directory card. Root for any given subdirectory
             Grid topDirectoryCard = (Grid)item.Parent;
             UIElementCollection collection = topDirectoryCard.Children;
-            String deviceId = "";
             String deviceName = "";
 
             //Get the device id of the querying item
@@ -276,7 +304,7 @@ namespace slidbaord
                 String name = c.GetValue(Control.NameProperty).ToString();
                 if (name.Equals("deviceId"))
                 {
-                    deviceId = ((Label)c).Content.ToString();
+                    DEVICE_ID = DEVICE_ID.Equals("") ? ((Label)c).Content.ToString() : DEVICE_ID;
                 }
                 if (name.Equals("deviceName"))
                 {
@@ -284,7 +312,7 @@ namespace slidbaord
                 }
             }
 
-            ArrayList response = HttpClient.getIndexObject(deviceId, path);
+            ArrayList response = HttpClient.getIndexObject(DEVICE_ID, path);
 
             if (((IndexObject)response[0]) == null)
             {
@@ -297,6 +325,15 @@ namespace slidbaord
             {
                 SurfaceWindow1.GlobalDirList.Items.Add(i);
             }
+        }
+
+
+        private void OpenFile(object sender, EventArgs e)
+        {
+            SurfaceButton sb = (SurfaceButton)sender;
+
+            String response = HttpClient.getFile(DEVICE_ID, sb.Content.ToString());
+            Console.WriteLine(response);
         }
     }
 }

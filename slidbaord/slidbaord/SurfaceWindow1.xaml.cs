@@ -22,7 +22,7 @@ using Newtonsoft.Json;
 namespace slidbaord
 {
     /// <summary>
-    /// Interaction logic for SurfaceWindow1.xaml
+    /// Controller for SurfaceWindow1.xaml
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
@@ -165,7 +165,7 @@ namespace slidbaord
             switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
-                    String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
+                    String deviceId = "00000000-2b17-f0eb-0000-00001ef377b9";
                     String deviceName = "Samsung Infuse";
 
                     _obj.ObjectModel.Content = deviceName;
