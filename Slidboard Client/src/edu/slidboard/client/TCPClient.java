@@ -76,6 +76,7 @@ public class TCPClient {
 		try {
 			Log.v("MSG", "Start listening.");
 			Log.v("MSG", "Going to wait.");
+			
 			while (!this.inFromServer.ready()){}
 			
 			Log.v("MSG", "Wait done, receiving.");
