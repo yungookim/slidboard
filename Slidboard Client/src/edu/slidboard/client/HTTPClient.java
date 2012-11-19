@@ -14,12 +14,12 @@ import android.util.Log;
 public class HTTPClient {
 	
 	
-	public static void POST(String data, String path) throws IOException{
+	public static String POST(String path, String data) throws IOException{
 		String targetURL = "http://69.164.219.86:8081/" + path; 
 		String msg = "msg=" + URLEncoder.encode(data, "UTF-8");
-		
 		URL url;
 		HttpURLConnection connection = null;  
+		String response = "err";
 		try {
 			//Create connection
 			url = new URL(targetURL);
@@ -31,6 +31,7 @@ public class HTTPClient {
 			connection.setUseCaches (false);
 			connection.setDoInput(true);
 			connection.setDoOutput(true);
+			connection.setConnectTimeout(3600000);
 			
 			//Send request
 			DataOutputStream wr = new DataOutputStream(connection.getOutputStream ());
@@ -42,19 +43,23 @@ public class HTTPClient {
 			InputStream is = connection.getInputStream();
 			BufferedReader rd = new BufferedReader(new InputStreamReader(is));
 			String line;
-			StringBuffer response = new StringBuffer(); 
+			StringBuffer _response = new StringBuffer(); 
 			while((line = rd.readLine()) != null) {
-				response.append(line);
-				response.append('\r');
+				_response.append(line);
+				_response.append('\r');
 			}
 			rd.close();
-			Log.v("FROM SERVER ", response.toString());
+			Log.v("FROM SERVER ", _response.toString());
+			response = _response.toString();
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 		} finally {
 			if(connection != null) {
-			connection.disconnect(); 
+				connection.disconnect(); 
+				Log.v("HTTP Client", "Connection closed");
 			}
 		}
+		return response;
 	}
 }
