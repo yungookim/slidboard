@@ -11,6 +11,7 @@ module.exports = {
 	CLIENT_MOBILE : "MOBILE",
 	CLIENT_PIXELSENSE : 'PixelSense',
 
+	//Routes incoming request to appropriate handler
 	exec : function(data, next){
 		if (data.from === this.CLIENT_MOBILE){
 			this.execMobile(data, next);
@@ -19,19 +20,13 @@ module.exports = {
 		}
 	},
 
+	//Hanlder for incoming mobile requests
 	execMobile : function(data, next){
-		switch (data.action)
-		{
-			case "init":
-				//Send instruction to the app.js
-				next("Device.init");
-				break;
-			default :
-				console.log(data.name);
-				break;
-		}
+
+
 	},
 
+	//Handler for incoming PixelSense handler
 	execPixelSense : function(data, next){
 	
 		if (data.action === "end"){
@@ -66,8 +61,6 @@ module.exports = {
 				indexer.getFile(query.requestingDevice, query.path, function(ret){
 					console.log('Query Done');
 					next(ret);
-					console.log();
-					module.exports.mobiles[0].end("filajlkfjlkejsaljf;sadklf\r\n");
 				});
 			default :
 				console.log(JSON.parse(data.extraMsg));
@@ -87,9 +80,7 @@ module.exports.parse = function(query){
 	} catch (e){
 		console.log("Wrong data time : app.js.socket.on.data");
 		console.log(e);
-		console.log(data);
-		socket.end('WDT');
-		return;
+		throw e;
 	}
 	return parsed_data;
 }
