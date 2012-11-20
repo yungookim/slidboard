@@ -37,7 +37,6 @@ namespace slidbaord
             String response = HttpClient.GET("getFile", msgWrapper.getMessage());
 
             Console.WriteLine(response);
-
             return "";
         }
     }

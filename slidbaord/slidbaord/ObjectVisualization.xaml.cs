@@ -76,6 +76,7 @@ namespace slidbaord
             item.MinWidth = 250;
             //item.MaxWidth = 600;
             item.MinHeight = 120;
+            item.Background = SurfaceColors.ScatterViewItemBackgroundBrush;
             
             /*
             if (indexedItem.name.Substring(0,1).Equals("."))
@@ -186,14 +187,12 @@ namespace slidbaord
         /// <param name="e"></param>
         private void open(object sender, EventArgs e)
         {
-            
             SurfaceButton sb = (SurfaceButton)sender;
             Grid item = (Grid)sb.Parent;
 
             UIElementCollection collection = item.Children;
             String path = "";
             Grid subDirList = null;
-
 
             //Get the properties of the event sender
             foreach (UIElement c in collection)
