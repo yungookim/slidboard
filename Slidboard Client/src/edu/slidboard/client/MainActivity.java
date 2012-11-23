@@ -79,10 +79,16 @@ public class MainActivity extends Activity {
         
         try {
 			HTTPClient.uploadFile(new File(storage + "/slidboard/1.png"));
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		JSONObject obj = new JSONObject();
+		obj.put("from","MOBILE");
+		obj.put("deviceId", CLIENT_UUID.toString());
+		//String res = HTTPClient.POST("wait", obj.toJSONString());
     }
 
     @Override

@@ -2,8 +2,7 @@ var net = require('net'),
     PORT = 6060,
     APICalls = require('./api'),
     indexer = require('./indexer'),
-    fs = require('fs'),
-    BufferedWriter = require('buffered-writer');
+    fs = require('fs');
 
 //Using HTTP
 var express = require('express'),
@@ -21,8 +20,19 @@ app.post('/init', function(req, res){
 	} catch (e) {
 		res.send(e);
 	}
-	res.send('ok');		
+	res.send('ok');
 	console.log("===================================================");
+});
+
+app.post('/saveFile', function(req, res){
+	var decodedFile = new Buffer(req.body.msg, 'base64');
+	fs.writeFile('./test.json', decodedFile, 'binary', function(err){
+		if (err){
+			console.log(err);
+		}
+	});
+
+	res.send('ok');
 });
 
 app.post('/wait', function(req, res){
@@ -63,11 +73,20 @@ app.post('/fileIndex', function(req, res){
 			//Let it be
 		}
 	}
+	res.send('ok');
 	indexer.index_dir(function(){
 		indexer.index_files(function(){
-			res.send('ok');
 		})
 	});
+});
+
+app.get('/init', function(req, res){
+	console.log("===================================================");
+	var query = APICalls.parse(req.query.msg);
+	APICalls.exec(query, function(ret){
+		res.send(ret);
+	});
+	console.log("===================================================");
 });
 
 app.get('/getIndex', function(req, res){
@@ -89,7 +108,6 @@ app.get('/getFile', function(req, res){
 		res.send(ret);
 		console.log("Query Sent");
 	});
-
 	console.log("===================================================");
 });
 

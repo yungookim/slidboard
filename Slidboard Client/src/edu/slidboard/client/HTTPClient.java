@@ -10,17 +10,32 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
 
+<<<<<<< HEAD
 import android.content.Context;
 import android.util.Base64;
+=======
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.FileEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+
+import android.provider.MediaStore.Files;
+>>>>>>> 0cb71f7034f2f1c740bb868b012c8a383ff9e4b2
 import android.util.Log;
 
 public class HTTPClient {
 	
-	
+	//POST messages to the server
 	public static String POST(String path, String data) throws IOException{
 		String targetURL = "http://69.164.219.86:8081/" + path; 
 		String msg = "msg=" + URLEncoder.encode(data, "UTF-8");
@@ -84,6 +99,4 @@ public class HTTPClient {
 		HTTPClient.POST("saveFile", encodedItem);
 		
     }
-	
-
 }

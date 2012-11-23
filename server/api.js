@@ -22,8 +22,6 @@ module.exports = {
 
 	//Hanlder for incoming mobile requests
 	execMobile : function(data, next){
-
-
 	},
 
 	//Handler for incoming PixelSense handler
@@ -35,12 +33,10 @@ module.exports = {
 			return;
 		}
 
-		console.log(data.action);
-
 		switch (data.action){
 			case 'init':
 				console.log("PixelSense Connected");
-				next('PS.init');
+				next('ok');
 				break;
 			case 'getIndex':
 				var query = JSON.parse(data.extraMsg);
@@ -52,7 +48,6 @@ module.exports = {
 					for (i in indexList){
 						list += JSON.stringify(indexList[i]) + "\n";
 					}
-
 					next(list);
 				});
 				break;
