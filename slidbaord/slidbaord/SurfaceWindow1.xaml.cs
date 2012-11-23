@@ -40,18 +40,12 @@ namespace slidbaord
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
 
-            //Establish a TCP connection with the server
-            //Async Stlye
-            //AsynchronousClient.StartClient();
-            //Blocking calls
-            //sc = new SocketClient("69.164.219.86", 6060);
-            //sc.connect();
-
             //Make the DirList ScatterView accessable globally
             GlobalDirList = this.DirList;
 
             //Or doing it in HTTP
             JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
+            //Test the connection to the server
             String response = HttpClient.GET("init", _msg.getMessage());
 
             //TODO DELETE THIS. FOR TESTING ONLY
@@ -143,7 +137,6 @@ namespace slidbaord
                     ic.ZIndex = zindex++;
                 }
             }
-
         }
 
         /// <summary>
