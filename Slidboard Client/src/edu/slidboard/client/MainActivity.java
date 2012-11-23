@@ -1,16 +1,11 @@
 package edu.slidboard.client;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.UUID;
-
 import org.json.simple.JSONObject;
 
+import java.io.IOException;
+import java.util.UUID;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,6 +13,7 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -42,31 +38,36 @@ public class MainActivity extends Activity {
         //Get path to an external storage
         String storage = Environment.getExternalStorageDirectory().getPath();
         
+        //Initialize connection.
+        try {        	
+        	JSONObject obj = new JSONObject();
+        	obj.put("from","MOBILE");
+        	obj.put("deviceId", CLIENT_UUID.toString());
+			String res = HTTPClient.POST("init", obj.toJSONString());
+			if (!res.equals("ok")){
+				Toast.makeText(this, "Error. Check server log", Toast.LENGTH_LONG).show();
+			}
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			return;//Let the system die
+		}
+        
         //Scan the contents of the external storage
         FileWalker fw;
 		try {
-			//Connect to server and send the index files
-			this.createConnection(client);
-			
-			this.client.read();
-			
-			
-			//Now, wait for requests from server
-			this.client.read();
-			
-			//TODO : as for the testing phase, only walk in a small dir.
 			fw = new FileWalker(storage);
-			
-			//fw.walk(storage, client, this.CLIENT_UUID);
-			
-			//HTTPClient.POST(fw.getRawIndex(), "fileIndex");
-			
-			//TODO: should close here, but should start to listen
-			//this.client.close();
+			fw.walk(storage, client, this.CLIENT_UUID);
+			HTTPClient.POST("fileIndex", fw.getRawIndex());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		JSONObject obj = new JSONObject();
+		obj.put("from","MOBILE");
+		obj.put("deviceId", CLIENT_UUID.toString());
+		//String res = HTTPClient.POST("wait", obj.toJSONString());
     }
 
     @Override

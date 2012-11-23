@@ -19,9 +19,12 @@ import java.net.UnknownHostException;
 import android.util.Log;
 
 /**
+ * Deprecated. Everything is moved to HTTP. 
  * @author Dave
  *
  */
+
+
 public class TCPClient {
 
 	private int port;

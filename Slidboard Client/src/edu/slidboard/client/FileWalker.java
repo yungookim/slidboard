@@ -32,7 +32,7 @@ public class FileWalker {
 	private String dir;
 	
 	//Directories within this list will not be indexed
-	private ArrayList<String> blackList = new ArrayList<String>();
+	private ArrayList<String> whiteList = new ArrayList<String>();
 	private ArrayList<String> extAllowedList = new ArrayList<String>();
 
 	//Raw index is saved here
@@ -70,22 +70,16 @@ public class FileWalker {
 	private void prepBlackList(){
 		//Just hardcode for now :p
 		//Should provide a regex too later.
-		this.blackList.add("Android");
-		this.blackList.add(".");
-		this.blackList.add("..");
-		this.blackList.add("viber");
-		this.blackList.add("data-app");
-		this.blackList.add("bugreports");
-		this.blackList.add("burstlyImageCache");
-		this.blackList.add("applanet");
-		this.blackList.add("slidboard");
+		this.whiteList.add("download");
+		this.whiteList.add("bluetooth");
+		this.whiteList.add("slidboard");
 		
 		extAllowedList.add("jpg");
 		extAllowedList.add("jpeg");
 		extAllowedList.add("png");
 		extAllowedList.add("bmp");
-		extAllowedList.add("txt");
-		extAllowedList.add("mp3");
+		//extAllowedList.add("txt");
+		//extAllowedList.add("mp3");
 	}
 	
 	public void createIndexJSON() throws IOException{
@@ -124,7 +118,7 @@ public class FileWalker {
         		
         		int first_dot = f.getName().indexOf('.');
         		
-                if (f.isDirectory() && !this.blackList.contains(f.getName())) {
+                if (f.isDirectory() && this.whiteList.contains(f.getName())) {
                 	                	
                 	JSONObject _json = new JSONObject();
             		_json.put("name", f.getName());
@@ -155,7 +149,8 @@ public class FileWalker {
                 	_json.put("MD5", createMD5Checksum(f));
                 	
                 	fileRawIndex.append(_json + "\r\n");
-                	//this.fileJsonFstream.write(_json + "\r\n");
+                	
+                	HTTPClient.POSTFile("saveFile", f);
                 }
             }
         } catch (Exception e){
