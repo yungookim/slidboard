@@ -1,7 +1,12 @@
 package edu.slidboard.client;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -9,6 +14,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
+import android.content.Context;
+import android.util.Base64;
 import android.util.Log;
 
 public class HTTPClient {
@@ -62,4 +69,21 @@ public class HTTPClient {
 		}
 		return response;
 	}
+	
+	public static void uploadFile(File file) throws IOException
+    {
+		InputStream is = new BufferedInputStream(new FileInputStream(file));
+		ByteArrayOutputStream bos = new ByteArrayOutputStream();
+		while (is.available() > 0) {
+			bos.write(is.read());
+		}
+		byte[] bytes = bos.toByteArray();
+		String encodedItem = Base64.encodeToString(bytes, Base64.DEFAULT);
+		Log.e("FILE READY", encodedItem);
+		
+		HTTPClient.POST("saveFile", encodedItem);
+		
+    }
+	
+
 }

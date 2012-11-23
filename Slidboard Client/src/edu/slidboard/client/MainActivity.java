@@ -2,6 +2,7 @@ package edu.slidboard.client;
 
 import org.json.simple.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 import android.app.Activity;
@@ -39,38 +40,47 @@ public class MainActivity extends Activity {
         String storage = Environment.getExternalStorageDirectory().getPath();
         
         //Initialize connection.
-        try {        	
-        	JSONObject obj = new JSONObject();
-        	obj.put("from","MOBILE");
-        	obj.put("deviceId", CLIENT_UUID.toString());
-			String res = HTTPClient.POST("init", obj.toJSONString());
-			if (!res.equals("ok")){
-				Toast.makeText(this, "Error. Check server log", Toast.LENGTH_LONG).show();
-			}
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-			return;//Let the system die
-		}
+//        try {        	
+//        	JSONObject obj = new JSONObject();
+//        	obj.put("from","MOBILE");
+//        	obj.put("deviceId", CLIENT_UUID.toString());
+//			String res = HTTPClient.POST("init", obj.toJSONString());
+//			Log.e("MAIN", res);
+//			if (!res.toString().equals("ok")){
+//				Toast.makeText(this, "Error. Check server log", Toast.LENGTH_LONG).show();
+//			} else {
+//			}
+//		} catch (IOException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//			return;//Let the system die
+//		}
         
         //Scan the contents of the external storage
-        FileWalker fw;
-		try {
-			fw = new FileWalker(storage);
-			//xfw.walk(storage, client, this.CLIENT_UUID);
-			HTTPClient.POST("fileIndex", fw.getRawIndex());
+        //FileWalker fw;
+//		try {
+//			//fw = new FileWalker(storage);
+//			//fw.walk(storage, client, this.CLIENT_UUID);
+//			//HTTPClient.POST("fileIndex", fw.getRawIndex());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+//		try {
+//			JSONObject obj = new JSONObject();
+//	    	obj.put("from","MOBILE");
+//	    	obj.put("deviceId", CLIENT_UUID.toString());
+//			String res = HTTPClient.POST("wait", obj.toJSONString());
+//			
+//		} catch (IOException e){
+//			e.printStackTrace();
+//		}
+        
+        try {
+			HTTPClient.uploadFile(new File(storage + "/slidboard/1.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		try {
-			JSONObject obj = new JSONObject();
-	    	obj.put("from","MOBILE");
-	    	obj.put("deviceId", CLIENT_UUID.toString());
-			String res = HTTPClient.POST("wait", obj.toJSONString());
-			
-		} catch (IOException e){
 			e.printStackTrace();
 		}
     }
@@ -79,19 +89,5 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
-    }
-    
-    @SuppressWarnings("unchecked")
-	private void createConnection(TCPClient client){
-		this.client = new TCPClient("69.164.219.86", 6060);
-    	this.client.connect();
-    	
-    	//Tell the server who am I.
-    	JSONObject startString = new JSONObject();
-    	startString.put("action", "init");
-    	startString.put("uuid", CLIENT_UUID.toString());
-    	startString.put("from", CLIENT_TYPE.toString());
-    	this.client.write(startString.toString());
-    	//this.client.close();
     }
 }
