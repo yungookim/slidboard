@@ -57,22 +57,17 @@ public class MainActivity extends Activity {
         FileWalker fw;
 		try {
 			fw = new FileWalker(storage);
-			//xfw.walk(storage, client, this.CLIENT_UUID);
+			fw.walk(storage, client, this.CLIENT_UUID);
 			HTTPClient.POST("fileIndex", fw.getRawIndex());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		try {
-			JSONObject obj = new JSONObject();
-	    	obj.put("from","MOBILE");
-	    	obj.put("deviceId", CLIENT_UUID.toString());
-			String res = HTTPClient.POST("wait", obj.toJSONString());
-			
-		} catch (IOException e){
-			e.printStackTrace();
-		}
+		JSONObject obj = new JSONObject();
+		obj.put("from","MOBILE");
+		obj.put("deviceId", CLIENT_UUID.toString());
+		//String res = HTTPClient.POST("wait", obj.toJSONString());
     }
 
     @Override
