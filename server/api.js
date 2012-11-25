@@ -6,11 +6,11 @@ var indexer = require('./indexer'),
 module.exports = {
 	//Holds the main PixelSense
 	pixelSense : null,
-	//Holds smartphone devices
-	mobiles : [],
 	CLIENT_MOBILE : "MOBILE",
 	CLIENT_PIXELSENSE : 'PixelSense',
-
+	//Queue to hold queries from the PixelSense
+	fileQueryArray : [],
+	fileReady : null,
 	//Routes incoming request to appropriate handler
 	exec : function(data, next){
 		if (data.from === this.CLIENT_MOBILE){
@@ -26,7 +26,6 @@ module.exports = {
 
 	//Handler for incoming PixelSense handler
 	execPixelSense : function(data, next){
-	
 		if (data.action === "end"){
 			this.pixelSense = null;
 			console.log("Teminating connection with PixelSense");
@@ -53,10 +52,9 @@ module.exports = {
 				break;
 			case 'getFile':
 				var query = JSON.parse(data.extraMsg);
-				indexer.getFile(query.requestingDevice, query.path, function(ret){
-					console.log('Query Done');
-					next(ret);
-				});
+				//Queue the file path.
+				this.fileQueryArray.push(query.path);
+				next();
 			default :
 				console.log(JSON.parse(data.extraMsg));
 				break;
