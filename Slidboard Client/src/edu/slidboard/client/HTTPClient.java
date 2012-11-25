@@ -6,31 +6,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
-
-<<<<<<< HEAD
-import android.content.Context;
 import android.util.Base64;
-=======
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.FileEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-
-import android.provider.MediaStore.Files;
->>>>>>> 0cb71f7034f2f1c740bb868b012c8a383ff9e4b2
 import android.util.Log;
 
 public class HTTPClient {
@@ -94,9 +76,10 @@ public class HTTPClient {
 		}
 		byte[] bytes = bos.toByteArray();
 		String encodedItem = Base64.encodeToString(bytes, Base64.DEFAULT);
+		
 		Log.e("FILE READY", encodedItem);
 		
-		HTTPClient.POST("saveFile", encodedItem);
+		HTTPClient.POST("uploadFile", encodedItem);
 		
     }
 }
