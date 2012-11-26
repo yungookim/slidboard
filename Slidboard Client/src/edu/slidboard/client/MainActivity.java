@@ -39,13 +39,7 @@ public class MainActivity extends Activity {
         JSONObject obj = new JSONObject();
 		obj.put("from","MOBILE");
 		obj.put("deviceId", CLIENT_UUID.toString());
-//			String res = HTTPClient.POST("init", obj.toJSONString());
-//			Log.e("MAIN", res);
-//			if (!res.toString().equals("ok")){
-//				Toast.makeText(this, "Error. Check server log", Toast.LENGTH_LONG).show();
-//			} else {
-//			}
-        
+
         //Scan the contents of the external storage
 		try {
 			FileWalker fw;
@@ -61,11 +55,6 @@ public class MainActivity extends Activity {
         thread = new Thread(worker);
         thread.start();
         
-//			String res = HTTPClient.POST("wait", obj.toJSONString());
-//			res = res.trim();
-//			HTTPClient.uploadFile(new File(res.toString()));
-			
-
     }
     
     @Override
