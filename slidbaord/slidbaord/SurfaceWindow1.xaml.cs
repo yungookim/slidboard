@@ -167,8 +167,6 @@ namespace slidbaord
                     ScatterViewItem[] ls = _obj.createFileList(
                                             HttpClient.getIndexObject(deviceId, "/mnt/sdcard"), 
                                             deviceName);
-
-                    Console.WriteLine("Dir views added");
                     foreach (ScatterViewItem i in ls)
                     {
                         if (i != null)
@@ -178,13 +176,8 @@ namespace slidbaord
                     }
 
                     break;
-                case 0xC2:
-                    _obj.ObjectModel.Content = "Nexus One";
-                    _obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
-                    break;
                 default:
                     _obj.ObjectModel.Content = "UNKNOWN MODEL";
-                    this.DirList.Visibility = Visibility.Hidden;
                     //_obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
                     break;
             }

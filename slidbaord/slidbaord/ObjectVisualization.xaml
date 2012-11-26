@@ -14,15 +14,5 @@
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                Height="25"/>
-        
-        <!--
-        <ListBox Name="DirList" SelectionMode="Single" Height="280" 
-                 HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
-            <ListBoxItem Height="25" Margin="4" Background="Gainsboro" FontWeight="Bold" FontSize="14">Item 1</ListBoxItem>
-         </ListBox>
-        -->
-        
-        
-        
     </Grid>
 </s:TagVisualization>

@@ -34,7 +34,6 @@ namespace slidbaord
         private void ObjectVisualization_Loaded(object sender, RoutedEventArgs e)
         {
             //TODO: customize ObjectVisualization's UI based on this.VisualizedTag here
-
         }
 
         /// <summary>
@@ -216,7 +215,7 @@ namespace slidbaord
 
             items.TrimToSize();
             int i = 0;
-            if (items.Count > 1)
+            if (items.Count > 0)
             {
                 foreach (IndexObject io in items)
                 {
@@ -331,8 +330,34 @@ namespace slidbaord
         {
             SurfaceButton sb = (SurfaceButton)sender;
 
-            String response = HttpClient.getFile(DEVICE_ID, sb.Content.ToString());
-            Console.WriteLine(response);
+            //response contains 
+            String uri = HttpClient.getFile(DEVICE_ID, sb.Content.ToString());
+
+            Console.WriteLine(uri);
+
+            int extLength = uri.Length - uri.LastIndexOf(".");
+            String fileExt = uri.Substring(uri.LastIndexOf("."), extLength);
+            Console.WriteLine(fileExt);
+
+            ScatterViewItem svi = new ScatterViewItem();
+            //mp3 file. play
+            if (fileExt.Equals(".mp3"))
+            {
+                MediaElement media = new MediaElement();
+                media.Source = new Uri(uri, UriKind.Absolute);
+                svi.Content = media;
+            }
+            else
+            {
+                //Assume its an image file
+                Image img = new Image();
+                img.Source = new BitmapImage(new Uri(uri, UriKind.Absolute));
+
+                svi.Content = img;
+            }
+            
+
+            SurfaceWindow1.GlobalDirList.Items.Add(svi);
         }
     }
 }
