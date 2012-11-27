@@ -331,36 +331,32 @@ namespace slidboard
             }
         }
 
-
         private void OpenFile(object sender, EventArgs e)
         {
             SurfaceButton sb = (SurfaceButton)sender;
 
             String originalFileFullPath = sb.Content.ToString();
 
-            ScatterViewItem item = new ScatterViewItem();
-            item.HorizontalContentAlignment = HorizontalAlignment.Center;
-            item.VerticalContentAlignment = VerticalAlignment.Center;
-            item.Background = Brushes.Transparent;
-            item.Foreground = Brushes.White;
-            item.FontWeight = FontWeights.UltraBold;
+            ScatterViewItem dynamicItem = new ScatterViewItem();
+            dynamicItem.HorizontalContentAlignment = HorizontalAlignment.Center;
+            dynamicItem.VerticalContentAlignment = VerticalAlignment.Center;
+            dynamicItem.Background = Brushes.Transparent;
+            dynamicItem.Foreground = Brushes.White;
+            dynamicItem.FontWeight = FontWeights.UltraBold;
 
             //tell the user that the content is loading in the background
             Label loading = new Label();
             loading.Content = "Loading...";
-            item.Content = loading;
-            SurfaceWindow1.GlobalDirList.Items.Add(item);
+            dynamicItem.Content = loading;
+            SurfaceWindow1.GlobalDirList.Items.Add(dynamicItem);
 
-            FileFetcher fetcher = new FileFetcher(DEVICE_ID, item, originalFileFullPath, this);
+            FileFetcher fetcher = new FileFetcher(DEVICE_ID, dynamicItem, originalFileFullPath, this);
             Thread workerThread = new Thread(fetcher.fetchfile);
             workerThread.SetApartmentState(ApartmentState.STA);
             workerThread.Start();
         }
 
-        public void updateUI()
-        {
-        
-        }
+        public delegate void updateUI();
 
         public void toggleMedia(object sender, EventArgs e)
         {
@@ -444,8 +440,6 @@ namespace slidboard
             int extLength = uri.Length - uri.LastIndexOf(".");
             String fileExt = uri.Substring(uri.LastIndexOf("."), extLength);
 
-            Object result;
-
             //mp3 file. play
             if (fileExt.Equals(".mp3"))
             {
@@ -486,7 +480,7 @@ namespace slidboard
                 status.VerticalContentAlignment = VerticalAlignment.Center;
                 status.HorizontalContentAlignment = HorizontalAlignment.Center;
                 status.Content = PLAYING;
-                status.Click += new RoutedEventHandler(this.toggleMedia);
+                status.Click += new RoutedEventHandler(view.toggleMedia);
 
                 Grid.SetRow(fileName, 0);
                 Grid.SetColumn(fileName, 0);
@@ -499,33 +493,20 @@ namespace slidboard
                 grid.Children.Add(media);
                 grid.Children.Add(status);
 
-                result = grid;
+                item.Content = grid;
+
             }
             else
             {
                 //Assume its an image file
                 Image img = new Image();
                 img.Source = new BitmapImage(new Uri(uri, UriKind.Absolute));
-                result = img;
+                Action action = delegate { item.Content = img; };
+                view.Dispatcher.Invoke(action);
+
             }
 
-            // Checking if this thread has access to the object. 
-            if (item.Dispatcher.CheckAccess())
-            {
-                // This thread has access so it can update the UI thread.
-                item.Content = (Image)result;
-            }
-            else
-            {
-                item.Dispatcher.Invoke(
-                    System.Windows.Threading.DispatcherPriority.Normal,
-                    new Action(
-                        delegate()
-                        {
-                            item.Content = (Image)result;
-                        }
-                    ));
-            }
+            
         }
     }
 }
