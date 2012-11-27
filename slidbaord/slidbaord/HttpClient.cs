@@ -6,7 +6,7 @@ using System.Net;
 using System.IO;
 using System.Collections;
 
-namespace slidbaord
+namespace slidboard
 {
     class HttpClient
     {
