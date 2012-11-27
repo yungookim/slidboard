@@ -19,14 +19,14 @@ using System.Collections;
 using Newtonsoft.Json;
 
 
-namespace slidbaord
+namespace slidboard
 {
     /// <summary>
     /// Controller for SurfaceWindow1.xaml
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
-        ObjectVisualization deviceObject;
+        SlidboardView deviceObject;
 
         public static ScatterView GlobalDirList;
 
@@ -46,7 +46,14 @@ namespace slidbaord
             //Or doing it in HTTP
             JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
             //Test the connection to the server
-            String response = HttpClient.GET("init", _msg.getMessage());
+            try
+            {
+                String response = HttpClient.GET("init", _msg.getMessage());
+            }
+            catch (Exception e) 
+            {
+                this.serverNotResondingDialog.Visibility = Visibility.Visible;
+            }
 
             //TODO DELETE THIS. FOR TESTING ONLY
             //String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
@@ -152,7 +159,7 @@ namespace slidbaord
         private void OnVisualizationAdded(object sender, TagVisualizerEventArgs e)
         {
 
-            ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            SlidboardView _obj = (SlidboardView)e.TagVisualization;
             this.deviceObject = _obj;
             
             switch (_obj.VisualizedTag.Value)
@@ -185,7 +192,7 @@ namespace slidbaord
 
         private void OnVisualizationRemoved(object sender, TagVisualizerEventArgs e) 
         {
-            ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            SlidboardView _obj = (SlidboardView)e.TagVisualization;
             this.DirList.Items.Clear();
 
             ScatterViewItem controlbox = new ScatterViewItem();

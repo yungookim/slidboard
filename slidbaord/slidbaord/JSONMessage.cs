@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace slidbaord
+namespace slidboard
 {
 
     //Message wrapper. Includes the origination of this message.

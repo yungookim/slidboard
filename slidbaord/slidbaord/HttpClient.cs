@@ -5,8 +5,9 @@ using System.Text;
 using System.Net;
 using System.IO;
 using System.Collections;
+using System.Net.Http;
 
-namespace slidbaord
+namespace slidboard
 {
     class HttpClient
     {

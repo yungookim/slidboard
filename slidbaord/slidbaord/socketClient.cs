@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using System.Threading;
 using System.Collections;
 
-namespace slidbaord
+namespace slidboard
 {
 
     public class SocketClient
