@@ -5,7 +5,7 @@ using System.Threading;
 using System.Text;
 
 
-namespace slidbaord
+namespace slidboard
 {
     //The mojority of the following codes are from MSDN examples.
     // State object for receiving data from remote.

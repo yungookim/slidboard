@@ -24,35 +24,46 @@ app.post('/init', function(req, res){
 	console.log("===================================================");
 });
 
-app.post('/saveFile', function(req, res){
-	var decodedFile = new Buffer(req.body.msg, 'base64');
-	fs.writeFile('./test.json', decodedFile, 'binary', function(err){
+app.post('/uploadFile', function(req, res){
+/*	var decodedFile = new Buffer(req.body.msg, 'base64');
+	fs.writeFile('./test.png', decodedFile, 'binary', function(err){
 		if (err){
 			console.log(err);
 		}
-	});
-
+	});*/
+	console.log("file uploaded");	
+	APICalls.fileReady = req.body.msg;
 	res.send('ok');
 });
 
 app.post('/wait', function(req, res){
 	console.log("/wait==============================================");
+	//Device waiting for request from PixelSense
 	try {
 		var query = APICalls.parse(req.body.msg);
 	} catch (e){
 		res.send(e);
 	}
-	
-	APICalls.mobiles.push({ deviceId : query.deviceId, response : res });
 
-	setTimeout(function(){
-		res.send('stillWaiting');
-	}, 30000);
+	var ticker = setInterval(function(){
+		if (APICalls.fileQueryArray.length > 0){
+			clearInterval(ticker);
+			//Request file LCFS
+			res.send(APICalls.fileQueryArray.pop());
+		}
+	}, 3000);
 
 	console.log("===================================================");
 });
 
 app.post('/fileIndex', function(req, res){
+	//Remove old files and indexes
+	try { fs.unlinkSync("/data/indexFile.json");} catch (e) { console.log(e); }
+	try { fs.unlinkSync("/data/indexDir.json");} catch (e) { console.log(e); }
+	try { 
+//		indexer.removeIndex();
+	} catch (e) { conole.log(e); }
+
 	var data = req.body.msg.split('\n');
 	//Stupid and slow implementation.
 	for (i in data){
@@ -73,12 +84,12 @@ app.post('/fileIndex', function(req, res){
 			//Let it be
 		}
 	}
-	res.send('ok');
-	indexer.index_dir(function(){
-		indexer.index_files(function(){
-		})
-	});
+		res.send('ok');
+		indexer.index_dir(function(){
+			indexer.index_files(function(){});
+		});
 });
+
 
 app.get('/init', function(req, res){
 	console.log("===================================================");
@@ -104,9 +115,19 @@ app.get('/getFile', function(req, res){
 	console.log("===================================================");
 	var query = APICalls.parse(req.query.msg);
 	APICalls.exec(query, function(ret){
-		console.log(ret);
-		res.send(ret);
-		console.log("Query Sent");
+		
+		//Wait until file upload is done from the client
+		var ticker = setInterval(function(){
+			//Handles just one file for now
+			if (APICalls.fileReady){
+				console.log("sending file");
+				clearInterval(ticker);
+				res.send(APICalls.fileReady);
+				APICalls.fileReady = null;	
+			}
+		}, 1000);
+
+		//send file
 	});
 	console.log("===================================================");
 });

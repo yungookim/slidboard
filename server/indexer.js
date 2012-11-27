@@ -38,7 +38,7 @@ module.exports = {
 				dir_array.splice(dir_array.length-1, 1);
 				var parent = dir_array.join('/');
 
-				collection.findAndModify({ id : id },[], 
+				collection.findAndModify({ fullPath : fullPath },[], 
 					{$set : 
 						{
 							deviceId : deviceId,
@@ -97,7 +97,7 @@ module.exports = {
 						var parent = dir_array.join('/');
 
 						var path_array = fullPath.split('/');
-						collection.findAndModify({id : id}, [], 
+						collection.findAndModify({fullPath : fullPath}, [], 
 						{$set : 
 							{
 								fileName : fileName,
@@ -135,18 +135,17 @@ module.exports = {
 	getIndex : function(deviceId, dir, next){
 		db.open(function (error, client) {
 			if (error) throw error;
-					var collection = new mongodb.Collection(client, 'index_dir');
-					
+					var collection = new mongodb.Collection(client, 'index_dir');				
 					collection.find({ deviceId : deviceId, parent : dir }, {})
 						.toArray(function(err, dirIndexes){
 						if (err) {console.log(err); return;}
 							collection = new mongodb.Collection(client, 'index_file');
 							collection.find({ deviceId : deviceId, parent : dir }, {})
 								.toArray(function(err, fileIndexes){
-									console.log(fileIndexes);
 									//Join the two results
 									var index = dirIndexes.concat(fileIndexes);
 									db.close();
+									console.log(index);
 									next(index);
 								});					
 					});
@@ -163,6 +162,20 @@ module.exports = {
 					db.close();
 					next(ret);
 				});
+		});
+	},
+
+	removeIndex : function(deviceId){
+		db.open(function(err, client){
+			if (err) throw err;
+			var collection = new mongodb.Collection(client, 'index_file');
+			collection.drop(function(){
+				collection = new mongodb.Collection(client, 'index_dir');				
+				collection.drop(function(){
+					db.close();
+				});
+				
+			});
 		});
 	}
 }

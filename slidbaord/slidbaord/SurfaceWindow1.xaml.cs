@@ -19,14 +19,14 @@ using System.Collections;
 using Newtonsoft.Json;
 
 
-namespace slidbaord
+namespace slidboard
 {
     /// <summary>
     /// Controller for SurfaceWindow1.xaml
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
-        ObjectVisualization deviceObject;
+        SlidboardView deviceObject;
 
         public static ScatterView GlobalDirList;
 
@@ -46,7 +46,14 @@ namespace slidbaord
             //Or doing it in HTTP
             JSONMessageWrapper _msg = new JSONMessageWrapper("init", "");
             //Test the connection to the server
-            String response = HttpClient.GET("init", _msg.getMessage());
+            try
+            {
+                String response = HttpClient.GET("init", _msg.getMessage());
+            }
+            catch (Exception e) 
+            {
+                this.serverNotResondingDialog.Visibility = Visibility.Visible;
+            }
 
             //TODO DELETE THIS. FOR TESTING ONLY
             //String deviceId = "87841656-3842-40cb-af59-389ee46b23cd";
@@ -152,7 +159,7 @@ namespace slidbaord
         private void OnVisualizationAdded(object sender, TagVisualizerEventArgs e)
         {
 
-            ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            SlidboardView _obj = (SlidboardView)e.TagVisualization;
             this.deviceObject = _obj;
             
             switch (_obj.VisualizedTag.Value)
@@ -167,8 +174,6 @@ namespace slidbaord
                     ScatterViewItem[] ls = _obj.createFileList(
                                             HttpClient.getIndexObject(deviceId, "/mnt/sdcard"), 
                                             deviceName);
-
-                    Console.WriteLine("Dir views added");
                     foreach (ScatterViewItem i in ls)
                     {
                         if (i != null)
@@ -178,13 +183,8 @@ namespace slidbaord
                     }
 
                     break;
-                case 0xC2:
-                    _obj.ObjectModel.Content = "Nexus One";
-                    _obj.objectWrapper.Fill = SurfaceColors.Accent2Brush;
-                    break;
                 default:
                     _obj.ObjectModel.Content = "UNKNOWN MODEL";
-                    this.DirList.Visibility = Visibility.Hidden;
                     //_obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
                     break;
             }
@@ -192,7 +192,7 @@ namespace slidbaord
 
         private void OnVisualizationRemoved(object sender, TagVisualizerEventArgs e) 
         {
-            ObjectVisualization _obj = (ObjectVisualization)e.TagVisualization;
+            SlidboardView _obj = (SlidboardView)e.TagVisualization;
             this.DirList.Items.Clear();
 
             ScatterViewItem controlbox = new ScatterViewItem();
