@@ -40,6 +40,7 @@ namespace slidboard
         private void ObjectVisualization_Loaded(object sender, RoutedEventArgs e)
         {
             //TODO: customize ObjectVisualization's UI based on this.VisualizedTag here
+            
         }
 
         /// <summary>
@@ -78,18 +79,15 @@ namespace slidboard
             ScatterViewItem item = new ScatterViewItem();
             //Set properties
             //item.Center = startingPosition;
+            item.Orientation = this.Orientation;
             item.MinWidth = 250;
-            //item.MaxWidth = 600;
             item.MinHeight = 120;
-            item.Background = SurfaceColors.ScatterViewItemBackgroundBrush;
+            item.HorizontalContentAlignment = HorizontalAlignment.Center;
+            item.VerticalContentAlignment = VerticalAlignment.Center;
+            item.Background = Brushes.Transparent;
+            item.Foreground = Brushes.White;
+            item.FontWeight = FontWeights.UltraBold;
             
-            /*
-            if (indexedItem.name.Substring(0,1).Equals("."))
-            {
-                item.Visibility = Visibility.Collapsed;
-            }
-            */
-
             //Add grid view for sub-directory list
             Grid subDirectoryList = new Grid();
             subDirectoryList.ColumnDefinitions.Add(new ColumnDefinition());
@@ -127,15 +125,14 @@ namespace slidboard
             sb.FontWeight = FontWeights.UltraBold;
             sb.Foreground = Brushes.WhiteSmoke;
 
-            Console.WriteLine(indexedItem.type);
-
             if (indexedItem.type.Equals("DIR"))
             {
                 sb.Content = indexedItem.parent + "/" + indexedItem.name + "      >>";
             }
             else
             {
-                sb.Content = "File : " + indexedItem.parent + "/" + indexedItem.name;
+                //sb.Content = "File : " + indexedItem.parent + "/" + indexedItem.name;
+                return null;
             }
 
             sb.Click += new RoutedEventHandler(this.open);
@@ -321,7 +318,7 @@ namespace slidboard
             if (((IndexObject)response[0]) == null)
             {
                 String content_temp = (String)sb.Content;
-                sb.Content = "EMPTY Folder : " + content_temp;
+                sb.Content = "EMPTY Folder";
                 return;
             }
 
@@ -337,12 +334,14 @@ namespace slidboard
 
             String originalFileFullPath = sb.Content.ToString();
 
+            //Create a ScatterViewItem to pass on to the worker thread.
             ScatterViewItem dynamicItem = new ScatterViewItem();
             dynamicItem.HorizontalContentAlignment = HorizontalAlignment.Center;
             dynamicItem.VerticalContentAlignment = VerticalAlignment.Center;
             dynamicItem.Background = Brushes.Transparent;
             dynamicItem.Foreground = Brushes.White;
             dynamicItem.FontWeight = FontWeights.UltraBold;
+            dynamicItem.Orientation = this.Orientation;
 
             //tell the user that the content is loading in the background
             Label loading = new Label();
@@ -420,7 +419,8 @@ namespace slidboard
         private const String PLAYING = "PLAYING";
         private const String STOPPED = "STOPPED";
 
-        public FileFetcher(String deviceId, ScatterViewItem item, String originalFileFullPath, SlidboardView view)
+        public FileFetcher(String deviceId, ScatterViewItem item, String originalFileFullPath, 
+            SlidboardView view)
         {
             this.DEVICE_ID = deviceId;
             this.item = item;
@@ -434,6 +434,21 @@ namespace slidboard
             //Warning : the file name is a GUID to avoid collision.
             //For original file name, use originalFileFullPath
             String uri = HttpClient.getFile(DEVICE_ID, originalFileFullPath);
+
+            if (uri.Equals("DNF")) 
+            {
+                
+                //Connectivity problem
+                //Update the UI in the main thread
+                Action action = delegate
+                {
+                    Label err = new Label();
+                    err.Content = "Please check the connection";
+                    item.Content = err;
+                };
+                view.Dispatcher.Invoke(action);
+                return;
+            }
 
             int extLength = uri.Length - uri.LastIndexOf(".");
             String fileExt = uri.Substring(uri.LastIndexOf("."), extLength);
@@ -494,7 +509,7 @@ namespace slidboard
                     grid.Children.Add(media);
                     grid.Children.Add(status);
 
-                    item.Content = grid;    
+                    item.Content = grid;
                 };
                 view.Dispatcher.Invoke(action);
             }
@@ -505,13 +520,10 @@ namespace slidboard
                 Action action = delegate {
                     Image img = new Image();
                     img.Source = new BitmapImage(new Uri(uri, UriKind.Absolute));
-                    item.Content = img; 
-                    //view.updateUI(item, img);
+                    item.Content = img;
                 };
                 view.Dispatcher.Invoke(action);
             }
         }
-
-        delegate void updateUIFunc();
     }
 }

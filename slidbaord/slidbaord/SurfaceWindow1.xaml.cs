@@ -169,7 +169,6 @@ namespace slidboard
                     String deviceName = "Samsung Infuse";
 
                     _obj.ObjectModel.Content = deviceName;
-                    _obj.objectWrapper.Fill = SurfaceColors.Accent1Brush;
 
                     ScatterViewItem[] ls = _obj.createFileList(
                                             HttpClient.getIndexObject(deviceId, "/mnt/sdcard"), 

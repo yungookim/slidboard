@@ -5,14 +5,18 @@
     Loaded="ObjectVisualization_Loaded"
     >
     <Grid>
-        <Rectangle Name="objectWrapper"
-                  HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch" Width="200" Height="300" />
-        
+        <Ellipse Name="objectWrapper"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch"
+                 Width="350" 
+                 Height="400"
+                 Fill="Transparent" 
+                 StrokeThickness="20" 
+                 Stroke="#FF3BFFFF" />
         <Label Name="ObjectModel"
-               Content="Model" 
+               Content="Name" 
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
-               Height="25"/>
+               Height="25" Margin="150,50,150,0" />
     </Grid>
 </s:TagVisualization>

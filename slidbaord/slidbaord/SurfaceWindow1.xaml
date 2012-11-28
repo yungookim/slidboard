@@ -20,7 +20,7 @@
             <s:TagVisualizer.Definitions>
                 <s:TagVisualizationDefinition Value="0xC1" 
                                               Source="SlidboardView.xaml"
-                                              LostTagTimeout="10000"
+                                              LostTagTimeout="3000"
                                               MaxCount="1"
                                               OrientationOffsetFromTag="0"
                                               PhysicalCenterOffsetFromTag="0,-2"
