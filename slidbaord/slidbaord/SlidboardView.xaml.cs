@@ -356,10 +356,6 @@ namespace slidboard
             workerThread.Start();
         }
 
-        public void updateUI(ScatterViewItem item, Image img){
-            item.Content = img;
-        }
-
         public void toggleMedia(object sender, EventArgs e)
         {
             Grid grid = (Grid)(((SurfaceButton)sender).Parent);
@@ -445,67 +441,72 @@ namespace slidboard
             //mp3 file. play
             if (fileExt.Equals(".mp3"))
             {
-                Grid grid = new Grid();
-                grid.Background = Brushes.Transparent;
+                //Update the UI in the main thread
+                Action action = delegate
+                {
+                    Grid grid = new Grid();
+                    grid.Background = Brushes.Transparent;
 
-                //Holder for file name
-                grid.RowDefinitions.Add(new RowDefinition());
-                //Holder for MediaElement
-                grid.RowDefinitions.Add(new RowDefinition());
-                //Holder for MediaElement status
-                grid.RowDefinitions.Add(new RowDefinition());
-                //The grid is going to be single columned
-                grid.ColumnDefinitions.Add(new ColumnDefinition());
+                    //Holder for file name
+                    grid.RowDefinitions.Add(new RowDefinition());
+                    //Holder for MediaElement
+                    grid.RowDefinitions.Add(new RowDefinition());
+                    //Holder for MediaElement status
+                    grid.RowDefinitions.Add(new RowDefinition());
+                    //The grid is going to be single columned
+                    grid.ColumnDefinitions.Add(new ColumnDefinition());
 
-                //File name label
-                Label fileName = new Label();
-                fileName.Name = "name";
-                fileName.Content = originalFileFullPath.Split('/')
-                    [originalFileFullPath.Split('/').Length - 1].ToUpper();
-                fileName.FontWeight = FontWeights.UltraBold;
-                fileName.Background = Brushes.Transparent;
-                fileName.Foreground = Brushes.White;
+                    //File name label
+                    Label fileName = new Label();
+                    fileName.Name = "name";
+                    fileName.Content = originalFileFullPath.Split('/')
+                        [originalFileFullPath.Split('/').Length - 1].ToUpper();
+                    fileName.FontWeight = FontWeights.UltraBold;
+                    fileName.Background = Brushes.Transparent;
+                    fileName.Foreground = Brushes.White;
 
-                //media element to play audio files
-                MediaElement media = new MediaElement();
-                media.Name = PLAYING;
-                media.LoadedBehavior = MediaState.Manual;
-                media.Source = new Uri(uri, UriKind.Absolute);
-                media.Play();
+                    //media element to play audio files
+                    MediaElement media = new MediaElement();
+                    media.Name = PLAYING;
+                    media.LoadedBehavior = MediaState.Manual;
+                    media.Source = new Uri(uri, UriKind.Absolute);
+                    media.Play();
 
-                //MediaElement status
-                SurfaceButton status = new SurfaceButton();
-                status.Name = "status";
-                status.Foreground = Brushes.White;
-                status.FontWeight = FontWeights.UltraBold;
-                status.Background = Brushes.Transparent;
-                status.VerticalContentAlignment = VerticalAlignment.Center;
-                status.HorizontalContentAlignment = HorizontalAlignment.Center;
-                status.Content = PLAYING;
-                status.Click += new RoutedEventHandler(view.toggleMedia);
+                    //MediaElement status
+                    SurfaceButton status = new SurfaceButton();
+                    status.Name = "status";
+                    status.Foreground = Brushes.White;
+                    status.FontWeight = FontWeights.UltraBold;
+                    status.Background = Brushes.Transparent;
+                    status.VerticalContentAlignment = VerticalAlignment.Center;
+                    status.HorizontalContentAlignment = HorizontalAlignment.Center;
+                    status.Content = PLAYING;
+                    status.Click += new RoutedEventHandler(view.toggleMedia);
 
-                Grid.SetRow(fileName, 0);
-                Grid.SetColumn(fileName, 0);
-                Grid.SetRow(media, 1);
-                Grid.SetColumn(media, 0);
-                Grid.SetRow(status, 2);
-                Grid.SetColumn(status, 0);
+                    Grid.SetRow(fileName, 0);
+                    Grid.SetColumn(fileName, 0);
+                    Grid.SetRow(media, 1);
+                    Grid.SetColumn(media, 0);
+                    Grid.SetRow(status, 2);
+                    Grid.SetColumn(status, 0);
 
-                grid.Children.Add(fileName);
-                grid.Children.Add(media);
-                grid.Children.Add(status);
+                    grid.Children.Add(fileName);
+                    grid.Children.Add(media);
+                    grid.Children.Add(status);
 
-                item.Content = grid;
-
+                    item.Content = grid;    
+                };
+                view.Dispatcher.Invoke(action);
             }
             else
             {
                 //Assume its an image file
-                Image img = new Image();
-                img.Source = new BitmapImage(new Uri(uri, UriKind.Absolute));
-                Action action = delegate { 
-                    //item.Content = img; 
-                    view.updateUI(item, img);
+                //Update the UI in the main thread
+                Action action = delegate {
+                    Image img = new Image();
+                    img.Source = new BitmapImage(new Uri(uri, UriKind.Absolute));
+                    item.Content = img; 
+                    //view.updateUI(item, img);
                 };
                 view.Dispatcher.Invoke(action);
             }
