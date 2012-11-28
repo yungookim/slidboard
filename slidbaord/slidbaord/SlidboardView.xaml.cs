@@ -356,7 +356,9 @@ namespace slidboard
             workerThread.Start();
         }
 
-        public delegate void updateUI();
+        public void updateUI(ScatterViewItem item, Image img){
+            item.Content = img;
+        }
 
         public void toggleMedia(object sender, EventArgs e)
         {
@@ -501,12 +503,14 @@ namespace slidboard
                 //Assume its an image file
                 Image img = new Image();
                 img.Source = new BitmapImage(new Uri(uri, UriKind.Absolute));
-                Action action = delegate { item.Content = img; };
+                Action action = delegate { 
+                    //item.Content = img; 
+                    view.updateUI(item, img);
+                };
                 view.Dispatcher.Invoke(action);
-
             }
-
-            
         }
+
+        delegate void updateUIFunc();
     }
 }
