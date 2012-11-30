@@ -5,9 +5,6 @@
     Title="slidbaord">
 
     <Grid>
-        
-        
-        
         <s:TagVisualizer 
             Name="MyTagVisualizer" 
             VerticalAlignment="Stretch"
@@ -43,7 +40,7 @@
                        VerticalAlignment="Stretch" 
                        HorizontalContentAlignment="Center" 
                        VerticalContentAlignment="Top">
-            
+
             <s:ScatterViewItem Name="serverNotResondingDialog" Width="500" Height="500" Center="600,600" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" CanScale="False" CanRotate="False" CanMove="False" Orientation="0" Visibility="Collapsed">
                 <Label Content="Make sure the server is running!" Foreground="Red"></Label>
             </s:ScatterViewItem>

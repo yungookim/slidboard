@@ -4,19 +4,21 @@
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Loaded="ObjectVisualization_Loaded"
     >
-    <Grid>
-        <Ellipse Name="objectWrapper"
-                 HorizontalAlignment="Stretch"
-                 VerticalAlignment="Stretch"
-                 Width="350" 
-                 Height="400"
-                 Fill="Transparent" 
-                 StrokeThickness="20" 
-                 Stroke="#FF3BFFFF" />
+    <Grid Width="175"
+          Height="auto">
+        <Ellipse 
+            Name="objectWrapper"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Width="350" 
+            Height="400"
+            Fill="Transparent" 
+            StrokeThickness="20" 
+            Stroke="#FF3BFFFF"/>
         <Label Name="ObjectModel"
                Content="Name" 
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
-               Height="25" Margin="150,50,150,0" />
+               Height="25" Margin="30,50,0,0" />
     </Grid>
 </s:TagVisualization>
