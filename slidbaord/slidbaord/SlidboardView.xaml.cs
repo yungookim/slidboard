@@ -66,6 +66,9 @@ namespace slidboard
                 return items;
         }
 
+        private double yOffset = 0;
+        private double xOffset = -1;
+
         private ScatterViewItem getItemView(IndexObject indexedItem, String deviceName)
         {
 
@@ -74,16 +77,54 @@ namespace slidboard
                 return null;
             }
 
+            if (xOffset == -1)
+            {
+                this.xOffset = this.Center.X;
+            }
+
             DEVICE_ID = DEVICE_ID.Equals("") ? indexedItem.deviceId : DEVICE_ID;
 
             ScatterViewItem item = new ScatterViewItem();
             //Set properties
-            //item.Center = startingPosition;
-            item.Orientation = this.Orientation;
+
+            Console.WriteLine(this.Orientation);
+            
+            //Orientation should be either 0 or 180 depending on the device's orientation
+
+            //[0,90] || [270,360]
+            if ((0 <= this.Orientation && this.Orientation <= 90) || (270 <= this.Orientation && this.Orientation <= 360))
+            {
+             item.Orientation = 0;
+                Point deviceLocation = new Point(xOffset + 350, this.Center.Y - 200 + yOffset);
+                yOffset += 30;
+                if (yOffset > 400)
+                {
+                    //reset
+                    yOffset = 0;
+                    xOffset += 100;
+                }
+                //Folder card displayed according to the location of the device
+                item.Center = deviceLocation;
+            }
+            else
+            {
+                item.Orientation = 180;
+                Point deviceLocation = new Point(xOffset - 350, this.Center.Y + 200 + yOffset);
+                yOffset += 30;
+                if (yOffset > 400)
+                {
+                    //reset
+                    yOffset = 0;
+                    xOffset += 100;
+                }
+                //Folder card displayed according to the location of the device
+                item.Center = deviceLocation;
+            }
+
             item.MinWidth = 250;
             item.MinHeight = 120;
             item.HorizontalContentAlignment = HorizontalAlignment.Center;
-            item.VerticalContentAlignment = VerticalAlignment.Center;
+            item.VerticalContentAlignment = VerticalAlignment.Top;
             item.Background = Brushes.Transparent;
             item.Foreground = Brushes.White;
             item.FontWeight = FontWeights.UltraBold;
@@ -218,6 +259,16 @@ namespace slidboard
 
             items.TrimToSize();
             int i = 0;
+
+            //This could be null
+            if (items.Count == 1)
+            {
+                if (((IndexObject)items[0]) == null)
+                {
+                    items.RemoveAt(0);
+                }
+            }
+
             if (items.Count > 0)
             {
                 foreach (IndexObject io in items)

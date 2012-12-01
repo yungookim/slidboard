@@ -13,6 +13,7 @@
             Height="Auto" Width="Auto"
             VisualizationAdded="OnVisualizationAdded" 
             VisualizationRemoved="OnVisualizationRemoved"
+            VisualizationMoved="OnVisualizationMoved"
             FontFamily="SlidBoard">
             <s:TagVisualizer.Definitions>
                 <s:TagVisualizationDefinition Value="0xC1" 
@@ -20,9 +21,10 @@
                                               LostTagTimeout="3000"
                                               MaxCount="1"
                                               OrientationOffsetFromTag="0"
-                                              PhysicalCenterOffsetFromTag="0,-2"
+                                              PhysicalCenterOffsetFromTag="-2,0"
                                               TagRemovedBehavior="Fade"
                                               UsesTagOrientation="True"
+                                              
                                               />
                 <s:TagVisualizationDefinition Source="SlidboardView.xaml"
                                               LostTagTimeout="2000"
@@ -43,20 +45,6 @@
 
             <s:ScatterViewItem Name="serverNotResondingDialog" Width="500" Height="500" Center="600,600" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" CanScale="False" CanRotate="False" CanMove="False" Orientation="0" Visibility="Collapsed">
                 <Label Content="Make sure the server is running!" Foreground="Red"></Label>
-            </s:ScatterViewItem>
-            
-            <s:ScatterViewItem Name="ControlBox" 
-                               Background="#007FFFD4" 
-                               BorderThickness="0"
-                               CanScale="False" 
-                               Center="100,100" 
-                               Orientation="0"
-                               CanMove="False" OpacityMask="#00000000" BorderBrush="#FF060C0A" Foreground="#00F7F7F7">
-                <s:SurfaceButton Name="CenterItems"
-                          FontSize="14"
-                          Margin="10,10,10,10"
-                          Click="OnStack">Stack items
-                </s:SurfaceButton>
             </s:ScatterViewItem>
         </s:ScatterView>
     </Grid>

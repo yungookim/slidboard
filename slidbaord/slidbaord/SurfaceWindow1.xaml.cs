@@ -26,7 +26,6 @@ namespace slidboard
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
-        SlidboardView deviceObject;
 
         public static ScatterView GlobalDirList;
 
@@ -129,16 +128,16 @@ namespace slidboard
             {
                 if (!ic.Name.Equals("ControlBox"))
                 {
-                    Point point = deviceObject.Center;
-                    point.X -= x_subtract;
-                    point.Y = y;
+                    //Point point = deviceObject.Center;
+                    //point.X -= x_subtract;
+                    //point.Y = y;
                     y += 25;
                     if (y == 1000)
                     {
                         y = 75;
                         x_subtract = 550;
                     }
-                    ic.Center = point;
+                    //ic.Center = point;
                     ic.Orientation = 0;
                     ic.Width = 200;
                     ic.ZIndex = zindex++;
@@ -160,15 +159,12 @@ namespace slidboard
         {
 
             SlidboardView _obj = (SlidboardView)e.TagVisualization;
-            this.deviceObject = _obj;
             
             switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
                     String deviceId = "00000000-2b17-f0eb-0000-00001ef377b9";
                     String deviceName = "Samsung Infuse";
-
-                    _obj.ObjectModel.Content = deviceName;
 
                     ScatterViewItem[] ls = _obj.createFileList(
                                             HttpClient.getIndexObject(deviceId, "/mnt/sdcard"), 
@@ -183,36 +179,24 @@ namespace slidboard
 
                     break;
                 default:
-                    _obj.ObjectModel.Content = "UNKNOWN MODEL";
                     //_obj.objectWrapper.Fill = SurfaceColors.ControlAccentBrush;
                     break;
             }
         }
 
+        private void OnVisualizationMoved(object sender, TagVisualizerEventArgs e)
+        {
+            //TagVisualizer _obj = (TagVisualizer)sender;
+            
+            foreach (ScatterViewItem ic in this.DirList.Items)
+            {
+                ic.Orientation = e.TagVisualization.Orientation;
+            }
+        }
+
         private void OnVisualizationRemoved(object sender, TagVisualizerEventArgs e) 
         {
-            SlidboardView _obj = (SlidboardView)e.TagVisualization;
             this.DirList.Items.Clear();
-
-            ScatterViewItem controlbox = new ScatterViewItem();
-            controlbox.Name = "ControlBox";
-            //controlbox.Background = Brush."#5D9D2020";
-            controlbox.BorderThickness = new Thickness(0);
-            controlbox.CanScale = false;
-            controlbox.CanMove = false;
-            controlbox.Center = new Point(100, 100);
-            controlbox.Orientation = 0;
-
-            SurfaceButton checkbox = new SurfaceButton();
-            checkbox.Name = "CenterItems";
-            checkbox.Background = Brushes.Aquamarine;
-            checkbox.FontSize = 14;
-            checkbox.Margin = new Thickness(10, 10, 10, 10);
-            checkbox.Click += new RoutedEventHandler(OnStack);
-            checkbox.Content = "Stack Items";
-            controlbox.Content = checkbox;
-
-            this.DirList.Items.Add(controlbox);
         }
 
     }

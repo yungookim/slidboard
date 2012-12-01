@@ -15,10 +15,5 @@
             Fill="Transparent" 
             StrokeThickness="20" 
             Stroke="#FF3BFFFF"/>
-        <Label Name="ObjectModel"
-               Content="Name" 
-               HorizontalAlignment="Center"
-               VerticalAlignment="Top"
-               Height="25" Margin="30,50,0,0" />
     </Grid>
 </s:TagVisualization>
