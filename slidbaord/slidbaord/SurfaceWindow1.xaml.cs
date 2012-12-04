@@ -163,12 +163,13 @@ namespace slidboard
             switch (_obj.VisualizedTag.Value)
             {
                 case 0xC1:
-                    String deviceId = "00000000-2b17-f0eb-0000-00001ef377b9";
+                    String deviceId = "24973f10-3dab-11e2-a25f-0800200c9a66";
                     String deviceName = "Samsung Infuse";
 
                     ScatterViewItem[] ls = _obj.createFileList(
                                             HttpClient.getIndexObject(deviceId, "/mnt/sdcard"), 
                                             deviceName);
+
                     foreach (ScatterViewItem i in ls)
                     {
                         if (i != null)

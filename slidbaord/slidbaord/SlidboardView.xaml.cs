@@ -57,7 +57,7 @@ namespace slidboard
             for (int i = 0; i < ls.Count; i++)
             {
                 IndexObject item = ls[i] as IndexObject;
-                ScatterViewItem temp = this.getItemView(item, deviceName);
+                ScatterViewItem temp = this.generateItemView(item, deviceName);
                 if (temp != null)
                 {
                     items[i] = temp;
@@ -69,7 +69,7 @@ namespace slidboard
         private double yOffset = 0;
         private double xOffset = -1;
 
-        private ScatterViewItem getItemView(IndexObject indexedItem, String deviceName)
+        private ScatterViewItem generateItemView(IndexObject indexedItem, String deviceName)
         {
 
             if (indexedItem == null)
@@ -86,11 +86,7 @@ namespace slidboard
 
             ScatterViewItem item = new ScatterViewItem();
             //Set properties
-
-            Console.WriteLine(this.Orientation);
-            
-            //Orientation should be either 0 or 180 depending on the device's orientation
-
+            //Item cardes orientation should depend on the device's orientation
             //[0,90] || [270,360]
             if ((0 <= this.Orientation && this.Orientation <= 90) || (270 <= this.Orientation && this.Orientation <= 360))
             {
@@ -116,12 +112,13 @@ namespace slidboard
                     //reset
                     yOffset = 0;
                     xOffset += 100;
-                }
+                }             
                 //Folder card displayed according to the location of the device
                 item.Center = deviceLocation;
             }
 
             item.MinWidth = 250;
+            item.Width = 250;
             item.MinHeight = 120;
             item.HorizontalContentAlignment = HorizontalAlignment.Center;
             item.VerticalContentAlignment = VerticalAlignment.Top;
@@ -160,6 +157,7 @@ namespace slidboard
             //Style the buttons
             sb.Name = "button";
             sb.MinHeight = 30;
+            sb.Width = 250;
             sb.HorizontalContentAlignment = HorizontalAlignment.Stretch;
             sb.VerticalContentAlignment = VerticalAlignment.Center;
             sb.Background = Brushes.DodgerBlue;
@@ -168,7 +166,7 @@ namespace slidboard
 
             if (indexedItem.type.Equals("DIR"))
             {
-                sb.Content = indexedItem.parent + "/" + indexedItem.name + "      >>";
+                sb.Content = indexedItem.parent + "/" + indexedItem.name;
             }
             else
             {
@@ -188,7 +186,6 @@ namespace slidboard
 
             //Row def for button
             RowDefinition button_def = new RowDefinition();
-            button_def.MaxHeight = 35;
             grid.RowDefinitions.Add(button_def);
 
             //Row def for subdirectory list
@@ -379,6 +376,8 @@ namespace slidboard
             }
         }
 
+        private Double newFileCardXoffset = 100;
+
         private void OpenFile(object sender, EventArgs e)
         {
             SurfaceButton sb = (SurfaceButton)sender;
@@ -393,6 +392,7 @@ namespace slidboard
             dynamicItem.Foreground = Brushes.White;
             dynamicItem.FontWeight = FontWeights.UltraBold;
             dynamicItem.Orientation = this.Orientation;
+            dynamicItem.Center = new Point(this.newFileCardXoffset += 150, 200);
 
             //tell the user that the content is loading in the background
             Label loading = new Label();
