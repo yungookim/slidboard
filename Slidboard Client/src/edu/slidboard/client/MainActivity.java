@@ -15,7 +15,8 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-	public UUID CLIENT_UUID;
+	//public UUID CLIENT_UUID;
+	public String CLIENT_UUID;
 	
 	public final String CLIENT_TYPE = "MOBILE";
 	
@@ -31,7 +32,11 @@ public class MainActivity extends Activity {
         String device_id = Settings.Secure.ANDROID_ID;
         
         //Generate the device's UUID
-        CLIENT_UUID = new UUID(device_id.hashCode(), device_id.hashCode()*device_id.hashCode());
+        //CLIENT_UUID = new UUID(device_id.hashCode(), device_id.hashCode()*device_id.hashCode());
+        
+        //HACK : FOR DEMO PURPOSE
+        CLIENT_UUID = "24973f10-3dab-11e2-a25f-0800200c9a66";
+        
         
         //Get path to an external storage
         String storage = Environment.getExternalStorageDirectory().getPath();
@@ -39,13 +44,13 @@ public class MainActivity extends Activity {
         JSONObject obj = new JSONObject();
 		obj.put("from","MOBILE");
 		obj.put("deviceId", CLIENT_UUID.toString());
-//			String res = HTTPClient.POST("init", obj.toJSONString());
-//			Log.e("MAIN", res);
-//			if (!res.toString().equals("ok")){
-//				Toast.makeText(this, "Error. Check server log", Toast.LENGTH_LONG).show();
-//			} else {
-//			}
-        
+
+		try {
+			HTTPClient.POST("init", obj.toJSONString());
+		} catch (Exception e){
+			Log.e("Err while init", e.toString());
+		}
+		
         //Scan the contents of the external storage
 		try {
 			FileWalker fw;
@@ -61,11 +66,6 @@ public class MainActivity extends Activity {
         thread = new Thread(worker);
         thread.start();
         
-//			String res = HTTPClient.POST("wait", obj.toJSONString());
-//			res = res.trim();
-//			HTTPClient.uploadFile(new File(res.toString()));
-			
-
     }
     
     @Override

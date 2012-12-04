@@ -19,14 +19,6 @@ import org.json.simple.JSONObject;
 import android.util.Log;
 
 public class FileWalker {
-	
-	//Object holding index.json
-//	private File indexFileJSON;
-//	private File indexDirJSON;
-	
-	//index.json file streams
-//	private FileWriter fileJsonFstream;
-//	private FileWriter dirJsonFstream;
 		
 	//Path to slidboard
 	private String dir;
@@ -64,6 +56,8 @@ public class FileWalker {
 		this.whiteList.add("download");
 		this.whiteList.add("bluetooth");
 		this.whiteList.add("slidboard");
+		this.whiteList.add("Pictures");
+		this.whiteList.add("Picture");
 		
 		extAllowedList.add("jpg");
 		extAllowedList.add("jpeg");
@@ -75,7 +69,7 @@ public class FileWalker {
 	//Simply list all the files in the external storage. 
 	//Let the server and the PixelSense do the heavy work
     @SuppressWarnings("unchecked")
-	public void walk(String path, UUID device_uuid) throws IOException{
+	public void walk(String path, String CLIENT_UUID) throws IOException{
         File root = new File(path);
         File[] list = root.listFiles();
         try {
@@ -95,14 +89,14 @@ public class FileWalker {
             		_json.put("name", f.getName());
         			_json.put("fullPath", f.getAbsolutePath());
                 	_json.put("type", "DIR");
-                	_json.put("device_uuid", device_uuid.toString());
+                	_json.put("device_uuid", CLIENT_UUID.toString());
                 	_json.put("id", UUID.randomUUID().toString());
                 	
                 	//this.dirJsonFstream.write(_json + "\r\n");
                 	dirRawIndex.append(_json + "\r\n");
                 	
                 	//Look into subdirectories
-                	this.walk(f.getAbsolutePath(), device_uuid);
+                	this.walk(f.getAbsolutePath(), CLIENT_UUID);
                 	
                 } else if (
                 		f.isFile() && ext.length() > 1 
@@ -116,7 +110,7 @@ public class FileWalker {
         			_json.put("size", f.length());
                 	_json.put("type", "FILE");
                 	_json.put("id", UUID.randomUUID().toString());
-                	_json.put("device_uuid", device_uuid.toString());
+                	_json.put("device_uuid", CLIENT_UUID.toString());
                 	_json.put("MD5", createMD5Checksum(f));
                 	
                 	fileRawIndex.append(_json + "\r\n");

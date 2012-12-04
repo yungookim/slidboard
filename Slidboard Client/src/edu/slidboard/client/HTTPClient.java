@@ -67,7 +67,7 @@ public class HTTPClient {
 		return response;
 	}
 	
-	public static void uploadFile(File file) throws IOException
+	public static String uploadFile(File file) throws IOException
     {
 		InputStream is = new BufferedInputStream(new FileInputStream(file));
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -77,9 +77,9 @@ public class HTTPClient {
 		byte[] bytes = bos.toByteArray();
 		String encodedItem = Base64.encodeToString(bytes, Base64.DEFAULT);
 		
-		Log.e("FILE READY", encodedItem);
-		
-		HTTPClient.POST("uploadFile", encodedItem);
-		
+		Log.e("FILE READY", file.getName());
+		String res = HTTPClient.POST("uploadFile", encodedItem);
+		Log.e("FILE SENT", file.getName());
+		return res;
     }
 }
