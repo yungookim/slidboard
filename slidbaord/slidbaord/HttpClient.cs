@@ -39,22 +39,30 @@ namespace slidboard
 
             JSONRequestIndex reqMsg = new JSONRequestIndex(deviceId, fileFullPath);
             JSONMessageWrapper msgWrapper = new JSONMessageWrapper("getFile", reqMsg.request());
-            String response = HttpClient.GET("getFile", msgWrapper.getMessage());
 
-            if (!string.IsNullOrEmpty(response))
+            try
             {
-                byte[] filebytes = Convert.FromBase64String(response);
-                Guid gid = Guid.NewGuid();
-                FileStream fs = new FileStream(TEMP_LOCATION + gid + fileExt,
-                                               FileMode.CreateNew,
-                                               FileAccess.Write,
-                                               FileShare.None);
-                fs.Write(filebytes, 0, filebytes.Length);
-                fs.Close();
-                return TEMP_LOCATION + gid.ToString() + fileExt;
-            }
+                String response = HttpClient.GET("getFile", msgWrapper.getMessage());
+                if (!string.IsNullOrEmpty(response))
+                {
+                    byte[] filebytes = Convert.FromBase64String(response);
+                    Guid gid = Guid.NewGuid();
+                    FileStream fs = new FileStream(TEMP_LOCATION + gid + fileExt,
+                                                   FileMode.CreateNew,
+                                                   FileAccess.Write,
+                                                   FileShare.None);
+                    fs.Write(filebytes, 0, filebytes.Length);
+                    fs.Close();
+                    return TEMP_LOCATION + gid.ToString() + fileExt;
+                }
 
-            return "";
+                return "";
+            }
+            catch (WebException e)
+            {
+                //return Device Not Found
+                return "DNF";
+            }
         }
     }
 }
