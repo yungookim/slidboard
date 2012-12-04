@@ -9,8 +9,8 @@ module.exports = {
 	CLIENT_MOBILE : "MOBILE",
 	CLIENT_PIXELSENSE : 'PixelSense',
 	//Queue to hold queries from the PixelSense
-	fileQueryArray : [],
-	fileReady : null,
+	fileQueryQueue : [],
+	fileReadyQueue : [],
 	//Routes incoming request to appropriate handler
 	exec : function(data, next){
 		if (data.from === this.CLIENT_MOBILE){
@@ -53,7 +53,7 @@ module.exports = {
 			case 'getFile':
 				var query = JSON.parse(data.extraMsg);
 				//Queue the file path.
-				this.fileQueryArray.push(query.path);
+				this.fileQueryQueue.push(query.path);
 				next();
 			default :
 				console.log(JSON.parse(data.extraMsg));

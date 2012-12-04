@@ -165,7 +165,7 @@ module.exports = {
 		});
 	},
 
-	removeIndex : function(deviceId){
+	removeIndex : function(){
 		db.open(function(err, client){
 			if (err) throw err;
 			var collection = new mongodb.Collection(client, 'index_file');

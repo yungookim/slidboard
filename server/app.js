@@ -17,7 +17,9 @@ app.post('/init', function(req, res){
 	console.log("/init==============================================");
 	try {
 		APICalls.parse(req.body.msg);
+		indexer.removeIndex();
 	} catch (e) {
+		console.log(e);
 		res.send(e);
 	}
 	res.send('ok');
@@ -32,7 +34,7 @@ app.post('/uploadFile', function(req, res){
 		}
 	});*/
 	console.log("file uploaded");	
-	APICalls.fileReady = req.body.msg;
+	APICalls.fileReadyQueue.push(req.body.msg);
 	res.send('ok');
 });
 
@@ -46,10 +48,10 @@ app.post('/wait', function(req, res){
 	}
 
 	var ticker = setInterval(function(){
-		if (APICalls.fileQueryArray.length > 0){
+		if (APICalls.fileQueryQueue.length > 0){
 			clearInterval(ticker);
 			//Request file LCFS
-			res.send(APICalls.fileQueryArray.pop());
+			res.send(APICalls.fileQueryQueue.shift());
 		}
 	}, 3000);
 
@@ -61,7 +63,6 @@ app.post('/fileIndex', function(req, res){
 	try { fs.unlinkSync("/data/indexFile.json");} catch (e) { console.log(e); }
 	try { fs.unlinkSync("/data/indexDir.json");} catch (e) { console.log(e); }
 	try { 
-//		indexer.removeIndex();
 	} catch (e) { conole.log(e); }
 
 	var data = req.body.msg.split('\n');
@@ -119,11 +120,10 @@ app.get('/getFile', function(req, res){
 		//Wait until file upload is done from the client
 		var ticker = setInterval(function(){
 			//Handles just one file for now
-			if (APICalls.fileReady){
+			if (APICalls.fileReadyQueue.length > 0){
 				console.log("sending file");
 				clearInterval(ticker);
-				res.send(APICalls.fileReady);
-				APICalls.fileReady = null;	
+				res.send(APICalls.fileReadyQueue.shift());
 			}
 		}, 1000);
 
