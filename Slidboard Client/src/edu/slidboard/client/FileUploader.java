@@ -3,6 +3,8 @@ package edu.slidboard.client;
 import java.io.File;
 import java.io.IOException;
 
+import android.util.Log;
+
 public class FileUploader implements Runnable {
 	private String result;
 	private String senderId;
@@ -14,20 +16,24 @@ public class FileUploader implements Runnable {
 	public void run() {
 	    waiter();
 	}
-	private String waiter() {
+	private void waiter() {
 		String res;
-		try {
-			while (true){
+		while (true) {
+			try {
+				Log.e("REQUEST THREAD", "waiting");
 				res = HTTPClient.POST("wait", this.senderId);
+				Log.e("REQUEST THREAD", "accepted");
 				res = res.trim();
-				HTTPClient.uploadFile(new File(res.toString()));
+				Log.e("REQUEST THREAD", "sending...");
+				res = HTTPClient.uploadFile(new File(res.toString()));
+				Log.e("REQUEST THREAD", res);
+				Log.e("REQUEST THREAD", "done");
+				res = "";
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-		
-		return "ok";
 	}
 	
 	public String getResult() {

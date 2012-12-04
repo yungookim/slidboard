@@ -8,7 +8,7 @@
     <ProjectGuid>{5DEB7E13-E47C-4886-BC70-7409201E77A8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>slidbaord</RootNamespace>
+    <RootNamespace>slidboard</RootNamespace>
     <AssemblyName>slidbaord</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -65,7 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ObjectVisualization.xaml">
+    <Page Include="SlidboardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,8 +82,8 @@
     <Compile Include="IndexObject.cs" />
     <Compile Include="JSONMessage.cs" />
     <Compile Include="socketClient.cs" />
-    <Compile Include="ObjectVisualization.xaml.cs">
-      <DependentUpon>ObjectVisualization.xaml</DependentUpon>
+    <Compile Include="SlidboardView.xaml.cs">
+      <DependentUpon>SlidboardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="SurfaceWindow1.xaml.cs">
       <DependentUpon>SurfaceWindow1.xaml</DependentUpon>

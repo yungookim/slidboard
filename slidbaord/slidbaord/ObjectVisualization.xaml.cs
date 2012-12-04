@@ -26,6 +26,9 @@ namespace slidbaord
 
         private String DEVICE_ID = "";
 
+        private const String PLAYING = "PLAYING";
+        private const String STOPPED = "STOPPED";
+
         public ObjectVisualization()
         {
             InitializeComponent();
@@ -34,7 +37,6 @@ namespace slidbaord
         private void ObjectVisualization_Loaded(object sender, RoutedEventArgs e)
         {
             //TODO: customize ObjectVisualization's UI based on this.VisualizedTag here
-
         }
 
         /// <summary>
@@ -216,7 +218,7 @@ namespace slidbaord
 
             items.TrimToSize();
             int i = 0;
-            if (items.Count > 1)
+            if (items.Count > 0)
             {
                 foreach (IndexObject io in items)
                 {
@@ -331,8 +333,137 @@ namespace slidbaord
         {
             SurfaceButton sb = (SurfaceButton)sender;
 
-            String response = HttpClient.getFile(DEVICE_ID, sb.Content.ToString());
-            Console.WriteLine(response);
+            String originalFileFullPath = sb.Content.ToString();
+
+            //uri is the path to the tmp storage on the current machine
+            //Warning : the file name is a GUID to avoid collision.
+            //For original file name, use originalFileFullPath
+            String uri = HttpClient.getFile(DEVICE_ID, originalFileFullPath);
+
+            int extLength = uri.Length - uri.LastIndexOf(".");
+            String fileExt = uri.Substring(uri.LastIndexOf("."), extLength);
+
+            ScatterViewItem item = new ScatterViewItem();
+            item.HorizontalContentAlignment = HorizontalAlignment.Center;
+            item.VerticalContentAlignment = VerticalAlignment.Center;
+            item.Background = Brushes.Transparent;
+
+            //mp3 file. play
+            if (fileExt.Equals(".mp3"))
+            {
+                item.MaxHeight = 200;
+
+                Grid grid = new Grid();
+                grid.Background = Brushes.Transparent;
+                
+                //Holder for file name
+                grid.RowDefinitions.Add(new RowDefinition());
+                //Holder for MediaElement
+                grid.RowDefinitions.Add(new RowDefinition());
+                //Holder for MediaElement status
+                grid.RowDefinitions.Add(new RowDefinition());
+                //The grid is going to be single columned
+                grid.ColumnDefinitions.Add(new ColumnDefinition());
+
+                //File name label
+                Label fileName = new Label();
+                fileName.Name = "name";
+                fileName.Content = originalFileFullPath.Split('/')
+                    [originalFileFullPath.Split('/').Length - 1].ToUpper();
+                fileName.FontWeight = FontWeights.UltraBold;
+                fileName.Background = Brushes.Transparent;
+                fileName.Foreground = Brushes.White;
+
+                //media element to play audio files
+                MediaElement media = new MediaElement();
+                media.Name = PLAYING;
+                media.LoadedBehavior = MediaState.Manual;
+                media.Source = new Uri(uri, UriKind.Absolute);
+                media.Play();
+
+                //MediaElement status
+                SurfaceButton status = new SurfaceButton();
+                status.Name = "status";
+                status.Foreground = Brushes.White;
+                status.FontWeight = FontWeights.UltraBold;
+                status.Background = Brushes.Transparent;
+                status.VerticalContentAlignment = VerticalAlignment.Center;
+                status.HorizontalContentAlignment = HorizontalAlignment.Center;
+                status.Content = PLAYING;
+                status.Click += new RoutedEventHandler(this.toggleMedia);
+
+                Grid.SetRow(fileName, 0);
+                Grid.SetColumn(fileName, 0);
+                Grid.SetRow(media, 1);
+                Grid.SetColumn(media, 0);
+                Grid.SetRow(status, 2);
+                Grid.SetColumn(status, 0);
+
+                grid.Children.Add(fileName);
+                grid.Children.Add(media);
+                grid.Children.Add(status);
+
+                item.Content = grid;
+            }
+            else
+            {
+                //Assume its an image file
+                Image img = new Image();
+                img.Source = new BitmapImage(new Uri(uri, UriKind.Absolute));
+
+                item.Content = img;
+            }
+            SurfaceWindow1.GlobalDirList.Items.Add(item);
+        }
+
+        public void toggleMedia(object sender, EventArgs e)
+        {
+            Grid grid = (Grid)(((SurfaceButton)sender).Parent);
+            UIElementCollection collection = grid.Children;
+
+            MediaElement temp;
+            Boolean isPlaying = true;
+
+            foreach (UIElement c in collection) 
+            {
+                if (c.GetType().Equals((new MediaElement()).GetType())) 
+                {
+                    String name = c.GetValue(Control.NameProperty).ToString();
+                    temp = ((MediaElement)c);
+
+                    if (name.Equals(PLAYING))
+                    {
+                        temp.Stop();
+                        temp.Name = STOPPED;
+                        isPlaying = false;
+                    }
+                    else
+                    {
+                        temp.Play();
+                        temp.Name = PLAYING;
+                        isPlaying = true;
+                    }
+                }
+            }
+
+            foreach (UIElement c in collection)
+            {
+                if (c.GetType().Equals((new SurfaceButton()).GetType()))
+                {
+                    String name = c.GetValue(Control.NameProperty).ToString();
+                    if (name.Equals("status")) {
+                        if (isPlaying)
+                        {
+                            ((SurfaceButton)c).Content = PLAYING;
+                        }
+                        else
+                        {
+                            ((SurfaceButton)c).Content = STOPPED;
+                        }
+                    }
+                }
+            }
+
         }
     }
 }
