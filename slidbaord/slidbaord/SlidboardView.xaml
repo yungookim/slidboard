@@ -15,5 +15,6 @@
             Fill="Transparent" 
             StrokeThickness="20" 
             Stroke="#FF3BFFFF"/>
+        
     </Grid>
 </s:TagVisualization>

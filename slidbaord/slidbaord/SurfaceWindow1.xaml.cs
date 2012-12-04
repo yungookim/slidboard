@@ -197,6 +197,24 @@ namespace slidboard
         {
             HttpClient.GET("done", "");
             this.DirList.Items.Clear();
+
+            /* Add to the main view
+             * <s:ScatterViewItem Width="250" Height="250" CanMove="False" CanRotate="False" 
+             *   CanScale="False" Orientation="0" Center="1780,150">
+             *   <Image Source="./Resources/qrcode.png"></Image>
+             * </s:ScatterViewItem>
+             */
+
+            ScatterViewItem qrCode = new ScatterViewItem();
+            qrCode.Width = 250;
+            qrCode.Height = 250;
+            qrCode.CanMove = false;
+            qrCode.CanRotate = false;
+            qrCode.CanScale = false;
+            qrCode.Orientation = 0;
+            qrCode.Center = new Point(1780, 880);
+
+            this.DirList.Items.Add(qrCode);
         }
 
     }
