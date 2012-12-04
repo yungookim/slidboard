@@ -66,11 +66,9 @@ namespace slidboard
         /// <param name="e"></param>
         protected override void OnClosed(EventArgs e)
         {
-            //Close the socket
-            //sc.close();
-
+            //Tell the server i'm done
+            HttpClient.GET("done", "");
             base.OnClosed(e);
-
             // Remove handlers for window availability events
             RemoveWindowAvailabilityHandlers();
         }
@@ -197,6 +195,7 @@ namespace slidboard
 
         private void OnVisualizationRemoved(object sender, TagVisualizerEventArgs e) 
         {
+            HttpClient.GET("done", "");
             this.DirList.Items.Clear();
         }
 
