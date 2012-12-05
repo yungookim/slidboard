@@ -213,6 +213,9 @@ namespace slidboard
             qrCode.CanScale = false;
             qrCode.Orientation = 0;
             qrCode.Center = new Point(1780, 880);
+            Image qrCodeImg = new Image();
+            qrCodeImg.Source =  new BitmapImage(new Uri("/Resources/qrcode.png", UriKind.Relative));
+            qrCode.Content = qrCodeImg;
 
             this.DirList.Items.Add(qrCode);
         }

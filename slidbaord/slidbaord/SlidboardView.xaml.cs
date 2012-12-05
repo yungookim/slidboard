@@ -377,12 +377,15 @@ namespace slidboard
         }
 
         private Double newFileCardXoffset = 100;
+        private Double newFileCardYoffset = 200;
 
         private void OpenFile(object sender, EventArgs e)
         {
             SurfaceButton sb = (SurfaceButton)sender;
 
             String originalFileFullPath = sb.Content.ToString();
+            String fileName = originalFileFullPath.Substring(originalFileFullPath.LastIndexOf("/") + 1,
+                originalFileFullPath.Length - originalFileFullPath.LastIndexOf("/") - 1);
 
             //Create a ScatterViewItem to pass on to the worker thread.
             ScatterViewItem dynamicItem = new ScatterViewItem();
@@ -392,13 +395,20 @@ namespace slidboard
             dynamicItem.Foreground = Brushes.White;
             dynamicItem.FontWeight = FontWeights.UltraBold;
             dynamicItem.Orientation = this.Orientation;
-            dynamicItem.Center = new Point(this.newFileCardXoffset += 150, 200);
+            dynamicItem.Center = new Point(this.newFileCardXoffset += 150, newFileCardYoffset);
+            if (newFileCardXoffset > 1800)
+            {
+                newFileCardXoffset = 100;
+                newFileCardYoffset += 100;
+            }
 
             //tell the user that the content is loading in the background
             Label loading = new Label();
-            loading.Content = "Loading...";
+            loading.Content = " Loading...";
             dynamicItem.Content = loading;
             SurfaceWindow1.GlobalDirList.Items.Add(dynamicItem);
+
+            //Console.WriteLine(originalFileFullPath);
 
             FileFetcher fetcher = new FileFetcher(DEVICE_ID, dynamicItem, originalFileFullPath, this);
             Thread workerThread = new Thread(fetcher.fetchfile);
