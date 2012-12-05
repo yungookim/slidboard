@@ -87,9 +87,9 @@ Model for incoming indexed file system for Android Client.
 Similar to Android Client, the class holds all the static methods for communicating with the server.
 
 #####JSONMessage , JSONMessageWrapper, Parser
-An extension of Newtonsoft.Json tailor specifically for this application. Any messages sent or received to the server should be firstly wrapped or parsed with the current class.
+An extension of Newtonsoft.Json tailored specifically for this application. Any messages sent or received to or from the server should be firstly wrapped or parsed with the these classes.
 
 
 ##TO DO
 The current components are just the ground works done in a few weeks during school term.
-In the beginning, it was aimed to the point where the PixelSense can handle multiple devices simultaneously and supports file transmission between devices in a NHCI manner. However, due to some constraints (eg. Device availability, and time) the goal became unattainable. It would be interesting to see how peers can interact with the files within their personal devices on a on centralized view. Also, although the underlying work can easily supoprt modification and deletion of the displayed files/directories, it was not implemented due to the time constraints.
+In the beginning, it was aimed to the point where the PixelSense can handle multiple devices simultaneously and supports file transmission between devices in a NHCI manner. However, due to some constraints (eg. Device availability, and time) the goal became unattainable. It would be interesting to see how peers can interact with the files within their personal devices on a centralized view. Also, although the components can easily supoprt modification and deletion of the displayed files/directories, it was not implemented due to the time constraints.
