@@ -20,7 +20,7 @@
         android:layout_alignRight="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="30dp"
-        android:text="Synched"
+        android:text="Synced"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="30dp" />
 

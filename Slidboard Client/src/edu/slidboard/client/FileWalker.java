@@ -58,6 +58,7 @@ public class FileWalker {
 		this.whiteList.add("slidboard");
 		this.whiteList.add("Pictures");
 		this.whiteList.add("Picture");
+		this.whiteList.add("Ringtones");
 		
 		extAllowedList.add("jpg");
 		extAllowedList.add("jpeg");

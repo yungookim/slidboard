@@ -6,8 +6,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
@@ -22,6 +25,8 @@ public class MainActivity extends Activity {
 	
 	//File uploader
 	private Thread thread;
+
+	private WakeLock mWakeLock;
 	
     @SuppressWarnings("unchecked")
 	@Override
@@ -66,6 +71,9 @@ public class MainActivity extends Activity {
         thread = new Thread(worker);
         thread.start();
         
+        final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        this.mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
+        this.mWakeLock.acquire();
     }
     
     @Override
@@ -83,7 +91,9 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
         //thread.interrupt();
-        
+    	this.mWakeLock.release();
+        super.onDestroy();
+    	//System.exit(0);
     }
 }
 
