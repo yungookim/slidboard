@@ -5,7 +5,7 @@ SlidBoard
 
 A fully functioning conceptual work for file system synchronization between Microsoft PixelSense and Android systems.
 
-The working prototype fully implements following scenario.  
+The working prototype fully implements the following scenario.  
   
 * The User downloads, installs, and runs the client app from    
 https://dl.dropbox.com/u/36220055/edu.slidboard.client.apk  
@@ -29,7 +29,7 @@ https://dl.dropbox.com/u/36220055/CSC494/final_browsing.png
 
 ##Components
 
-Slidboard has three components, namely, Slidboard (runs on PixelSense), Server, and Android Client.
+Slidboard has three components. Namely, Slidboard (runs on PixelSense), Server, and Android Client.
 Any message exchanges in the network are done via HTTP and should be in JSON format.
 
 ###Server
@@ -43,7 +43,7 @@ Interface layer of the server. Although some of the functionalities are included
 Handlers for device communications. Parses incoming request and invokes the appropriate function.
 
 #####indexer.js
-Handlers for indexing file system of Android in MongoDB.
+Handlers for indexing file system of Android into MongoDB.
 
 ###Android Client
 Almost down to nothing skeleton work for Android client.
@@ -78,7 +78,7 @@ The main dish. Fetches, and renders the file system from the mounted device.
 Controller for Slidboard. Initializes the main view and handles events.
 
 #####SlidboardView
-Creates, and handles elements dynamically created via TagVisualization event from SurfaceWindow1. From IndexObjects, the class can generate file system structure view, render images, and play audio files(MediaElement). Any items generated here are wrapped inside a ScatterViewItem, otherwise, the system will throw an Exception. Also, to ensure a non-blocking UX, any NetworkIO should create a background thread. When the thread finishes the IO, it creates then delete the view elements to the main view for render.
+Creates, and handles elements dynamically created via TagVisualization event from SurfaceWindow1. From IndexObjects, the class can generate file system structure view, render images, and play audio files(MediaElement). Any items generated here are wrapped inside a ScatterViewItem, otherwise, the system will throw an Exception. Also, to ensure a non-blocking UX, any NetworkIO should create a background thread. When the thread finishes the IO, it creates then delegate the view elements to the main view for render.
 
 #####IndexObject
 Model for incoming indexed file system for Android Client.
