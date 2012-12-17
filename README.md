@@ -93,3 +93,7 @@ An extension of Newtonsoft.Json tailored specifically for this application. Any 
 ##TO DO
 The current components are just the ground works done in a few weeks during school term.
 In the beginning, it was aimed to the point where the PixelSense can handle multiple devices simultaneously and supports file transmission between devices in a NHCI manner. However, due to some constraints (eg. Device availability, and time) the goal became unattainable. It would be interesting to see how peers can interact with the files within their personal devices on a centralized view. Also, although the components can easily supoprt modification and deletion of the displayed files/directories, it was not implemented due to the time constraints.
+
+
+##A very special thanks to
+Professor Steve Engels and John Hancock for mentoring and allowing me to use the device and persue with the prototype!
