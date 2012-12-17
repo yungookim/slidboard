@@ -96,4 +96,4 @@ In the beginning, it was aimed to the point where the PixelSense can handle mult
 
 
 ##A very special thanks to
-Professor Steve Engels and John Hancock for mentoring and allowing me to use the device and persue with the prototype!
+Professor Steve Engels and John Hancock at Department of Computer Science, University of Toronto, for mentoring and allowing me to use the device and persue with the prototype!
