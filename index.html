@@ -41,10 +41,10 @@
 
 <ul>
 <li><p>The User downloads, installs, and runs the client app from<br><a href="https://dl.dropbox.com/u/36220055/edu.slidboard.client.apk">https://dl.dropbox.com/u/36220055/edu.slidboard.client.apk</a>  </p></li>
-<li><p>The user simply places his/her device on the screen of MS PixelSense.<br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.05.25.jpg" alt="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.05.25.jpg"></p></li>
-<li><p>The PixelSense will then display the "white-listed" directories in Android system as shown in the link.<br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.06.49.jpg" alt="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.06.49.jpg  "><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.07.00.jpg" alt="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.07.00.jpg  "><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.07.20.jpg" alt="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.07.20.jpg"></p></li>
-<li><p>All the elements shown can be freely moved, located, resized, and flicked.<br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.08.28.jpg" alt="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.08.28.jpg"></p></li>
-<li><p>When working with peers, simply rotating the physical device will rotate every elements by the corresponding degree.<br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.08.55.jpg" alt="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.08.55.jpg  "><img src="https://dl.dropbox.com/u/36220055/CSC494/final_browsing.png" alt="https://dl.dropbox.com/u/36220055/CSC494/final_browsing.png"></p></li>
+<li><p>The user simply places his/her device on the screen of MS PixelSense.<br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.05.25.jpg"></p></li>
+<li><p>The PixelSense will then display the "white-listed" directories in Android system as shown in the link.<br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.06.49.jpg"><br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.07.00.jpg"><br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.07.20.jpg"></p></li>
+<li><p>All the elements shown can be freely moved, located, resized, and flicked.<br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.08.28.jpg"></p></li>
+<li><p>When working with peers, simply rotating the physical device will rotate every elements by the corresponding degree.<br><img src="https://dl.dropbox.com/u/36220055/CSC494/2012-12-04%2023.08.55.jpg"><br><img src="https://dl.dropbox.com/u/36220055/CSC494/final_browsing.png"></p></li>
 <li><p>As for the working prototype, only images and mp3 files are supported on PixelSense.</p></li>
 </ul><h2>Components</h2>
 
@@ -120,12 +120,16 @@ Any message exchanges in the network are done via HTTP and should be in JSON for
 
 <h5>JSONMessage , JSONMessageWrapper, Parser</h5>
 
-<p>An extension of Newtonsoft.Json tailor specifically for this application. Any messages sent or received to the server should be firstly wrapped or parsed with the current class.</p>
+<p>An extension of Newtonsoft.Json tailored specifically for this application. Any messages sent or received to or from the server should be firstly wrapped or parsed with the these classes.</p>
 
 <h2>TO DO</h2>
 
 <p>The current components are just the ground works done in a few weeks during school term.
-In the beginning, it was aimed to the point where the PixelSense can handle multiple devices simultaneously and supports file transmission between devices in a NHCI manner. However, due to some constraints (eg. Device availability, and time) the goal became unattainable. It would be interesting to see how peers can interact with the files within their personal devices on a on centralized view. Also, although the underlying work can easily supoprt modification and deletion of the displayed files/directories, it was not implemented due to the time constraints.</p>
+In the beginning, it was aimed to the point where the PixelSense can handle multiple devices simultaneously and supports file transmission between devices in a NHCI manner. However, due to some constraints (eg. Device availability, and time) the goal became unattainable. It would be interesting to see how peers can interact with the files within their personal devices on a centralized view. Also, although the components can easily supoprt modification and deletion of the displayed files/directories, it was not implemented due to the time constraints.</p>
+
+<h2>A very special thanks to</h2>
+
+<p>Professor Steve Engels and John Hancock at Department of Computer Science, University of Toronto, for the mentor and allowing me to use the device and pursue with the prototype!</p>
       </section>
     </div>
 
