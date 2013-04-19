@@ -97,3 +97,6 @@ In the beginning, it was aimed to the point where the PixelSense can handle mult
 
 ##A very special thanks to
 Professor Steve Engels and John Hancock at Department of Computer Science, University of Toronto, for mentoring and allowing me to use the device and persue with the prototype!
+
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/4f88248a6db385a921436364685c27ad "githalytics.com")](http://githalytics.com/yungookim/slidboard)
